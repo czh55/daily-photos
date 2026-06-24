@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Node (if any later)
+node_modules/
+
+# Python (if any later)
+__pycache__/
+*.pyc

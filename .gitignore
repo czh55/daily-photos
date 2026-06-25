@@ -1,13 +1,11 @@
-# macOS
-.DS_Store
-
-# Editor
-.vscode/
-.idea/
-
-# Node (if any later)
-node_modules/
-
-# Python (if any later)
+# Python
 __pycache__/
 *.pyc
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+
+# 运行时数据
+data/history.json

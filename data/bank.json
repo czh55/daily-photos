@@ -1,0 +1,184 @@
+{
+  "pool": [
+    {
+      "id": 1,
+      "title": "月升，赫尔南德斯",
+      "photographer": "Ansel Adams",
+      "desc": "黑白风景摄影的巅峰之作，月光洒在新墨西哥州的小镇与远山上，展现了自然光影的极致控制与深远的空间层次。",
+      "tags": ["黑白", "风景", "大画幅"],
+      "img": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
+      "category": "风景"
+    },
+    {
+      "id": 2,
+      "title": "圣拉扎尔车站背后",
+      "photographer": "Henri Cartier-Bresson",
+      "desc": "决定性瞬间的经典诠释——一个男人跳跃水坑的瞬间被精确捕捉，水面的倒影与动态完美共构。",
+      "tags": ["街拍", "决定性瞬间", "黑白"],
+      "img": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&q=80",
+      "category": "街拍"
+    },
+    {
+      "id": 3,
+      "title": "移民母亲",
+      "photographer": "Dorothea Lange",
+      "desc": "大萧条时期最具感染力的纪实肖像。一位母亲忧虑的眼神与孩子们的依偎，成为整个时代的象征。",
+      "tags": ["纪实", "肖像", "社会"],
+      "img": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800&q=80",
+      "category": "肖像"
+    },
+    {
+      "id": 4,
+      "title": "阿富汗少女",
+      "photographer": "Steve McCurry",
+      "desc": "那双穿透镜头的绿眼睛成为《国家地理》历史上最著名的封面。色彩饱和、情感张力与人类共通的故事密不可分。",
+      "tags": ["肖像", "纪实", "色彩"],
+      "img": "https://images.unsplash.com/photo-1504198453319-5ce911bafcde?w=800&q=80",
+      "category": "肖像"
+    },
+    {
+      "id": 5,
+      "title": "莱茵河 II",
+      "photographer": "Andreas Gursky",
+      "desc": "当代摄影最昂贵作品之一，以极致冷静的视角呈现莱茵河的几何秩序，挑战了风景摄影的传统美学边界。",
+      "tags": ["当代", "观念", "大画幅"],
+      "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+      "category": "风景"
+    },
+    {
+      "id": 6,
+      "title": "霞浦日出",
+      "photographer": "何藩 (Fan Ho)",
+      "desc": "东方光影美学的极致表达。晨光穿透海面薄雾，渔人的剪影与光线交织，每一帧都如古典水墨画般诗意盎然。",
+      "tags": ["光影", "街头", "黑白"],
+      "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+      "category": "光影"
+    },
+    {
+      "id": 7,
+      "title": "星夜",
+      "photographer": "Michael Kenna",
+      "desc": "极简主义黑白长曝光杰作。极少的元素、大量的留白、静谧的构图，让观者在虚无中感受到宇宙的呼吸。",
+      "tags": ["黑白", "极简", "长曝光"],
+      "img": "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=80",
+      "category": "风景"
+    },
+    {
+      "id": 8,
+      "title": "东京压缩",
+      "photographer": "Michael Wolf",
+      "desc": "地铁通勤者的面孔被玻璃挤压变形，都市生活的窒息感与个体在巨大系统中的无力感，被冷酷地记录下来。",
+      "tags": ["街拍", "都市", "纪实"],
+      "img": "https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=800&q=80",
+      "category": "街拍"
+    },
+    {
+      "id": 9,
+      "title": "池塘月色",
+      "photographer": "Edward Steichen",
+      "desc": "早期画意摄影的极致典范。柔焦、月光、水面的朦胧倒影，摄影与绘画的边界在此消融，开创了艺术摄影的先河。",
+      "tags": ["画意", "早期摄影", "月光"],
+      "img": "https://images.unsplash.com/photo-1505144808419-1957a94ca61e?w=800&q=80",
+      "category": "风景"
+    },
+    {
+      "id": 10,
+      "title": "枪",
+      "photographer": "William Klein",
+      "desc": "一个男孩用玩具枪直指镜头，表情愤怒而挑衅。粗颗粒、广角变形、强烈的黑白对比，挑战了摄影的一切优雅规则。",
+      "tags": ["街拍", "粗颗粒", "挑衅"],
+      "img": "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=80",
+      "category": "街拍"
+    },
+    {
+      "id": 11,
+      "title": "尘暴",
+      "photographer": "Arthur Rothstein",
+      "desc": "1930年代沙尘暴中的农场家庭。尘土的质感、绝望的姿态、灰调的天空——环境灾难中的人类脆弱与坚韧并存。",
+      "tags": ["纪实", "环境", "社会"],
+      "img": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80",
+      "category": "纪实"
+    },
+    {
+      "id": 12,
+      "title": "摩洛哥蓝色之城",
+      "photographer": "未知摄影师",
+      "desc": "舍夫沙万的蓝色巷道是对色彩最纯粹的礼赞。每面墙、每级阶梯都沉浸在深浅不一的蓝中，城市就是一幅巨大的调色板。",
+      "tags": ["色彩", "建筑", "旅行"],
+      "img": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80",
+      "category": "建筑"
+    },
+    {
+      "id": 13,
+      "title": "巴塔哥尼亚秋色",
+      "photographer": "未知摄影师",
+      "desc": "南美尽头的原始秋景。火红的山毛榉林与湛蓝的湖泊形成浓烈对比，远山积雪将画面带入一种超越时间的永恒感。",
+      "tags": ["风景", "色彩", "自然"],
+      "img": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+      "category": "风景"
+    },
+    {
+      "id": 14,
+      "title": "斯德哥尔摩地铁",
+      "photographer": "未知摄影师",
+      "desc": "地铁站变成了地下洞穴艺术馆。裸露的岩壁被涂上鲜艳的红色，人造光源与自然岩石的质感碰撞出超现实的氛围。",
+      "tags": ["建筑", "色彩", "地下"],
+      "img": "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&q=80",
+      "category": "建筑"
+    },
+    {
+      "id": 15,
+      "title": "冰岛极光",
+      "photographer": "未知摄影师",
+      "desc": "绿色极光如绸缎般在夜空中舞动，冰川大地反射着微光。极寒之地的瑰丽天象，是人类对自然界最纯粹的敬畏。",
+      "tags": ["自然", "极光", "长曝光"],
+      "img": "https://images.unsplash.com/photo-1483347756197-71ef80e95f73?w=800&q=80",
+      "category": "自然"
+    },
+    {
+      "id": 16,
+      "title": "东京夜雨",
+      "photographer": "未知摄影师",
+      "desc": "霓虹灯在雨夜的街面积水中投射出破碎的光影。透明雨伞下匆匆的行人、湿漉漉的柏油路面——这是赛博朋克美学最真实的日常呈现。",
+      "tags": ["都市", "雨夜", "霓虹"],
+      "img": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80",
+      "category": "街拍"
+    },
+    {
+      "id": 17,
+      "title": "沙漠孤树",
+      "photographer": "未知摄影师",
+      "desc": "纳米比亚死亡沼泽的枯树与橙色沙丘。枯死百年的树干在晨曦中投下长长的阴影，极致的简洁中蕴含着生命的哲思。",
+      "tags": ["极简", "风景", "沙漠"],
+      "img": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&q=80",
+      "category": "风景"
+    },
+    {
+      "id": 18,
+      "title": "北海道雪景",
+      "photographer": "未知摄影师",
+      "desc": "暴雪后的宁静。被厚雪覆盖的树木如同雕塑，蓝调的光线赋予了冬季森林一种近乎神圣的氛围，时间仿佛在此凝固。",
+      "tags": ["雪景", "自然", "蓝调"],
+      "img": "https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?w=800&q=80",
+      "category": "自然"
+    },
+    {
+      "id": 19,
+      "title": "耶路撒冷哭墙",
+      "photographer": "未知摄影师",
+      "desc": "信仰与历史在石墙前交汇。祈祷者的手触摸千年石壁，光影在缝隙间流转——一个民族的苦难与希望被凝固在一张照片中。",
+      "tags": ["纪实", "人文", "宗教"],
+      "img": "https://images.unsplash.com/photo-1466442929976-97f336a657be?w=800&q=80",
+      "category": "纪实"
+    },
+    {
+      "id": 20,
+      "title": "晨曦中的金门大桥",
+      "photographer": "未知摄影师",
+      "desc": "旧金山的晨雾如海浪般翻涌，橘红色的金门大桥从云雾中探出。自然现象与人造奇迹的对话，是西海岸最具标志性的视觉诗篇。",
+      "tags": ["建筑", "晨雾", "城市"],
+      "img": "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&q=80",
+      "category": "建筑"
+    }
+  ]
+}

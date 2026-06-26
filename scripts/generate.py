@@ -8,7 +8,6 @@
 import json
 import os
 import random
-import shutil
 from datetime import datetime, timedelta
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -82,12 +81,67 @@ def compute_stats(selected):
     }
 
 
+def format_date_cn(iso_date):
+    """将 YYYY-MM-DD 格式化为中文日期。"""
+    dt = datetime.strptime(iso_date, "%Y-%m-%d")
+    weekdays = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
+    return dt.strftime("%Y年%m月%d日 ") + weekdays[dt.weekday()]
+
+
+def adapt_html_for_archive(html):
+    """调整归档页中的资源与导航路径（archive/ 子目录）。"""
+    html = html.replace('href="style.css"', 'href="../style.css"')
+    html = html.replace('href="archive/"', 'href="index.html"')
+    return html
+
+
+def repair_archive_html(path):
+    """修复已有归档页的 CSS 路径、固定日期与导航链接。"""
+    import re
+
+    date_str = os.path.basename(path).replace(".html", "")
+    if not re.match(r"\d{4}-\d{2}-\d{2}$", date_str):
+        return
+
+    with open(path, "r", encoding="utf-8") as f:
+        html = f.read()
+
+    html = adapt_html_for_archive(html)
+    date_cn = format_date_cn(date_str)
+    html = re.sub(
+        r'<div class="date"[^>]*>.*?</div>',
+        f'<div class="date">{date_cn}</div>',
+        html,
+        count=1,
+    )
+    html = re.sub(
+        r"// Render date\nconst now = new Date\(\);[\s\S]*?"
+        r"document\.getElementById\('todayDate'\)\.textContent = [^;]+;\n",
+        "",
+        html,
+    )
+    if "archive-link" not in html:
+        html = html.replace(
+            '<div class="filter-bar container" id="filterBar"></div>',
+            '<div class="filter-bar container" id="filterBar"></div>\n\n'
+            '<div class="archive-link container">\n'
+            '  <a href="index.html">浏览往期推荐</a>\n'
+            "</div>",
+        )
+
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(html)
+
+
 def archive_current_index():
     """将当前的 docs/index.html 归档到 archive/ 目录。"""
     if os.path.exists(INDEX_PATH):
         today = datetime.now().strftime("%Y-%m-%d")
         archive_path = os.path.join(ARCHIVE_DIR, f"{today}.html")
-        shutil.copy2(INDEX_PATH, archive_path)
+        with open(INDEX_PATH, "r", encoding="utf-8") as f:
+            content = adapt_html_for_archive(f.read())
+        with open(archive_path, "w", encoding="utf-8") as f:
+            f.write(content)
         print(f"  归档: {archive_path}")
 
 
@@ -187,6 +241,12 @@ def main():
 
     # 更新归档索引
     generate_archive_index()
+
+    # 修复所有归档页路径（兼容历史遗留文件）
+    if os.path.isdir(ARCHIVE_DIR):
+        for fname in os.listdir(ARCHIVE_DIR):
+            if fname.endswith(".html") and fname != "index.html":
+                repair_archive_html(os.path.join(ARCHIVE_DIR, fname))
 
     # 更新历史
     update_history(history, selected)

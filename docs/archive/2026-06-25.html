@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>每日摄影推荐 | Daily Photography</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
 <header class="container">
-  <div class="date" id="todayDate"></div>
+  <div class="date">2026年06月25日 星期四</div>
   <h1>每日摄影推荐</h1>
   <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
 </header>
@@ -21,6 +21,10 @@
 </div>
 
 <div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
 
 <div class="gallery container" id="gallery"></div>
 
@@ -198,10 +202,6 @@ const photos = [
   }
 ];
 
-// Render date
-const now = new Date();
-const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
-document.getElementById('todayDate').textContent = now.toLocaleDateString('zh-CN', options);
 document.getElementById('footerYear').textContent = now.getFullYear();
 
 // Get unique categories

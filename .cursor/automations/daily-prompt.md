@@ -4,12 +4,14 @@
 
 ### 1. 执行生成脚本
 运行 `python3 scripts/generate.py`，该脚本会：
-- 从 `data/bank.json` 读取摄影作品库
-- 根据 `data/history.json` 排除近期已推荐作品，避免重复
-- 随机选取 20 幅作品作为今日推荐
+- 调用 `scripts/fetch_photos.py` 从 Openverse / Wikimedia 按 8 种风格抓取当日新作品
+- 通过 URL 与 source_id 永久去重，确保与历史推荐不重复
+- 将新抓取作品合并到 `data/bank.json`，选取 20 幅作为今日推荐
 - 将选中作品记录到 `data/history.json`
 - 使用 `templates/index.html` 模板生成 `docs/index.html`
 - 归档旧的 `docs/index.html` 到 `docs/archive/YYYY-MM-DD.html`
+
+也可单独测试抓取：`python3 scripts/fetch_photos.py`
 
 ### 2. 验证生成结果
 - 确认 `docs/index.html` 已更新且文件非空
@@ -40,7 +42,8 @@ git push origin main
 | 问题 | 处理 |
 |------|------|
 | `generate.py` 执行失败 | 查看错误日志，修复后重试 |
-| `bank.json` 作品不足 20 幅 | 放宽重复推荐限制，允许最近 30 天外的作品再次出现 |
+| `bank.json` 作品不足 20 幅 | 网络抓取失败时降级从库中选取；放宽重复推荐限制 |
+| 网络抓取失败 | 检查网络连接，查看 Openverse API 是否可用，重试 `fetch_photos.py` |
 | `git push` 失败 | 检查网络连接，重试一次；若仍失败则跳过推送并报告 |
 | GitHub Pages 不更新 | 检查 Settings → Pages 是否指向 `main` 分支的 `/docs` 目录 |
 | 图片链接失效 | 在 `bank.json` 中标记该作品为 `broken: true`，下次生成时排除 |

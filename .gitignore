@@ -7,5 +7,4 @@ __pycache__/
 .vscode/
 .DS_Store
 
-# 运行时数据
-data/history.json
+# 运行时数据（history.json 需提交以保证跨环境去重）

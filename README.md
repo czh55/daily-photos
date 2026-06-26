@@ -15,7 +15,8 @@ daily-photos/
 │   ├── archive/                  # 往期归档
 │   └── .nojekyll                 # 禁用 Jekyll
 ├── scripts/
-│   └── generate.py               # 核心生成脚本
+│   ├── generate.py               # 核心生成脚本（含抓取 + 页面生成）
+│   └── fetch_photos.py           # 网络抓取脚本（Openverse / Wikimedia）
 ├── templates/
 │   └── index.html                # 主页 HTML 模板
 ├── data/
@@ -53,4 +54,13 @@ cd docs && python3 -m http.server 8000
 
 ## 数据源
 
-摄影作品数据存放在 `data/bank.json`，手动维护。每期从库中随机选取 20 幅，30 天内不重复推荐同一幅作品。
+每日自动从网络抓取 CC 授权摄影作品（[Openverse](https://openverse.org/) 为主，[Wikimedia Commons](https://commons.wikimedia.org/) 为补充），覆盖 8 种风格：风景、街拍、肖像、纪实、建筑、自然、光影、黑白。
+
+- 抓取结果合并到 `data/bank.json`，通过图片 URL 与 source_id **永久去重**
+- 每期推荐 20 幅 freshly fetched 作品，确保与历史不重复
+- 网络不可用时降级从作品库选取未推荐作品
+
+```bash
+# 仅测试网络抓取
+python3 scripts/fetch_photos.py
+```

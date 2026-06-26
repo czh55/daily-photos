@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """每日摄影推荐生成器
 
-从 bank.json 选取 20 幅作品，生成 docs/index.html，
+从网络抓取当日新作品，生成 docs/index.html，
 归档旧版到 docs/archive/，更新 data/history.json 避免重复推荐。
 """
 
@@ -9,10 +9,15 @@ import json
 import os
 import random
 import shutil
+import sys
 from datetime import datetime, timedelta
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
+sys.path.insert(0, SCRIPT_DIR)
+
+from fetch_photos import fetch_daily_photos, normalize_url
+
 DATA_DIR = os.path.join(PROJECT_DIR, "data")
 DOCS_DIR = os.path.join(PROJECT_DIR, "docs")
 TEMPLATES_DIR = os.path.join(PROJECT_DIR, "templates")
@@ -25,14 +30,20 @@ ARCHIVE_DIR = os.path.join(DOCS_DIR, "archive")
 
 DAILY_COUNT = 20
 REPEAT_COOLDOWN_DAYS = 30
+MIN_CATEGORIES = 5
 
 
-def load_json(path):
+def load_json(path, default=None):
+    if not os.path.exists(path):
+        if default is not None:
+            return default
+        raise FileNotFoundError(path)
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
 def save_json(path, data):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
@@ -42,26 +53,30 @@ def load_template(path):
         return f.read()
 
 
-def get_recently_used_ids(history, days=REPEAT_COOLDOWN_DAYS):
-    """返回最近 N 天已推荐过的作品 ID 集合。"""
+def get_recently_used_keys(history, days=REPEAT_COOLDOWN_DAYS):
+    """返回最近 N 天已推荐过的作品 ID 与 URL。"""
     cutoff = (datetime.now() - timedelta(days=days)).strftime("%Y-%m-%d")
-    used = set()
+    used_ids = set()
+    used_urls = set()
     for record in history:
         if record.get("date", "") >= cutoff:
             for photo in record.get("photos", []):
-                used.add(photo["id"])
-    return used
+                used_ids.add(photo["id"])
+                used_urls.add(normalize_url(photo.get("img", "")))
+    return used_ids, used_urls
 
 
-def select_photos(bank, history):
-    """从作品库中选取 20 幅，优先未推荐过的作品。"""
-    pool = bank["pool"]
-    used_ids = get_recently_used_ids(history)
+def select_photos_fallback(bank, history):
+    """网络抓取失败时的降级选片：从作品库中选取未推荐过的作品。"""
+    pool = [p for p in bank["pool"] if not p.get("broken")]
+    used_ids, used_urls = get_recently_used_keys(history)
 
-    # 分为可用和已用过
-    available = [p for p in pool if p["id"] not in used_ids]
+    available = [
+        p for p in pool
+        if p["id"] not in used_ids and normalize_url(p.get("img", "")) not in used_urls
+    ]
     if len(available) < DAILY_COUNT:
-        fallback = [p for p in pool if p["id"] in used_ids]
+        fallback = [p for p in pool if p not in available]
         available += fallback
 
     if len(available) < DAILY_COUNT:
@@ -138,8 +153,10 @@ def generate_index_html(selected, stats):
     template = load_template(TEMPLATE_PATH)
     photos_json = json.dumps(selected, ensure_ascii=False)
     today_cn = datetime.now().strftime("%Y年%m月%d日 %A")
-    weekdays = {"Monday": "星期一", "Tuesday": "星期二", "Wednesday": "星期三",
-                "Thursday": "星期四", "Friday": "星期五", "Saturday": "星期六", "Sunday": "星期日"}
+    weekdays = {
+        "Monday": "星期一", "Tuesday": "星期二", "Wednesday": "星期三",
+        "Thursday": "星期四", "Friday": "星期五", "Saturday": "星期六", "Sunday": "星期日",
+    }
     for en, cn in weekdays.items():
         today_cn = today_cn.replace(en, cn)
 
@@ -157,6 +174,7 @@ def generate_index_html(selected, stats):
 def update_history(history, selected):
     """将今日推荐写入历史记录。"""
     today = datetime.now().strftime("%Y-%m-%d")
+    history = [r for r in history if r.get("date") != today]
     history.append({"date": today, "photos": selected})
     save_json(HISTORY_PATH, history)
     print(f"  更新历史: {HISTORY_PATH}")
@@ -166,29 +184,30 @@ def main():
     print("每日摄影推荐生成器")
     print("=" * 40)
 
-    # 加载数据
     bank = load_json(BANK_PATH)
-    history = load_json(HISTORY_PATH)
+    history = load_json(HISTORY_PATH, [])
     print(f"  作品库: {len(bank['pool'])} 幅 | 历史记录: {len(history)} 期")
 
-    # 选作品
-    selected = select_photos(bank, history)
-    print(f"  选中: {len(selected)} 幅")
+    # 1. 从网络抓取今日新作品
+    try:
+        selected = fetch_daily_photos(bank, history)
+        print(f"  今日推荐: 网络新抓取 {len(selected)} 幅")
+    except RuntimeError as exc:
+        print(f"  网络抓取失败: {exc}")
+        print("  降级: 从作品库选取未推荐作品")
+        bank = load_json(BANK_PATH)
+        selected = select_photos_fallback(bank, history)
+        print(f"  选中: {len(selected)} 幅（降级模式）")
 
-    # 统计
     stats = compute_stats(selected)
     print(f"  统计: {stats['photographer_count']} 位摄影师 | {stats['category_count']} 种风格")
 
-    # 归档旧首页
+    if stats["category_count"] < MIN_CATEGORIES:
+        print(f"  警告: 风格种类 {stats['category_count']} 少于目标 {MIN_CATEGORIES}")
+
     archive_current_index()
-
-    # 生成新首页
     generate_index_html(selected, stats)
-
-    # 更新归档索引
     generate_archive_index()
-
-    # 更新历史
     update_history(history, selected)
 
     print("=" * 40)

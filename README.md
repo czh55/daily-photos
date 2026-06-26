@@ -36,7 +36,7 @@ python3 scripts/generate.py
 
 1. 在 Cursor 中创建 Automation，trigger 设为 `cron: "0 9 * * *"`（每天 9:00）
 2. Prompt 字段填入 `.cursor/automations/daily-trigger.txt` 的内容
-3. Automation 触发时 Agent 自动执行 `generate.py` → commit → push
+3. Automation 触发时 Agent 自动执行 `generate.py` → commit → 直接 push 到 `main` 分支（不创建 PR）
 
 ### 本地预览
 

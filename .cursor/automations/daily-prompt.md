@@ -16,8 +16,12 @@
 - 确认 `docs/archive/` 中有新的归档文件
 - 确认 `data/history.json` 已更新
 
-### 3. 提交并推送
+### 3. 提交并推送到 main（不要创建 PR）
+直接在 `main` 分支提交并推送，**不要**使用 feature 分支，**不要**调用 OpenGitPr。
+
 ```bash
+git checkout main
+git pull origin main
 git add -A
 git diff --cached --stat
 git commit -m "daily: $(date +%Y-%m-%d) 每日摄影推荐更新"

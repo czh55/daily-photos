@@ -95,6 +95,45 @@ def adapt_html_for_archive(html):
     return html
 
 
+def extract_photos_from_html(html):
+    """从 HTML 中提取 photos 数组。"""
+    import re
+
+    match = re.search(r"(?:var|const) photos = (\[[\s\S]*?\]);", html)
+    if not match:
+        return None
+    raw = match.group(1)
+    try:
+        return json.loads(raw)
+    except json.JSONDecodeError:
+        titles = re.findall(r'title: "((?:\\.|[^"\\])*)"', html)
+        if not titles:
+            return None
+        bank = load_json(BANK_PATH)
+        pool_by_title = {p["title"]: p for p in bank["pool"]}
+        return [pool_by_title[t] for t in titles if t in pool_by_title]
+
+
+def render_index_html(selected, stats, date_cn=None):
+    """使用模板渲染首页 HTML 字符串。"""
+    template = load_template(TEMPLATE_PATH)
+    if date_cn is None:
+        date_cn = datetime.now().strftime("%Y年%m月%d日 %A")
+        weekdays = {
+            "Monday": "星期一", "Tuesday": "星期二", "Wednesday": "星期三",
+            "Thursday": "星期四", "Friday": "星期五", "Saturday": "星期六", "Sunday": "星期日",
+        }
+        for en, cn in weekdays.items():
+            date_cn = date_cn.replace(en, cn)
+
+    html = template.replace("{{PHOTOS_JSON}}", json.dumps(selected, ensure_ascii=False))
+    html = html.replace("{{DATE}}", date_cn)
+    html = html.replace("{{PHOTO_COUNT}}", str(stats["photo_count"]))
+    html = html.replace("{{PHOTOGRAPHER_COUNT}}", str(stats["photographer_count"]))
+    html = html.replace("{{CATEGORY_COUNT}}", str(stats["category_count"]))
+    return html
+
+
 def repair_archive_html(path):
     """修复已有归档页的 CSS 路径、固定日期与导航链接。"""
     import re
@@ -106,28 +145,34 @@ def repair_archive_html(path):
     with open(path, "r", encoding="utf-8") as f:
         html = f.read()
 
-    html = adapt_html_for_archive(html)
-    date_cn = format_date_cn(date_str)
-    html = re.sub(
-        r'<div class="date"[^>]*>.*?</div>',
-        f'<div class="date">{date_cn}</div>',
-        html,
-        count=1,
+    photos = extract_photos_from_html(html)
+    is_legacy = (
+        "now.getFullYear()" in html
+        or re.search(r"const photos\s*=\s*\[\s*\{", html)
+        or "const categories" in html
     )
-    html = re.sub(
-        r"// Render date\nconst now = new Date\(\);[\s\S]*?"
-        r"document\.getElementById\('todayDate'\)\.textContent = [^;]+;\n",
-        "",
-        html,
-    )
-    if "archive-link" not in html:
-        html = html.replace(
-            '<div class="filter-bar container" id="filterBar"></div>',
-            '<div class="filter-bar container" id="filterBar"></div>\n\n'
-            '<div class="archive-link container">\n'
-            '  <a href="index.html">浏览往期推荐</a>\n'
-            "</div>",
+
+    if photos and is_legacy:
+        stats = compute_stats(photos)
+        html = adapt_html_for_archive(render_index_html(photos, stats, format_date_cn(date_str)))
+    else:
+        html = adapt_html_for_archive(html)
+        date_cn = format_date_cn(date_str)
+        html = re.sub(
+            r'<div class="date"[^>]*>.*?</div>',
+            f'<div class="date">{date_cn}</div>',
+            html,
+            count=1,
         )
+        html = html.replace("now.getFullYear()", "new Date().getFullYear()")
+        if "archive-link" not in html:
+            html = html.replace(
+                '<div class="filter-bar container" id="filterBar"></div>',
+                '<div class="filter-bar container" id="filterBar"></div>\n\n'
+                '<div class="archive-link container">\n'
+                '  <a href="index.html">浏览往期推荐</a>\n'
+                "</div>",
+            )
 
     with open(path, "w", encoding="utf-8") as f:
         f.write(html)
@@ -189,20 +234,7 @@ def generate_archive_index():
 
 def generate_index_html(selected, stats):
     """使用模板生成 docs/index.html。"""
-    template = load_template(TEMPLATE_PATH)
-    photos_json = json.dumps(selected, ensure_ascii=False)
-    today_cn = datetime.now().strftime("%Y年%m月%d日 %A")
-    weekdays = {"Monday": "星期一", "Tuesday": "星期二", "Wednesday": "星期三",
-                "Thursday": "星期四", "Friday": "星期五", "Saturday": "星期六", "Sunday": "星期日"}
-    for en, cn in weekdays.items():
-        today_cn = today_cn.replace(en, cn)
-
-    html = template.replace("{{PHOTOS_JSON}}", photos_json)
-    html = html.replace("{{DATE}}", today_cn)
-    html = html.replace("{{PHOTO_COUNT}}", str(stats["photo_count"]))
-    html = html.replace("{{PHOTOGRAPHER_COUNT}}", str(stats["photographer_count"]))
-    html = html.replace("{{CATEGORY_COUNT}}", str(stats["category_count"]))
-
+    html = render_index_html(selected, stats)
     with open(INDEX_PATH, "w", encoding="utf-8") as f:
         f.write(html)
     print(f"  生成主页: {INDEX_PATH}")

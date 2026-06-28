@@ -31,6 +31,43 @@ def load_json(path):
         return json.load(f)
 
 
+def load_or_rebuild_history():
+    """加载历史记录；缺失时从归档页与当前首页重建。"""
+    if os.path.exists(HISTORY_PATH):
+        return load_json(HISTORY_PATH)
+
+    import re
+
+    print("  历史记录缺失，从归档页重建...")
+    history = []
+
+    if os.path.isdir(ARCHIVE_DIR):
+        for fname in sorted(os.listdir(ARCHIVE_DIR)):
+            if fname.endswith(".html") and fname != "index.html":
+                date_str = fname.replace(".html", "")
+                path = os.path.join(ARCHIVE_DIR, fname)
+                with open(path, "r", encoding="utf-8") as f:
+                    photos = extract_photos_from_html(f.read())
+                if photos:
+                    history.append({"date": date_str, "photos": photos})
+
+    if os.path.exists(INDEX_PATH):
+        with open(INDEX_PATH, "r", encoding="utf-8") as f:
+            html = f.read()
+        photos = extract_photos_from_html(html)
+        date_match = re.search(r'<div class="date">(\d{4})年(\d{2})月(\d{2})日', html)
+        if photos and date_match:
+            date_str = f"{date_match.group(1)}-{date_match.group(2)}-{date_match.group(3)}"
+            if not any(r["date"] == date_str for r in history):
+                history.append({"date": date_str, "photos": photos})
+
+    history.sort(key=lambda r: r["date"])
+    if history:
+        save_json(HISTORY_PATH, history)
+        print(f"  已重建历史: {len(history)} 期")
+    return history
+
+
 def save_json(path, data):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
@@ -254,7 +291,7 @@ def main():
 
     # 加载数据
     bank = load_json(BANK_PATH)
-    history = load_json(HISTORY_PATH)
+    history = load_or_rebuild_history()
     print(f"  作品库: {len(bank['pool'])} 幅 | 历史记录: {len(history)} 期")
 
     # 选作品

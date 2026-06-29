@@ -8,6 +8,7 @@
 import json
 import os
 import random
+import re
 from datetime import datetime, timedelta
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -361,7 +362,75 @@ def update_history(history, selected):
     print(f"  更新历史: {HISTORY_PATH}")
 
 
+def list_archive_dates():
+    """返回 archive/ 下所有 YYYY-MM-DD 日期，升序。"""
+    dates = []
+    if not os.path.isdir(ARCHIVE_DIR):
+        return dates
+    for fname in os.listdir(ARCHIVE_DIR):
+        if fname == "index.html" or not fname.endswith(".html"):
+            continue
+        date_str = fname.replace(".html", "")
+        if re.match(r"\d{4}-\d{2}-\d{2}$", date_str):
+            dates.append(date_str)
+    return sorted(dates)
+
+
+def regenerate_all_archives(sync_today_index=True):
+    """按日期顺序重生成所有归档页，使用当前作品库与选片逻辑。"""
+    import copy
+
+    bank = load_json(BANK_PATH)
+    dates = list_archive_dates()
+    if not dates:
+        print("  无归档日期可更新")
+        return
+
+    print(f"  重生成 {len(dates)} 期归档: {dates[0]} ~ {dates[-1]}")
+    history = []
+    today = datetime.now().strftime("%Y-%m-%d")
+
+    for date_str in dates:
+        selected = select_photos(bank, history)
+        stats = compute_stats(selected)
+        sources = len({p.get("source", "unknown") for p in selected})
+        html = adapt_html_for_archive(
+            render_index_html(selected, stats, format_date_cn(date_str))
+        )
+        archive_path = os.path.join(ARCHIVE_DIR, f"{date_str}.html")
+        with open(archive_path, "w", encoding="utf-8") as f:
+            f.write(html)
+        history.append({"date": date_str, "photos": copy.deepcopy(selected)})
+        print(
+            f"  更新: {date_str} | {len(selected)} 幅 | "
+            f"{stats['category_count']} 风格 | {sources} 图床"
+        )
+
+    save_json(HISTORY_PATH, history)
+
+    if sync_today_index and today in dates:
+        record = next(r for r in history if r["date"] == today)
+        stats = compute_stats(record["photos"])
+        generate_index_html(record["photos"], stats)
+        print(f"  同步主页: {today}")
+
+    generate_archive_index()
+    print(f"  历史记录已更新: {len(history)} 期")
+
+
 def main():
+    import sys
+
+    if len(sys.argv) > 1 and sys.argv[1] == "--regenerate-all":
+        print("批量重生成归档")
+        print("=" * 40)
+        bank = load_json(BANK_PATH)
+        print(f"  作品库: {len(bank['pool'])} 幅")
+        regenerate_all_archives()
+        print("=" * 40)
+        print("重生成完成")
+        return
+
     print("每日摄影推荐生成器")
     print("=" * 40)
 

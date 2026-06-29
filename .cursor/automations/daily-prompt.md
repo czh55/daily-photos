@@ -3,10 +3,17 @@
 ## 执行步骤
 
 ### 1. 执行生成脚本
-运行 `python3 scripts/generate.py`，该脚本会：
+先扩充作品库（库 < 120 条或需增量拉取时），再生成今日推荐：
+
+```bash
+python3 scripts/enrich_bank.py   # 从多图床拉取外链，合并 bank.json
+python3 scripts/generate.py
+```
+
+`enrich_bank.py` 从 Openverse、Wikimedia、NASA、Met 等图床拉取 **HTTPS 外链**（不下载图片）；`generate.py` 会：
 - 从 `data/bank.json` 读取摄影作品库
 - 根据 `data/history.json` 排除近期已推荐作品，避免重复
-- 随机选取 20 幅作品作为今日推荐
+- 按风格与图床来源均衡选取 20 幅作品
 - 将选中作品记录到 `data/history.json`
 - 使用 `templates/index.html` 模板生成 `docs/index.html`
 - 归档旧的 `docs/index.html` 到 `docs/archive/YYYY-MM-DD.html`
@@ -44,7 +51,8 @@ git push origin main
 | 问题 | 处理 |
 |------|------|
 | `generate.py` 执行失败 | 查看错误日志，修复后重试 |
-| `bank.json` 作品不足 20 幅 | 放宽重复推荐限制，允许最近 30 天外的作品再次出现 |
+| `enrich_bank.py` 某图床失败 | 记录日志，跳过该源，继续 generate |
+| `bank.json` 作品不足 20 幅 | 运行 `enrich_bank.py --bootstrap` 扩充；或放宽重复推荐限制 |
 | `git push` 失败 | 检查网络连接，重试一次；若仍失败则跳过推送并报告 |
 | GitHub Pages 不更新 | 检查 Settings → Pages 是否指向 `main` 分支的 `/docs` 目录 |
 | 图片链接失效 | 在 `bank.json` 中标记该作品为 `broken: true`，下次生成时排除 |

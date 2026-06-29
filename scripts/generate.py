@@ -89,22 +89,98 @@ def get_recently_used_ids(history, days=REPEAT_COOLDOWN_DAYS):
     return used
 
 
+def filter_pool(pool):
+    """过滤无效或已标记失效的作品。"""
+    valid = []
+    for p in pool:
+        if p.get("broken"):
+            continue
+        img = p.get("img", "")
+        if not img.startswith("https://"):
+            continue
+        valid.append(p)
+    return valid
+
+
+def _pick_from(pool_list, selected, used_ids, used_urls, count=1):
+    """从列表中选取若干条，避免 ID 与 URL 重复。"""
+    random.shuffle(pool_list)
+    picked = 0
+    for p in pool_list:
+        if len(selected) >= DAILY_COUNT:
+            break
+        if p["id"] in used_ids or p["img"] in used_urls:
+            continue
+        selected.append(p)
+        used_ids.add(p["id"])
+        used_urls.add(p["img"])
+        picked += 1
+        if picked >= count:
+            break
+
+
+def _balanced_select(candidates, count):
+    """风格与图床均衡抽样。"""
+    selected = []
+    used_ids = set()
+    used_urls = set()
+
+    by_cat = {}
+    by_src = {}
+    for p in candidates:
+        by_cat.setdefault(p["category"], []).append(p)
+        by_src.setdefault(p.get("source", "unknown"), []).append(p)
+
+    cat_keys = list(by_cat.keys())
+    random.shuffle(cat_keys)
+    min_categories = min(5, len(cat_keys))
+    for cat in cat_keys[:min_categories]:
+        _pick_from(by_cat[cat], selected, used_ids, used_urls, 1)
+
+    src_keys = sorted(by_src.keys(), key=lambda s: -len(by_src[s]))
+    random.shuffle(src_keys)
+    min_sources = min(4, len(src_keys))
+    for src in src_keys:
+        if len({p.get("source") for p in selected}) >= min_sources:
+            break
+        if any(p.get("source") == src for p in selected):
+            continue
+        _pick_from(by_src[src], selected, used_ids, used_urls, 1)
+
+    remaining = [p for p in candidates if p["id"] not in used_ids and p["img"] not in used_urls]
+    _pick_from(remaining, selected, used_ids, used_urls, count - len(selected))
+
+    return selected[:count]
+
+
 def select_photos(bank, history):
-    """从作品库中选取 20 幅，优先未推荐过的作品。"""
-    pool = bank["pool"]
-    used_ids = get_recently_used_ids(history)
+    """从作品库中选取 20 幅：冷却优先、风格均衡、图床均衡、URL 去重。"""
+    pool = filter_pool(bank["pool"])
+    if len(pool) < DAILY_COUNT:
+        raise RuntimeError(f"作品库有效条目不足 {DAILY_COUNT} 幅")
 
-    # 分为可用和已用过
-    available = [p for p in pool if p["id"] not in used_ids]
-    if len(available) < DAILY_COUNT:
-        fallback = [p for p in pool if p["id"] in used_ids]
-        available += fallback
+    candidates = None
+    for cooldown in (REPEAT_COOLDOWN_DAYS, 14, 0):
+        used_ids = get_recently_used_ids(history, days=cooldown) if cooldown > 0 else set()
+        fresh = [p for p in pool if p["id"] not in used_ids]
+        if len(fresh) >= DAILY_COUNT:
+            candidates = fresh
+            break
 
-    if len(available) < DAILY_COUNT:
-        raise RuntimeError(f"作品库总量不足 {DAILY_COUNT} 幅")
+    if candidates is None:
+        candidates = pool
 
-    selected = random.sample(available, DAILY_COUNT)
-    return selected
+    selected = _balanced_select(candidates, DAILY_COUNT)
+    if len(selected) < DAILY_COUNT:
+        fallback = [p for p in pool if p["id"] not in {x["id"] for x in selected}]
+        extra = _balanced_select(fallback, DAILY_COUNT - len(selected))
+        seen = {p["id"] for p in selected}
+        for p in extra:
+            if p["id"] not in seen:
+                selected.append(p)
+                seen.add(p["id"])
+
+    return selected[:DAILY_COUNT]
 
 
 def compute_stats(selected):

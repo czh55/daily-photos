@@ -150,6 +150,7 @@ header .subtitle {
 .photo-card .info { padding: 18px 20px; }
 .photo-card .info h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; color: var(--text); }
 .photo-card .info .photographer { font-size: 13px; color: var(--accent); margin-bottom: 8px; }
+.photo-card .info .source-label { font-size: 11px; color: var(--text-secondary); margin-bottom: 8px; letter-spacing: 0.5px; }
 .photo-card .info .desc { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
 .photo-card .info .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
 .photo-card .info .tag { font-size: 11px; padding: 3px 10px; background: var(--accent-dim); color: var(--accent); border-radius: 10px; }

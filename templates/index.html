@@ -63,10 +63,25 @@ var photos = {{PHOTOS_JSON}};
     filterBar.appendChild(btn);
   });
 
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
   function renderGallery(filter) {
     var gallery = document.getElementById('gallery');
     var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
     gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
       return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
         '<div class="img-wrap">' +
           '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
@@ -76,6 +91,7 @@ var photos = {{PHOTOS_JSON}};
         '<div class="info">' +
           '<h3>' + p.title + '</h3>' +
           '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
           '<p class="desc">' + p.desc + '</p>' +
           '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
         '</div>' +

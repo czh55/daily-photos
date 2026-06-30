@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年06月30日 星期二</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">13</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">7</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "NASA astronaut Zena Cardman poses for a portrait", "photographer": "NASA", "desc": "构图上，NASA astronaut Zena Cardman poses for a portrait以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/jsc2024e022261_alt2/jsc2024e022261_alt2~orig.jpg", "category": "肖像", "source": "nasa", "source_url": "https://images.nasa.gov/details-jsc2024e022261_alt2", "id": 86}, {"title": "Earth observation taken by the Expedition 30 crewmember", "photographer": "NASA", "desc": "构图上，Earth observation taken by the Expedition 30 crewmember以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/iss030e099324/iss030e099324~orig.jpg", "category": "街拍", "source": "nasa", "source_url": "https://images.nasa.gov/details-iss030e099324", "id": 73}, {"title": "In social life, Sikander Khan was friendly and kind.jpg", "photographer": "Nasirkyz", "desc": "构图上，In social life, Sikander Khan was friendly and kind.jpg以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nasirkyz的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/In_social_life%2C_Sikander_Khan_was_friendly_and_kind.jpg/960px-In_social_life%2C_Sikander_Khan_was_friendly_and_kind.jpg", "category": "纪实", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AIn_social_life%2C_Sikander_Khan_was_friendly_and_kind.jpg", "id": 98}, {"title": "'Forest of Light' sculpture on Keele University campus - geograph.org.uk - 41528", "photographer": "Jonathan Hutchins", "desc": "构图上，'Forest of Light' sculpture on Keele University campus - geograph.org.uk - 41528以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jonathan Hutchins的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/%27Forest_of_Light%27_sculpture_on_Keele_University_campus_-_geograph.org.uk_-_4152862.jpg/960px-%27Forest_of_Light%27_sculpture_on_Keele_University_campus_-_geograph.org.uk_-_4152862.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3A%27Forest_of_Light%27_sculpture_on_Keele_University_campus_-_geograph.org.uk_-_4152862.jpg", "id": 143}, {"title": "Riansares Mountain Vista (Revisited) (1)", "photographer": "Nicholas_T", "desc": "构图上，Riansares Mountain Vista (Revisited) (1)以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nicholas_T的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "appalachianmountains", "baldeaglestateforest", "cirrus", "clintoncounty", "flickr"], "img": "https://live.staticflickr.com/8303/7818672808_a426256e27_b.jpg", "category": "风景", "source": "flickr", "source_url": "https://www.flickr.com/photos/14922165@N00/7818672808", "id": 184}, {"id": 6, "title": "霞浦日出", "photographer": "何藩 (Fan Ho)", "desc": "东方光影美学的极致表达。晨光穿透海面薄雾，渔人的剪影与光线交织，每一帧都如古典水墨画般诗意盎然。", "tags": ["光影", "街头", "黑白"], "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80", "category": "光影", "source": "unsplash"}, {"title": "Majas on a Balcony", "photographer": "Goya (Francisco de Goya y Lucientes)", "desc": "构图上，Majas on a Balcony以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Goya (Francisco de Goya y Lucientes)的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-20750-001.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436548", "id": 103}, {"title": "Spartan Soldier", "photographer": "Charles Nègre", "desc": "构图上，Spartan Soldier以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Charles Nègre的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ph/original/DP279241.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/283133", "id": 213}, {"title": "OSIRIS-REx NASA Social", "photographer": "NASA", "desc": "构图上，OSIRIS-REx NASA Social以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/KSC-20160907-PH_KLS02_0002/KSC-20160907-PH_KLS02_0002~orig.jpg", "category": "纪实", "source": "nasa", "source_url": "https://images.nasa.gov/details-KSC-20160907-PH_KLS02_0002", "id": 102}, {"title": "urban bridge dusk headlight tail", "photographer": "Openverse 摄影师", "desc": "构图上，urban bridge dusk headlight tail以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "architecture", "bridge", "city", "highway architecture", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYxNzExMjM4LXdpa2ltZWRpYS1pbWFnZS1rb3diaHZiYy5qcGc.jpg", "category": "建筑", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/3283392/free-photo-image-bridge-tower-arch", "id": 204}, {"title": "building geometry", "photographer": "Openverse 摄影师", "desc": "构图上，building geometry以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "building", "geometry", "ice", "nature", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvc3YyMjAwNTQtaW1hZ2Uta3d5bjF5MzIuanBn.jpg", "category": "建筑", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/5935132/photo-image-winter-building", "id": 54}, {"title": "Creative Photography - Nature/Wildlife", "photographer": "NASA", "desc": "构图上，Creative Photography - Nature/Wildlife以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/KSC-20201028-PH-JBS02_0139/KSC-20201028-PH-JBS02_0139~orig.jpg", "category": "自然", "source": "nasa", "source_url": "https://images.nasa.gov/details-KSC-20201028-PH-JBS02_0139", "id": 47}, {"title": "Intervale Scenic vista Mt Washington White Mountain North Conway NH.jpg", "photographer": "EgorovaSvetlana", "desc": "构图上，Intervale Scenic vista Mt Washington White Mountain North Conway NH.jpg以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，EgorovaSvetlana的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Intervale_Scenic_vista_Mt_Washington_White_Mountain_North_Conway_NH.jpg/960px-Intervale_Scenic_vista_Mt_Washington_White_Mountain_North_Conway_NH.jpg", "category": "风景", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AIntervale_Scenic_vista_Mt_Washington_White_Mountain_North_Conway_NH.jpg", "id": 188}, {"id": 10, "title": "枪", "photographer": "William Klein", "desc": "一个男孩用玩具枪直指镜头，表情愤怒而挑衅。粗颗粒、广角变形、强烈的黑白对比，挑战了摄影的一切优雅规则。", "tags": ["街拍", "粗颗粒", "挑衅"], "img": "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=80", "category": "街拍", "source": "unsplash"}, {"title": "Rocky Mountain National Park", "photographer": "NASA", "desc": "构图上，Rocky Mountain National Park以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000242/GSFC_20171208_Archive_e000242~large.jpg", "category": "风景", "source": "nasa", "source_url": "https://images.nasa.gov/details-GSFC_20171208_Archive_e000242", "id": 189}, {"title": "Elektrostal. Urban architecture. img 001.jpg", "photographer": "Dmitry Makeev", "desc": "构图上，Elektrostal. Urban architecture. img 001.jpg以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Dmitry Makeev的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Elektrostal._Urban_architecture._img_001.jpg/960px-Elektrostal._Urban_architecture._img_001.jpg", "category": "建筑", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AElektrostal._Urban_architecture._img_001.jpg", "id": 205}, {"title": "Portrait Aubrey Beardsley Frederick H", "photographer": "thegetty", "desc": "构图上，Portrait Aubrey Beardsley Frederick H以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，thegetty的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "body", "face", "hand", "photograph", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAyL2xyL2dldHR5MTA2ZzlyLWltYWdlLmpwZw.jpg", "category": "肖像", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/14262991/portrait-aubrey-beardsley-frederick-evans", "id": 81}, {"title": "Nature landscape photography photo", "photographer": "Openverse 摄影师", "desc": "构图上，Nature landscape photography photo以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "beach", "beautiful landscape", "landscape", "ocean", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg5MTk1Mi1pbWFnZS1rd3Z4Y2hnay5qcGc.jpg", "category": "风景", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/5920568/photo-image-cloud-public-domain-blue", "id": 26}, {"title": "KSC-04pd1228", "photographer": "NASA", "desc": "构图上，KSC-04pd1228以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/KSC-04pd1228/KSC-04pd1228~orig.jpg", "category": "建筑", "source": "nasa", "source_url": "https://images.nasa.gov/details-KSC-04pd1228", "id": 59}, {"title": "Social life", "photographer": "Helgi Halldórsson/Freddi", "desc": "构图上，Social life以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Helgi Halldórsson/Freddi的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "háskóladagurinn2014opiðhúsíháskólaíslands", "hu00e1sku00f3ladagurinn2014opiu00f0hu00fasu00edhu00e1sku00f3lau00edslands", "universityday2014openhouseattheuniversityoficelandmarch12014", "indoors", "flickr"], "img": "https://live.staticflickr.com/7432/12950638073_b629826666_b.jpg", "category": "纪实", "source": "flickr", "source_url": "https://www.flickr.com/photos/8058853@N06/12950638073", "id": 92}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

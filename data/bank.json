@@ -3587,6 +3587,491 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/435873",
       "id": 228
+    },
+    {
+      "title": "Irises",
+      "photographer": "Vincent van Gogh",
+      "desc": "构图上，Irises以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Vincent van Gogh的镜头传递出对风景题材的独到观察与共鸣。",
+      "tags": [
+        "风景",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP346474.jpg",
+      "category": "风景",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436528",
+      "id": 229
+    },
+    {
+      "title": "Abner's Messenger before David; The Queen of Sheba Bringing Gifts to Solomon;...",
+      "photographer": "Master of the Saint Barbara Legend",
+      "desc": "构图上，Abner's Messenger before David; The Queen of Sheba Bringing Gifts to Solomon;...以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Master of the Saint Barbara Legend的镜头传递出对风景题材的独到观察与共鸣。",
+      "tags": [
+        "风景",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/SF DT1049.jpg",
+      "category": "风景",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/437028",
+      "id": 230
+    },
+    {
+      "title": "Ia Orana Maria (Hail Mary)",
+      "photographer": "Paul Gauguin",
+      "desc": "构图上，Ia Orana Maria (Hail Mary)以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Paul Gauguin的镜头传递出对风景题材的独到观察与共鸣。",
+      "tags": [
+        "风景",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1025.jpg",
+      "category": "风景",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/438821",
+      "id": 231
+    },
+    {
+      "title": "Damascus Room",
+      "photographer": "Met Museum",
+      "desc": "构图上，Damascus Room以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对建筑题材的独到观察与共鸣。",
+      "tags": [
+        "建筑",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/DP240367.jpg",
+      "category": "建筑",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/452102",
+      "id": 232
+    },
+    {
+      "title": "Right Leaf of a Diptych",
+      "photographer": "Met Museum",
+      "desc": "构图上，Right Leaf of a Diptych以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对建筑题材的独到观察与共鸣。",
+      "tags": [
+        "建筑",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/md/original/sf17-190-176s1.jpg",
+      "category": "建筑",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/464132",
+      "id": 233
+    },
+    {
+      "title": "Young Lady in 1866",
+      "photographer": "Edouard Manet",
+      "desc": "构图上，Young Lady in 1866以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Edouard Manet的镜头传递出对街拍题材的独到观察与共鸣。",
+      "tags": [
+        "街拍",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP273977.jpg",
+      "category": "街拍",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436964",
+      "id": 234
+    },
+    {
+      "title": "The True Issue or \"Thats Whats the Matter\"",
+      "photographer": "Currier & Ives",
+      "desc": "构图上，The True Issue or \"Thats Whats the Matter\"以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Currier & Ives的镜头传递出对街拍题材的独到观察与共鸣。",
+      "tags": [
+        "街拍",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP-21533-001.jpg",
+      "category": "街拍",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/850659",
+      "id": 235
+    },
+    {
+      "title": "Animal pendant",
+      "photographer": "Met Museum",
+      "desc": "构图上，Animal pendant以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-43941-001.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/309952",
+      "id": 236
+    },
+    {
+      "title": "Dish with Horse and Rider",
+      "photographer": "Met Museum",
+      "desc": "构图上，Dish with Horse and Rider以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/sf45-153-2b.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/450578",
+      "id": 237
+    },
+    {
+      "title": "\"The Seven Sleepers of Ephesus\", Folio from a Falnama (Book of Omens)",
+      "photographer": "Met Museum",
+      "desc": "构图上，\"The Seven Sleepers of Ephesus\", Folio from a Falnama (Book of Omens)以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/DP148337.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/449026",
+      "id": 238
+    },
+    {
+      "title": "Still Life with a Vase of Flowers, Melon, Peaches, and Grapes",
+      "photographer": "Charlotte Eustache Sophie de Fuligny Damas, marquise de Grollier",
+      "desc": "构图上，Still Life with a Vase of Flowers, Melon, Peaches, and Grapes以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Charlotte Eustache Sophie de Fuligny Damas, marquise de Grollier的镜头传递出对纪实题材的独到观察与共鸣。",
+      "tags": [
+        "纪实",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-25141-001.jpg",
+      "category": "纪实",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/888924",
+      "id": 239
+    },
+    {
+      "title": "Light in the shadow",
+      "photographer": "Pelle De Brabander",
+      "desc": "构图上，Light in the shadow以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Pelle De Brabander的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "black",
+        "glass",
+        "light",
+        "photography",
+        "flickr"
+      ],
+      "img": "https://live.staticflickr.com/4822/46246944642_ddf6eb76eb_b.jpg",
+      "category": "光影",
+      "source": "flickr",
+      "source_url": "https://www.flickr.com/photos/164899334@N05/46246944642",
+      "id": 240
+    },
+    {
+      "title": "Tōkyō #6",
+      "photographer": "Thomas Leuthard",
+      "desc": "构图上，Tōkyō #6以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Thomas Leuthard的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "architecture",
+        "city",
+        "dark",
+        "light",
+        "flickr"
+      ],
+      "img": "https://live.staticflickr.com/7011/13979851281_35237bab41_b.jpg",
+      "category": "光影",
+      "source": "flickr",
+      "source_url": "https://www.flickr.com/photos/41346951@N05/13979851281",
+      "id": 241
+    },
+    {
+      "title": "Color BOX- Low light photography",
+      "photographer": "||-SAM Nasim-||",
+      "desc": "构图上，Color BOX- Low light photography以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，||-SAM Nasim-||的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "bangladesh",
+        "box",
+        "color",
+        "colorbank",
+        "flickr"
+      ],
+      "img": "https://live.staticflickr.com/6117/6257833143_68c06405da_b.jpg",
+      "category": "光影",
+      "source": "flickr",
+      "source_url": "https://www.flickr.com/photos/65732636@N06/6257833143",
+      "id": 242
+    },
+    {
+      "title": "light and shadow photography",
+      "photographer": "Openverse 摄影师",
+      "desc": "构图上，light and shadow photography以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "coquelicot",
+        "flower petal shadow",
+        "hibiscus",
+        "landscape photography",
+        "rawpixel"
+      ],
+      "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvcHgxMDEyNjIxLWltYWdlLWt3eXJsbWswLmpwZw.jpg",
+      "category": "光影",
+      "source": "rawpixel",
+      "source_url": "https://www.rawpixel.com/image/5964784/free-public-domain-cc0-photo",
+      "id": 243
+    },
+    {
+      "title": "silhouette person walking concrete tiles",
+      "photographer": "Openverse 摄影师",
+      "desc": "构图上，silhouette person walking concrete tiles以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "black and white",
+        "black and white photography",
+        "light and shadow",
+        "person photo",
+        "rawpixel"
+      ],
+      "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA2L3Vwd2s2MjIwNzk3Mi13aWtpbWVkaWEtaW1hZ2Uta293bjRiZTguanBn.jpg",
+      "category": "光影",
+      "source": "rawpixel",
+      "source_url": "https://www.rawpixel.com/image/3296412/free-photo-image-shadow-black-and-white-photography-walking",
+      "id": 244
+    },
+    {
+      "title": "Free man walking pass mural",
+      "photographer": "Openverse 摄影师",
+      "desc": "构图上，Free man walking pass mural以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "graffiti paintings art",
+        "hip hop",
+        "light dark",
+        "photography",
+        "rawpixel"
+      ],
+      "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHgxMzg3NDYtaW1hZ2Uta3d2eHliOHouanBn.jpg",
+      "category": "光影",
+      "source": "rawpixel",
+      "source_url": "https://www.rawpixel.com/image/5924156/photo-image-public-domain-shadow-person",
+      "id": 245
+    },
+    {
+      "title": "2024 - Photo of the street Plantage Middenlaan in Amsterdam with house facades i",
+      "photographer": "Fons Heijnsbroek",
+      "desc": "构图上，2024 - Photo of the street Plantage Middenlaan in Amsterdam with house facades i以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Fons Heijnsbroek的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "wikimedia"
+      ],
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/2024_-_Photo_of_the_street_Plantage_Middenlaan_in_Amsterdam_with_house_facades_in_sun_and_shadow_-_street_photography_in_free_images_and_high_resolutions%2C_Dutch_photographer_Fons_Heijnsbroek%2C_Netherlands_2024.tif/lossy-page1-960px-thumbnail.tif.jpg",
+      "category": "光影",
+      "source": "wikimedia",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3A2024_-_Photo_of_the_street_Plantage_Middenlaan_in_Amsterdam_with_house_facades_in_sun_and_shadow_-_street_photography_in_free_images_and_high_resolutions%2C_Dutch_photographer_Fons_Heijnsbroek%2C_Netherlands_2024.tif",
+      "id": 246
+    },
+    {
+      "title": "2024 Photo of a canal tour boat with tourists under the bridge Kortjewantsbrug i",
+      "photographer": "Fons Heijnsbroek",
+      "desc": "构图上，2024 Photo of a canal tour boat with tourists under the bridge Kortjewantsbrug i以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Fons Heijnsbroek的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "wikimedia"
+      ],
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/2024_Photo_of_a_canal_tour_boat_with_tourists_under_the_bridge_Kortjewantsbrug_in_Amsterdam_city%2C_with_water_reflections_and_light_shadow_effects_-_free_image_of_city_photography_in_high_resolutions_Netherlands_by_Fons_Heijnsbroek.tif/lossy-page1-960px-thumbnail.tif.jpg",
+      "category": "光影",
+      "source": "wikimedia",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3A2024_Photo_of_a_canal_tour_boat_with_tourists_under_the_bridge_Kortjewantsbrug_in_Amsterdam_city%2C_with_water_reflections_and_light_shadow_effects_-_free_image_of_city_photography_in_high_resolutions_Netherlands_by_Fons_Heijnsbroek.tif",
+      "id": 247
+    },
+    {
+      "title": "Beauty of a sunflower in light and shadow.jpg",
+      "photographer": "লুন",
+      "desc": "构图上，Beauty of a sunflower in light and shadow.jpg以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，লুন的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "wikimedia"
+      ],
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Beauty_of_a_sunflower_in_light_and_shadow.jpg/960px-Beauty_of_a_sunflower_in_light_and_shadow.jpg",
+      "category": "光影",
+      "source": "wikimedia",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3ABeauty_of_a_sunflower_in_light_and_shadow.jpg",
+      "id": 248
+    },
+    {
+      "title": "Astronaut John Young in shadow of Lunar Module behind ultraviolet camera",
+      "photographer": "NASA",
+      "desc": "构图上，Astronaut John Young in shadow of Lunar Module behind ultraviolet camera以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "nasa",
+        "space"
+      ],
+      "img": "https://images-assets.nasa.gov/image/as16-114-18439/as16-114-18439~large.jpg",
+      "category": "光影",
+      "source": "nasa",
+      "source_url": "https://images.nasa.gov/details-as16-114-18439",
+      "id": 249
+    },
+    {
+      "title": "The Doorway",
+      "photographer": "James McNeill Whistler",
+      "desc": "构图上，The Doorway以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，James McNeill Whistler的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP813603.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/365017",
+      "id": 250
+    },
+    {
+      "title": "The Lamentation",
+      "photographer": "Master of the Virgin among Virgins",
+      "desc": "构图上，The Lamentation以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Master of the Virgin among Virgins的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-23271-001.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/437035",
+      "id": 251
+    },
+    {
+      "title": "\"Bhil Couple Hunting Deer at Night\", Folio from the Davis Album",
+      "photographer": "Met Museum",
+      "desc": "构图上，\"Bhil Couple Hunting Deer at Night\", Folio from the Davis Album以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/DP107564.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/448478",
+      "id": 252
+    },
+    {
+      "title": "Adelaide Gaol #dailyshoot #monochrome",
+      "photographer": "Leshaines123",
+      "desc": "构图上，Adelaide Gaol #dailyshoot #monochrome以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Leshaines123的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "adelaide",
+        "adelaide2013",
+        "anawesomeshot",
+        "ashon",
+        "flickr"
+      ],
+      "img": "https://live.staticflickr.com/8263/8652047539_5c1bfe6286_b.jpg",
+      "category": "黑白",
+      "source": "flickr",
+      "source_url": "https://www.flickr.com/photos/46018453@N06/8652047539",
+      "id": 253
+    },
+    {
+      "title": "Monochrome car",
+      "photographer": "Openverse 摄影师",
+      "desc": "构图上，Monochrome car以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "car",
+        "car back",
+        "monochrome",
+        "sedan",
+        "rawpixel"
+      ],
+      "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAzL2ZyYmFsbHNfdG9feW91X2RhZGR5LWltYWdlLmpwZw.jpg",
+      "category": "黑白",
+      "source": "rawpixel",
+      "source_url": "https://www.rawpixel.com/image/8812184/monochrome-car",
+      "id": 254
+    },
+    {
+      "title": "Black and white monochrome - trees in winter snow.jpg",
+      "photographer": "PosifCool",
+      "desc": "构图上，Black and white monochrome - trees in winter snow.jpg以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，PosifCool的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "wikimedia"
+      ],
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Black_and_white_monochrome_-_trees_in_winter_snow.jpg/960px-Black_and_white_monochrome_-_trees_in_winter_snow.jpg",
+      "category": "黑白",
+      "source": "wikimedia",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3ABlack_and_white_monochrome_-_trees_in_winter_snow.jpg",
+      "id": 255
+    },
+    {
+      "title": "Transition on Tethys",
+      "photographer": "NASA",
+      "desc": "构图上，Transition on Tethys以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "nasa",
+        "space"
+      ],
+      "img": "https://images-assets.nasa.gov/image/PIA08284/PIA08284~orig.jpg",
+      "category": "黑白",
+      "source": "nasa",
+      "source_url": "https://images.nasa.gov/details-PIA08284",
+      "id": 256
+    },
+    {
+      "title": "Emperor Antoninus Pius",
+      "photographer": "Antico (Pier Jacopo Alari Bonacolsi)",
+      "desc": "构图上，Emperor Antoninus Pius以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Antico (Pier Jacopo Alari Bonacolsi)的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/es/original/DP234101.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/204587",
+      "id": 257
+    },
+    {
+      "title": "Chess Set",
+      "photographer": "Met Museum",
+      "desc": "构图上，Chess Set以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/DP170393.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/452204",
+      "id": 258
+    },
+    {
+      "title": "Mold Fragment with Musicians",
+      "photographer": "Met Museum",
+      "desc": "构图上，Mold Fragment with Musicians以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/DP367585.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/450761",
+      "id": 259
     }
   ]
 }

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年07月01日 星期三</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">16</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">7</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Tōkyō #6", "photographer": "Thomas Leuthard", "desc": "构图上，Tōkyō #6以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Thomas Leuthard的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "architecture", "city", "dark", "light", "flickr"], "img": "https://live.staticflickr.com/7011/13979851281_35237bab41_b.jpg", "category": "光影", "source": "flickr", "source_url": "https://www.flickr.com/photos/41346951@N05/13979851281", "id": 241}, {"title": "Puget Sound, Seattle, WA, USA, Vancouver, British Columbia, Canada", "photographer": "NASA", "desc": "构图上，Puget Sound, Seattle, WA, USA, Vancouver, British Columbia, Canada以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/sts047-151-488/sts047-151-488~large.jpg", "category": "街拍", "source": "nasa", "source_url": "https://images.nasa.gov/details-sts047-151-488", "id": 74}, {"title": "Rocky Mountain National Park", "photographer": "NASA", "desc": "构图上，Rocky Mountain National Park以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000242/GSFC_20171208_Archive_e000242~large.jpg", "category": "风景", "source": "nasa", "source_url": "https://images.nasa.gov/details-GSFC_20171208_Archive_e000242", "id": 189}, {"title": "Birmingham and central Alabama area seen in Earth Resources Exp. Package", "photographer": "NASA", "desc": "构图上，Birmingham and central Alabama area seen in Earth Resources Exp. Package以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/SL4-93-153/SL4-93-153~large.jpg", "category": "黑白", "source": "nasa", "source_url": "https://images.nasa.gov/details-SL4-93-153", "id": 128}, {"title": "Still Life with a Vase of Flowers, Melon, Peaches, and Grapes", "photographer": "Charlotte Eustache Sophie de Fuligny Damas, marquise de Grollier", "desc": "构图上，Still Life with a Vase of Flowers, Melon, Peaches, and Grapes以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Charlotte Eustache Sophie de Fuligny Damas, marquise de Grollier的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-25141-001.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/888924", "id": 239}, {"id": 8, "title": "东京压缩", "photographer": "Michael Wolf", "desc": "地铁通勤者的面孔被玻璃挤压变形，都市生活的窒息感与个体在巨大系统中的无力感，被冷酷地记录下来。", "tags": ["街拍", "都市", "纪实"], "img": "https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=800&q=80", "category": "街拍", "source": "unsplash"}, {"title": "Monochrome car", "photographer": "Openverse 摄影师", "desc": "构图上，Monochrome car以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "car", "car back", "monochrome", "sedan", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAzL2ZyYmFsbHNfdG9feW91X2RhZGR5LWltYWdlLmpwZw.jpg", "category": "黑白", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/8812184/monochrome-car", "id": 254}, {"id": 10, "title": "枪", "photographer": "William Klein", "desc": "一个男孩用玩具枪直指镜头，表情愤怒而挑衅。粗颗粒、广角变形、强烈的黑白对比，挑战了摄影的一切优雅规则。", "tags": ["街拍", "粗颗粒", "挑衅"], "img": "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=80", "category": "街拍", "source": "unsplash"}, {"title": "Mountains Sunset Hills Valley", "photographer": "Openverse 摄影师", "desc": "构图上，Mountains Sunset Hills Valley以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "hills vista", "mountain", "nature", "panorama", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvbnMxNjkzLWltYWdlLWt3eXMwcDVnLmpwZw.jpg", "category": "风景", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/5967322/mountains-sunset-hills-valley", "id": 134}, {"title": "Creative Photography - Nature/Wildlife", "photographer": "NASA", "desc": "构图上，Creative Photography - Nature/Wildlife以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/KSC-20201028-PH-JBS02_0013/KSC-20201028-PH-JBS02_0013~orig.jpg", "category": "自然", "source": "nasa", "source_url": "https://images.nasa.gov/details-KSC-20201028-PH-JBS02_0013", "id": 46}, {"title": "Irises", "photographer": "Vincent van Gogh", "desc": "构图上，Irises以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Vincent van Gogh的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP346474.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436528", "id": 229}, {"title": "The Doorway", "photographer": "James McNeill Whistler", "desc": "构图上，The Doorway以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，James McNeill Whistler的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP813603.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/365017", "id": 250}, {"title": "JGSDF, Marines conduct field training exercise during Forest Light [Image 5 o...", "photographer": "DVIDSHUB", "desc": "构图上，JGSDF, Marines conduct field training exercise during Forest Light [Image 5 o...以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，DVIDSHUB的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "3rdmarinelogisticsgroup", "3rdmlg", "bilateral", "clr35", "flickr"], "img": "https://live.staticflickr.com/7176/6862531256_e3383be728_b.jpg", "category": "自然", "source": "flickr", "source_url": "https://www.flickr.com/photos/28650594@N03/6862531256", "id": 193}, {"title": "The Fortune-Teller", "photographer": "Georges de La Tour", "desc": "构图上，The Fortune-Teller以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Georges de La Tour的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-14286-015.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436838", "id": 155}, {"title": "Chess Set", "photographer": "Met Museum", "desc": "构图上，Chess Set以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP170393.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/452204", "id": 258}, {"title": "Building of the Savings Bank of Beaune en 2016.jpg", "photographer": "Pierre André Leclercq", "desc": "构图上，Building of the Savings Bank of Beaune en 2016.jpg以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Pierre André Leclercq的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Building_of_the_Savings_Bank_of_Beaune_en_2016.jpg/960px-Building_of_the_Savings_Bank_of_Beaune_en_2016.jpg", "category": "建筑", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ABuilding_of_the_Savings_Bank_of_Beaune_en_2016.jpg", "id": 56}, {"title": "Coorg (Kodagu) wildlife and nature in South India.jpg", "photographer": "Fredericknoronha", "desc": "构图上，Coorg (Kodagu) wildlife and nature in South India.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Fredericknoronha的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Coorg_%28Kodagu%29_wildlife_and_nature_in_South_India.jpg/960px-Coorg_%28Kodagu%29_wildlife_and_nature_in_South_India.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ACoorg_%28Kodagu%29_wildlife_and_nature_in_South_India.jpg", "id": 42}, {"title": "Bust-Length Study of a Man", "photographer": "François-Auguste Biard", "desc": "构图上，Bust-Length Study of a Man以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，François-Auguste Biard的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-23957-001.jpg", "category": "自然", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/856295", "id": 48}, {"title": "School of Architecture and Urban Planning.jpg", "photographer": "Caelb375", "desc": "构图上，School of Architecture and Urban Planning.jpg以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Caelb375的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/School_of_Architecture_and_Urban_Planning.jpg/960px-School_of_Architecture_and_Urban_Planning.jpg", "category": "建筑", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ASchool_of_Architecture_and_Urban_Planning.jpg", "id": 207}, {"title": "Majas on a Balcony", "photographer": "Goya (Francisco de Goya y Lucientes)", "desc": "构图上，Majas on a Balcony以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Goya (Francisco de Goya y Lucientes)的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-20750-001.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436548", "id": 103}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

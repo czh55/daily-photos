@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年07月02日 星期四</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">16</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">8</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Female figurine", "photographer": "Met Museum", "desc": "构图上，Female figurine以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-13440-033.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/313251", "id": 220}, {"title": "The Adoration of the Magi", "photographer": "Joos van Wassenhove", "desc": "构图上，The Adoration of the Magi以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Joos van Wassenhove的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-16339-001.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436803", "id": 34}, {"title": "Famous Women", "photographer": "Gai Qi", "desc": "构图上，Famous Women以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Gai Qi的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/as/original/DP-14152-011.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/733847", "id": 61}, {"title": "Cylindrical Vessel", "photographer": "Met Museum", "desc": "构图上，Cylindrical Vessel以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP101926.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/314523", "id": 180}, {"title": "Emil Paje Photography | Commercial, Weddings, Portrait & Lifesytle, Wildlife ...", "photographer": "emilpaje", "desc": "构图上，Emil Paje Photography | Commercial, Weddings, Portrait & Lifesytle, Wildlife ...以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，emilpaje的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "|", "commercial", "emil", "lifesytle", "flickr"], "img": "https://live.staticflickr.com/8750/16636486947_8095f50de4_b.jpg", "category": "自然", "source": "flickr", "source_url": "https://www.flickr.com/photos/62227281@N08/16636486947", "id": 38}, {"title": "Javan munia, Wildlife&nature.jpg", "photographer": "Khairul Biswas", "desc": "构图上，Javan munia, Wildlife&nature.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Khairul Biswas的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Javan_munia%2C_Wildlife%26nature.jpg/960px-Javan_munia%2C_Wildlife%26nature.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AJavan_munia%2C_Wildlife%26nature.jpg", "id": 44}, {"title": "Golden hour sky", "photographer": "Sergeant Matt Hecht", "desc": "构图上，Golden hour sky以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Sergeant Matt Hecht的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "cloud", "countryside", "golden hour", "golden sky", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L2ZsODg4MjA4MDE1Ni1pbWFnZS1rcWFwNTJwaC5qcGc.jpg", "category": "光影", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/3578681/free-photo-image-sun-background", "id": 111}, {"title": "Lion stretching laying black white", "photographer": "Sergeant Matt Hecht", "desc": "构图上，Lion stretching laying black white以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Sergeant Matt Hecht的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "black and white animals", "black and white photography", "lion", "lion black and white", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvZmwyMDQ0MjY5MzM5MS1pbWFnZS1rcWJ1cHZpMS5qcGc.jpg", "category": "黑白", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/3583259/free-photo-image-animal-bandw", "id": 124}, {"title": "L'Arlésienne: Madame Joseph-Michel Ginoux (Marie Julien, 1848–1911)", "photographer": "Vincent van Gogh", "desc": "构图上，L'Arlésienne: Madame Joseph-Michel Ginoux (Marie Julien, 1848–1911)以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Vincent van Gogh的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1396.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436529", "id": 223}, {"title": "2024 Photo of a canal tour boat with tourists under the bridge Kortjewantsbrug i", "photographer": "Fons Heijnsbroek", "desc": "构图上，2024 Photo of a canal tour boat with tourists under the bridge Kortjewantsbrug i以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Fons Heijnsbroek的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/2024_Photo_of_a_canal_tour_boat_with_tourists_under_the_bridge_Kortjewantsbrug_in_Amsterdam_city%2C_with_water_reflections_and_light_shadow_effects_-_free_image_of_city_photography_in_high_resolutions_Netherlands_by_Fons_Heijnsbroek.tif/lossy-page1-960px-thumbnail.tif.jpg", "category": "光影", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3A2024_Photo_of_a_canal_tour_boat_with_tourists_under_the_bridge_Kortjewantsbrug_in_Amsterdam_city%2C_with_water_reflections_and_light_shadow_effects_-_free_image_of_city_photography_in_high_resolutions_Netherlands_by_Fons_Heijnsbroek.tif", "id": 247}, {"title": "The Fortune-Teller", "photographer": "Georges de La Tour", "desc": "构图上，The Fortune-Teller以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Georges de La Tour的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-14286-015.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436838", "id": 155}, {"title": "KSC-98pc983", "photographer": "NASA", "desc": "构图上，KSC-98pc983以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/KSC-98pc983/KSC-98pc983~orig.jpg", "category": "光影", "source": "nasa", "source_url": "https://images.nasa.gov/details-KSC-98pc983", "id": 116}, {"title": "Forest Treetops Struck Light (c", "photographer": "Openverse 摄影师", "desc": "构图上，Forest Treetops Struck Light (c以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "art", "drawings", "forest", "light", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA0L25nYTE1OTI4Mi1pbWFnZS5qcGc.jpg", "category": "自然", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/10026941/forest-treetops-struck-light-c-1800-heinrich-rieter", "id": 194}, {"title": "Coorg (Kodagu) wildlife and nature in South India.jpg", "photographer": "Fredericknoronha", "desc": "构图上，Coorg (Kodagu) wildlife and nature in South India.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Fredericknoronha的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Coorg_%28Kodagu%29_wildlife_and_nature_in_South_India.jpg/960px-Coorg_%28Kodagu%29_wildlife_and_nature_in_South_India.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ACoorg_%28Kodagu%29_wildlife_and_nature_in_South_India.jpg", "id": 42}, {"title": "\"The Concourse of the Birds\", Folio 11r from a Mantiq al-Tayr (Language of th...", "photographer": "Habiballah of Sava", "desc": "构图上，\"The Concourse of the Birds\", Folio 11r from a Mantiq al-Tayr (Language of th...以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Habiballah of Sava的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP234083.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/451725", "id": 33}, {"title": "iss071e513872", "photographer": "NASA", "desc": "构图上，iss071e513872以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/iss071e513872/iss071e513872~orig.jpg", "category": "肖像", "source": "nasa", "source_url": "https://images.nasa.gov/details-iss071e513872", "id": 87}, {"title": "\"Bhil Couple Hunting Deer at Night\", Folio from the Davis Album", "photographer": "Met Museum", "desc": "构图上，\"Bhil Couple Hunting Deer at Night\", Folio from the Davis Album以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP107564.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/448478", "id": 252}, {"title": "Street photography woman", "photographer": "kevin dooley", "desc": "构图上，Street photography woman以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，kevin dooley的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "photography", "street", "streetphotography", "woman", "flickr"], "img": "https://live.staticflickr.com/8148/7710389126_8de6cab778_b.jpg", "category": "街拍", "source": "flickr", "source_url": "https://www.flickr.com/photos/12836528@N00/7710389126", "id": 64}, {"title": "CDU Wahlkampfplakat - kaspl018.JPG", "photographer": "CDU", "desc": "构图上，CDU Wahlkampfplakat - kaspl018.JPG以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，CDU的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/CDU_Wahlkampfplakat_-_kaspl018.JPG/960px-CDU_Wahlkampfplakat_-_kaspl018.JPG", "category": "肖像", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ACDU_Wahlkampfplakat_-_kaspl018.JPG", "id": 161}, {"title": "Chapel and Forest of Light, Keele University - geograph.org.uk - 6738137.jpg", "photographer": "Jonathan Hutchins", "desc": "构图上，Chapel and Forest of Light, Keele University - geograph.org.uk - 6738137.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jonathan Hutchins的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Chapel_and_Forest_of_Light%2C_Keele_University_-_geograph.org.uk_-_6738137.jpg/960px-Chapel_and_Forest_of_Light%2C_Keele_University_-_geograph.org.uk_-_6738137.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AChapel_and_Forest_of_Light%2C_Keele_University_-_geograph.org.uk_-_6738137.jpg", "id": 195}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

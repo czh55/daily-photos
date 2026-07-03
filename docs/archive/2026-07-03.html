@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年07月03日 星期五</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">14</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">7</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Forest Light", "photographer": "Fugue", "desc": "构图上，Forest Light以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Fugue的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "forest", "frankfurt", "germany", "oberursel", "flickr"], "img": "https://live.staticflickr.com/21/31523548_0a55db3df5_b.jpg", "category": "自然", "source": "flickr", "source_url": "https://www.flickr.com/photos/16633713@N00/31523548", "id": 141}, {"title": "Astronaut John Young in shadow of Lunar Module behind ultraviolet camera", "photographer": "NASA", "desc": "构图上，Astronaut John Young in shadow of Lunar Module behind ultraviolet camera以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/as16-114-18439/as16-114-18439~large.jpg", "category": "光影", "source": "nasa", "source_url": "https://images.nasa.gov/details-as16-114-18439", "id": 249}, {"title": "Earth observations taken during the STS-71 mission", "photographer": "NASA", "desc": "构图上，Earth observations taken during the STS-71 mission以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/sts071-705-055/sts071-705-055~orig.jpg", "category": "风景", "source": "nasa", "source_url": "https://images.nasa.gov/details-sts071-705-055", "id": 32}, {"title": "Orpheus Instructing Savage People Theology", "photographer": "themet", "desc": "构图上，Orpheus Instructing Savage People Theology以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，themet的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "art", "music", "painting", "person", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA5L21ldDY2NDY2Mi1pbWFnZS5qcGc.jpg", "category": "纪实", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/8102144/orpheus-instructing-savage-people-theology-and-the-arts-social-life", "id": 289}, {"title": "\"Kai Khusrau, Farangis and Giv Crossing the River Jihun (Oxus)\", Folio from a...", "photographer": "Abu'l Qasim Firdausi", "desc": "构图上，\"Kai Khusrau, Farangis and Giv Crossing the River Jihun (Oxus)\", Folio from a...以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Abu'l Qasim Firdausi的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP234071.JPG", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/447300", "id": 164}, {"title": "\"Bhil Couple Hunting Deer at Night\", Folio from the Davis Album", "photographer": "Met Museum", "desc": "构图上，\"Bhil Couple Hunting Deer at Night\", Folio from the Davis Album以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP107564.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/448478", "id": 252}, {"title": "Head of a Central Asian Figure in a Pointed Cap", "photographer": "Met Museum", "desc": "构图上，Head of a Central Asian Figure in a Pointed Cap以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP262928.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/450483", "id": 263}, {"title": "Earth observation taken by the Expedition 35 crew", "photographer": "NASA", "desc": "构图上，Earth observation taken by the Expedition 35 crew以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/iss035e027265/iss035e027265~orig.jpg", "category": "风景", "source": "nasa", "source_url": "https://images.nasa.gov/details-iss035e027265", "id": 190}, {"title": "Louis Armstrong, head-and-shoulders portrait, facing", "photographer": "libraryofcongress", "desc": "构图上，Louis Armstrong, head-and-shoulders portrait, facing以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，libraryofcongress的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "armstrong", "black portrait", "famous", "photo", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2xvYzk3NTE4MzIzLWltYWdlLmpwZw.jpg", "category": "肖像", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/6746916/photo-image-face-black-shirt", "id": 266}, {"title": "Pochette d'Amore", "photographer": "Met Museum", "desc": "构图上，Pochette d'Amore以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/mi/original/DP-20647-001.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/501573", "id": 131}, {"title": "The Adoration of the Magi", "photographer": "Joos van Wassenhove", "desc": "构图上，The Adoration of the Magi以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Joos van Wassenhove的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-16339-001.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436803", "id": 34}, {"title": "The last light - Tokyo, Japan - Black and white photography", "photographer": "Giuseppe Milo (www.pixael.com)", "desc": "构图上，The last light - Tokyo, Japan - Black and white photography以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Giuseppe Milo (www.pixael.com)的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "alone", "architecture", "black", "blackandwhite", "flickr"], "img": "https://live.staticflickr.com/4625/38830543685_ee97444be0_b.jpg", "category": "黑白", "source": "flickr", "source_url": "https://www.flickr.com/photos/87690240@N03/38830543685", "id": 119}, {"title": "NASA astronaut Zena Cardman poses for a portrait", "photographer": "NASA", "desc": "构图上，NASA astronaut Zena Cardman poses for a portrait以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/jsc2024e022261_alt/jsc2024e022261_alt~orig.jpg", "category": "肖像", "source": "nasa", "source_url": "https://images.nasa.gov/details-jsc2024e022261_alt", "id": 85}, {"title": "Night City Architecture Urban Skyline Illuminated", "photographer": "OiMax", "desc": "构图上，Night City Architecture Urban Skyline Illuminated以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，OiMax的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "architecture", "city", "illuminated", "night", "flickr"], "img": "https://live.staticflickr.com/4175/34022192433_4a0b464ff9_b.jpg", "category": "建筑", "source": "flickr", "source_url": "https://www.flickr.com/photos/72396314@N00/34022192433", "id": 200}, {"title": "The Harvesters", "photographer": "Pieter Bruegel the Elder", "desc": "构图上，The Harvesters以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Pieter Bruegel the Elder的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP119115.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/435809", "id": 118}, {"title": "The Smokers", "photographer": "Adriaen Brouwer", "desc": "构图上，The Smokers以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Adriaen Brouwer的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-15904-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/435807", "id": 287}, {"title": "Transition on Tethys", "photographer": "NASA", "desc": "构图上，Transition on Tethys以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/PIA08284/PIA08284~orig.jpg", "category": "黑白", "source": "nasa", "source_url": "https://images.nasa.gov/details-PIA08284", "id": 256}, {"title": "The Crucifixion with the Virgin and Saint John", "photographer": "Hendrick ter Brugghen", "desc": "构图上，The Crucifixion with the Virgin and Saint John以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Hendrick ter Brugghen的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP146490.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/435817", "id": 225}, {"title": "Chapel and Forest of Light, Keele University - geograph.org.uk - 6738137.jpg", "photographer": "Jonathan Hutchins", "desc": "构图上，Chapel and Forest of Light, Keele University - geograph.org.uk - 6738137.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jonathan Hutchins的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Chapel_and_Forest_of_Light%2C_Keele_University_-_geograph.org.uk_-_6738137.jpg/960px-Chapel_and_Forest_of_Light%2C_Keele_University_-_geograph.org.uk_-_6738137.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AChapel_and_Forest_of_Light%2C_Keele_University_-_geograph.org.uk_-_6738137.jpg", "id": 195}, {"title": "Virgin and Child with Four Angels", "photographer": "Gerard David", "desc": "构图上，Virgin and Child with Four Angels以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Gerard David的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-1410-001.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436102", "id": 269}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

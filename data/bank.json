@@ -6389,6 +6389,186 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/501188",
       "id": 412
+    },
+    {
+      "title": "Armchair (part of a set)",
+      "photographer": "Nicolas-Quinibert Foliot",
+      "desc": "构图上，Armchair (part of a set)以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nicolas-Quinibert Foliot的镜头传递出对风景题材的独到观察与共鸣。",
+      "tags": [
+        "风景",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/es/original/152739.jpg",
+      "category": "风景",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/197744",
+      "id": 413
+    },
+    {
+      "title": "Head of Christ (Ecce Homo)",
+      "photographer": "Petrus Christus",
+      "desc": "构图上，Head of Christ (Ecce Homo)以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Petrus Christus的镜头传递出对风景题材的独到观察与共鸣。",
+      "tags": [
+        "风景",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DT229079.jpg",
+      "category": "风景",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/435897",
+      "id": 414
+    },
+    {
+      "title": "A River in a Meadow",
+      "photographer": "Théodore Rousseau",
+      "desc": "构图上，A River in a Meadow以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Théodore Rousseau的镜头传递出对自然题材的独到观察与共鸣。",
+      "tags": [
+        "自然",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-15888-001.jpg",
+      "category": "自然",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/437518",
+      "id": 415
+    },
+    {
+      "title": "Christ Healing the Blind",
+      "photographer": "El Greco (Domenikos Theotokopoulos)",
+      "desc": "构图上，Christ Healing the Blind以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，El Greco (Domenikos Theotokopoulos)的镜头传递出对建筑题材的独到观察与共鸣。",
+      "tags": [
+        "建筑",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-26505-001.jpg",
+      "category": "建筑",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436572",
+      "id": 416
+    },
+    {
+      "title": "Naser al-Din Shah",
+      "photographer": "Unknown",
+      "desc": "构图上，Naser al-Din Shah以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Unknown的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ph/original/DP202944.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/285455",
+      "id": 417
+    },
+    {
+      "title": "The Chess Players",
+      "photographer": "Liberale da Verona",
+      "desc": "构图上，The Chess Players以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Liberale da Verona的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DT226950.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436884",
+      "id": 418
+    },
+    {
+      "title": "The Annunciation",
+      "photographer": "Joos van Cleve",
+      "desc": "构图上，The Annunciation以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Joos van Cleve的镜头传递出对纪实题材的独到观察与共鸣。",
+      "tags": [
+        "纪实",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-19433-001.jpg",
+      "category": "纪实",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436791",
+      "id": 419
+    },
+    {
+      "title": "Virgin and Child with Saints Catherine of Alexandria and Barbara",
+      "photographer": "Hans Memling",
+      "desc": "构图上，Virgin and Child with Saints Catherine of Alexandria and Barbara以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Hans Memling的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-33354-001.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/437054",
+      "id": 420
+    },
+    {
+      "title": "Fragment of a Capital with a Basket-Weave Pattern and Crosses",
+      "photographer": "Met Museum",
+      "desc": "构图上，Fragment of a Capital with a Basket-Weave Pattern and Crosses以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/10.175.86.JPG",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/456176",
+      "id": 421
+    },
+    {
+      "title": "Snuff Bottle",
+      "photographer": "Met Museum",
+      "desc": "构图上，Snuff Bottle以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/as/original/21_175_190ab_O1.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/41400",
+      "id": 422
+    },
+    {
+      "title": "Tunic with Diamond Band",
+      "photographer": "Met Museum",
+      "desc": "构图上，Tunic with Diamond Band以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ao/original/DP107698.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/314528",
+      "id": 423
+    },
+    {
+      "title": "The Martyrdom of St. Thomas Becket, Archbishop of Canterbury",
+      "photographer": "Jean-Baptiste Marie Pierre",
+      "desc": "构图上，The Martyrdom of St. Thomas Becket, Archbishop of Canterbury以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jean-Baptiste Marie Pierre的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP813422.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/339340",
+      "id": 424
     }
   ]
 }

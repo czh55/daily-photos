@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年07月12日 星期日</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">17</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">8</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Al Ma'wa for Nature and Wildlife 11.jpg", "photographer": "Mohammad hajeer", "desc": "构图上，Al Ma'wa for Nature and Wildlife 11.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mohammad hajeer的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Al_Ma%27wa_for_Nature_and_Wildlife_11.jpg/960px-Al_Ma%27wa_for_Nature_and_Wildlife_11.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AAl_Ma%27wa_for_Nature_and_Wildlife_11.jpg", "id": 376}, {"title": "Processional Cross", "photographer": "Northern Highlands artist", "desc": "构图上，Processional Cross以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Northern Highlands artist的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP100984.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/317877", "id": 390}, {"title": "Light in the shadow", "photographer": "Pelle De Brabander", "desc": "构图上，Light in the shadow以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Pelle De Brabander的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "black", "glass", "light", "photography", "flickr"], "img": "https://live.staticflickr.com/4822/46246944642_ddf6eb76eb_b.jpg", "category": "光影", "source": "flickr", "source_url": "https://www.flickr.com/photos/164899334@N05/46246944642", "id": 240}, {"title": "Archangel Gabriel; The Virgin Annunciate", "photographer": "Gerard David", "desc": "构图上，Archangel Gabriel; The Virgin Annunciate以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Gerard David的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/rl/original/DT3083.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/459062", "id": 284}, {"title": "Arba'een In Mehran City 2016 - Iran (Black And White Photography-Mostafa Meraji)", "photographer": "Mostafameraji", "desc": "构图上，Arba'een In Mehran City 2016 - Iran (Black And White Photography-Mostafa Meraji)以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mostafameraji的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Arba%27een_In_Mehran_City_2016_-_Iran_%28Black_And_White_Photography-Mostafa_Meraji%29_%D8%A7%D8%B1%D8%A8%D8%B9%DB%8C%D9%86_%D8%AF%D8%B1_%D9%85%D9%87%D8%B1%D8%A7%D9%86-_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-_%D8%B9%DA%A9%D8%B3_%D9%87%D8%A7%DB%8C_%D8%B3%DB%8C%D8%A7%D9%87_%D9%88_%D8%B3%D9%81%DB%8C%D8%AF_36.jpg/960px-thumbnail.jpg", "category": "纪实", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AArba%27een_In_Mehran_City_2016_-_Iran_%28Black_And_White_Photography-Mostafa_Meraji%29_%D8%A7%D8%B1%D8%A8%D8%B9%DB%8C%D9%86_%D8%AF%D8%B1_%D9%85%D9%87%D8%B1%D8%A7%D9%86-_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-_%D8%B9%DA%A9%D8%B3_%D9%87%D8%A7%DB%8C_%D8%B3%DB%8C%D8%A7%D9%87_%D9%88_%D8%B3%D9%81%DB%8C%D8%AF_36.jpg", "id": 323}, {"title": "Free man walking pass mural", "photographer": "Openverse 摄影师", "desc": "构图上，Free man walking pass mural以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "graffiti paintings art", "hip hop", "light dark", "photography", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHgxMzg3NDYtaW1hZ2Uta3d2eHliOHouanBn.jpg", "category": "光影", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/5924156/photo-image-public-domain-shadow-person", "id": 245}, {"title": "Plum blossoms", "photographer": "Jin Nong", "desc": "构图上，Plum blossoms以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jin Nong的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/as/original/DP160540.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/36432", "id": 328}, {"title": "Intervale Scenic Vista White Mountain North Conway.jpg", "photographer": "EgorovaSvetlana", "desc": "构图上，Intervale Scenic Vista White Mountain North Conway.jpg以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，EgorovaSvetlana的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Intervale_Scenic_Vista_White_Mountain_North_Conway.jpg/960px-Intervale_Scenic_Vista_White_Mountain_North_Conway.jpg", "category": "风景", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AIntervale_Scenic_Vista_White_Mountain_North_Conway.jpg", "id": 186}, {"title": "KSC-98pc1418", "photographer": "NASA", "desc": "构图上，KSC-98pc1418以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/KSC-98pc1418/KSC-98pc1418~orig.jpg", "category": "光影", "source": "nasa", "source_url": "https://images.nasa.gov/details-KSC-98pc1418", "id": 115}, {"title": "Saint Philip Neri (1515–1595)", "photographer": "Carlo Dolci", "desc": "构图上，Saint Philip Neri (1515–1595)以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Carlo Dolci的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-944-001.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/712539", "id": 356}, {"title": "The Birth of the Virgin", "photographer": "Fra Carnevale (Bartolomeo di Giovanni Corradini)", "desc": "构图上，The Birth of the Virgin以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Fra Carnevale (Bartolomeo di Giovanni Corradini)的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP109484.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/435848", "id": 117}, {"title": "Vessel, Seated Deities", "photographer": "Met Museum", "desc": "构图上，Vessel, Seated Deities以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-13003-005.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/310607", "id": 314}, {"title": "Cuirass (<i>Char-aina</i>)", "photographer": "Met Museum", "desc": "构图上，Cuirass (<i>Char-aina</i>)以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/aa/original/DP147307.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/24007", "id": 310}, {"title": "Antoine Laurent Lavoisier (1743–1794) and Marie Anne Lavoisier (Marie Anne Pi...", "photographer": "Jacques Louis David", "desc": "构图上，Antoine Laurent Lavoisier (1743–1794) and Marie Anne Lavoisier (Marie Anne Pi...以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jacques Louis David的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-19709-001.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436106", "id": 369}, {"title": "A tree!.jpg", "photographer": "Sundaram Perumal", "desc": "构图上，A tree!.jpg以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Sundaram Perumal的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/A_tree%21.jpg/960px-A_tree%21.jpg", "category": "黑白", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AA_tree%21.jpg", "id": 176}, {"title": "Brunch communautaire avec les candidats de la ville de Québec / Community bru...", "photographer": "Michael Ignatieff", "desc": "构图上，Brunch communautaire avec les candidats de la ville de Québec / Community bru...以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Michael Ignatieff的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "ignatieff", "michael", "quebec", "flickr"], "img": "https://live.staticflickr.com/5256/5526711132_769052868f_b.jpg", "category": "街拍", "source": "flickr", "source_url": "https://www.flickr.com/photos/14231352@N08/5526711132", "id": 280}, {"title": "ISS NASA Social", "photographer": "NASA", "desc": "构图上，ISS NASA Social以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/201302200013HQ/201302200013HQ~orig.tif", "category": "纪实", "source": "nasa", "source_url": "https://images.nasa.gov/details-201302200013HQ", "id": 100}, {"title": "Forest Light", "photographer": "Umnak", "desc": "构图上，Forest Light以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Umnak的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "johnmuircabin", "tongassforest", "conifer", "dawn", "flickr"], "img": "https://live.staticflickr.com/5486/10523143414_247d5c67be_b.jpg", "category": "自然", "source": "flickr", "source_url": "https://www.flickr.com/photos/11376383@N00/10523143414", "id": 276}, {"title": "Al Ma'wa for Nature and Wildlife 05.jpg", "photographer": "Mohammad hajeer", "desc": "构图上，Al Ma'wa for Nature and Wildlife 05.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mohammad hajeer的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Al_Ma%27wa_for_Nature_and_Wildlife_05.jpg/960px-Al_Ma%27wa_for_Nature_and_Wildlife_05.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AAl_Ma%27wa_for_Nature_and_Wildlife_05.jpg", "id": 363}, {"title": "Miniature male effigy", "photographer": "Inca artist(s)", "desc": "构图上，Miniature male effigy以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Inca artist(s)的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-13440-014.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/309943", "id": 406}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

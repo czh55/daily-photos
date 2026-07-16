@@ -7050,6 +7050,111 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/452364",
       "id": 456
+    },
+    {
+      "title": "Poems from the Pavilion of True Meaning",
+      "photographer": "Zhou Lianggong",
+      "desc": "构图上，Poems from the Pavilion of True Meaning以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Zhou Lianggong的镜头传递出对风景题材的独到观察与共鸣。",
+      "tags": [
+        "风景",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/as/original/DP-13240-001.jpg",
+      "category": "风景",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/701293",
+      "id": 457
+    },
+    {
+      "title": "Virgin and Child Enthroned",
+      "photographer": "Bohemian Painter",
+      "desc": "构图上，Virgin and Child Enthroned以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Bohemian Painter的镜头传递出对建筑题材的独到观察与共鸣。",
+      "tags": [
+        "建筑",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-20592-001.jpg",
+      "category": "建筑",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/838076",
+      "id": 458
+    },
+    {
+      "title": "Shoes",
+      "photographer": "Vincent van Gogh",
+      "desc": "构图上，Shoes以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Vincent van Gogh的镜头传递出对街拍题材的独到观察与共鸣。",
+      "tags": [
+        "街拍",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1947.jpg",
+      "category": "街拍",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436533",
+      "id": 459
+    },
+    {
+      "title": "Portrait of a Youth with a Surgical Cut in one Eye",
+      "photographer": "Met Museum",
+      "desc": "构图上，Portrait of a Youth with a Surgical Cut in one Eye以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/eg/original/DP112592.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/547768",
+      "id": 460
+    },
+    {
+      "title": "Elizabeth Farren (born about 1759, died 1829), Later Countess of Derby",
+      "photographer": "Sir Thomas Lawrence",
+      "desc": "构图上，Elizabeth Farren (born about 1759, died 1829), Later Countess of Derby以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Sir Thomas Lawrence的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP169218.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436851",
+      "id": 461
+    },
+    {
+      "title": "Neckless jar with complex scene",
+      "photographer": "Paracas artist(s)",
+      "desc": "构图上，Neckless jar with complex scene以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Paracas artist(s)的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-24348-001.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/312928",
+      "id": 462
+    },
+    {
+      "title": "Vanitas Still Life",
+      "photographer": "Edwaert Collier",
+      "desc": "构图上，Vanitas Still Life以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Edwaert Collier的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP146494.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/435918",
+      "id": 463
     }
   ]
 }

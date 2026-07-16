@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年07月16日 星期四</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">14</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">8</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Johann I (1468–1532), the Constant, Elector of Saxony", "photographer": "Lucas Cranach the Elder", "desc": "构图上，Johann I (1468–1532), the Constant, Elector of Saxony以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Lucas Cranach the Elder的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP280599.jpg", "category": "自然", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436046", "id": 389}, {"title": "Ergaki, Buiba Valley, Western Sayan Mountains, Krasnoyarsk Krai, Russia.jpg", "photographer": "Vyacheslav Argenberg", "desc": "构图上，Ergaki, Buiba Valley, Western Sayan Mountains, Krasnoyarsk Krai, Russia.jpg以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Vyacheslav Argenberg的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Ergaki%2C_Buiba_Valley%2C_Western_Sayan_Mountains%2C_Krasnoyarsk_Krai%2C_Russia.jpg/960px-Ergaki%2C_Buiba_Valley%2C_Western_Sayan_Mountains%2C_Krasnoyarsk_Krai%2C_Russia.jpg", "category": "风景", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AErgaki%2C_Buiba_Valley%2C_Western_Sayan_Mountains%2C_Krasnoyarsk_Krai%2C_Russia.jpg", "id": 426}, {"title": "Earth Observations taken by the Expedition 14 crew", "photographer": "NASA", "desc": "构图上，Earth Observations taken by the Expedition 14 crew以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/iss014e10547/iss014e10547~orig.jpg", "category": "建筑", "source": "nasa", "source_url": "https://images.nasa.gov/details-iss014e10547", "id": 210}, {"title": "CITY LONDON ELECTION. LIBAERAL CANDIDATES", "photographer": "Openverse 摄影师", "desc": "构图上，CITY LONDON ELECTION. LIBAERAL CANDIDATES以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "art", "city", "illustration", "man", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA2L3dpZW53X183NTQ4LWltYWdlLmpwZw.jpg", "category": "街拍", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/11676209/image-paper-art-man", "id": 137}, {"title": "Reed Pipe", "photographer": "Met Museum", "desc": "构图上，Reed Pipe以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/mi/original/midp89.4.572.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/501188", "id": 412}, {"title": "Abner's Messenger before David; The Queen of Sheba Bringing Gifts to Solomon;...", "photographer": "Master of the Saint Barbara Legend", "desc": "构图上，Abner's Messenger before David; The Queen of Sheba Bringing Gifts to Solomon;...以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Master of the Saint Barbara Legend的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/SF DT1049.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437028", "id": 230}, {"title": "A Fisherman Leaning on an Oar", "photographer": "Jean Honoré Fragonard", "desc": "构图上，A Fisherman Leaning on an Oar以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jean Honoré Fragonard的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP136103.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/373266", "id": 344}, {"title": "Footed Bowl with Eagle Emblem", "photographer": "Met Museum", "desc": "构图上，Footed Bowl with Eagle Emblem以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP-17264-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/444717", "id": 431}, {"title": "Head from a Figure with a Beaded Headdress", "photographer": "Met Museum", "desc": "构图上，Head from a Figure with a Beaded Headdress以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP170373.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/448959", "id": 450}, {"title": "A Vase with Flowers", "photographer": "Jacob Vosmaer", "desc": "构图上，A Vase with Flowers以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jacob Vosmaer的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP145940.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437920", "id": 408}, {"title": "Valentine with lace paper and faux pearls", "photographer": "Esther Howland", "desc": "构图上，Valentine with lace paper and faux pearls以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Esther Howland的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP-14967-005.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/775454", "id": 386}, {"title": "Marine", "photographer": "Salomon van Ruysdael", "desc": "构图上，Marine以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Salomon van Ruysdael的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP145942.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437587", "id": 445}, {"title": "Nature landscape photography photo", "photographer": "Openverse 摄影师", "desc": "构图上，Nature landscape photography photo以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "beach", "beach grass", "beach landscape", "grass", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3B4OTkwOTktaW1hZ2Uta3d2eDgycW8uanBn.jpg", "category": "风景", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/5919771/photo-image-cloud-public-domain-blue", "id": 24}, {"title": "Yoke", "photographer": "Met Museum", "desc": "构图上，Yoke以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-23864-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/312643", "id": 440}, {"title": "Terracotta fragment of a kylix: eye-cup (drinking cup)", "photographer": "Met Museum", "desc": "构图上，Terracotta fragment of a kylix: eye-cup (drinking cup)以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/gr/original/DVB13369_1_ff.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/756044", "id": 370}, {"title": "Vessel terminating in the forepart of a stag", "photographer": "Met Museum", "desc": "构图上，Vessel terminating in the forepart of a stag以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/an/original/DP-42027-001.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/327399", "id": 443}, {"title": "Building geometry (Nampo Lotte)", "photographer": "Idle Expatter", "desc": "构图上，Building geometry (Nampo Lotte)以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Idle Expatter的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "architecture", "buildings", "busan", "geometry", "flickr"], "img": "https://live.staticflickr.com/7176/6828151318_57d500854e_b.jpg", "category": "建筑", "source": "flickr", "source_url": "https://www.flickr.com/photos/75719750@N02/6828151318", "id": 50}, {"title": "Scene from a Novella", "photographer": "Liberale da Verona", "desc": "构图上，Scene from a Novella以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Liberale da Verona的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT8310.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436885", "id": 365}, {"title": "Al Ma'wa for Nature and Wildlife 03.jpg", "photographer": "Mohammad hajeer", "desc": "构图上，Al Ma'wa for Nature and Wildlife 03.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mohammad hajeer的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Al_Ma%27wa_for_Nature_and_Wildlife_03.jpg/960px-Al_Ma%27wa_for_Nature_and_Wildlife_03.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AAl_Ma%27wa_for_Nature_and_Wildlife_03.jpg", "id": 449}, {"title": "The Last Toilet of Charlotte Corday", "photographer": "Lumb Stocks", "desc": "构图上，The Last Toilet of Charlotte Corday以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Lumb Stocks的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP884893.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/764636", "id": 385}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

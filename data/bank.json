@@ -7341,6 +7341,110 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/437159",
       "id": 475
+    },
+    {
+      "title": "Elektrostal. Urban architecture. img 016.jpg",
+      "photographer": "Dmitry Makeev",
+      "desc": "构图上，Elektrostal. Urban architecture. img 016.jpg以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Dmitry Makeev的镜头传递出对建筑题材的独到观察与共鸣。",
+      "tags": [
+        "建筑",
+        "wikimedia"
+      ],
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Elektrostal._Urban_architecture._img_016.jpg/960px-Elektrostal._Urban_architecture._img_016.jpg",
+      "category": "建筑",
+      "source": "wikimedia",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3AElektrostal._Urban_architecture._img_016.jpg",
+      "id": 476
+    },
+    {
+      "title": "Bowl with Enthroned Figure and Horsemen",
+      "photographer": "Met Museum",
+      "desc": "构图上，Bowl with Enthroned Figure and Horsemen以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对建筑题材的独到观察与共鸣。",
+      "tags": [
+        "建筑",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/DP368508.jpg",
+      "category": "建筑",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/451378",
+      "id": 477
+    },
+    {
+      "title": "Pair of carved ornaments with the Maize God",
+      "photographer": "Maya artist(s)",
+      "desc": "构图上，Pair of carved ornaments with the Maize God以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Maya artist(s)的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-24306-003.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/317760",
+      "id": 478
+    },
+    {
+      "title": "Vessel with mythological scene",
+      "photographer": "Maya artist(s)",
+      "desc": "构图上，Vessel with mythological scene以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Maya artist(s)的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ao/original/DP348021.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/662967",
+      "id": 479
+    },
+    {
+      "title": "Pendant mask of Ìyọ́bà Idià",
+      "photographer": "Ìgbèsànmwà (ivory- and wood- carving guild) artists",
+      "desc": "构图上，Pendant mask of Ìyọ́bà Idià以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Ìgbèsànmwà (ivory- and wood- carving guild) artists的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ao/original/DP231460.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/318622",
+      "id": 480
+    },
+    {
+      "title": "Christ Crowned with Thorns",
+      "photographer": "Antonello da Messina (Antonello di Giovanni d'Antonio)",
+      "desc": "构图上，Christ Crowned with Thorns以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Antonello da Messina (Antonello di Giovanni d'Antonio)的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DT285189.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/435580",
+      "id": 481
+    },
+    {
+      "title": "The Crucifixion with Donors and Saints Peter and Margaret of Antioch",
+      "photographer": "Cornelis Engebrechtsz",
+      "desc": "构图上，The Crucifixion with Donors and Saints Peter and Margaret of Antioch以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Cornelis Engebrechtsz的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DT10856.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436271",
+      "id": 482
     }
   ]
 }

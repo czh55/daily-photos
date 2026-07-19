@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年07月19日 星期日</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">16</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">7</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "A River in a Meadow", "photographer": "Théodore Rousseau", "desc": "构图上，A River in a Meadow以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Théodore Rousseau的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-15888-001.jpg", "category": "自然", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437518", "id": 415}, {"title": "Twin Stars", "photographer": "Luis Falero", "desc": "构图上，Twin Stars以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Luis Falero的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP800314.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/335370", "id": 448}, {"title": "Philip IV (1605–1665), King of Spain", "photographer": "Velázquez (Diego Rodríguez de Silva y Velázquez)", "desc": "构图上，Philip IV (1605–1665), King of Spain以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Velázquez (Diego Rodríguez de Silva y Velázquez)的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP239023.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437873", "id": 428}, {"title": "Portrait photography", "photographer": "James Willamor", "desc": "构图上，Portrait photography以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，James Willamor的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "photography", "portrait", "flickr"], "img": "https://live.staticflickr.com/3707/11423129055_8ba55b6c8d_b.jpg", "category": "肖像", "source": "flickr", "source_url": "https://www.flickr.com/photos/81464596@N00/11423129055", "id": 78}, {"title": "VIENNA VOLUNTEER.(in Italy 1848) (Supplement", "photographer": "Openverse 摄影师", "desc": "构图上，VIENNA VOLUNTEER.(in Italy 1848) (Supplement以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "art", "drawing", "illustration", "paper", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA2L3dpZW44ODYwNi1pbWFnZS5qcGc.jpg", "category": "纪实", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/11574656/image-paper-art-vintage", "id": 468}, {"title": "Elektrostal. Urban architecture. img 016.jpg", "photographer": "Dmitry Makeev", "desc": "构图上，Elektrostal. Urban architecture. img 016.jpg以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Dmitry Makeev的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Elektrostal._Urban_architecture._img_016.jpg/960px-Elektrostal._Urban_architecture._img_016.jpg", "category": "建筑", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AElektrostal._Urban_architecture._img_016.jpg", "id": 476}, {"title": "Saint Anthony the Abbot in the Wilderness", "photographer": "Sano di Pietro (Ansano di Pietro di Mencio)", "desc": "构图上，Saint Anthony the Abbot in the Wilderness以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Sano di Pietro (Ansano di Pietro di Mencio)的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/rl/original/DP319194.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/458967", "id": 402}, {"title": "Boss from a disc-headed pin", "photographer": "Met Museum", "desc": "构图上，Boss from a disc-headed pin以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/an/original/DP-25848-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/323971", "id": 354}, {"title": "Poems from the Pavilion of True Meaning", "photographer": "Zhou Lianggong", "desc": "构图上，Poems from the Pavilion of True Meaning以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Zhou Lianggong的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/as/original/DP-13240-001.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/701293", "id": 457}, {"title": "Young Woman Knitting", "photographer": "Berthe Morisot", "desc": "构图上，Young Woman Knitting以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Berthe Morisot的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1928.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437159", "id": 475}, {"title": "Saint Lawrence Enthroned with Saints and Donors", "photographer": "Fra Filippo Lippi", "desc": "构图上，Saint Lawrence Enthroned with Saints and Donors以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Fra Filippo Lippi的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-17016-001.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436897", "id": 442}, {"title": "Christ Crowned with Thorns", "photographer": "Antonello da Messina (Antonello di Giovanni d'Antonio)", "desc": "构图上，Christ Crowned with Thorns以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Antonello da Messina (Antonello di Giovanni d'Antonio)的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT285189.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/435580", "id": 481}, {"title": "Nature landscape black white photography", "photographer": "Openverse 摄影师", "desc": "构图上，Nature landscape black white photography以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "black and white", "black and white landscape", "black and white nature", "black and white photography", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHgxNjM4ODU5LWltYWdlLWt3dnhzem02LmpwZw.jpg", "category": "黑白", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/5923289/photo-image-public-domain-nature-free", "id": 397}, {"title": "Portrait of a Man", "photographer": "Lucas Cranach the Elder", "desc": "构图上，Portrait of a Man以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Lucas Cranach the Elder的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP280788.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436044", "id": 472}, {"title": "Virgin and Child", "photographer": "Bartolomé Estebán Murillo", "desc": "构图上，Virgin and Child以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Bartolomé Estebán Murillo的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-14936-010.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437175", "id": 441}, {"title": "Poetry (Poesia XXVII)", "photographer": "Master of the E-Series Tarocchi", "desc": "构图上，Poetry (Poesia XXVII)以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Master of the E-Series Tarocchi的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/59.570.32.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/362029", "id": 439}, {"title": "Glass pendant in the form of a miniature jar", "photographer": "Met Museum", "desc": "构图上，Glass pendant in the form of a miniature jar以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/gr/original/DP-13080-064.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/243456", "id": 362}, {"title": "Mirror with Split-Leaf Palmette Design Inlaid with Gold", "photographer": "Met Museum", "desc": "构图上，Mirror with Split-Leaf Palmette Design Inlaid with Gold以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP170394.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/452364", "id": 456}, {"title": "The Ballet from \"Robert le Diable\"", "photographer": "Edgar Degas", "desc": "构图上，The Ballet from \"Robert le Diable\"以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Edgar Degas的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1911.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436123", "id": 307}, {"title": "Four Gospels in Armenian", "photographer": "Met Museum", "desc": "构图上，Four Gospels in Armenian以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/md/original/DP228809.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/478665", "id": 471}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

@@ -7579,6 +7579,156 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/207968",
       "id": 491
+    },
+    {
+      "title": "Bashi-Bazouk",
+      "photographer": "Jean-Léon Gérôme",
+      "desc": "构图上，Bashi-Bazouk以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jean-Léon Gérôme的镜头传递出对自然题材的独到观察与共鸣。",
+      "tags": [
+        "自然",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP243839.jpg",
+      "category": "自然",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/440723",
+      "id": 492
+    },
+    {
+      "title": "Joan of Arc",
+      "photographer": "Jules Bastien-Lepage",
+      "desc": "构图上，Joan of Arc以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jules Bastien-Lepage的镜头传递出对街拍题材的独到观察与共鸣。",
+      "tags": [
+        "街拍",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-14201-049.jpg",
+      "category": "街拍",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/435621",
+      "id": 493
+    },
+    {
+      "title": "Relief panel",
+      "photographer": "Met Museum",
+      "desc": "构图上，Relief panel以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/an/original/DP375420.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/322611",
+      "id": 494
+    },
+    {
+      "title": "Deity figure",
+      "photographer": "Maya artist(s)",
+      "desc": "构图上，Deity figure以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Maya artist(s)的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-23472-001.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/313262",
+      "id": 495
+    },
+    {
+      "title": "The Judgment of Paris",
+      "photographer": "Lucas Cranach the Elder",
+      "desc": "构图上，The Judgment of Paris以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Lucas Cranach the Elder的镜头传递出对纪实题材的独到观察与共鸣。",
+      "tags": [
+        "纪实",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP280358.jpg",
+      "category": "纪实",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436037",
+      "id": 496
+    },
+    {
+      "title": "Portrait of a Man",
+      "photographer": "Quinten Massys",
+      "desc": "构图上，Portrait of a Man以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Quinten Massys的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DT280221.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436985",
+      "id": 497
+    },
+    {
+      "title": "Fortified Wall at Tivoli",
+      "photographer": "Simon Denis",
+      "desc": "构图上，Fortified Wall at Tivoli以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Simon Denis的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP169449.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/438645",
+      "id": 498
+    },
+    {
+      "title": "Ornamento delle belle & virtuose donne, page 20 (verso)",
+      "photographer": "Matteo Pagano",
+      "desc": "构图上，Ornamento delle belle & virtuose donne, page 20 (verso)以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Matteo Pagano的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP360804.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/660212",
+      "id": 499
+    },
+    {
+      "title": "A Farmhouse with a Thatched Roof and Trees Beside a River",
+      "photographer": "Constant Troyon",
+      "desc": "构图上，A Farmhouse with a Thatched Roof and Trees Beside a River以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Constant Troyon的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP812257.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/334671",
+      "id": 500
+    },
+    {
+      "title": "Cup and Saucer",
+      "photographer": "Glasgow Pottery Company",
+      "desc": "构图上，Cup and Saucer以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Glasgow Pottery Company的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ad/original/ADA5516.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/2858",
+      "id": 501
     }
   ]
 }

@@ -8295,6 +8295,96 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/194067",
       "id": 538
+    },
+    {
+      "title": "Judith with the Head of Holofernes",
+      "photographer": "Lucas Cranach the Elder",
+      "desc": "构图上，Judith with the Head of Holofernes以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Lucas Cranach the Elder的镜头传递出对自然题材的独到观察与共鸣。",
+      "tags": [
+        "自然",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP280784.jpg",
+      "category": "自然",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436038",
+      "id": 539
+    },
+    {
+      "title": "The Monet Family in Their Garden at Argenteuil",
+      "photographer": "Edouard Manet",
+      "desc": "构图上，The Monet Family in Their Garden at Argenteuil以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Edouard Manet的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-25465-001.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436965",
+      "id": 540
+    },
+    {
+      "title": "An Allegory",
+      "photographer": "Domenico Guidobono",
+      "desc": "构图上，An Allegory以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Domenico Guidobono的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/EP542.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436607",
+      "id": 541
+    },
+    {
+      "title": "Chancel of Trinity Chapel, New York",
+      "photographer": "John William Hill",
+      "desc": "构图上，Chancel of Trinity Chapel, New York以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，John William Hill的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ad/original/APS3328.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/11092",
+      "id": 542
+    },
+    {
+      "title": "Two Tahitian Women",
+      "photographer": "Paul Gauguin",
+      "desc": "构图上，Two Tahitian Women以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Paul Gauguin的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1342.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436446",
+      "id": 543
+    },
+    {
+      "title": "The Martyrdom of Saint Clement I, Pope",
+      "photographer": "Agostino Ciampelli",
+      "desc": "构图上，The Martyrdom of Saint Clement I, Pope以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Agostino Ciampelli的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP166863.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/338517",
+      "id": 544
     }
   ]
 }

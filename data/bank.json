@@ -8385,6 +8385,111 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/338517",
       "id": 544
+    },
+    {
+      "title": "Candlestick",
+      "photographer": "Met Museum",
+      "desc": "构图上，Candlestick以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/DP193.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/444525",
+      "id": 545
+    },
+    {
+      "title": "Portrait of a Man",
+      "photographer": "Rembrandt (Rembrandt van Rijn)",
+      "desc": "构图上，Portrait of a Man以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Rembrandt (Rembrandt van Rijn)的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP145947.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/437400",
+      "id": 546
+    },
+    {
+      "title": "Portrait of a Young Man",
+      "photographer": "Bronzino (Agnolo di Cosimo di Mariano)",
+      "desc": "构图上，Portrait of a Young Man以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Bronzino (Agnolo di Cosimo di Mariano)的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-14286-011.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/435802",
+      "id": 547
+    },
+    {
+      "title": "The Punishment of Niobe",
+      "photographer": "Merry Joseph Blondel",
+      "desc": "构图上，The Punishment of Niobe以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Merry Joseph Blondel的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP-22653-001.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/848292",
+      "id": 548
+    },
+    {
+      "title": "Sketch of a Town in Germany",
+      "photographer": "Andrew Fisher Bunner",
+      "desc": "构图上，Sketch of a Town in Germany以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Andrew Fisher Bunner的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ad/original/ap99.38.68.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/10322",
+      "id": 549
+    },
+    {
+      "title": "In the Meadow",
+      "photographer": "Auguste Renoir",
+      "desc": "构图上，In the Meadow以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Auguste Renoir的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1398.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/437434",
+      "id": 550
+    },
+    {
+      "title": "Two Costume Designs or Portrait Types",
+      "photographer": "Anonymous, French, 18th century",
+      "desc": "构图上，Two Costume Designs or Portrait Types以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Anonymous, French, 18th century的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP825818.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/415335",
+      "id": 551
     }
   ]
 }

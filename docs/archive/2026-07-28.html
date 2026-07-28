@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年07月28日 星期二</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">19</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">7</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Merano Street Photography by Giovanni Ussi 27.jpg", "photographer": "Giovanni Ussi", "desc": "构图上，Merano Street Photography by Giovanni Ussi 27.jpg以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Giovanni Ussi的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Merano_Street_Photography_by_Giovanni_Ussi_27.jpg/960px-Merano_Street_Photography_by_Giovanni_Ussi_27.jpg", "category": "街拍", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AMerano_Street_Photography_by_Giovanni_Ussi_27.jpg", "id": 71}, {"title": "Bowl with a Majlis Scene by a Pond", "photographer": "Abu Zayd al-Kashani", "desc": "构图上，Bowl with a Majlis Scene by a Pond以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Abu Zayd al-Kashani的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP371760.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/451752", "id": 524}, {"title": "Judith with the Head of Holofernes", "photographer": "Lucas Cranach the Elder", "desc": "构图上，Judith with the Head of Holofernes以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Lucas Cranach the Elder的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP280784.jpg", "category": "自然", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436038", "id": 539}, {"title": "Saint Catherine of Siena", "photographer": "Fulvio Signorini", "desc": "构图上，Saint Catherine of Siena以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Fulvio Signorini的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/es/original/DP-22142-001.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/197460", "id": 532}, {"title": "An Allegory", "photographer": "Domenico Guidobono", "desc": "构图上，An Allegory以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Domenico Guidobono的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/EP542.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436607", "id": 541}, {"title": "See the light!", "photographer": "VinothChandar", "desc": "构图上，See the light!以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，VinothChandar的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "capture", "chennai", "light", "madras", "flickr"], "img": "https://live.staticflickr.com/6004/5957574260_eefc56639c_b.jpg", "category": "光影", "source": "flickr", "source_url": "https://www.flickr.com/photos/44345361@N06/5957574260", "id": 526}, {"id": 2, "title": "圣拉扎尔车站背后", "photographer": "Henri Cartier-Bresson", "desc": "决定性瞬间的经典诠释——一个男人跳跃水坑的瞬间被精确捕捉，水面的倒影与动态完美共构。", "tags": ["街拍", "决定性瞬间", "黑白"], "img": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&q=80", "category": "街拍", "source": "unsplash"}, {"title": "Washerwomen in a Ruined Gallery", "photographer": "Hubert Robert", "desc": "构图上，Washerwomen in a Ruined Gallery以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Hubert Robert的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP808079.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/339704", "id": 528}, {"title": "Nietzsche1882.jpg", "photographer": "Gustav-Adolf Schultze (d. 1897)", "desc": "构图上，Nietzsche1882.jpg以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Gustav-Adolf Schultze (d. 1897)的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Nietzsche1882.jpg/960px-Nietzsche1882.jpg", "category": "肖像", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ANietzsche1882.jpg", "id": 84}, {"title": "Standing Soldier with a Spear", "photographer": "Anonymous, Spanish, School of Seville, 17th century", "desc": "构图上，Standing Soldier with a Spear以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Anonymous, Spanish, School of Seville, 17th century的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP800415.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/336675", "id": 536}, {"title": "Embroidered bag with fringe", "photographer": "Nasca artist", "desc": "构图上，Embroidered bag with fringe以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nasca artist的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-26534-001.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/308022", "id": 523}, {"title": "Watch in the form of a Lesser George", "photographer": "Nicholas Vallin", "desc": "构图上，Watch in the form of a Lesser George以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nicholas Vallin的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/es/original/DP340439.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/194067", "id": 538}, {"title": "The Interior of a Woman Painter's Studio", "photographer": "Marie Victoire Lemoine", "desc": "构图上，The Interior of a Woman Painter's Studio以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Marie Victoire Lemoine的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP320098.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436875", "id": 105}, {"title": "The Temptation of Saint Mary Magdalen", "photographer": "Johann Liss", "desc": "构图上，The Temptation of Saint Mary Magdalen以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Johann Liss的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-19542-001.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/828241", "id": 508}, {"title": "Relief panel", "photographer": "Met Museum", "desc": "构图上，Relief panel以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/an/original/DP355694.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/322621", "id": 534}, {"title": "Cliffside Sero Colorado (Black & White photography).png", "photographer": "Ginelly.Q", "desc": "构图上，Cliffside Sero Colorado (Black & White photography).png以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Ginelly.Q的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Cliffside_Sero_Colorado_%28Black_%26_White_photography%29.png/960px-Cliffside_Sero_Colorado_%28Black_%26_White_photography%29.png", "category": "黑白", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ACliffside_Sero_Colorado_%28Black_%26_White_photography%29.png", "id": 127}, {"title": "The Martyrdom of Saint Clement I, Pope", "photographer": "Agostino Ciampelli", "desc": "构图上，The Martyrdom of Saint Clement I, Pope以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Agostino Ciampelli的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP166863.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/338517", "id": 544}, {"title": "Sleep", "photographer": "Pierre Puvis de Chavannes", "desc": "构图上，Sleep以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Pierre Puvis de Chavannes的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-14201-033.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437349", "id": 537}, {"title": "Mosaic glass inlay", "photographer": "Met Museum", "desc": "构图上，Mosaic glass inlay以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/gr/original/sf421139.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/257722", "id": 130}, {"title": "Pendant Human Face (1st-5th century", "photographer": "Openverse 摄影师", "desc": "构图上，Pendant Human Face (1st-5th century以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "face", "human", "person", "photo", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvZmlsZXMvd2Vic2l0ZS8yMDIzLTA0L3dhbTc2NDk1LWltYWdlLmpwZw.jpg", "category": "肖像", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/10152758/pendant-with-human-face-1st-5th-century-ce-south-arabian", "id": 158}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

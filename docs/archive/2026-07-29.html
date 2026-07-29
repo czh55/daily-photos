@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年07月29日 星期三</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">15</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">8</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"id": 19, "title": "耶路撒冷哭墙", "photographer": "未知摄影师", "desc": "信仰与历史在石墙前交汇。祈祷者的手触摸千年石壁，光影在缝隙间流转——一个民族的苦难与希望被凝固在一张照片中。", "tags": ["纪实", "人文", "宗教"], "img": "https://images.unsplash.com/photo-1466442929976-97f336a657be?w=800&q=80", "category": "纪实", "source": "unsplash"}, {"title": "Apis dorsata nest on a tree at golden hour in Laos.jpg", "photographer": "Basile Morin", "desc": "构图上，Apis dorsata nest on a tree at golden hour in Laos.jpg以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Basile Morin的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Apis_dorsata_nest_on_a_tree_at_golden_hour_in_Laos.jpg/960px-Apis_dorsata_nest_on_a_tree_at_golden_hour_in_Laos.jpg", "category": "光影", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AApis_dorsata_nest_on_a_tree_at_golden_hour_in_Laos.jpg", "id": 113}, {"title": "Candlestick", "photographer": "Met Museum", "desc": "构图上，Candlestick以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP193.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/444525", "id": 545}, {"title": "Argentine black and white tegu (Salvator merianae) male Vicente Lopez.jpg", "photographer": "Charles J. Sharp", "desc": "构图上，Argentine black and white tegu (Salvator merianae) male Vicente Lopez.jpg以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Charles J. Sharp的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Argentine_black_and_white_tegu_%28Salvator_merianae%29_male_Vicente_Lopez.jpg/960px-Argentine_black_and_white_tegu_%28Salvator_merianae%29_male_Vicente_Lopez.jpg", "category": "黑白", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AArgentine_black_and_white_tegu_%28Salvator_merianae%29_male_Vicente_Lopez.jpg", "id": 125}, {"id": 14, "title": "斯德哥尔摩地铁", "photographer": "未知摄影师", "desc": "地铁站变成了地下洞穴艺术馆。裸露的岩壁被涂上鲜艳的红色，人造光源与自然岩石的质感碰撞出超现实的氛围。", "tags": ["建筑", "色彩", "地下"], "img": "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&q=80", "category": "建筑", "source": "unsplash"}, {"title": "ISS NASA Social", "photographer": "NASA", "desc": "构图上，ISS NASA Social以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/201302200014HQ/201302200014HQ~orig.tif", "category": "纪实", "source": "nasa", "source_url": "https://images.nasa.gov/details-201302200014HQ", "id": 101}, {"title": "Pittsburgh golden hour", "photographer": "brdonovan", "desc": "构图上，Pittsburgh golden hour以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，brdonovan的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "december", "golden", "hour", "pittsburgh", "flickr"], "img": "https://live.staticflickr.com/7002/6513558769_42943f7001_b.jpg", "category": "光影", "source": "flickr", "source_url": "https://www.flickr.com/photos/58621196@N05/6513558769", "id": 106}, {"title": "Ariadne", "photographer": "George Frederic Watts", "desc": "构图上，Ariadne以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，George Frederic Watts的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP169627.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437936", "id": 88}, {"title": "Mosaic glass inlay", "photographer": "Met Museum", "desc": "构图上，Mosaic glass inlay以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/gr/original/sf421139.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/257722", "id": 130}, {"id": 17, "title": "沙漠孤树", "photographer": "未知摄影师", "desc": "纳米比亚死亡沼泽的枯树与橙色沙丘。枯死百年的树干在晨曦中投下长长的阴影，极致的简洁中蕴含着生命的哲思。", "tags": ["极简", "风景", "沙漠"], "img": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&q=80", "category": "风景", "source": "unsplash"}, {"title": "Modern office building small windows", "photographer": "Openverse 摄影师", "desc": "构图上，Modern office building small windows以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "apartment building", "geometry", "geometry photo", "minimal", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L3Vwd2s2MTkwODM0Ny13aWtpbWVkaWEtaW1hZ2Uta293b25qc3QuanBn.jpg", "category": "建筑", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/3299283/free-photo-image-geometry-apartment-building-architectural", "id": 52}, {"id": 12, "title": "摩洛哥蓝色之城", "photographer": "未知摄影师", "desc": "舍夫沙万的蓝色巷道是对色彩最纯粹的礼赞。每面墙、每级阶梯都沉浸在深浅不一的蓝中，城市就是一幅巨大的调色板。", "tags": ["色彩", "建筑", "旅行"], "img": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80", "category": "建筑", "source": "unsplash"}, {"id": 9, "title": "池塘月色", "photographer": "Edward Steichen", "desc": "早期画意摄影的极致典范。柔焦、月光、水面的朦胧倒影，摄影与绘画的边界在此消融，开创了艺术摄影的先河。", "tags": ["画意", "早期摄影", "月光"], "img": "https://images.unsplash.com/photo-1505144808419-1957a94ca61e?w=800&q=80", "category": "风景", "source": "unsplash"}, {"title": "Peace Day. From: World War", "photographer": "museumofnewzealand", "desc": "构图上，Peace Day. From: World War以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，museumofnewzealand的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "black peace", "crowd street", "documentary photographs", "horses street", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTEyL2xyL21vbno5NTMxNTUtaW1hZ2UuanBn.jpg", "category": "纪实", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/13028921/peace-day-from-world-war-photograph-album-1919-herbert-green", "id": 168}, {"title": "Merano Street Photography by Giovanni Ussi 27.jpg", "photographer": "Giovanni Ussi", "desc": "构图上，Merano Street Photography by Giovanni Ussi 27.jpg以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Giovanni Ussi的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Merano_Street_Photography_by_Giovanni_Ussi_27.jpg/960px-Merano_Street_Photography_by_Giovanni_Ussi_27.jpg", "category": "街拍", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AMerano_Street_Photography_by_Giovanni_Ussi_27.jpg", "id": 71}, {"title": "10/52 - Monochrome Tones", "photographer": "Nanagyei", "desc": "构图上，10/52 - Monochrome Tones以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nanagyei的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "1052", "a700", "battle", "hotel", "flickr"], "img": "https://live.staticflickr.com/7058/6831122690_6771886419_b.jpg", "category": "黑白", "source": "flickr", "source_url": "https://www.flickr.com/photos/32876353@N04/6831122690", "id": 530}, {"title": "Portrait of a Young Man", "photographer": "Bronzino (Agnolo di Cosimo di Mariano)", "desc": "构图上，Portrait of a Young Man以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Bronzino (Agnolo di Cosimo di Mariano)的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-14286-011.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/435802", "id": 547}, {"title": "Merano Street Photography by Giovanni Ussi 10.jpg", "photographer": "Giovanni Ussi", "desc": "构图上，Merano Street Photography by Giovanni Ussi 10.jpg以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Giovanni Ussi的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Merano_Street_Photography_by_Giovanni_Ussi_10.jpg/960px-Merano_Street_Photography_by_Giovanni_Ussi_10.jpg", "category": "街拍", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AMerano_Street_Photography_by_Giovanni_Ussi_10.jpg", "id": 70}, {"title": "Emil Paje Photography | Commercial, Weddings, Portrait & Lifesytle, Wildlife ...", "photographer": "emilpaje", "desc": "构图上，Emil Paje Photography | Commercial, Weddings, Portrait & Lifesytle, Wildlife ...以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，emilpaje的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "|", "commercial", "emil", "lifesytle", "flickr"], "img": "https://live.staticflickr.com/7614/16656457120_93c24153f6_b.jpg", "category": "自然", "source": "flickr", "source_url": "https://www.flickr.com/photos/62227281@N08/16656457120", "id": 36}, {"id": 1, "title": "月升，赫尔南德斯", "photographer": "Ansel Adams", "desc": "黑白风景摄影的巅峰之作，月光洒在新墨西哥州的小镇与远山上，展现了自然光影的极致控制与深远的空间层次。", "tags": ["黑白", "风景", "大画幅"], "img": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80", "category": "风景", "source": "unsplash"}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

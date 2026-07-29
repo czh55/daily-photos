@@ -8490,6 +8490,96 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/415335",
       "id": 551
+    },
+    {
+      "title": "Saint Bernardino of Siena",
+      "photographer": "Fulvio Signorini",
+      "desc": "构图上，Saint Bernardino of Siena以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Fulvio Signorini的镜头传递出对建筑题材的独到观察与共鸣。",
+      "tags": [
+        "建筑",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/es/original/DP-22143-001.jpg",
+      "category": "建筑",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/197461",
+      "id": 552
+    },
+    {
+      "title": "View of the Colosseum and the Arch of Constantine from the Palatine",
+      "photographer": "Charles Rémond",
+      "desc": "构图上，View of the Colosseum and the Arch of Constantine from the Palatine以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Charles Rémond的镜头传递出对建筑题材的独到观察与共鸣。",
+      "tags": [
+        "建筑",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP150998.jpg",
+      "category": "建筑",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/438670",
+      "id": 553
+    },
+    {
+      "title": "A Woman with a Dog",
+      "photographer": "Giacomo Ceruti",
+      "desc": "构图上，A Woman with a Dog以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Giacomo Ceruti的镜头传递出对街拍题材的独到观察与共鸣。",
+      "tags": [
+        "街拍",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-29214-001.jpg",
+      "category": "街拍",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/435864",
+      "id": 554
+    },
+    {
+      "title": "Diptych with the Coronation of the Virgin and the Last Judgment",
+      "photographer": "Met Museum",
+      "desc": "构图上，Diptych with the Coronation of the Virgin and the Last Judgment以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/cl/original/DP-33216-001.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/471975",
+      "id": 555
+    },
+    {
+      "title": "Belshazzar's Feast",
+      "photographer": "Jan Muller",
+      "desc": "构图上，Belshazzar's Feast以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jan Muller的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP825422.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/374030",
+      "id": 556
+    },
+    {
+      "title": "Cross with Pearls",
+      "photographer": "Met Museum",
+      "desc": "构图上，Cross with Pearls以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/md/original/DT11711.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/476543",
+      "id": 557
     }
   ]
 }

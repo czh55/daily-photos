@@ -8580,6 +8580,114 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/476543",
       "id": 557
+    },
+    {
+      "title": "Glass panels modern facade building",
+      "photographer": "Openverse 摄影师",
+      "desc": "构图上，Glass panels modern facade building以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对建筑题材的独到观察与共鸣。",
+      "tags": [
+        "建筑",
+        "architecture",
+        "building",
+        "geometry",
+        "glass building",
+        "rawpixel"
+      ],
+      "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3Vwd2s2MjEzMjYyNy13aWtpbWVkaWEtaW1hZ2Uta293YXZyMmouanBn.jpg",
+      "category": "建筑",
+      "source": "rawpixel",
+      "source_url": "https://www.rawpixel.com/image/3282311/free-photo-image-office-building-view-city",
+      "id": 558
+    },
+    {
+      "title": "The Calling of Saint Matthew",
+      "photographer": "Jan Sanders van Hemessen",
+      "desc": "构图上，The Calling of Saint Matthew以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jan Sanders van Hemessen的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DT201070.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436643",
+      "id": 559
+    },
+    {
+      "title": "Hortensia",
+      "photographer": "Fernand Khnopff",
+      "desc": "构图上，Hortensia以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Fernand Khnopff的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP354135.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/679686",
+      "id": 560
+    },
+    {
+      "title": "[South Portal, Chartres Cathedral]",
+      "photographer": "Charles Marville",
+      "desc": "构图上，[South Portal, Chartres Cathedral]以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Charles Marville的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ph/original/DP158042.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/283734",
+      "id": 561
+    },
+    {
+      "title": "Interior with a Young Couple",
+      "photographer": "Pieter de Hooch",
+      "desc": "构图上，Interior with a Young Couple以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Pieter de Hooch的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP145906.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436675",
+      "id": 562
+    },
+    {
+      "title": "The Ramparts of Carcassonne",
+      "photographer": "Gustave Le Gray",
+      "desc": "构图上，The Ramparts of Carcassonne以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Gustave Le Gray的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ph/original/DP150967.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/283107",
+      "id": 563
+    },
+    {
+      "title": "\"Four-in-Hand\"",
+      "photographer": "Louis Maurer",
+      "desc": "构图上，\"Four-in-Hand\"以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Louis Maurer的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DT2035.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/371974",
+      "id": 564
     }
   ]
 }

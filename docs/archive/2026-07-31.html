@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年07月31日 星期五</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">19</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">7</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "The Monet Family in Their Garden at Argenteuil", "photographer": "Edouard Manet", "desc": "构图上，The Monet Family in Their Garden at Argenteuil以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Edouard Manet的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-25465-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436965", "id": 540}, {"id": 19, "title": "耶路撒冷哭墙", "photographer": "未知摄影师", "desc": "信仰与历史在石墙前交汇。祈祷者的手触摸千年石壁，光影在缝隙间流转——一个民族的苦难与希望被凝固在一张照片中。", "tags": ["纪实", "人文", "宗教"], "img": "https://images.unsplash.com/photo-1466442929976-97f336a657be?w=800&q=80", "category": "纪实", "source": "unsplash"}, {"title": "The Jabach Family", "photographer": "Charles Le Brun", "desc": "构图上，The Jabach Family以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Charles Le Brun的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP352819.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/626692", "id": 76}, {"title": "Argentine black and white tegu (Salvator merianae) male Vicente Lopez.jpg", "photographer": "Charles J. Sharp", "desc": "构图上，Argentine black and white tegu (Salvator merianae) male Vicente Lopez.jpg以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Charles J. Sharp的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Argentine_black_and_white_tegu_%28Salvator_merianae%29_male_Vicente_Lopez.jpg/960px-Argentine_black_and_white_tegu_%28Salvator_merianae%29_male_Vicente_Lopez.jpg", "category": "黑白", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AArgentine_black_and_white_tegu_%28Salvator_merianae%29_male_Vicente_Lopez.jpg", "id": 125}, {"title": "edge building facade glass plates", "photographer": "Openverse 摄影师", "desc": "构图上，edge building facade glass plates以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "architecture", "building", "city", "geometry", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3Vwd2s2MjA2NzkyOS13aWtpbWVkaWEtaW1hZ2Uta293YXBoOHUuanBn.jpg", "category": "建筑", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/3282433/free-photo-image-office-building-background", "id": 53}, {"id": 5, "title": "莱茵河 II", "photographer": "Andreas Gursky", "desc": "当代摄影最昂贵作品之一，以极致冷静的视角呈现莱茵河的几何秩序，挑战了风景摄影的传统美学边界。", "tags": ["当代", "观念", "大画幅"], "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80", "category": "风景", "source": "unsplash"}, {"title": "Saint Bernardino of Siena", "photographer": "Fulvio Signorini", "desc": "构图上，Saint Bernardino of Siena以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Fulvio Signorini的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/es/original/DP-22143-001.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/197461", "id": 552}, {"id": 1, "title": "月升，赫尔南德斯", "photographer": "Ansel Adams", "desc": "黑白风景摄影的巅峰之作，月光洒在新墨西哥州的小镇与远山上，展现了自然光影的极致控制与深远的空间层次。", "tags": ["黑白", "风景", "大画幅"], "img": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80", "category": "风景", "source": "unsplash"}, {"title": "Modern office building small windows", "photographer": "Openverse 摄影师", "desc": "构图上，Modern office building small windows以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "apartment building", "geometry", "geometry photo", "minimal", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L3Vwd2s2MTkwODM0Ny13aWtpbWVkaWEtaW1hZ2Uta293b25qc3QuanBn.jpg", "category": "建筑", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/3299283/free-photo-image-geometry-apartment-building-architectural", "id": 52}, {"title": "Golden Hour Girl", "photographer": "dolbinator1000", "desc": "构图上，Golden Hour Girl以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，dolbinator1000的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "cliff", "dress", "field", "girl", "flickr"], "img": "https://live.staticflickr.com/8641/16022841399_8b61b9bbd0_b.jpg", "category": "光影", "source": "flickr", "source_url": "https://www.flickr.com/photos/126654539@N08/16022841399", "id": 108}, {"id": 9, "title": "池塘月色", "photographer": "Edward Steichen", "desc": "早期画意摄影的极致典范。柔焦、月光、水面的朦胧倒影，摄影与绘画的边界在此消融，开创了艺术摄影的先河。", "tags": ["画意", "早期摄影", "月光"], "img": "https://images.unsplash.com/photo-1505144808419-1957a94ca61e?w=800&q=80", "category": "风景", "source": "unsplash"}, {"id": 4, "title": "阿富汗少女", "photographer": "Steve McCurry", "desc": "那双穿透镜头的绿眼睛成为《国家地理》历史上最著名的封面。色彩饱和、情感张力与人类共通的故事密不可分。", "tags": ["肖像", "纪实", "色彩"], "img": "https://images.unsplash.com/photo-1504198453319-5ce911bafcde?w=800&q=80", "category": "肖像", "source": "unsplash"}, {"title": "The pianist - Isernia, Italy - Black and white photography", "photographer": "Giuseppe Milo (www.pixael.com)", "desc": "构图上，The pianist - Isernia, Italy - Black and white photography以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Giuseppe Milo (www.pixael.com)的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "art", "backlight", "beautiful", "beauty", "flickr"], "img": "https://live.staticflickr.com/8293/29092217043_5490517326_b.jpg", "category": "黑白", "source": "flickr", "source_url": "https://www.flickr.com/photos/87690240@N03/29092217043", "id": 120}, {"title": "Portrait of a Man", "photographer": "Rembrandt (Rembrandt van Rijn)", "desc": "构图上，Portrait of a Man以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Rembrandt (Rembrandt van Rijn)的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP145947.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437400", "id": 546}, {"title": "New York City Street Scenes - Building Geometry", "photographer": "Steven Pisano", "desc": "构图上，New York City Street Scenes - Building Geometry以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Steven Pisano的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "flickr"], "img": "https://live.staticflickr.com/642/20746466564_1917011b4c_b.jpg", "category": "建筑", "source": "flickr", "source_url": "https://www.flickr.com/photos/45776673@N04/20746466564", "id": 51}, {"title": "Dublin North Inner City candidate Darryl O'Callaghan and Party Leader Eamon G...", "photographer": "Labour Youth ~ Óige an Lucht Oibre", "desc": "构图上，Dublin North Inner City candidate Darryl O'Callaghan and Party Leader Eamon G...以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Labour Youth ~ Óige an Lucht Oibre的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "adult", "festival", "man", "movie", "flickr"], "img": "https://live.staticflickr.com/2832/12343960335_87115d3311_b.jpg", "category": "街拍", "source": "flickr", "source_url": "https://www.flickr.com/photos/80895979@N00/12343960335", "id": 151}, {"title": "Fishy Social Life", "photographer": "ydiggnme", "desc": "构图上，Fishy Social Life以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，ydiggnme的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "aquarium", "birch", "fish", "tropical", "flickr"], "img": "https://live.staticflickr.com/3499/3738158964_ca64449273_b.jpg", "category": "纪实", "source": "flickr", "source_url": "https://www.flickr.com/photos/34810543@N03/3738158964", "id": 93}, {"title": "The Punishment of Niobe", "photographer": "Merry Joseph Blondel", "desc": "构图上，The Punishment of Niobe以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Merry Joseph Blondel的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP-22653-001.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/848292", "id": 548}, {"title": "Henry Taylor. Author of \"Philip Van Artevelde\"", "photographer": "Julia Margaret Cameron", "desc": "构图上，Henry Taylor. Author of \"Philip Van Artevelde\"以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Julia Margaret Cameron的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ph/original/DP318598.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/268706", "id": 90}, {"title": "SOCIAL GOLD LIFE BALL WIEN 2015 Bodengold.jpg", "photographer": "Johannes Angerbauer-Goldhoff", "desc": "构图上，SOCIAL GOLD LIFE BALL WIEN 2015 Bodengold.jpg以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Johannes Angerbauer-Goldhoff的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/SOCIAL_GOLD_LIFE_BALL_WIEN_2015_Bodengold.jpg/960px-SOCIAL_GOLD_LIFE_BALL_WIEN_2015_Bodengold.jpg", "category": "纪实", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ASOCIAL_GOLD_LIFE_BALL_WIEN_2015_Bodengold.jpg", "id": 99}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

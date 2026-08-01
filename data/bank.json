@@ -8688,6 +8688,81 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/371974",
       "id": 564
+    },
+    {
+      "title": "The Last Communion of Saint Jerome",
+      "photographer": "Botticelli (Alessandro di Mariano Filipepi)",
+      "desc": "构图上，The Last Communion of Saint Jerome以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Botticelli (Alessandro di Mariano Filipepi)的镜头传递出对自然题材的独到观察与共鸣。",
+      "tags": [
+        "自然",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-24049-001.jpg",
+      "category": "自然",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/435728",
+      "id": 565
+    },
+    {
+      "title": "The Agony in the Garden",
+      "photographer": "Nicolas Poussin",
+      "desc": "构图上，The Agony in the Garden以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nicolas Poussin的镜头传递出对建筑题材的独到观察与共鸣。",
+      "tags": [
+        "建筑",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-23235-001.jpg",
+      "category": "建筑",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/442488",
+      "id": 566
+    },
+    {
+      "title": "Miracle of Saint Gregory",
+      "photographer": "Anonymous, Netherlandish, 16th century",
+      "desc": "构图上，Miracle of Saint Gregory以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Anonymous, Netherlandish, 16th century的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP801712.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/335498",
+      "id": 567
+    },
+    {
+      "title": "The Fifteen Mysteries and the Virgin of the Rosary",
+      "photographer": "Netherlandish (Brussels) Painter",
+      "desc": "构图上，The Fifteen Mysteries and the Virgin of the Rosary以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Netherlandish (Brussels) Painter的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DT5754.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/437216",
+      "id": 568
+    },
+    {
+      "title": "Saint Margaret of Cortona",
+      "photographer": "Gaspare Traversi",
+      "desc": "构图上，Saint Margaret of Cortona以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Gaspare Traversi的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DT11449.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/437841",
+      "id": 569
     }
   ]
 }

@@ -8763,6 +8763,132 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/437841",
       "id": 569
+    },
+    {
+      "title": "Jerusalem from the Mount of Olives",
+      "photographer": "Charles-Théodore Frère",
+      "desc": "构图上，Jerusalem from the Mount of Olives以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Charles-Théodore Frère的镜头传递出对风景题材的独到观察与共鸣。",
+      "tags": [
+        "风景",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DT2000.jpg",
+      "category": "风景",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436418",
+      "id": 570
+    },
+    {
+      "title": "Couple zebras",
+      "photographer": "Openverse 摄影师",
+      "desc": "构图上，Couple zebras以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对自然题材的独到观察与共鸣。",
+      "tags": [
+        "自然",
+        "animal",
+        "nature",
+        "nature photos",
+        "wildlife",
+        "rawpixel"
+      ],
+      "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYxNzA5MzA0LXdpa2ltZWRpYS1pbWFnZS1rb3diYXh2dy5qcGc.jpg",
+      "category": "自然",
+      "source": "rawpixel",
+      "source_url": "https://www.rawpixel.com/image/3283220/free-photo-image-zebra-wildlife-animal-cc0",
+      "id": 571
+    },
+    {
+      "title": "Sierra Leone Elections. USAID in Sierra",
+      "photographer": "U.S. Agency for International Development",
+      "desc": "构图上，Sierra Leone Elections. USAID in Sierra以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，U.S. Agency for International Development的镜头传递出对纪实题材的独到观察与共鸣。",
+      "tags": [
+        "纪实",
+        "africa",
+        "africa elections",
+        "africa people",
+        "elections",
+        "rawpixel"
+      ],
+      "img": "https://images.rawpixel.com/image_1300/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmwzOTg4NTkwMDcwMC1pbWFnZS1rdWNnaGF1eS5qcGc.jpg",
+      "category": "纪实",
+      "source": "rawpixel",
+      "source_url": "https://www.rawpixel.com/image/4051110/image-public-domain-person-woman",
+      "id": 572
+    },
+    {
+      "title": "Fragment of a Door Post with Acanthus Leaves",
+      "photographer": "Met Museum",
+      "desc": "构图上，Fragment of a Door Post with Acanthus Leaves以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/10.175.84.JPG",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/456174",
+      "id": 573
+    },
+    {
+      "title": "Liverdun",
+      "photographer": "James McNeill Whistler",
+      "desc": "构图上，Liverdun以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，James McNeill Whistler的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP813180.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/372481",
+      "id": 574
+    },
+    {
+      "title": "Terracotta fragment of an oinochoe (jug)",
+      "photographer": "Met Museum",
+      "desc": "构图上，Terracotta fragment of an oinochoe (jug)以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/gr/original/DVB12164_1_ff.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/750501",
+      "id": 575
+    },
+    {
+      "title": "Figure Study in Colors",
+      "photographer": "James McNeill Whistler",
+      "desc": "构图上，Figure Study in Colors以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，James McNeill Whistler的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP814076.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/372862",
+      "id": 576
+    },
+    {
+      "title": "Reclining Female Nude Figure",
+      "photographer": "Domenico Tintoretto",
+      "desc": "构图上，Reclining Female Nude Figure以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Domenico Tintoretto的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP811858.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/340864",
+      "id": 577
     }
   ]
 }

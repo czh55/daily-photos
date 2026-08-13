@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年08月13日 星期四</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">16</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">7</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Night City Architecture Urban Skyline Illuminated", "photographer": "OiMax", "desc": "构图上，Night City Architecture Urban Skyline Illuminated以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，OiMax的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "architecture", "city", "illuminated", "night", "flickr"], "img": "https://live.staticflickr.com/4175/34022192433_4a0b464ff9_b.jpg", "category": "建筑", "source": "flickr", "source_url": "https://www.flickr.com/photos/72396314@N00/34022192433", "id": 200}, {"title": "Astronaut John Young in shadow of Lunar Module behind ultraviolet camera", "photographer": "NASA", "desc": "构图上，Astronaut John Young in shadow of Lunar Module behind ultraviolet camera以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/as16-114-18439/as16-114-18439~large.jpg", "category": "光影", "source": "nasa", "source_url": "https://images.nasa.gov/details-as16-114-18439", "id": 249}, {"title": "Street photography woman", "photographer": "kevin dooley", "desc": "构图上，Street photography woman以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，kevin dooley的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "photography", "street", "streetphotography", "woman", "flickr"], "img": "https://live.staticflickr.com/8148/7710389126_8de6cab778_b.jpg", "category": "街拍", "source": "flickr", "source_url": "https://www.flickr.com/photos/12836528@N00/7710389126", "id": 64}, {"title": "Monochrome Alicante Airport Roof # dailyshoot", "photographer": "Leshaines123", "desc": "构图上，Monochrome Alicante Airport Roof # dailyshoot以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Leshaines123的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "365", "abstract", "airport", "alicante", "flickr"], "img": "https://live.staticflickr.com/8428/7788986136_8805b54959_b.jpg", "category": "黑白", "source": "flickr", "source_url": "https://www.flickr.com/photos/46018453@N06/7788986136", "id": 174}, {"title": "Jar, Ritual Scenes", "photographer": "Met Museum", "desc": "构图上，Jar, Ritual Scenes以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/1993.441_a.JPG", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/316813", "id": 218}, {"title": "In social life, Sikander Khan was friendly and kind.jpg", "photographer": "Nasirkyz", "desc": "构图上，In social life, Sikander Khan was friendly and kind.jpg以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nasirkyz的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/In_social_life%2C_Sikander_Khan_was_friendly_and_kind.jpg/960px-In_social_life%2C_Sikander_Khan_was_friendly_and_kind.jpg", "category": "纪实", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AIn_social_life%2C_Sikander_Khan_was_friendly_and_kind.jpg", "id": 98}, {"title": "Coorg (Kodagu) wildlife and nature in South India.jpg", "photographer": "Fredericknoronha", "desc": "构图上，Coorg (Kodagu) wildlife and nature in South India.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Fredericknoronha的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Coorg_%28Kodagu%29_wildlife_and_nature_in_South_India.jpg/960px-Coorg_%28Kodagu%29_wildlife_and_nature_in_South_India.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ACoorg_%28Kodagu%29_wildlife_and_nature_in_South_India.jpg", "id": 42}, {"title": "Black and white film photography, Collage, 1970s, Rostov-on-Don, Russia.jpg", "photographer": "Vyacheslav Argenberg", "desc": "构图上，Black and white film photography, Collage, 1970s, Rostov-on-Don, Russia.jpg以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Vyacheslav Argenberg的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Black_and_white_film_photography%2C_Collage%2C_1970s%2C_Rostov-on-Don%2C_Russia.jpg/960px-Black_and_white_film_photography%2C_Collage%2C_1970s%2C_Rostov-on-Don%2C_Russia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "黑白", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ABlack_and_white_film_photography%2C_Collage%2C_1970s%2C_Rostov-on-Don%2C_Russia.jpg", "id": 621}, {"title": "Lioness wild", "photographer": "Openverse 摄影师", "desc": "构图上，Lioness wild以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "animal wildlife", "lion", "lion images", "lioness", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZnJhZnJpY2FfYW5pbWFsX2JpZ19jYXJuaXZvcmVfMS1pbWFnZS1reWJlYjJoai5qcGc.jpg", "category": "自然", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/6041364/photo-image-public-domain-nature-free", "id": 41}, {"title": "Tabernacle Polyptych with the Madonna and Child and Scenes from the Life of C...", "photographer": "Met Museum", "desc": "构图上，Tabernacle Polyptych with the Madonna and Child and Scenes from the Life of C...以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/rl/original/SLP1553-1.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/460281", "id": 619}, {"title": "A Woman with a Dog", "photographer": "Giacomo Ceruti", "desc": "构图上，A Woman with a Dog以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Giacomo Ceruti的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-29214-001.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/435864", "id": 554}, {"id": 11, "title": "尘暴", "photographer": "Arthur Rothstein", "desc": "1930年代沙尘暴中的农场家庭。尘土的质感、绝望的姿态、灰调的天空——环境灾难中的人类脆弱与坚韧并存。", "tags": ["纪实", "环境", "社会"], "img": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80", "category": "纪实", "source": "unsplash"}, {"title": "Louis Armstrong, head-and-shoulders portrait, facing", "photographer": "libraryofcongress", "desc": "构图上，Louis Armstrong, head-and-shoulders portrait, facing以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，libraryofcongress的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "armstrong", "black portrait", "famous", "photo", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2xvYzk3NTE4MzIzLWltYWdlLmpwZw.jpg", "category": "肖像", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/6746916/photo-image-face-black-shirt", "id": 266}, {"title": "Javan munia, Wildlife&nature.jpg", "photographer": "Khairul Biswas", "desc": "构图上，Javan munia, Wildlife&nature.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Khairul Biswas的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Javan_munia%2C_Wildlife%26nature.jpg/960px-Javan_munia%2C_Wildlife%26nature.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AJavan_munia%2C_Wildlife%26nature.jpg", "id": 44}, {"title": "Earth Observation", "photographer": "NASA", "desc": "构图上，Earth Observation以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/iss032e009123/iss032e009123~orig.jpg", "category": "街拍", "source": "nasa", "source_url": "https://images.nasa.gov/details-iss032e009123", "id": 72}, {"title": "Pochette d'Amore", "photographer": "Met Museum", "desc": "构图上，Pochette d'Amore以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/mi/original/DP-20647-001.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/501573", "id": 131}, {"title": "iss038e055233", "photographer": "NASA", "desc": "构图上，iss038e055233以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/iss038e055233/iss038e055233~orig.jpg", "category": "肖像", "source": "nasa", "source_url": "https://images.nasa.gov/details-iss038e055233", "id": 217}, {"title": "Al Ma'wa for Nature and Wildlife 11.jpg", "photographer": "Mohammad hajeer", "desc": "构图上，Al Ma'wa for Nature and Wildlife 11.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mohammad hajeer的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Al_Ma%27wa_for_Nature_and_Wildlife_11.jpg/960px-Al_Ma%27wa_for_Nature_and_Wildlife_11.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AAl_Ma%27wa_for_Nature_and_Wildlife_11.jpg", "id": 376}, {"title": "Arba'een In Mehran City 2016 - Iran (Black And White Photography-Mostafa Meraji)", "photographer": "Mostafameraji", "desc": "构图上，Arba'een In Mehran City 2016 - Iran (Black And White Photography-Mostafa Meraji)以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mostafameraji的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Arba%27een_In_Mehran_City_2016_-_Iran_%28Black_And_White_Photography-Mostafa_Meraji%29_%D8%A7%D8%B1%D8%A8%D8%B9%DB%8C%D9%86_%D8%AF%D8%B1_%D9%85%D9%87%D8%B1%D8%A7%D9%86-_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-_%D8%B9%DA%A9%D8%B3_%D9%87%D8%A7%DB%8C_%D8%B3%DB%8C%D8%A7%D9%87_%D9%88_%D8%B3%D9%81%DB%8C%D8%AF_16.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "纪实", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AArba%27een_In_Mehran_City_2016_-_Iran_%28Black_And_White_Photography-Mostafa_Meraji%29_%D8%A7%D8%B1%D8%A8%D8%B9%DB%8C%D9%86_%D8%AF%D8%B1_%D9%85%D9%87%D8%B1%D8%A7%D9%86-_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-_%D8%B9%DA%A9%D8%B3_%D9%87%D8%A7%DB%8C_%D8%B3%DB%8C%D8%A7%D9%87_%D9%88_%D8%B3%D9%81%DB%8C%D8%AF_16.jpg", "id": 595}, {"title": "Miracle of Saint Gregory", "photographer": "Anonymous, Netherlandish, 16th century", "desc": "构图上，Miracle of Saint Gregory以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Anonymous, Netherlandish, 16th century的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP801712.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/335498", "id": 567}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

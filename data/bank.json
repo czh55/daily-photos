@@ -9792,6 +9792,36 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/464294",
       "id": 640
+    },
+    {
+      "title": "View of Toledo",
+      "photographer": "El Greco (Domenikos Theotokopoulos)",
+      "desc": "构图上，View of Toledo以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，El Greco (Domenikos Theotokopoulos)的镜头传递出对建筑题材的独到观察与共鸣。",
+      "tags": [
+        "建筑",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP349564.jpg",
+      "category": "建筑",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436575",
+      "id": 641
+    },
+    {
+      "title": "Tetrapod Jar",
+      "photographer": "Met Museum",
+      "desc": "构图上，Tetrapod Jar以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ao/original/DP23127.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/314522",
+      "id": 642
     }
   ]
 }

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年08月19日 星期三</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">16</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">8</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Plum blossoms", "photographer": "Jin Nong", "desc": "构图上，Plum blossoms以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jin Nong的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/as/original/DP160540.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/36432", "id": 328}, {"title": "The Temptation of Saint Anthony", "photographer": "Herri met de Bles", "desc": "构图上，The Temptation of Saint Anthony以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Herri met de Bles的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP235224.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/435678", "id": 156}, {"title": "Arba'een In Mehran City 2016 - Iran (Black And White Photography-Mostafa Meraji)", "photographer": "Mostafameraji", "desc": "构图上，Arba'een In Mehran City 2016 - Iran (Black And White Photography-Mostafa Meraji)以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mostafameraji的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Arba%27een_In_Mehran_City_2016_-_Iran_%28Black_And_White_Photography-Mostafa_Meraji%29_%D8%A7%D8%B1%D8%A8%D8%B9%DB%8C%D9%86_%D8%AF%D8%B1_%D9%85%D9%87%D8%B1%D8%A7%D9%86-_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-_%D8%B9%DA%A9%D8%B3_%D9%87%D8%A7%DB%8C_%D8%B3%DB%8C%D8%A7%D9%87_%D9%88_%D8%B3%D9%81%DB%8C%D8%AF_40.jpg/960px-thumbnail.jpg", "category": "纪实", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AArba%27een_In_Mehran_City_2016_-_Iran_%28Black_And_White_Photography-Mostafa_Meraji%29_%D8%A7%D8%B1%D8%A8%D8%B9%DB%8C%D9%86_%D8%AF%D8%B1_%D9%85%D9%87%D8%B1%D8%A7%D9%86-_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-_%D8%B9%DA%A9%D8%B3_%D9%87%D8%A7%DB%8C_%D8%B3%DB%8C%D8%A7%D9%87_%D9%88_%D8%B3%D9%81%DB%8C%D8%AF_40.jpg", "id": 324}, {"title": "A Peasant Family", "photographer": "Antoine Le Nain", "desc": "构图上，A Peasant Family以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Antoine Le Nain的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP131218.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/438779", "id": 404}, {"title": "Plaque carved in relief with Egyptianizing creature", "photographer": "Met Museum", "desc": "构图上，Plaque carved in relief with Egyptianizing creature以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/an/original/DP-28973-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/325345", "id": 219}, {"id": 3, "title": "移民母亲", "photographer": "Dorothea Lange", "desc": "大萧条时期最具感染力的纪实肖像。一位母亲忧虑的眼神与孩子们的依偎，成为整个时代的象征。", "tags": ["纪实", "肖像", "社会"], "img": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800&q=80", "category": "肖像", "source": "unsplash"}, {"title": "Orpheus Instructing Savage People Theology", "photographer": "themet", "desc": "构图上，Orpheus Instructing Savage People Theology以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，themet的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "art", "music", "painting", "person", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA5L21ldDY2NDY2Mi1pbWFnZS5qcGc.jpg", "category": "纪实", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/8102144/orpheus-instructing-savage-people-theology-and-the-arts-social-life", "id": 289}, {"title": "Arba'een In Mehran City 2016 - Iran (Black And White Photography-Mostafa Meraji)", "photographer": "Mostafameraji", "desc": "构图上，Arba'een In Mehran City 2016 - Iran (Black And White Photography-Mostafa Meraji)以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mostafameraji的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Arba%27een_In_Mehran_City_2016_-_Iran_%28Black_And_White_Photography-Mostafa_Meraji%29_%D8%A7%D8%B1%D8%A8%D8%B9%DB%8C%D9%86_%D8%AF%D8%B1_%D9%85%D9%87%D8%B1%D8%A7%D9%86-_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-_%D8%B9%DA%A9%D8%B3_%D9%87%D8%A7%DB%8C_%D8%B3%DB%8C%D8%A7%D9%87_%D9%88_%D8%B3%D9%81%DB%8C%D8%AF_08.jpg/960px-thumbnail.jpg", "category": "纪实", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AArba%27een_In_Mehran_City_2016_-_Iran_%28Black_And_White_Photography-Mostafa_Meraji%29_%D8%A7%D8%B1%D8%A8%D8%B9%DB%8C%D9%86_%D8%AF%D8%B1_%D9%85%D9%87%D8%B1%D8%A7%D9%86-_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-_%D8%B9%DA%A9%D8%B3_%D9%87%D8%A7%DB%8C_%D8%B3%DB%8C%D8%A7%D9%87_%D9%88_%D8%B3%D9%81%DB%8C%D8%AF_08.jpg", "id": 222}, {"title": "Belshazzar's Feast", "photographer": "Jan Muller", "desc": "构图上，Belshazzar's Feast以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jan Muller的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP825422.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/374030", "id": 556}, {"title": "Colorful canal houses at golden hour in Damrak avenue Amsterdam the Netherlands.", "photographer": "Basile Morin", "desc": "构图上，Colorful canal houses at golden hour in Damrak avenue Amsterdam the Netherlands.以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Basile Morin的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Colorful_canal_houses_at_golden_hour_in_Damrak_avenue_Amsterdam_the_Netherlands.jpg/960px-Colorful_canal_houses_at_golden_hour_in_Damrak_avenue_Amsterdam_the_Netherlands.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "光影", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AColorful_canal_houses_at_golden_hour_in_Damrak_avenue_Amsterdam_the_Netherlands.jpg", "id": 618}, {"title": "2024 - Photo of the street Plantage Middenlaan in Amsterdam with house facades i", "photographer": "Fons Heijnsbroek", "desc": "构图上，2024 - Photo of the street Plantage Middenlaan in Amsterdam with house facades i以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Fons Heijnsbroek的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/2024_-_Photo_of_the_street_Plantage_Middenlaan_in_Amsterdam_with_house_facades_in_sun_and_shadow_-_street_photography_in_free_images_and_high_resolutions%2C_Dutch_photographer_Fons_Heijnsbroek%2C_Netherlands_2024.tif/lossy-page1-960px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "光影", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3A2024_-_Photo_of_the_street_Plantage_Middenlaan_in_Amsterdam_with_house_facades_in_sun_and_shadow_-_street_photography_in_free_images_and_high_resolutions%2C_Dutch_photographer_Fons_Heijnsbroek%2C_Netherlands_2024.tif", "id": 598}, {"id": 13, "title": "巴塔哥尼亚秋色", "photographer": "未知摄影师", "desc": "南美尽头的原始秋景。火红的山毛榉林与湛蓝的湖泊形成浓烈对比，远山积雪将画面带入一种超越时间的永恒感。", "tags": ["风景", "色彩", "自然"], "img": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80", "category": "风景", "source": "unsplash"}, {"title": "Portable Icon with the Virgin Eleousa", "photographer": "Met Museum", "desc": "构图上，Portable Icon with the Virgin Eleousa以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/md/original/DP-38912-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/474336", "id": 377}, {"title": "Tobatsu Bishamonten", "photographer": "Met Museum", "desc": "构图上，Tobatsu Bishamonten以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/as/original/DP-27915-006.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/53162", "id": 358}, {"title": "The Adoration of the Magi", "photographer": "Joos van Wassenhove", "desc": "构图上，The Adoration of the Magi以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Joos van Wassenhove的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-16339-001.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436803", "id": 34}, {"title": "LDEF positioned by RMS over OV-102's payload during STS-32 retrieval", "photographer": "NASA", "desc": "构图上，LDEF positioned by RMS over OV-102's payload during STS-32 retrieval以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/s32-541-018/s32-541-018~large.jpg", "category": "纪实", "source": "nasa", "source_url": "https://images.nasa.gov/details-s32-541-018", "id": 171}, {"title": "Armchair (part of a set)", "photographer": "Nicolas-Quinibert Foliot", "desc": "构图上，Armchair (part of a set)以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nicolas-Quinibert Foliot的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/es/original/152178.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/197741", "id": 275}, {"title": "Portrait of a Woman and an Enslaved Servant", "photographer": "Nicolas de Largillierre (or Largillière)", "desc": "构图上，Portrait of a Woman and an Enslaved Servant以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nicolas de Largillierre (or Largillière)的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP312828.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436846", "id": 351}, {"title": "The Last Communion of Saint Jerome", "photographer": "Botticelli (Alessandro di Mariano Filipepi)", "desc": "构图上，The Last Communion of Saint Jerome以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Botticelli (Alessandro di Mariano Filipepi)的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-24049-001.jpg", "category": "自然", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/435728", "id": 565}, {"title": "Armchair (part of a set)", "photographer": "Nicolas-Quinibert Foliot", "desc": "构图上，Armchair (part of a set)以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nicolas-Quinibert Foliot的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/es/original/152177.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/197739", "id": 626}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

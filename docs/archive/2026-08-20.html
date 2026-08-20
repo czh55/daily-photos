@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年08月20日 星期四</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">15</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">7</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Self-Portrait with Two Pupils, Marie Gabrielle Capet (1761–1818) and Marie Ma...", "photographer": "Adélaïde Labille-Guiard", "desc": "构图上，Self-Portrait with Two Pupils, Marie Gabrielle Capet (1761–1818) and Marie Ma...以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Adélaïde Labille-Guiard的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP320103.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436840", "id": 308}, {"title": "Virgin and Child", "photographer": "Met Museum", "desc": "构图上，Virgin and Child以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/md/original/DP-34069-001.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/464294", "id": 640}, {"title": "KSC-01PP-0882", "photographer": "NASA", "desc": "构图上，KSC-01PP-0882以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/01pp0882/01pp0882~large.jpg", "category": "建筑", "source": "nasa", "source_url": "https://images.nasa.gov/details-01pp0882", "id": 60}, {"title": "Street vendor", "photographer": "Mennecy", "desc": "构图上，Street vendor以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mennecy的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/es/original/DP241968.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/201718", "id": 264}, {"title": "Christ Blessing, Surrounded by a Donor Family", "photographer": "German Painter", "desc": "构图上，Christ Blessing, Surrounded by a Donor Family以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，German Painter的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT302497.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437466", "id": 312}, {"id": 10, "title": "枪", "photographer": "William Klein", "desc": "一个男孩用玩具枪直指镜头，表情愤怒而挑衅。粗颗粒、广角变形、强烈的黑白对比，挑战了摄影的一切优雅规则。", "tags": ["街拍", "粗颗粒", "挑衅"], "img": "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=80", "category": "街拍", "source": "unsplash"}, {"title": "Nature landscape photography photo", "photographer": "Openverse 摄影师", "desc": "构图上，Nature landscape photography photo以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "beach", "beach grass", "beach landscape", "grass", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3B4OTkwOTktaW1hZ2Uta3d2eDgycW8uanBn.jpg", "category": "风景", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/5919771/photo-image-cloud-public-domain-blue", "id": 24}, {"title": "The Triumph of History over Time", "photographer": "Anton Raphael Mengs", "desc": "构图上，The Triumph of History over Time以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Anton Raphael Mengs的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP860677.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/671453", "id": 623}, {"title": "Young Woman Knitting", "photographer": "Berthe Morisot", "desc": "构图上，Young Woman Knitting以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Berthe Morisot的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1928.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437159", "id": 475}, {"title": "Fragment from a Lintel or Frieze with a Foliate Square and Circle", "photographer": "Met Museum", "desc": "构图上，Fragment from a Lintel or Frieze with a Foliate Square and Circle以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/wb-10.175.59b.JPG", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/446123", "id": 649}, {"title": "Earth Observations taken by the Expedition 23 Crew", "photographer": "NASA", "desc": "构图上，Earth Observations taken by the Expedition 23 Crew以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/iss023e057948/iss023e057948~orig.jpg", "category": "黑白", "source": "nasa", "source_url": "https://images.nasa.gov/details-iss023e057948", "id": 129}, {"title": "Forest Light", "photographer": "Fugue", "desc": "构图上，Forest Light以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Fugue的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "forest", "frankfurt", "germany", "oberursel", "flickr"], "img": "https://live.staticflickr.com/21/31523548_0a55db3df5_b.jpg", "category": "自然", "source": "flickr", "source_url": "https://www.flickr.com/photos/16633713@N00/31523548", "id": 141}, {"title": "Night-Shining White", "photographer": "Han Gan", "desc": "构图上，Night-Shining White以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Han Gan的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/as/original/DP153705.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/39901", "id": 172}, {"title": "Damascus Room", "photographer": "Met Museum", "desc": "构图上，Damascus Room以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP240367.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/452102", "id": 232}, {"title": "Forest sunlight", "photographer": "Openverse 摄影师", "desc": "构图上，Forest sunlight以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "background", "branch", "forest", "forest light", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL2ZyYXV0dW1uX2Vhcmx5X21vcm5pbmdfbGFuZHNjYXBlLWltYWdlLWt5YmM1bGI5LmpwZw.jpg", "category": "自然", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/6028604/photo-image-light-public-domain-leaves", "id": 136}, {"title": "The True Issue or \"Thats Whats the Matter\"", "photographer": "Currier & Ives", "desc": "构图上，The True Issue or \"Thats Whats the Matter\"以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Currier & Ives的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP831802.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/430812", "id": 77}, {"title": "Arba'een In Mehran City 2016 - Iran (Black And White Photography-Mostafa Meraji)", "photographer": "Mostafameraji", "desc": "构图上，Arba'een In Mehran City 2016 - Iran (Black And White Photography-Mostafa Meraji)以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mostafameraji的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Arba%27een_In_Mehran_City_2016_-_Iran_%28Black_And_White_Photography-Mostafa_Meraji%29_%D8%A7%D8%B1%D8%A8%D8%B9%DB%8C%D9%86_%D8%AF%D8%B1_%D9%85%D9%87%D8%B1%D8%A7%D9%86-_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-_%D8%B9%DA%A9%D8%B3_%D9%87%D8%A7%DB%8C_%D8%B3%DB%8C%D8%A7%D9%87_%D9%88_%D8%B3%D9%81%DB%8C%D8%AF_40.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "纪实", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AArba%27een_In_Mehran_City_2016_-_Iran_%28Black_And_White_Photography-Mostafa_Meraji%29_%D8%A7%D8%B1%D8%A8%D8%B9%DB%8C%D9%86_%D8%AF%D8%B1_%D9%85%D9%87%D8%B1%D8%A7%D9%86-_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-_%D8%B9%DA%A9%D8%B3_%D9%87%D8%A7%DB%8C_%D8%B3%DB%8C%D8%A7%D9%87_%D9%88_%D8%B3%D9%81%DB%8C%D8%AF_40.jpg", "id": 597}, {"title": "Colorful canal houses at golden hour in Damrak avenue Amsterdam the Netherlands.", "photographer": "Basile Morin", "desc": "构图上，Colorful canal houses at golden hour in Damrak avenue Amsterdam the Netherlands.以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Basile Morin的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Colorful_canal_houses_at_golden_hour_in_Damrak_avenue_Amsterdam_the_Netherlands.jpg/960px-Colorful_canal_houses_at_golden_hour_in_Damrak_avenue_Amsterdam_the_Netherlands.jpg", "category": "光影", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AColorful_canal_houses_at_golden_hour_in_Damrak_avenue_Amsterdam_the_Netherlands.jpg", "id": 114}, {"title": "Group Hikers Looking Vista Louis", "photographer": "thegetty", "desc": "构图上，Group Hikers Looking Vista Louis以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，thegetty的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "forest", "mountain", "nature", "person", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAyL2xyL2dldHR5MTA2azMzLWltYWdlLmpwZw.jpg", "category": "风景", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/14253785/group-hikers-looking-vista-louis-fleckenstein", "id": 330}, {"title": "Street photography big city", "photographer": "Openverse 摄影师", "desc": "构图上，Street photography big city以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "city", "new york", "new york street", "new york streets", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYxODM3OTg4LXdpa2ltZWRpYS1pbWFnZS1rb3dwdnhvaC5qcGc.jpg", "category": "街拍", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/3301580/free-photo-image-new-york-city-building", "id": 67}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

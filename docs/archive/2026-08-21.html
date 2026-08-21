@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年08月21日 星期五</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">14</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">8</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Creative Photography - Nature/Wildlife", "photographer": "NASA", "desc": "构图上，Creative Photography - Nature/Wildlife以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/KSC-20201028-PH-JBS02_0013/KSC-20201028-PH-JBS02_0013~orig.jpg", "category": "自然", "source": "nasa", "source_url": "https://images.nasa.gov/details-KSC-20201028-PH-JBS02_0013", "id": 46}, {"title": "Elektrostal. Urban architecture. img 001.jpg", "photographer": "Dmitry Makeev", "desc": "构图上，Elektrostal. Urban architecture. img 001.jpg以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Dmitry Makeev的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Elektrostal._Urban_architecture._img_001.jpg/960px-Elektrostal._Urban_architecture._img_001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "建筑", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AElektrostal._Urban_architecture._img_001.jpg", "id": 584}, {"title": "In Full Sunlight (En plein soleil)", "photographer": "James Tissot", "desc": "构图上，In Full Sunlight (En plein soleil)以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，James Tissot的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-21607-001.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/438887", "id": 394}, {"title": "Capital with Acanthus Leaves", "photographer": "Met Museum", "desc": "构图上，Capital with Acanthus Leaves以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/10.175.101.JPG", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/456186", "id": 637}, {"title": "The Horse Fair", "photographer": "Rosa Bonheur", "desc": "构图上，The Horse Fair以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Rosa Bonheur的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-23550-001.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/435702", "id": 214}, {"id": 7, "title": "星夜", "photographer": "Michael Kenna", "desc": "极简主义黑白长曝光杰作。极少的元素、大量的留白、静谧的构图，让观者在虚无中感受到宇宙的呼吸。", "tags": ["黑白", "极简", "长曝光"], "img": "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=80", "category": "风景", "source": "unsplash"}, {"title": "Vesturhorn Mountains - Iceland - Landscape photography", "photographer": "Giuseppe Milo (www.pixael.com)", "desc": "构图上，Vesturhorn Mountains - Iceland - Landscape photography以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Giuseppe Milo (www.pixael.com)的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "europe", "geotagged", "ice", "iceland", "flickr"], "img": "https://live.staticflickr.com/4619/40428299302_73299938c8_b.jpg", "category": "风景", "source": "flickr", "source_url": "https://www.flickr.com/photos/87690240@N03/40428299302", "id": 21}, {"title": "Free black white architecture photo", "photographer": "Openverse 摄影师", "desc": "构图上，Free black white architecture photo以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "black and white", "black and white architectural photography", "black and white architecture photos", "black and white building", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg1MzYyNTYtaW1hZ2Uta3d2eG5obmguanBn.jpg", "category": "黑白", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/5922653/photo-image-public-domain-free-city", "id": 123}, {"title": "Earth observation taken by the Expedition 30 crewmember", "photographer": "NASA", "desc": "构图上，Earth observation taken by the Expedition 30 crewmember以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/iss030e099324/iss030e099324~orig.jpg", "category": "街拍", "source": "nasa", "source_url": "https://images.nasa.gov/details-iss030e099324", "id": 73}, {"title": "Thomas Carlyle", "photographer": "Julia Margaret Cameron", "desc": "构图上，Thomas Carlyle以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Julia Margaret Cameron的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ph/original/DP295239.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/269434", "id": 594}, {"title": "Intervale Scenic Vista White Mountain North Conway.jpg", "photographer": "EgorovaSvetlana", "desc": "构图上，Intervale Scenic Vista White Mountain North Conway.jpg以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，EgorovaSvetlana的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Intervale_Scenic_Vista_White_Mountain_North_Conway.jpg/960px-Intervale_Scenic_Vista_White_Mountain_North_Conway.jpg", "category": "风景", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AIntervale_Scenic_Vista_White_Mountain_North_Conway.jpg", "id": 186}, {"title": "Portrait of a Woman, Possibly a Nun of San Secondo; (verso) Scene in Grisaille", "photographer": "Jacometto (Jacometto Veneziano)", "desc": "构图上，Portrait of a Woman, Possibly a Nun of San Secondo; (verso) Scene in Grisaille以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jacometto (Jacometto Veneziano)的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/rl/original/DP221483.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/459027", "id": 270}, {"title": "Stamp seal", "photographer": "Met Museum", "desc": "构图上，Stamp seal以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/an/original/DP-13441-023.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/327799", "id": 353}, {"title": "Earth observation taken by the Expedition 35 crew", "photographer": "NASA", "desc": "构图上，Earth observation taken by the Expedition 35 crew以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/iss035e027265/iss035e027265~orig.jpg", "category": "风景", "source": "nasa", "source_url": "https://images.nasa.gov/details-iss035e027265", "id": 190}, {"title": "Barcelona Spain Interior-view-in-Casa Batlló-01.jpg", "photographer": "CEphoto, Uwe Aranas", "desc": "构图上，Barcelona Spain Interior-view-in-Casa Batlló-01.jpg以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，CEphoto, Uwe Aranas的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Barcelona_Spain_Interior-view-in-Casa_Batll%C3%B3-01.jpg/960px-Barcelona_Spain_Interior-view-in-Casa_Batll%C3%B3-01.jpg", "category": "黑白", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ABarcelona_Spain_Interior-view-in-Casa_Batll%C3%B3-01.jpg", "id": 177}, {"title": "Free man walking pass mural", "photographer": "Openverse 摄影师", "desc": "构图上，Free man walking pass mural以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "graffiti paintings art", "hip hop", "light dark", "photography", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHgxMzg3NDYtaW1hZ2Uta3d2eHliOHouanBn.jpg", "category": "光影", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/5924156/photo-image-public-domain-shadow-person", "id": 245}, {"title": "Cylindrical Vessel", "photographer": "Met Museum", "desc": "构图上，Cylindrical Vessel以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP101926.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/314523", "id": 180}, {"title": "Terracotta fragment of a kylix: eye-cup (drinking cup)", "photographer": "Met Museum", "desc": "构图上，Terracotta fragment of a kylix: eye-cup (drinking cup)以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/gr/original/DVB13362_1_ff.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/756051", "id": 371}, {"title": "Beauty of a sunflower in light and shadow.jpg", "photographer": "লুন", "desc": "构图上，Beauty of a sunflower in light and shadow.jpg以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，লুন的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Beauty_of_a_sunflower_in_light_and_shadow.jpg/960px-Beauty_of_a_sunflower_in_light_and_shadow.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "光影", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ABeauty_of_a_sunflower_in_light_and_shadow.jpg", "id": 600}, {"title": "202410 午後的外埔忘憂谷以南之黃色稻田.jpg", "photographer": "Junyu-K", "desc": "构图上，202410 午後的外埔忘憂谷以南之黃色稻田.jpg以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Junyu-K的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/202410_%E5%8D%88%E5%BE%8C%E7%9A%84%E5%A4%96%E5%9F%94%E5%BF%98%E6%86%82%E8%B0%B7%E4%BB%A5%E5%8D%97%E4%B9%8B%E9%BB%83%E8%89%B2%E7%A8%BB%E7%94%B0.jpg/960px-202410_%E5%8D%88%E5%BE%8C%E7%9A%84%E5%A4%96%E5%9F%94%E5%BF%98%E6%86%82%E8%B0%B7%E4%BB%A5%E5%8D%97%E4%B9%8B%E9%BB%83%E8%89%B2%E7%A8%BB%E7%94%B0.jpg", "category": "风景", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3A202410_%E5%8D%88%E5%BE%8C%E7%9A%84%E5%A4%96%E5%9F%94%E5%BF%98%E6%86%82%E8%B0%B7%E4%BB%A5%E5%8D%97%E4%B9%8B%E9%BB%83%E8%89%B2%E7%A8%BB%E7%94%B0.jpg", "id": 28}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

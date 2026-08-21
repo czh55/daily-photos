@@ -10114,6 +10114,96 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/544320",
       "id": 662
+    },
+    {
+      "title": "Sabine Houdon (1787–1836)",
+      "photographer": "Jean Antoine Houdon",
+      "desc": "构图上，Sabine Houdon (1787–1836)以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jean Antoine Houdon的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/es/original/DP242660.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/200668",
+      "id": 663
+    },
+    {
+      "title": "Haystacks, Morning, Eragny",
+      "photographer": "Camille Pissarro",
+      "desc": "构图上，Haystacks, Morning, Eragny以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Camille Pissarro的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-20613-001.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/438738",
+      "id": 664
+    },
+    {
+      "title": "The Lamentation",
+      "photographer": "Ambrosius Benson",
+      "desc": "构图上，The Lamentation以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Ambrosius Benson的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/LC-1982_60_23.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/435651",
+      "id": 665
+    },
+    {
+      "title": "Christ Appearing to His Mother",
+      "photographer": "Juan de Flandes",
+      "desc": "构图上，Christ Appearing to His Mother以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Juan de Flandes的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DT2649.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/437489",
+      "id": 666
+    },
+    {
+      "title": "Flora and Zephyr",
+      "photographer": "Jacob de Wit",
+      "desc": "构图上，Flora and Zephyr以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jacob de Wit的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP145896.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/437947",
+      "id": 667
+    },
+    {
+      "title": "Marie Antoinette in a Park",
+      "photographer": "Elisabeth Louise Vigée Le Brun",
+      "desc": "构图上，Marie Antoinette in a Park以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Elisabeth Louise Vigée Le Brun的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP-18368-001.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/824771",
+      "id": 668
     }
   ]
 }

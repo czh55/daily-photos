@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年08月22日 星期六</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">17</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">8</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Capital", "photographer": "Met Museum", "desc": "构图上，Capital以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP-25746-001.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/456155", "id": 601}, {"title": "Scene from a Novella", "photographer": "Liberale da Verona", "desc": "构图上，Scene from a Novella以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Liberale da Verona的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT8310.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436885", "id": 365}, {"id": 20, "title": "晨曦中的金门大桥", "photographer": "未知摄影师", "desc": "旧金山的晨雾如海浪般翻涌，橘红色的金门大桥从云雾中探出。自然现象与人造奇迹的对话，是西海岸最具标志性的视觉诗篇。", "tags": ["建筑", "晨雾", "城市"], "img": "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&q=80", "category": "建筑", "source": "unsplash"}, {"title": "L'Arlésienne: Madame Joseph-Michel Ginoux (Marie Julien, 1848–1911)", "photographer": "Vincent van Gogh", "desc": "构图上，L'Arlésienne: Madame Joseph-Michel Ginoux (Marie Julien, 1848–1911)以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Vincent van Gogh的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1396.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436529", "id": 223}, {"title": "Bust-Length Study of a Man", "photographer": "François-Auguste Biard", "desc": "构图上，Bust-Length Study of a Man以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，François-Auguste Biard的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-23957-001.jpg", "category": "自然", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/856295", "id": 48}, {"title": "KSC-98pc1418", "photographer": "NASA", "desc": "构图上，KSC-98pc1418以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/KSC-98pc1418/KSC-98pc1418~orig.jpg", "category": "光影", "source": "nasa", "source_url": "https://images.nasa.gov/details-KSC-98pc1418", "id": 115}, {"title": "Forest Light", "photographer": "FolioRoad", "desc": "构图上，Forest Light以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，FolioRoad的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "forests", "leaves", "sunlight", "trees", "flickr"], "img": "https://live.staticflickr.com/7115/7634804078_1e1616a422_b.jpg", "category": "自然", "source": "flickr", "source_url": "https://www.flickr.com/photos/83280149@N08/7634804078", "id": 142}, {"title": "Earth observations of city lights in the Alps taken during STS-97", "photographer": "NASA", "desc": "构图上，Earth observations of city lights in the Alps taken during STS-97以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/sts097-355-011/sts097-355-011~orig.jpg", "category": "风景", "source": "nasa", "source_url": "https://images.nasa.gov/details-sts097-355-011", "id": 31}, {"title": "Still Life with a Vase of Flowers, Melon, Peaches, and Grapes", "photographer": "Charlotte Eustache Sophie de Fuligny Damas, marquise de Grollier", "desc": "构图上，Still Life with a Vase of Flowers, Melon, Peaches, and Grapes以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Charlotte Eustache Sophie de Fuligny Damas, marquise de Grollier的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-25141-001.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/888924", "id": 239}, {"title": "Magical Stela with Horus the Child", "photographer": "Met Museum", "desc": "构图上，Magical Stela with Horus the Child以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/eg/original/DP-38634-001.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/546037", "id": 325}, {"title": "Virgin and Child", "photographer": "Bartolomé Estebán Murillo", "desc": "构图上，Virgin and Child以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Bartolomé Estebán Murillo的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-14936-010.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437175", "id": 441}, {"title": "Earth observation taken by the Expedition 35 crew", "photographer": "NASA", "desc": "构图上，Earth observation taken by the Expedition 35 crew以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/iss035e027265/iss035e027265~orig.jpg", "category": "风景", "source": "nasa", "source_url": "https://images.nasa.gov/details-iss035e027265", "id": 190}, {"title": "Still Life with Apples and a Pot of Primroses", "photographer": "Paul Cézanne", "desc": "构图上，Still Life with Apples and a Pot of Primroses以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Paul Cézanne的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT47.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/435882", "id": 465}, {"title": "A tree!.jpg", "photographer": "Sundaram Perumal", "desc": "构图上，A tree!.jpg以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Sundaram Perumal的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/A_tree%21.jpg/960px-A_tree%21.jpg", "category": "黑白", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AA_tree%21.jpg", "id": 176}, {"title": "Madonna and Child", "photographer": "Master of the Magdalen", "desc": "构图上，Madonna and Child以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Master of the Magdalen的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT279163.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437015", "id": 487}, {"title": "Merano Street Photography by Giovanni Ussi 27.jpg", "photographer": "Giovanni Ussi", "desc": "构图上，Merano Street Photography by Giovanni Ussi 27.jpg以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Giovanni Ussi的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Merano_Street_Photography_by_Giovanni_Ussi_27.jpg/960px-Merano_Street_Photography_by_Giovanni_Ussi_27.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "街拍", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AMerano_Street_Photography_by_Giovanni_Ussi_27.jpg", "id": 644}, {"title": "CITY LONDON ELECTION. LIBAERAL CANDIDATES", "photographer": "Openverse 摄影师", "desc": "构图上，CITY LONDON ELECTION. LIBAERAL CANDIDATES以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "art", "city", "illustration", "man", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA2L3dpZW53X183NTQ4LWltYWdlLmpwZw.jpg", "category": "街拍", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/11676209/image-paper-art-man", "id": 137}, {"title": "Poetry (Poesia XXVII)", "photographer": "Master of the E-Series Tarocchi", "desc": "构图上，Poetry (Poesia XXVII)以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Master of the E-Series Tarocchi的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/59.570.32.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/362029", "id": 439}, {"title": "Boy Face from Venezuela.jpg", "photographer": "Wilfredor", "desc": "构图上，Boy Face from Venezuela.jpg以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Wilfredor的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Boy_Face_from_Venezuela.jpg/960px-Boy_Face_from_Venezuela.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "肖像", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ABoy_Face_from_Venezuela.jpg", "id": 627}, {"title": "Dublin pride 2016 parade - Dublin, Ireland - Documentary photography", "photographer": "Giuseppe Milo (www.pixael.com)", "desc": "构图上，Dublin pride 2016 parade - Dublin, Ireland - Documentary photography以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Giuseppe Milo (www.pixael.com)的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "amazon", "amnesty", "documentary", "dropbox", "flickr"], "img": "https://live.staticflickr.com/7604/27286934283_a1da431c80_b.jpg", "category": "纪实", "source": "flickr", "source_url": "https://www.flickr.com/photos/87690240@N03/27286934283", "id": 166}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

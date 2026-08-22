@@ -10204,6 +10204,125 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/824771",
       "id": 668
+    },
+    {
+      "title": "[Palace of the Dey of Algiers, Algeria]",
+      "photographer": "Gustave de Beaucorps",
+      "desc": "构图上，[Palace of the Dey of Algiers, Algeria]以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Gustave de Beaucorps的镜头传递出对风景题材的独到观察与共鸣。",
+      "tags": [
+        "风景",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ph/original/DP310797.jpg",
+      "category": "风景",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/307069",
+      "id": 669
+    },
+    {
+      "title": "Al Ma'wa for Nature and Wildlife 09.jpg",
+      "photographer": "Mohammad hajeer",
+      "desc": "构图上，Al Ma'wa for Nature and Wildlife 09.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mohammad hajeer的镜头传递出对自然题材的独到观察与共鸣。",
+      "tags": [
+        "自然",
+        "wikimedia"
+      ],
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Al_Ma%27wa_for_Nature_and_Wildlife_09.jpg/960px-Al_Ma%27wa_for_Nature_and_Wildlife_09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "category": "自然",
+      "source": "wikimedia",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3AAl_Ma%27wa_for_Nature_and_Wildlife_09.jpg",
+      "id": 670
+    },
+    {
+      "title": "Vanitas Still Life",
+      "photographer": "Jacques de Gheyn II",
+      "desc": "构图上，Vanitas Still Life以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jacques de Gheyn II的镜头传递出对街拍题材的独到观察与共鸣。",
+      "tags": [
+        "街拍",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP143209.jpg",
+      "category": "街拍",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436485",
+      "id": 671
+    },
+    {
+      "title": "The Gaze",
+      "photographer": "Pierre-Louis Pierson",
+      "desc": "构图上，The Gaze以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Pierre-Louis Pierson的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ph/original/DP158928.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/283245",
+      "id": 672
+    },
+    {
+      "title": "Male Figurine",
+      "photographer": "Met Museum",
+      "desc": "构图上，Male Figurine以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对纪实题材的独到观察与共鸣。",
+      "tags": [
+        "纪实",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-13440-021.jpg",
+      "category": "纪实",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/315492",
+      "id": 673
+    },
+    {
+      "title": "Adam and Eve with Charles I and Henrietta Maria",
+      "photographer": "Met Museum",
+      "desc": "构图上，Adam and Eve with Charles I and Henrietta Maria以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对纪实题材的独到观察与共鸣。",
+      "tags": [
+        "纪实",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/es/original/DP158590.jpg",
+      "category": "纪实",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/228990",
+      "id": 674
+    },
+    {
+      "title": "\"A Night-time Gathering\", Folio from the Davis Album",
+      "photographer": "Muhammad Zaman",
+      "desc": "构图上，\"A Night-time Gathering\", Folio from the Davis Album以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Muhammad Zaman的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/DP107558.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/448460",
+      "id": 675
+    },
+    {
+      "title": "Musk Cat",
+      "photographer": "Uto Gyoshi",
+      "desc": "构图上，Musk Cat以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Uto Gyoshi的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/as/original/DP361166.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/53222",
+      "id": 676
     }
   ]
 }

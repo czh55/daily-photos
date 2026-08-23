@@ -10323,6 +10323,66 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/53222",
       "id": 676
+    },
+    {
+      "title": "Capital",
+      "photographer": "Met Museum",
+      "desc": "构图上，Capital以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/10.175.85.JPG",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/456175",
+      "id": 677
+    },
+    {
+      "title": "Study for \"L'Accordée du village\"",
+      "photographer": "Jean-Baptiste Greuze",
+      "desc": "构图上，Study for \"L'Accordée du village\"以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jean-Baptiste Greuze的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP820415.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/399623",
+      "id": 678
+    },
+    {
+      "title": "Self-Portrait",
+      "photographer": "Edgar Degas",
+      "desc": "构图上，Self-Portrait以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Edgar Degas的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP805828.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/334312",
+      "id": 679
+    },
+    {
+      "title": "Vessel with mythological scene",
+      "photographer": "Metropolitan Painter",
+      "desc": "构图上，Vessel with mythological scene以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Metropolitan Painter的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-576-001.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/310364",
+      "id": 680
     }
   ]
 }

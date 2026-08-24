@@ -10383,6 +10383,110 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/310364",
       "id": 680
+    },
+    {
+      "title": "The Marriage Feast at Cana",
+      "photographer": "Juan de Flandes",
+      "desc": "构图上，The Marriage Feast at Cana以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Juan de Flandes的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1459.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436801",
+      "id": 681
+    },
+    {
+      "title": "Relief fragment",
+      "photographer": "Met Museum",
+      "desc": "构图上，Relief fragment以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/an/original/DP-16504-001.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/322143",
+      "id": 682
+    },
+    {
+      "title": "Sebastian Andorfer (1469–1537)",
+      "photographer": "Hans Maler",
+      "desc": "构图上，Sebastian Andorfer (1469–1537)以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Hans Maler的镜头传递出对纪实题材的独到观察与共鸣。",
+      "tags": [
+        "纪实",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP281080.jpg",
+      "category": "纪实",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436941",
+      "id": 683
+    },
+    {
+      "title": "The Adoration of the Shepherds",
+      "photographer": "Christian Wilhelm Ernst Dietrich",
+      "desc": "构图上，The Adoration of the Shepherds以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Christian Wilhelm Ernst Dietrich的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/ep71.162.bw.R.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436200",
+      "id": 684
+    },
+    {
+      "title": "Hind Head Hill, On the Portsmouth Road, part V, plate 25 from \"Liber Studiorum\"",
+      "photographer": "Joseph Mallord William Turner",
+      "desc": "构图上，Hind Head Hill, On the Portsmouth Road, part V, plate 25 from \"Liber Studiorum\"以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Joseph Mallord William Turner的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP821392.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/382928",
+      "id": 685
+    },
+    {
+      "title": "Joseph Stalin, Franklin D Roosevelt and Winston Churchill, in Teheran, 1943, edi",
+      "photographer": "Dennis Charles Oulds",
+      "desc": "构图上，Joseph Stalin, Franklin D Roosevelt and Winston Churchill, in Teheran, 1943, edi以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Dennis Charles Oulds的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "wikimedia"
+      ],
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Joseph_Stalin%2C_Franklin_D_Roosevelt_and_Winston_Churchill%2C_in_Teheran%2C_1943%2C_edit.jpg/960px-Joseph_Stalin%2C_Franklin_D_Roosevelt_and_Winston_Churchill%2C_in_Teheran%2C_1943%2C_edit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "category": "黑白",
+      "source": "wikimedia",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3AJoseph_Stalin%2C_Franklin_D_Roosevelt_and_Winston_Churchill%2C_in_Teheran%2C_1943%2C_edit.jpg",
+      "id": 686
+    },
+    {
+      "title": "The Goddess Bhairavi Devi with Shiva",
+      "photographer": "Payag",
+      "desc": "构图上，The Goddess Bhairavi Devi with Shiva以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Payag的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/DP257990.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/457743",
+      "id": 687
     }
   ]
 }

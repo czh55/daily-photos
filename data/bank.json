@@ -10606,6 +10606,36 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/691008",
       "id": 695
+    },
+    {
+      "title": "Head of a ruler",
+      "photographer": "Met Museum",
+      "desc": "构图上，Head of a ruler以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/an/original/DP-23662-001.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/329077",
+      "id": 696
+    },
+    {
+      "title": "The Collector of Prints",
+      "photographer": "Edgar Degas",
+      "desc": "构图上，The Collector of Prints以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Edgar Degas的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-25461-001.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436122",
+      "id": 697
     }
   ]
 }

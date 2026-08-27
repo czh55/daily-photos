@@ -10636,6 +10636,96 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/436122",
       "id": 697
+    },
+    {
+      "title": "Modified celt-pendant with incised motifs",
+      "photographer": "Olmec artist(s)",
+      "desc": "构图上，Modified celt-pendant with incised motifs以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Olmec artist(s)的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-23470-001.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/310467",
+      "id": 698
+    },
+    {
+      "title": "\"Unwan\", Folio from the Shah Jahan Album",
+      "photographer": "Mir 'Ali Haravi",
+      "desc": "构图上，\"Unwan\", Folio from the Shah Jahan Album以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mir 'Ali Haravi的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/DP247712.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/451289",
+      "id": 699
+    },
+    {
+      "title": "“A Branch of Sacred Evergreen” (Sakaki), from the Moriyasu Version, known as ...",
+      "photographer": "Met Museum",
+      "desc": "构图上，“A Branch of Sacred Evergreen” (Sakaki), from the Moriyasu Version, known as ...以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/as/original/LC-2015_300_36ab_001.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/670970",
+      "id": 700
+    },
+    {
+      "title": "Fragment from a Molding with Intertwined Vines and Acanthus Leaves",
+      "photographer": "Met Museum",
+      "desc": "构图上，Fragment from a Molding with Intertwined Vines and Acanthus Leaves以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/sf10-175-37s1.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/446114",
+      "id": 701
+    },
+    {
+      "title": "Landscape with Three Figures and Birds",
+      "photographer": "Albert Flamen",
+      "desc": "构图上，Landscape with Three Figures and Birds以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Albert Flamen的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP802105.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/335497",
+      "id": 702
+    },
+    {
+      "title": "Cylindrical Vessel",
+      "photographer": "Met Museum",
+      "desc": "构图上，Cylindrical Vessel以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ao/original/h1_1982.207.7.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/314524",
+      "id": 703
     }
   ]
 }

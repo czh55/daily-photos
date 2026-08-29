@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年08月29日 星期六</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">14</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">7</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Self-Portrait", "photographer": "Edgar Degas", "desc": "构图上，Self-Portrait以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Edgar Degas的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP805828.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/334312", "id": 679}, {"title": "The Temptation of Saint Mary Magdalen", "photographer": "Johann Liss", "desc": "构图上，The Temptation of Saint Mary Magdalen以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Johann Liss的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-19542-001.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/828241", "id": 508}, {"title": "Elderly Gambian woman face portrait.jpg", "photographer": "Ferdinand Reus", "desc": "构图上，Elderly Gambian woman face portrait.jpg以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Ferdinand Reus的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Elderly_Gambian_woman_face_portrait.jpg/960px-Elderly_Gambian_woman_face_portrait.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "肖像", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AElderly_Gambian_woman_face_portrait.jpg", "id": 629}, {"title": "Judith with the Head of Holofernes", "photographer": "Lucas Cranach the Elder", "desc": "构图上，Judith with the Head of Holofernes以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Lucas Cranach the Elder的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP280784.jpg", "category": "自然", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436038", "id": 539}, {"title": "Male Figurine", "photographer": "Met Museum", "desc": "构图上，Male Figurine以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-13440-021.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/315492", "id": 673}, {"title": "Krikalev and Robinson in Zvezda", "photographer": "NASA", "desc": "构图上，Krikalev and Robinson in Zvezda以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/s114e5562/s114e5562~orig.jpg", "category": "肖像", "source": "nasa", "source_url": "https://images.nasa.gov/details-s114e5562", "id": 162}, {"title": "Studio Portrait: Boy Hood, Algeria", "photographer": "themet", "desc": "构图上，Studio Portrait: Boy Hood, Algeria以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，themet的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "algeria", "celebrities", "portrait", "portrait painting", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAzL21ldDc2NDgzMi1pbWFnZS5qcGc.jpg", "category": "肖像", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/9086560/studio-portrait-boy-with-hood-algeria-unknown", "id": 265}, {"title": "Mirror with Split-Leaf Palmette Design Inlaid with Gold", "photographer": "Met Museum", "desc": "构图上，Mirror with Split-Leaf Palmette Design Inlaid with Gold以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP170394.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/452364", "id": 456}, {"title": "Portrait of a Woman", "photographer": "Quinten Massys", "desc": "构图上，Portrait of a Woman以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Quinten Massys的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1461.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436986", "id": 283}, {"title": "Abdullkadir KAPLAN DUDAYEV.jpg", "photographer": "BerzanOner", "desc": "构图上，Abdullkadir KAPLAN DUDAYEV.jpg以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，BerzanOner的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Abdullkadir_KAPLAN_DUDAYEV.jpg/960px-Abdullkadir_KAPLAN_DUDAYEV.jpg", "category": "肖像", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AAbdullkadir_KAPLAN_DUDAYEV.jpg", "id": 82}, {"title": "Ed Muskie presidential candidate, New", "photographer": "libraryofcongress", "desc": "构图上，Ed Muskie presidential candidate, New以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，libraryofcongress的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "audience", "city", "color", "microphone", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvbG9jMjAyMDczNTcxNC1pbWFnZS5qcGc.jpg", "category": "街拍", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/6320353/muskie-presidential-candidate-new-york-city", "id": 704}, {"title": "Head of a Central Asian Figure in a Pointed Cap", "photographer": "Met Museum", "desc": "构图上，Head of a Central Asian Figure in a Pointed Cap以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP262928.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/450483", "id": 263}, {"title": "Al Ma'wa for Nature and Wildlife 05.jpg", "photographer": "Mohammad hajeer", "desc": "构图上，Al Ma'wa for Nature and Wildlife 05.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mohammad hajeer的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Al_Ma%27wa_for_Nature_and_Wildlife_05.jpg/960px-Al_Ma%27wa_for_Nature_and_Wildlife_05.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AAl_Ma%27wa_for_Nature_and_Wildlife_05.jpg", "id": 363}, {"title": "Adelaide Gaol #dailyshoot #monochrome", "photographer": "Leshaines123", "desc": "构图上，Adelaide Gaol #dailyshoot #monochrome以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Leshaines123的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "adelaide", "adelaide2013", "anawesomeshot", "ashon", "flickr"], "img": "https://live.staticflickr.com/8263/8652047539_5c1bfe6286_b.jpg", "category": "黑白", "source": "flickr", "source_url": "https://www.flickr.com/photos/46018453@N06/8652047539", "id": 253}, {"title": "Washerwomen in a Ruined Gallery", "photographer": "Hubert Robert", "desc": "构图上，Washerwomen in a Ruined Gallery以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Hubert Robert的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP808079.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/339704", "id": 528}, {"title": "Head of a ruler", "photographer": "Met Museum", "desc": "构图上，Head of a ruler以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/an/original/DP-23662-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/329077", "id": 696}, {"title": "Glass eye bead", "photographer": "Met Museum", "desc": "构图上，Glass eye bead以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/gr/original/DP-13080-076.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/239926", "id": 447}, {"title": "Bowl with Musicians", "photographer": "Met Museum", "desc": "构图上，Bowl with Musicians以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP221330.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/448672", "id": 302}, {"title": "Grooms and horses", "photographer": "Zhao Mengfu", "desc": "构图上，Grooms and horses以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Zhao Mengfu的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/as/original/DP213981_CRD.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/40507", "id": 470}, {"title": "\"The Court of Ravana\", Folio from a Ramayana", "photographer": "Met Museum", "desc": "构图上，\"The Court of Ravana\", Folio from a Ramayana以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP107192.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/454358", "id": 533}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

@@ -10834,6 +10834,110 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/14845",
       "id": 710
+    },
+    {
+      "title": "Merano Street Photography by Giovanni Ussi 33.jpg",
+      "photographer": "Giovanni Ussi",
+      "desc": "构图上，Merano Street Photography by Giovanni Ussi 33.jpg以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Giovanni Ussi的镜头传递出对街拍题材的独到观察与共鸣。",
+      "tags": [
+        "街拍",
+        "wikimedia"
+      ],
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Merano_Street_Photography_by_Giovanni_Ussi_33.jpg/960px-Merano_Street_Photography_by_Giovanni_Ussi_33.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "category": "街拍",
+      "source": "wikimedia",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3AMerano_Street_Photography_by_Giovanni_Ussi_33.jpg",
+      "id": 711
+    },
+    {
+      "title": "Two Women",
+      "photographer": "Paul Gauguin",
+      "desc": "构图上，Two Women以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Paul Gauguin的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1953.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/438001",
+      "id": 712
+    },
+    {
+      "title": "Hollow Oak Tree, Fontainebleau",
+      "photographer": "Gustave Le Gray",
+      "desc": "构图上，Hollow Oak Tree, Fontainebleau以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Gustave Le Gray的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ph/original/DP335718.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/306321",
+      "id": 713
+    },
+    {
+      "title": "Saint Jerome Praying in a Landscape",
+      "photographer": "Niccolò dell' Abate",
+      "desc": "构图上，Saint Jerome Praying in a Landscape以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Niccolò dell' Abate的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP807541.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/343425",
+      "id": 714
+    },
+    {
+      "title": "City Hall",
+      "photographer": "John Hill",
+      "desc": "构图上，City Hall以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，John Hill的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ad/original/268406.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/16988",
+      "id": 715
+    },
+    {
+      "title": "Glass gold-band mosaic bead",
+      "photographer": "Met Museum",
+      "desc": "构图上，Glass gold-band mosaic bead以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/gr/original/sf1513011color.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/249047",
+      "id": 716
+    },
+    {
+      "title": "Seascape and Deluge (from Sketchbook VII)",
+      "photographer": "William Trost Richards",
+      "desc": "构图上，Seascape and Deluge (from Sketchbook VII)以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，William Trost Richards的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ad/original/257785.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/15373",
+      "id": 717
     }
   ]
 }

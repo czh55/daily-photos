@@ -10938,6 +10938,51 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/15373",
       "id": 717
+    },
+    {
+      "title": "Head of Christ",
+      "photographer": "Master of the Orcagnesque Misericordia",
+      "desc": "构图上，Head of Christ以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Master of the Orcagnesque Misericordia的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-19581-001.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/437021",
+      "id": 718
+    },
+    {
+      "title": "\"The Death of King Dasharatha, the Father of Rama\", Folio from a Ramayana",
+      "photographer": "Met Museum",
+      "desc": "构图上，\"The Death of King Dasharatha, the Father of Rama\", Folio from a Ramayana以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/DP107193.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/454359",
+      "id": 719
+    },
+    {
+      "title": "Manuel Osorio Manrique de Zuñiga (1784–1792)",
+      "photographer": "Goya (Francisco de Goya y Lucientes)",
+      "desc": "构图上，Manuel Osorio Manrique de Zuñiga (1784–1792)以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Goya (Francisco de Goya y Lucientes)的镜头传递出对纪实题材的独到观察与共鸣。",
+      "tags": [
+        "纪实",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP287624.jpg",
+      "category": "纪实",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436545",
+      "id": 720
     }
   ]
 }

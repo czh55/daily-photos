@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年08月31日 星期一</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">19</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">7</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Photographer-studio-1893.jpg", "photographer": "A.H. Wheeler, photographer, Berlin, Wis.", "desc": "构图上，Photographer-studio-1893.jpg以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，A.H. Wheeler, photographer, Berlin, Wis.的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Photographer-studio-1893.jpg/960px-Photographer-studio-1893.jpg", "category": "肖像", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3APhotographer-studio-1893.jpg", "id": 392}, {"title": "Creative Photography - Nature/Wildlife", "photographer": "NASA", "desc": "构图上，Creative Photography - Nature/Wildlife以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/KSC-20201028-PH-JBS02_0139/KSC-20201028-PH-JBS02_0139~orig.jpg", "category": "自然", "source": "nasa", "source_url": "https://images.nasa.gov/details-KSC-20201028-PH-JBS02_0139", "id": 47}, {"title": "The Crucifixion with Donors and Saints Peter and Margaret of Antioch", "photographer": "Cornelis Engebrechtsz", "desc": "构图上，The Crucifixion with Donors and Saints Peter and Margaret of Antioch以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Cornelis Engebrechtsz的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT10856.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436271", "id": 482}, {"title": "CROAT OUTPOST.(in October 1848) (Supplement", "photographer": "Openverse 摄影师", "desc": "构图上，CROAT OUTPOST.(in October 1848) (Supplement以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "art", "design", "drawing", "illustration", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA2L3dpZW44OTM0OC1pbWFnZS5qcGc.jpg", "category": "纪实", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/11605358/image-paper-art-vintage", "id": 380}, {"title": "Market by the Seashore", "photographer": "Salomon van Ruysdael", "desc": "构图上，Market by the Seashore以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Salomon van Ruysdael的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP143181.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437585", "id": 483}, {"title": "Earth Observations taken by Expedition 32 crewmember", "photographer": "NASA", "desc": "构图上，Earth Observations taken by Expedition 32 crewmember以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/iss032e023718/iss032e023718~orig.jpg", "category": "建筑", "source": "nasa", "source_url": "https://images.nasa.gov/details-iss032e023718", "id": 208}, {"title": "The Brioche", "photographer": "Edouard Manet", "desc": "构图上，The Brioche以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Edouard Manet的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-13655-001.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436946", "id": 474}, {"title": "The Martyrdom of Saint Clement I, Pope", "photographer": "Agostino Ciampelli", "desc": "构图上，The Martyrdom of Saint Clement I, Pope以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Agostino Ciampelli的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP166863.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/338517", "id": 544}, {"title": "Bowl with Enthroned Figure and Horsemen", "photographer": "Met Museum", "desc": "构图上，Bowl with Enthroned Figure and Horsemen以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP368508.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/451378", "id": 477}, {"title": "Light in the shadow", "photographer": "Pelle De Brabander", "desc": "构图上，Light in the shadow以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Pelle De Brabander的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "black", "glass", "light", "photography", "flickr"], "img": "https://live.staticflickr.com/4822/46246944642_ddf6eb76eb_b.jpg", "category": "光影", "source": "flickr", "source_url": "https://www.flickr.com/photos/164899334@N05/46246944642", "id": 240}, {"title": "Two Costume Designs or Portrait Types", "photographer": "Anonymous, French, 18th century", "desc": "构图上，Two Costume Designs or Portrait Types以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Anonymous, French, 18th century的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP825818.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/415335", "id": 551}, {"title": "Holy Family with an Angel", "photographer": "Raffaellino del Garbo (also known as Raffaelle de' Capponi and Raffaelle de' Carli)", "desc": "构图上，Holy Family with an Angel以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Raffaellino del Garbo (also known as Raffaelle de' Capponi and Raffaelle de' Carli)的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-15089-001.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437368", "id": 212}, {"title": "a human faced carp!?", "photographer": "yajico", "desc": "构图上，a human faced carp!?以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，yajico的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "carp", "japan", "jikeiin", "jinmengyo", "flickr"], "img": "https://live.staticflickr.com/26/95563981_3fa9e7378b_b.jpg", "category": "肖像", "source": "flickr", "source_url": "https://www.flickr.com/photos/71912190@N00/95563981", "id": 285}, {"title": "Francis I (1494–1547), King of France", "photographer": "Joos van Cleve", "desc": "构图上，Francis I (1494–1547), King of France以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Joos van Cleve的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP350013.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436796", "id": 338}, {"title": "Seascape and Deluge (from Sketchbook VII)", "photographer": "William Trost Richards", "desc": "构图上，Seascape and Deluge (from Sketchbook VII)以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，William Trost Richards的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ad/original/257785.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/15373", "id": 717}, {"title": "A Maid Asleep", "photographer": "Johannes Vermeer", "desc": "构图上，A Maid Asleep以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Johannes Vermeer的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP355525.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437878", "id": 490}, {"title": "Settee (canapé) (part of a set)", "photographer": "Nicolas-Quinibert Foliot", "desc": "构图上，Settee (canapé) (part of a set)以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nicolas-Quinibert Foliot的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/es/original/TP101.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/197738", "id": 348}, {"title": "Folio from a Mu'nis al-ahrar fi daqa'iq al-ash'ar (The Free Man's Companion t...", "photographer": "Muhammad ibn Badr al-Din Jajarmi", "desc": "构图上，Folio from a Mu'nis al-ahrar fi daqa'iq al-ash'ar (The Free Man's Companion t...以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Muhammad ibn Badr al-Din Jajarmi的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP241048.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/447071", "id": 504}, {"title": "202410 午後的台中外埔忘憂谷.jpg", "photographer": "Junyu-K", "desc": "构图上，202410 午後的台中外埔忘憂谷.jpg以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Junyu-K的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/202410_%E5%8D%88%E5%BE%8C%E7%9A%84%E5%8F%B0%E4%B8%AD%E5%A4%96%E5%9F%94%E5%BF%98%E6%86%82%E8%B0%B7.jpg/960px-202410_%E5%8D%88%E5%BE%8C%E7%9A%84%E5%8F%B0%E4%B8%AD%E5%A4%96%E5%9F%94%E5%BF%98%E6%86%82%E8%B0%B7.jpg", "category": "风景", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3A202410_%E5%8D%88%E5%BE%8C%E7%9A%84%E5%8F%B0%E4%B8%AD%E5%A4%96%E5%9F%94%E5%BF%98%E6%86%82%E8%B0%B7.jpg", "id": 27}, {"title": "Springtime", "photographer": "Pierre-Auguste Cot", "desc": "构图上，Springtime以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Pierre-Auguste Cot的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-33707-001.jpg", "category": "自然", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/438158", "id": 349}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

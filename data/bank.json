@@ -10983,6 +10983,96 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/436545",
       "id": 720
+    },
+    {
+      "title": "Pin (ttipqui)",
+      "photographer": "Peruvian artist(s)",
+      "desc": "构图上，Pin (ttipqui)以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Peruvian artist(s)的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-27227-001.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/126673",
+      "id": 721
+    },
+    {
+      "title": "The Bodhisattva Jizō",
+      "photographer": "Intan",
+      "desc": "构图上，The Bodhisattva Jizō以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Intan的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/as/original/DP-14364-001.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/76084",
+      "id": 722
+    },
+    {
+      "title": "Tälsäm or yä bərana kətab (healing scroll)",
+      "photographer": "Northern Highlands däbtära (religious scholar)",
+      "desc": "构图上，Tälsäm or yä bərana kətab (healing scroll)以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Northern Highlands däbtära (religious scholar)的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ao/original/DP326509.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/320962",
+      "id": 723
+    },
+    {
+      "title": "Allegory of Asia, from \"The Four Continents\"",
+      "photographer": "Marcus Gheeraerts the Elder",
+      "desc": "构图上，Allegory of Asia, from \"The Four Continents\"以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Marcus Gheeraerts the Elder的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP836192.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/385670",
+      "id": 724
+    },
+    {
+      "title": "Terracotta rim fragment of a kyathos (cup-shaped ladle)",
+      "photographer": "Met Museum",
+      "desc": "构图上，Terracotta rim fragment of a kyathos (cup-shaped ladle)以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/gr/original/DVB12326_1_ff.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/750451",
+      "id": 725
+    },
+    {
+      "title": "The Death of Britannicus",
+      "photographer": "Alexandre Denis Abel de Pujol",
+      "desc": "构图上，The Death of Britannicus以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Alexandre Denis Abel de Pujol的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP134855.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/365702",
+      "id": 726
     }
   ]
 }

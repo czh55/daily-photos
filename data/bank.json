@@ -11073,6 +11073,94 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/365702",
       "id": 726
+    },
+    {
+      "title": "Lake Khövsgöl.jpg",
+      "photographer": "Виктор Пинчук",
+      "desc": "构图上，Lake Khövsgöl.jpg以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Виктор Пинчук的镜头传递出对风景题材的独到观察与共鸣。",
+      "tags": [
+        "风景",
+        "wikimedia"
+      ],
+      "img": "https://upload.wikimedia.org/wikipedia/commons/7/79/Lake_Kh%C3%B6vsg%C3%B6l.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "category": "风景",
+      "source": "wikimedia",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3ALake_Kh%C3%B6vsg%C3%B6l.jpg",
+      "id": 727
+    },
+    {
+      "title": "Openwork plaque with a sphinx at a tree",
+      "photographer": "Met Museum",
+      "desc": "构图上，Openwork plaque with a sphinx at a tree以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/an/original/DP110556.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/324198",
+      "id": 728
+    },
+    {
+      "title": "Shadow photography.jpg",
+      "photographer": "JAYASHREESATHIYAMOORTHY",
+      "desc": "构图上，Shadow photography.jpg以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，JAYASHREESATHIYAMOORTHY的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "wikimedia"
+      ],
+      "img": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Shadow_photography.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "category": "光影",
+      "source": "wikimedia",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3AShadow_photography.jpg",
+      "id": 729
+    },
+    {
+      "title": "Panel with the god Zeus/Serapis/Ohrmazd and worshiper",
+      "photographer": "Met Museum",
+      "desc": "构图上，Panel with the god Zeus/Serapis/Ohrmazd and worshiper以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/an/original/DT918.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/327830",
+      "id": 730
+    },
+    {
+      "title": "Portrait of a Man",
+      "photographer": "Moretto da Brescia (Alessandro Bonvicino)",
+      "desc": "构图上，Portrait of a Man以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Moretto da Brescia (Alessandro Bonvicino)的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-25741-001.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/437158",
+      "id": 731
+    },
+    {
+      "title": "Johann I (1468–1532), the Constant, Elector of Saxony",
+      "photographer": "Lucas Cranach the Elder and Workshop",
+      "desc": "构图上，Johann I (1468–1532), the Constant, Elector of Saxony以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Lucas Cranach the Elder and Workshop的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP278975.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436045",
+      "id": 732
     }
   ]
 }

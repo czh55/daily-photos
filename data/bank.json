@@ -11161,6 +11161,110 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/436045",
       "id": 732
+    },
+    {
+      "title": "Portrait Photography of a Man.jpg",
+      "photographer": "Ready Street",
+      "desc": "构图上，Portrait Photography of a Man.jpg以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Ready Street的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "wikimedia"
+      ],
+      "img": "https://upload.wikimedia.org/wikipedia/commons/2/25/Portrait_Photography_of_a_Man.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "category": "肖像",
+      "source": "wikimedia",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3APortrait_Photography_of_a_Man.jpg",
+      "id": 733
+    },
+    {
+      "title": "The Dead Christ with Angels",
+      "photographer": "Edouard Manet",
+      "desc": "构图上，The Dead Christ with Angels以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Edouard Manet的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-17679-001.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436950",
+      "id": 734
+    },
+    {
+      "title": "Basket of Flowers",
+      "photographer": "Eugène Delacroix",
+      "desc": "构图上，Basket of Flowers以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Eugène Delacroix的镜头传递出对纪实题材的独到观察与共鸣。",
+      "tags": [
+        "纪实",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-14347-001.jpg",
+      "category": "纪实",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436175",
+      "id": 735
+    },
+    {
+      "title": "Young Ladies of the Village",
+      "photographer": "Gustave Courbet",
+      "desc": "构图上，Young Ladies of the Village以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Gustave Courbet的镜头传递出对纪实题材的独到观察与共鸣。",
+      "tags": [
+        "纪实",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1967.jpg",
+      "category": "纪实",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/438820",
+      "id": 736
+    },
+    {
+      "title": "Virgin and Child",
+      "photographer": "Hans Memling",
+      "desc": "构图上，Virgin and Child以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Hans Memling的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/rl/original/DT3076.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/459053",
+      "id": 737
+    },
+    {
+      "title": "Crozier Head with Double Enthroned Christ",
+      "photographer": "Met Museum",
+      "desc": "构图上，Crozier Head with Double Enthroned Christ以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/md/original/sf17-190-171s6.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/464118",
+      "id": 738
+    },
+    {
+      "title": "White Plum Blossoms and Moon",
+      "photographer": "Itō Jakuchū",
+      "desc": "构图上，White Plum Blossoms and Moon以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Itō Jakuchū的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/as/original/DP-12232-273.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/53408",
+      "id": 739
     }
   ]
 }

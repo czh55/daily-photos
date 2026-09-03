@@ -11265,6 +11265,66 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/53408",
       "id": 739
+    },
+    {
+      "title": "Arles, Cloitre St. Trophime",
+      "photographer": "Edouard Baldus",
+      "desc": "构图上，Arles, Cloitre St. Trophime以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Edouard Baldus的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ph/original/DP138006.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/283136",
+      "id": 740
+    },
+    {
+      "title": "Capital with Acanthus Leaves",
+      "photographer": "Met Museum",
+      "desc": "构图上，Capital with Acanthus Leaves以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/DP-25743-001.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/446120",
+      "id": 741
+    },
+    {
+      "title": "Portrait of a Young Lady with an Amber Necklace",
+      "photographer": "Sir Thomas Lawrence",
+      "desc": "构图上，Portrait of a Young Lady with an Amber Necklace以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Sir Thomas Lawrence的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/rl/original/DP-22114-001.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/459978",
+      "id": 742
+    },
+    {
+      "title": "The Third-Class Carriage",
+      "photographer": "Honoré Daumier",
+      "desc": "构图上，The Third-Class Carriage以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Honoré Daumier的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-21027-001.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436095",
+      "id": 743
     }
   ]
 }

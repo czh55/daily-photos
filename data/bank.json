@@ -11325,6 +11325,36 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/436095",
       "id": 743
+    },
+    {
+      "title": "Artist's Study: Charity, Seville",
+      "photographer": "Alphonse Delaunay",
+      "desc": "构图上，Artist's Study: Charity, Seville以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Alphonse Delaunay的镜头传递出对纪实题材的独到观察与共鸣。",
+      "tags": [
+        "纪实",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ph/original/DP-44691-027.jpg",
+      "category": "纪实",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/921288",
+      "id": 744
+    },
+    {
+      "title": "Study of a Young Woman",
+      "photographer": "Johannes Vermeer",
+      "desc": "构图上，Study of a Young Woman以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Johannes Vermeer的镜头传递出对纪实题材的独到观察与共鸣。",
+      "tags": [
+        "纪实",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP353256.jpg",
+      "category": "纪实",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/437879",
+      "id": 745
     }
   ]
 }

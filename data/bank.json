@@ -11355,6 +11355,111 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/437879",
       "id": 745
+    },
+    {
+      "title": "Sea monster",
+      "photographer": "Severo Calzetta da Ravenna",
+      "desc": "构图上，Sea monster以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Severo Calzetta da Ravenna的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/es/original/DP-12420-001.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/207000",
+      "id": 746
+    },
+    {
+      "title": "La Berceuse (Woman Rocking a Cradle; Augustine-Alix Pellicot Roulin, 1851–1930)",
+      "photographer": "Vincent van Gogh",
+      "desc": "构图上，La Berceuse (Woman Rocking a Cradle; Augustine-Alix Pellicot Roulin, 1851–1930)以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Vincent van Gogh的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-19279-001.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/437984",
+      "id": 747
+    },
+    {
+      "title": "Mars and Venus United by Love",
+      "photographer": "Paolo Veronese (Paolo Caliari)",
+      "desc": "构图上，Mars and Venus United by Love以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Paolo Veronese (Paolo Caliari)的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP167124.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/437891",
+      "id": 748
+    },
+    {
+      "title": "The Youthful Saint John the Baptist",
+      "photographer": "Domenico Pieratti",
+      "desc": "构图上，The Youthful Saint John the Baptist以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Domenico Pieratti的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/es/original/DP217272.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/231787",
+      "id": 749
+    },
+    {
+      "title": "Crescent-Shaped Pendant with Confronted Birds",
+      "photographer": "Met Museum",
+      "desc": "构图上，Crescent-Shaped Pendant with Confronted Birds以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/DP170371.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/448401",
+      "id": 750
+    },
+    {
+      "title": "Floral Design",
+      "photographer": "Antoine Berjon",
+      "desc": "构图上，Floral Design以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Antoine Berjon的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP805169.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/334940",
+      "id": 751
+    },
+    {
+      "title": "Landscape near Rome",
+      "photographer": "Albert Venus",
+      "desc": "构图上，Landscape near Rome以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Albert Venus的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP824684.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/397978",
+      "id": 752
     }
   ]
 }

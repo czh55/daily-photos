@@ -11460,6 +11460,51 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/397978",
       "id": 752
+    },
+    {
+      "title": "Yuny and His Wife Renenutet",
+      "photographer": "Met Museum",
+      "desc": "构图上，Yuny and His Wife Renenutet以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对街拍题材的独到观察与共鸣。",
+      "tags": [
+        "街拍",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/eg/original/DT549.jpg",
+      "category": "街拍",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/544740",
+      "id": 753
+    },
+    {
+      "title": "Tureen with cover (Terrine épis de blé or épis en or et plateau)",
+      "photographer": "Sèvres Manufactory",
+      "desc": "构图上，Tureen with cover (Terrine épis de blé or épis en or et plateau)以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Sèvres Manufactory的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/es/original/DP352509.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/188877",
+      "id": 754
+    },
+    {
+      "title": "Bearded, bare-chested male figure, study for \"The Horse Fair\"",
+      "photographer": "Rosa Bonheur",
+      "desc": "构图上，Bearded, bare-chested male figure, study for \"The Horse Fair\"以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Rosa Bonheur的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP809536.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/336328",
+      "id": 755
     }
   ]
 }

@@ -11505,6 +11505,51 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/336328",
       "id": 755
+    },
+    {
+      "title": "The Japanese Robe",
+      "photographer": "Alfred Stevens",
+      "desc": "构图上，The Japanese Robe以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Alfred Stevens的镜头传递出对纪实题材的独到观察与共鸣。",
+      "tags": [
+        "纪实",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-42347-001.jpg",
+      "category": "纪实",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/437756",
+      "id": 756
+    },
+    {
+      "title": "Cornemuse Béchonnet",
+      "photographer": "Joseph Bechonnet",
+      "desc": "构图上，Cornemuse Béchonnet以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Joseph Bechonnet的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/mi/original/89.2.165 full.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/500561",
+      "id": 757
+    },
+    {
+      "title": "Studio delle virtuose Dame, page 32 (recto)",
+      "photographer": "Isabella Catanea Parasole",
+      "desc": "构图上，Studio delle virtuose Dame, page 32 (recto)以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Isabella Catanea Parasole的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP353506.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/661029",
+      "id": 758
     }
   ]
 }

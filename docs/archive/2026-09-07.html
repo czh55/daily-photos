@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年09月07日 星期一</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">17</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">8</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Puget Sound, Seattle, WA, USA, Vancouver, British Columbia, Canada", "photographer": "NASA", "desc": "构图上，Puget Sound, Seattle, WA, USA, Vancouver, British Columbia, Canada以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/sts047-151-488/sts047-151-488~large.jpg", "category": "街拍", "source": "nasa", "source_url": "https://images.nasa.gov/details-sts047-151-488", "id": 74}, {"title": "SOCIAL GOLD LIFE BALL WIEN 2015 Bodengold.jpg", "photographer": "Johannes Angerbauer-Goldhoff", "desc": "构图上，SOCIAL GOLD LIFE BALL WIEN 2015 Bodengold.jpg以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Johannes Angerbauer-Goldhoff的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/SOCIAL_GOLD_LIFE_BALL_WIEN_2015_Bodengold.jpg/960px-SOCIAL_GOLD_LIFE_BALL_WIEN_2015_Bodengold.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "纪实", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ASOCIAL_GOLD_LIFE_BALL_WIEN_2015_Bodengold.jpg", "id": 635}, {"title": "Modified celt-pendant with incised motifs", "photographer": "Olmec artist(s)", "desc": "构图上，Modified celt-pendant with incised motifs以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Olmec artist(s)的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-23470-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/310467", "id": 698}, {"title": "New York City Street Scenes - Building Geometry", "photographer": "Steven Pisano", "desc": "构图上，New York City Street Scenes - Building Geometry以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Steven Pisano的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "flickr"], "img": "https://live.staticflickr.com/642/20746466564_1917011b4c_b.jpg", "category": "建筑", "source": "flickr", "source_url": "https://www.flickr.com/photos/45776673@N04/20746466564", "id": 51}, {"title": "202410 午後的台中外埔忘憂谷.jpg", "photographer": "Junyu-K", "desc": "构图上，202410 午後的台中外埔忘憂谷.jpg以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Junyu-K的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/202410_%E5%8D%88%E5%BE%8C%E7%9A%84%E5%8F%B0%E4%B8%AD%E5%A4%96%E5%9F%94%E5%BF%98%E6%86%82%E8%B0%B7.jpg/960px-202410_%E5%8D%88%E5%BE%8C%E7%9A%84%E5%8F%B0%E4%B8%AD%E5%A4%96%E5%9F%94%E5%BF%98%E6%86%82%E8%B0%B7.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "风景", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3A202410_%E5%8D%88%E5%BE%8C%E7%9A%84%E5%8F%B0%E4%B8%AD%E5%A4%96%E5%9F%94%E5%BF%98%E6%86%82%E8%B0%B7.jpg", "id": 578}, {"title": "Al Ma'wa for Nature and Wildlife 03.jpg", "photographer": "Mohammad hajeer", "desc": "构图上，Al Ma'wa for Nature and Wildlife 03.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mohammad hajeer的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Al_Ma%27wa_for_Nature_and_Wildlife_03.jpg/960px-Al_Ma%27wa_for_Nature_and_Wildlife_03.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AAl_Ma%27wa_for_Nature_and_Wildlife_03.jpg", "id": 449}, {"title": "Terracotta fragment of a kylix: eye-cup (drinking cup)", "photographer": "Met Museum", "desc": "构图上，Terracotta fragment of a kylix: eye-cup (drinking cup)以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/gr/original/DVB13369_1_ff.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/756044", "id": 370}, {"title": "Abdullkadir KAPLAN DUDAYEV.jpg", "photographer": "BerzanOner", "desc": "构图上，Abdullkadir KAPLAN DUDAYEV.jpg以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，BerzanOner的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Abdullkadir_KAPLAN_DUDAYEV.jpg/960px-Abdullkadir_KAPLAN_DUDAYEV.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "肖像", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AAbdullkadir_KAPLAN_DUDAYEV.jpg", "id": 591}, {"title": "Don Andrés de Andrade y la Cal", "photographer": "Bartolomé Estebán Murillo", "desc": "构图上，Don Andrés de Andrade y la Cal以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Bartolomé Estebán Murillo的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-16333-001.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437173", "id": 75}, {"title": "A Vase with Flowers", "photographer": "Jacob Vosmaer", "desc": "构图上，A Vase with Flowers以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jacob Vosmaer的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP145940.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437920", "id": 408}, {"title": "Fragment of a Capital with a Basket-Weave Pattern and Crosses", "photographer": "Met Museum", "desc": "构图上，Fragment of a Capital with a Basket-Weave Pattern and Crosses以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/10.175.86.JPG", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/456176", "id": 421}, {"title": "Liverdun", "photographer": "James McNeill Whistler", "desc": "构图上，Liverdun以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，James McNeill Whistler的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP813180.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/372481", "id": 574}, {"title": "\"Four-in-Hand\"", "photographer": "Louis Maurer", "desc": "构图上，\"Four-in-Hand\"以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Louis Maurer的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DT2035.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/371974", "id": 564}, {"title": "Portrait of a Young Man", "photographer": "Bronzino (Agnolo di Cosimo di Mariano)", "desc": "构图上，Portrait of a Young Man以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Bronzino (Agnolo di Cosimo di Mariano)的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-14286-011.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/435802", "id": 547}, {"title": "Al Ma'wa for Nature and Wildlife 08.jpg", "photographer": "Mohammad hajeer", "desc": "构图上，Al Ma'wa for Nature and Wildlife 08.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mohammad hajeer的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Al_Ma%27wa_for_Nature_and_Wildlife_08.jpg/960px-Al_Ma%27wa_for_Nature_and_Wildlife_08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AAl_Ma%27wa_for_Nature_and_Wildlife_08.jpg", "id": 643}, {"title": "Landscape with Three Figures and Birds", "photographer": "Albert Flamen", "desc": "构图上，Landscape with Three Figures and Birds以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Albert Flamen的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP802105.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/335497", "id": 702}, {"title": "Ergaki, Buiba Valley, Western Sayan Mountains, Krasnoyarsk Krai, Russia.jpg", "photographer": "Vyacheslav Argenberg", "desc": "构图上，Ergaki, Buiba Valley, Western Sayan Mountains, Krasnoyarsk Krai, Russia.jpg以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Vyacheslav Argenberg的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Ergaki%2C_Buiba_Valley%2C_Western_Sayan_Mountains%2C_Krasnoyarsk_Krai%2C_Russia.jpg/960px-Ergaki%2C_Buiba_Valley%2C_Western_Sayan_Mountains%2C_Krasnoyarsk_Krai%2C_Russia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "风景", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AErgaki%2C_Buiba_Valley%2C_Western_Sayan_Mountains%2C_Krasnoyarsk_Krai%2C_Russia.jpg", "id": 654}, {"title": "“A Branch of Sacred Evergreen” (Sakaki), from the Moriyasu Version, known as ...", "photographer": "Met Museum", "desc": "构图上，“A Branch of Sacred Evergreen” (Sakaki), from the Moriyasu Version, known as ...以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/as/original/LC-2015_300_36ab_001.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/670970", "id": 700}, {"title": "Head of Christ", "photographer": "Master of the Orcagnesque Misericordia", "desc": "构图上，Head of Christ以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Master of the Orcagnesque Misericordia的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-19581-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437021", "id": 718}, {"title": "\"Bizhan Slaughters the Wild Boars of Irman\", Folio from a Shahnama (Book of K...", "photographer": "Abu'l Qasim Firdausi", "desc": "构图上，\"Bizhan Slaughters the Wild Boars of Irman\", Folio from a Shahnama (Book of K...以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Abu'l Qasim Firdausi的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DT214817.jpg", "category": "自然", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/448280", "id": 262}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

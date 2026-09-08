@@ -11550,6 +11550,51 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/661029",
       "id": 758
+    },
+    {
+      "title": "The Annunciation",
+      "photographer": "Petrus Christus",
+      "desc": "构图上，The Annunciation以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Petrus Christus的镜头传递出对风景题材的独到观察与共鸣。",
+      "tags": [
+        "风景",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1479.jpg",
+      "category": "风景",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/435899",
+      "id": 759
+    },
+    {
+      "title": "An Allegory of the Arts with Isis and Geometry Attending the Three-headed Fig...",
+      "photographer": "Erasmus Quellinus",
+      "desc": "构图上，An Allegory of the Arts with Isis and Geometry Attending the Three-headed Fig...以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Erasmus Quellinus的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP802235.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/376666",
+      "id": 760
+    },
+    {
+      "title": "Textile Design with Alternating Vertical Rows of Lozenges and Pearls Framed b...",
+      "photographer": "Anonymous, Alsatian, 19th century",
+      "desc": "构图上，Textile Design with Alternating Vertical Rows of Lozenges and Pearls Framed b...以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Anonymous, Alsatian, 19th century的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP889454.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/710695",
+      "id": 761
     }
   ]
 }

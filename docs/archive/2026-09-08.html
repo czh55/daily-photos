@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年09月08日 星期二</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">15</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">8</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Merano Street Photography by Giovanni Ussi 14.jpg", "photographer": "Giovanni Ussi", "desc": "构图上，Merano Street Photography by Giovanni Ussi 14.jpg以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Giovanni Ussi的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Merano_Street_Photography_by_Giovanni_Ussi_14.jpg/960px-Merano_Street_Photography_by_Giovanni_Ussi_14.jpg", "category": "街拍", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AMerano_Street_Photography_by_Giovanni_Ussi_14.jpg", "id": 485}, {"title": "Riansares Mountain Vista (Revisited) (1)", "photographer": "Nicholas_T", "desc": "构图上，Riansares Mountain Vista (Revisited) (1)以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nicholas_T的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "appalachianmountains", "baldeaglestateforest", "cirrus", "clintoncounty", "flickr"], "img": "https://live.staticflickr.com/8303/7818672808_a426256e27_b.jpg", "category": "风景", "source": "flickr", "source_url": "https://www.flickr.com/photos/14922165@N00/7818672808", "id": 184}, {"title": "Two Women", "photographer": "Paul Gauguin", "desc": "构图上，Two Women以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Paul Gauguin的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1953.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/438001", "id": 712}, {"title": "Capital with Acanthus Leaves", "photographer": "Met Museum", "desc": "构图上，Capital with Acanthus Leaves以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP-25744-001.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/456150", "id": 514}, {"title": "Black white macro modern line", "photographer": "Openverse 摄影师", "desc": "构图上，Black white macro modern line以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "architecture", "architecture photos", "facade", "modern", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYxNzE5Nzg2LXdpa2ltZWRpYS1pbWFnZS1rb3diYmk0NC5qcGc.jpg", "category": "建筑", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/3283222/free-photo-image-modern-symbol-facade", "id": 203}, {"title": "Salvator Mundi", "photographer": "Albrecht Dürer", "desc": "构图上，Salvator Mundi以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Albrecht Dürer的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-38479-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436243", "id": 337}, {"title": "Neckless jar with complex scene", "photographer": "Paracas artist(s)", "desc": "构图上，Neckless jar with complex scene以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Paracas artist(s)的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-24348-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/312928", "id": 462}, {"title": "Cafe Candid (47184250341).jpg", "photographer": "Rod Waddington from Kergunyah, Australia", "desc": "构图上，Cafe Candid (47184250341).jpg以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Rod Waddington from Kergunyah, Australia的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Cafe_Candid_%2847184250341%29.jpg/960px-Cafe_Candid_%2847184250341%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "街拍", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ACafe_Candid_%2847184250341%29.jpg", "id": 613}, {"title": "Two Tahitian Women", "photographer": "Paul Gauguin", "desc": "构图上，Two Tahitian Women以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Paul Gauguin的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1342.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436446", "id": 543}, {"title": "Ariadne", "photographer": "George Frederic Watts", "desc": "构图上，Ariadne以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，George Frederic Watts的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP169627.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437936", "id": 88}, {"title": "Panel with the god Zeus/Serapis/Ohrmazd and worshiper", "photographer": "Met Museum", "desc": "构图上，Panel with the god Zeus/Serapis/Ohrmazd and worshiper以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/an/original/DT918.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/327830", "id": 730}, {"title": "KSC-04pd1228", "photographer": "NASA", "desc": "构图上，KSC-04pd1228以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/KSC-04pd1228/KSC-04pd1228~orig.jpg", "category": "建筑", "source": "nasa", "source_url": "https://images.nasa.gov/details-KSC-04pd1228", "id": 59}, {"title": "City Hall", "photographer": "John Hill", "desc": "构图上，City Hall以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，John Hill的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ad/original/268406.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/16988", "id": 715}, {"id": 1, "title": "月升，赫尔南德斯", "photographer": "Ansel Adams", "desc": "黑白风景摄影的巅峰之作，月光洒在新墨西哥州的小镇与远山上，展现了自然光影的极致控制与深远的空间层次。", "tags": ["黑白", "风景", "大画幅"], "img": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80", "category": "风景", "source": "unsplash"}, {"title": "Fragment from a Frieze with a Meander Pattern and Rosettes", "photographer": "Met Museum", "desc": "构图上，Fragment from a Frieze with a Meander Pattern and Rosettes以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/118072.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/453602", "id": 705}, {"title": "Rocks at Fontainebleau", "photographer": "Paul Cézanne", "desc": "构图上，Rocks at Fontainebleau以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Paul Cézanne的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-23704-001.jpg", "category": "自然", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/435880", "id": 350}, {"title": "Baltic beach, black white", "photographer": "Openverse 摄影师", "desc": "构图上，Baltic beach, black white以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "beach", "beach black and white", "black and white", "black and white photography", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZnJzX3dfYmxhY2tfd2hpdGUtaW1hZ2Uta3liY3U0bGIuanBn.jpg", "category": "黑白", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/6032605/photo-image-public-domain-black-beach", "id": 122}, {"title": "Saint Lawrence Enthroned with Saints and Donors", "photographer": "Fra Filippo Lippi", "desc": "构图上，Saint Lawrence Enthroned with Saints and Donors以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Fra Filippo Lippi的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-17016-001.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436897", "id": 442}, {"title": "Virgin and child", "photographer": "Niccolò Roccatagliata", "desc": "构图上，Virgin and child以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Niccolò Roccatagliata的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/es/original/DP-1222-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/191610", "id": 379}, {"title": "The Card Players", "photographer": "Paul Cézanne", "desc": "构图上，The Card Players以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Paul Cézanne的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP231550.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/435868", "id": 453}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

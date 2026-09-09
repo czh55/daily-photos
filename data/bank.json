@@ -11595,6 +11595,111 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/710695",
       "id": 761
+    },
+    {
+      "title": "Altar to the Sun Warrior",
+      "photographer": "Mexico Nahua artist(s)",
+      "desc": "构图上，Altar to the Sun Warrior以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mexico Nahua artist(s)的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-39200-001.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/318674",
+      "id": 762
+    },
+    {
+      "title": "Daoist Sage and Hawk",
+      "photographer": "Soga Nichokuan",
+      "desc": "构图上，Daoist Sage and Hawk以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Soga Nichokuan的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/as/original/DP704988.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/53008",
+      "id": 763
+    },
+    {
+      "title": "Processional Standard ('Alam)",
+      "photographer": "Met Museum",
+      "desc": "构图上，Processional Standard ('Alam)以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/DP328288.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/457977",
+      "id": 764
+    },
+    {
+      "title": "Fragment from a Molding with Intertwined Vines and Acanthus Leaves",
+      "photographer": "Met Museum",
+      "desc": "构图上，Fragment from a Molding with Intertwined Vines and Acanthus Leaves以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/10.175.88.JPG",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/456178",
+      "id": 765
+    },
+    {
+      "title": "The New City Hall, New York",
+      "photographer": "Pavel Petrovich Svinin",
+      "desc": "构图上，The New City Hall, New York以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Pavel Petrovich Svinin的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ad/original/ap42.95.4.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/12735",
+      "id": 766
+    },
+    {
+      "title": "Wooded Landscape",
+      "photographer": "Anthonie Waterloo",
+      "desc": "构图上，Wooded Landscape以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Anthonie Waterloo的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/rl/original/DP-28512-001.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/459335",
+      "id": 767
+    },
+    {
+      "title": "Old Woman",
+      "photographer": "Nicolas Bernard Lépicié",
+      "desc": "构图上，Old Woman以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nicolas Bernard Lépicié的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP831521.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/395503",
+      "id": 768
     }
   ]
 }

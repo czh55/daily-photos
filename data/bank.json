@@ -11700,6 +11700,96 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/395503",
       "id": 768
+    },
+    {
+      "title": "The Storm",
+      "photographer": "Pierre-Auguste Cot",
+      "desc": "构图上，The Storm以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Pierre-Auguste Cot的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DT11964.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/435997",
+      "id": 769
+    },
+    {
+      "title": "Fragment from a Molding with Scrolling Acanthus Leaves",
+      "photographer": "Met Museum",
+      "desc": "构图上，Fragment from a Molding with Scrolling Acanthus Leaves以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/10.175.129.JPG",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/456204",
+      "id": 770
+    },
+    {
+      "title": "Textile Design with Alternating  Hexagons and Starlike Shapes with Pearls in ...",
+      "photographer": "Anonymous, Alsatian, 19th century",
+      "desc": "构图上，Textile Design with Alternating  Hexagons and Starlike Shapes with Pearls in ...以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Anonymous, Alsatian, 19th century的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP889340.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/709079",
+      "id": 771
+    },
+    {
+      "title": "Dwarf (one of a pair)",
+      "photographer": "Villeroy",
+      "desc": "构图上，Dwarf (one of a pair)以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Villeroy的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/es/original/DP223292.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/237451",
+      "id": 772
+    },
+    {
+      "title": "The Life of the Virgin",
+      "photographer": "Adriaen Isenbrant",
+      "desc": "构图上，The Life of the Virgin以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Adriaen Isenbrant的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DT12055.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436723",
+      "id": 773
+    },
+    {
+      "title": "Man with a Magnifying Glass",
+      "photographer": "Rembrandt (Rembrandt van Rijn)",
+      "desc": "构图上，Man with a Magnifying Glass以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Rembrandt (Rembrandt van Rijn)的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP145909.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/437399",
+      "id": 774
     }
   ]
 }

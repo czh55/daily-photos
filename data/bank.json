@@ -11790,6 +11790,51 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/437399",
       "id": 774
+    },
+    {
+      "title": "A Musical Party",
+      "photographer": "Gerbrand van den Eeckhout",
+      "desc": "构图上，A Musical Party以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Gerbrand van den Eeckhout的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP143165.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436267",
+      "id": 775
+    },
+    {
+      "title": "Abraham Dismissing Hagar and Ishmael",
+      "photographer": "Barent Fabritius",
+      "desc": "构图上，Abraham Dismissing Hagar and Ishmael以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Barent Fabritius的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP143212.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436288",
+      "id": 776
+    },
+    {
+      "title": "The Fieschi Morgan Staurotheke",
+      "photographer": "Met Museum",
+      "desc": "构图上，The Fieschi Morgan Staurotheke以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/md/original/DT119.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/472562",
+      "id": 777
     }
   ]
 }

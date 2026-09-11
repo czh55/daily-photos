@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年09月11日 星期五</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">16</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">7</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Standing Soldier with a Spear", "photographer": "Anonymous, Spanish, School of Seville, 17th century", "desc": "构图上，Standing Soldier with a Spear以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Anonymous, Spanish, School of Seville, 17th century的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP800415.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/336675", "id": 536}, {"title": "view lush forest light blue", "photographer": "Openverse 摄影师", "desc": "构图上，view lush forest light blue以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "background", "blue", "cloud", "desktop wallpaper", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYxNjQ5MTU1LXdpa2ltZWRpYS1pbWFnZS1rb3dsenRxbS5qcGc.jpg", "category": "自然", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/3294403/free-photo-image-azure-sky-bush-cc0", "id": 135}, {"title": "Christ Crowned with Thorns", "photographer": "Antonello da Messina (Antonello di Giovanni d'Antonio)", "desc": "构图上，Christ Crowned with Thorns以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Antonello da Messina (Antonello di Giovanni d'Antonio)的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT285189.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/435580", "id": 481}, {"title": "ISS NASA Social", "photographer": "NASA", "desc": "构图上，ISS NASA Social以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/201302200014HQ/201302200014HQ~orig.tif", "category": "纪实", "source": "nasa", "source_url": "https://images.nasa.gov/details-201302200014HQ", "id": 101}, {"title": "Abner's Messenger before David; The Queen of Sheba Bringing Gifts to Solomon;...", "photographer": "Master of the Saint Barbara Legend", "desc": "构图上，Abner's Messenger before David; The Queen of Sheba Bringing Gifts to Solomon;...以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Master of the Saint Barbara Legend的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/SF DT1049.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437028", "id": 230}, {"title": "Cliffside Sero Colorado (Black & White photography).png", "photographer": "Ginelly.Q", "desc": "构图上，Cliffside Sero Colorado (Black & White photography).png以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Ginelly.Q的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Cliffside_Sero_Colorado_%28Black_%26_White_photography%29.png/960px-Cliffside_Sero_Colorado_%28Black_%26_White_photography%29.png", "category": "黑白", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ACliffside_Sero_Colorado_%28Black_%26_White_photography%29.png", "id": 127}, {"title": "NASA astronaut Zena Cardman poses for a portrait", "photographer": "NASA", "desc": "构图上，NASA astronaut Zena Cardman poses for a portrait以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/jsc2024e022261_alt2/jsc2024e022261_alt2~orig.jpg", "category": "肖像", "source": "nasa", "source_url": "https://images.nasa.gov/details-jsc2024e022261_alt2", "id": 86}, {"title": "Embroidered bag with fringe", "photographer": "Nasca artist", "desc": "构图上，Embroidered bag with fringe以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nasca artist的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-26534-001.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/308022", "id": 523}, {"title": "Pendant Human Face (1st-5th century", "photographer": "Openverse 摄影师", "desc": "构图上，Pendant Human Face (1st-5th century以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "face", "human", "person", "photo", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvZmlsZXMvd2Vic2l0ZS8yMDIzLTA0L3dhbTc2NDk1LWltYWdlLmpwZw.jpg", "category": "肖像", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/10152758/pendant-with-human-face-1st-5th-century-ce-south-arabian", "id": 158}, {"title": "Dublin North Inner City candidate Darryl O'Callaghan and Party Leader Eamon G...", "photographer": "Labour Youth ~ Óige an Lucht Oibre", "desc": "构图上，Dublin North Inner City candidate Darryl O'Callaghan and Party Leader Eamon G...以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Labour Youth ~ Óige an Lucht Oibre的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "adult", "festival", "man", "movie", "flickr"], "img": "https://live.staticflickr.com/2832/12343960335_87115d3311_b.jpg", "category": "街拍", "source": "flickr", "source_url": "https://www.flickr.com/photos/80895979@N00/12343960335", "id": 151}, {"title": "Animal pendant", "photographer": "Met Museum", "desc": "构图上，Animal pendant以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-43941-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/309952", "id": 236}, {"title": "Fragment from a Molding with Intertwined Vines and Acanthus Leaves", "photographer": "Met Museum", "desc": "构图上，Fragment from a Molding with Intertwined Vines and Acanthus Leaves以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/sf10-175-37s1.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/446114", "id": 701}, {"title": "Roses", "photographer": "Vincent van Gogh", "desc": "构图上，Roses以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Vincent van Gogh的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP346475.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436534", "id": 89}, {"title": "Hunting Dogs with Dead Hare", "photographer": "Gustave Courbet", "desc": "构图上，Hunting Dogs with Dead Hare以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Gustave Courbet的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1961.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436014", "id": 708}, {"title": "Pittsburgh golden hour", "photographer": "brdonovan", "desc": "构图上，Pittsburgh golden hour以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，brdonovan的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "december", "golden", "hour", "pittsburgh", "flickr"], "img": "https://live.staticflickr.com/7002/6513558769_42943f7001_b.jpg", "category": "光影", "source": "flickr", "source_url": "https://www.flickr.com/photos/58621196@N05/6513558769", "id": 106}, {"title": "Cloître Saint-Amand, Rouen", "photographer": "Edmond Bacot", "desc": "构图上，Cloître Saint-Amand, Rouen以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Edmond Bacot的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ph/original/DP139287.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/267316", "id": 706}, {"title": "Christ Appearing to His Mother", "photographer": "Juan de Flandes", "desc": "构图上，Christ Appearing to His Mother以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Juan de Flandes的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT2649.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437489", "id": 666}, {"title": "Dione Has Her Faults Monochrome", "photographer": "NASA", "desc": "构图上，Dione Has Her Faults Monochrome以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/PIA07690/PIA07690~orig.jpg", "category": "黑白", "source": "nasa", "source_url": "https://images.nasa.gov/details-PIA07690", "id": 179}, {"id": 17, "title": "沙漠孤树", "photographer": "未知摄影师", "desc": "纳米比亚死亡沼泽的枯树与橙色沙丘。枯死百年的树干在晨曦中投下长长的阴影，极致的简洁中蕴含着生命的哲思。", "tags": ["极简", "风景", "沙漠"], "img": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&q=80", "category": "风景", "source": "unsplash"}, {"title": "\"Page of Calligraphy Illuminated with Animals and Plants in a Field of Flower...", "photographer": "Nanha", "desc": "构图上，\"Page of Calligraphy Illuminated with Animals and Plants in a Field of Flower...以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nanha的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP231356.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/451287", "id": 298}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

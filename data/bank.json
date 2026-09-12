@@ -11835,6 +11835,51 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/472562",
       "id": 777
+    },
+    {
+      "title": "The Sleep of Venus",
+      "photographer": "Pierre Paul Prud'hon",
+      "desc": "构图上，The Sleep of Venus以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Pierre Paul Prud'hon的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP-44579-001.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/933949",
+      "id": 778
+    },
+    {
+      "title": "Design for a Decorative Frieze",
+      "photographer": "Anonymous, French, 19th century",
+      "desc": "构图上，Design for a Decorative Frieze以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Anonymous, French, 19th century的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/63.712.6.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/362201",
+      "id": 779
+    },
+    {
+      "title": "Christ on the Cross",
+      "photographer": "Anonymous, German, 16th century",
+      "desc": "构图上，Christ on the Cross以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Anonymous, German, 16th century的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP803532.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/339165",
+      "id": 780
     }
   ]
 }

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年09月13日 星期日</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">15</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">7</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Vessel, Seated Deities", "photographer": "Met Museum", "desc": "构图上，Vessel, Seated Deities以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-13003-005.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/310607", "id": 314}, {"title": "Life and Death in a Star-Forming Cloud", "photographer": "NASA", "desc": "构图上，Life and Death in a Star-Forming Cloud以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/PIA16464/PIA16464~orig.jpg", "category": "自然", "source": "nasa", "source_url": "https://images.nasa.gov/details-PIA16464", "id": 145}, {"title": "Altar to the Sun Warrior", "photographer": "Mexico Nahua artist(s)", "desc": "构图上，Altar to the Sun Warrior以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mexico Nahua artist(s)的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-39200-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/318674", "id": 762}, {"title": "Artist's Study: Charity, Seville", "photographer": "Alphonse Delaunay", "desc": "构图上，Artist's Study: Charity, Seville以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Alphonse Delaunay的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ph/original/DP-44691-027.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/921288", "id": 744}, {"title": "Rocky Mountain National Park", "photographer": "NASA", "desc": "构图上，Rocky Mountain National Park以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000242/GSFC_20171208_Archive_e000242~large.jpg", "category": "风景", "source": "nasa", "source_url": "https://images.nasa.gov/details-GSFC_20171208_Archive_e000242", "id": 189}, {"title": "'Curry & rice,' forty plates", "photographer": "Openverse 摄影师", "desc": "构图上，'Curry & rice,' forty plates以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "art", "books", "george", "india", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAxL3ljYmFvcmJpczU2Mzc1MTYtaW1hZ2UuanBn.jpg", "category": "纪实", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/9179201/image-books-art-public-domain", "id": 535}, {"title": "New York City Street Scenes -Building Geometry", "photographer": "Steven Pisano", "desc": "构图上，New York City Street Scenes -Building Geometry以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Steven Pisano的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "flickr"], "img": "https://live.staticflickr.com/600/21342932916_95891cb29a_b.jpg", "category": "建筑", "source": "flickr", "source_url": "https://www.flickr.com/photos/45776673@N04/21342932916", "id": 520}, {"title": "The Chess Players", "photographer": "Liberale da Verona", "desc": "构图上，The Chess Players以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Liberale da Verona的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT226950.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436884", "id": 418}, {"title": "Relief panel", "photographer": "Met Museum", "desc": "构图上，Relief panel以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/an/original/DP375420.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/322611", "id": 494}, {"title": "Stela of the Steward Mentuwoser", "photographer": "Met Museum", "desc": "构图上，Stela of the Steward Mentuwoser以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/eg/original/DP322064.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/544320", "id": 662}, {"title": "Sunflowers", "photographer": "Vincent van Gogh", "desc": "构图上，Sunflowers以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Vincent van Gogh的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-41223-001.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436524", "id": 709}, {"title": "Harlequin family", "photographer": "Villeroy", "desc": "构图上，Harlequin family以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Villeroy的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/es/original/DP260944.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/207137", "id": 399}, {"title": "The Temple of Dendur", "photographer": "Met Museum", "desc": "构图上，The Temple of Dendur以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/eg/original/DP240337.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/547802", "id": 332}, {"title": "Table clock with calendar", "photographer": "Lucien Falize", "desc": "构图上，Table clock with calendar以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Lucien Falize的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/es/original/DP349144.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/207968", "id": 491}, {"title": "Dish with a Landscape", "photographer": "Jacopo da Pesaro", "desc": "构图上，Dish with a Landscape以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jacopo da Pesaro的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/es/original/DP-14531-024.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/738106", "id": 367}, {"title": "Monochrome car", "photographer": "Openverse 摄影师", "desc": "构图上，Monochrome car以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "car", "car back", "monochrome", "sedan", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAzL2ZyYmFsbHNfdG9feW91X2RhZGR5LWltYWdlLmpwZw.jpg", "category": "黑白", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/8812184/monochrome-car", "id": 254}, {"title": "The Lamentation", "photographer": "Ambrosius Benson", "desc": "构图上，The Lamentation以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Ambrosius Benson的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/LC-1982_60_23.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/435651", "id": 665}, {"title": "A True and Thorough Instruction in Geometry (Ein aigentliche und grundtliche ...", "photographer": "Augustin Hirschvogel", "desc": "构图上，A True and Thorough Instruction in Geometry (Ein aigentliche und grundtliche ...以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Augustin Hirschvogel的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP-14576-001.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/351643", "id": 405}, {"title": "Man with a Magnifying Glass", "photographer": "Rembrandt (Rembrandt van Rijn)", "desc": "构图上，Man with a Magnifying Glass以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Rembrandt (Rembrandt van Rijn)的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP145909.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437399", "id": 774}, {"title": "A Farmhouse with a Thatched Roof and Trees Beside a River", "photographer": "Constant Troyon", "desc": "构图上，A Farmhouse with a Thatched Roof and Trees Beside a River以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Constant Troyon的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP812257.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/334671", "id": 500}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

@@ -11880,6 +11880,51 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/339165",
       "id": 780
+    },
+    {
+      "title": "Door board (jovo)",
+      "photographer": "Met Museum",
+      "desc": "构图上，Door board (jovo)以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-21001-001.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/757056",
+      "id": 781
+    },
+    {
+      "title": "Capital",
+      "photographer": "Met Museum",
+      "desc": "构图上，Capital以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/10.175.39.JPG",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/446116",
+      "id": 782
+    },
+    {
+      "title": "Capital of a Double Pilaster",
+      "photographer": "Met Museum",
+      "desc": "构图上，Capital of a Double Pilaster以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/10.175.93.JPG",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/446127",
+      "id": 783
     }
   ]
 }

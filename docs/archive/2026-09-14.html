@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年09月14日 星期一</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">16</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">7</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Fragment from a Molding with Scrolling Acanthus Leaves", "photographer": "Met Museum", "desc": "构图上，Fragment from a Molding with Scrolling Acanthus Leaves以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/10.175.129.JPG", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/456204", "id": 770}, {"title": "Pax with the Crucifixion", "photographer": "Met Museum", "desc": "构图上，Pax with the Crucifixion以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/cl/original/DP-34081-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/471977", "id": 286}, {"title": "2007.09 - 'A seascape with cliffs and rocky shore near Petit-Dalle', photo of...", "photographer": "Amsterdam free photos & pictures of the Dutch city", "desc": "构图上，2007.09 - 'A seascape with cliffs and rocky shore near Petit-Dalle', photo of...以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Amsterdam free photos & pictures of the Dutch city的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "cliffs", "falaises", "france", "landscape", "flickr"], "img": "https://live.staticflickr.com/3683/10534973634_46cf56f6fc_b.jpg", "category": "风景", "source": "flickr", "source_url": "https://www.flickr.com/photos/104736837@N03/10534973634", "id": 22}, {"title": "Black Hills Region, SD, USA", "photographer": "NASA", "desc": "构图上，Black Hills Region, SD, USA以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/sl2-81-157/sl2-81-157~orig.jpg", "category": "自然", "source": "nasa", "source_url": "https://images.nasa.gov/details-sl2-81-157", "id": 146}, {"title": "Study of a Young Woman", "photographer": "Johannes Vermeer", "desc": "构图上，Study of a Young Woman以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Johannes Vermeer的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP353256.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437879", "id": 745}, {"id": 6, "title": "霞浦日出", "photographer": "何藩 (Fan Ho)", "desc": "东方光影美学的极致表达。晨光穿透海面薄雾，渔人的剪影与光线交织，每一帧都如古典水墨画般诗意盎然。", "tags": ["光影", "街头", "黑白"], "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80", "category": "光影", "source": "unsplash"}, {"title": "Bird, poultry wildlife, nature environment", "photographer": "Openverse 摄影师", "desc": "构图上，Bird, poultry wildlife, nature environment以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "animal", "bird", "desktop wallpaper", "hd wallpaper", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTEyL2ZsNTE2NjM5NzUyOTItaW1hZ2UuanBn.jpg", "category": "自然", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/11189353/bird-poultry-wildlife-nature-environment", "id": 40}, {"title": "The New City Hall, New York", "photographer": "Pavel Petrovich Svinin", "desc": "构图上，The New City Hall, New York以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Pavel Petrovich Svinin的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ad/original/ap42.95.4.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/12735", "id": 766}, {"id": 8, "title": "东京压缩", "photographer": "Michael Wolf", "desc": "地铁通勤者的面孔被玻璃挤压变形，都市生活的窒息感与个体在巨大系统中的无力感，被冷酷地记录下来。", "tags": ["街拍", "都市", "纪实"], "img": "https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=800&q=80", "category": "街拍", "source": "unsplash"}, {"title": "Hollow Oak Tree, Fontainebleau", "photographer": "Gustave Le Gray", "desc": "构图上，Hollow Oak Tree, Fontainebleau以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Gustave Le Gray的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ph/original/DP335718.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/306321", "id": 713}, {"title": "Saint Remigius Replenishing the Barrel of Wine; (interior) Saint Remigius and...", "photographer": "Swiss Painter", "desc": "构图上，Saint Remigius Replenishing the Barrel of Wine; (interior) Saint Remigius and...以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Swiss Painter的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT256630.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437771", "id": 707}, {"title": "Al Ma'wa for Nature and Wildlife 11.jpg", "photographer": "Mohammad hajeer", "desc": "构图上，Al Ma'wa for Nature and Wildlife 11.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mohammad hajeer的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Al_Ma%27wa_for_Nature_and_Wildlife_11.jpg/960px-Al_Ma%27wa_for_Nature_and_Wildlife_11.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AAl_Ma%27wa_for_Nature_and_Wildlife_11.jpg", "id": 376}, {"title": "Processional Standard ('Alam)", "photographer": "Met Museum", "desc": "构图上，Processional Standard ('Alam)以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP328288.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/457977", "id": 764}, {"title": "A River in a Meadow", "photographer": "Théodore Rousseau", "desc": "构图上，A River in a Meadow以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Théodore Rousseau的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-15888-001.jpg", "category": "自然", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437518", "id": 415}, {"title": "Battersea Reach", "photographer": "Sir Francis Seymour Haden", "desc": "构图上，Battersea Reach以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Sir Francis Seymour Haden的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP835556.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/630986", "id": 639}, {"title": "Al Ma'wa for Nature and Wildlife 08.jpg", "photographer": "Mohammad hajeer", "desc": "构图上，Al Ma'wa for Nature and Wildlife 08.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mohammad hajeer的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Al_Ma%27wa_for_Nature_and_Wildlife_08.jpg/960px-Al_Ma%27wa_for_Nature_and_Wildlife_08.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AAl_Ma%27wa_for_Nature_and_Wildlife_08.jpg", "id": 375}, {"title": "Boy Face from Venezuela.jpg", "photographer": "Wilfredor", "desc": "构图上，Boy Face from Venezuela.jpg以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Wilfredor的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Boy_Face_from_Venezuela.jpg/960px-Boy_Face_from_Venezuela.jpg", "category": "肖像", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ABoy_Face_from_Venezuela.jpg", "id": 160}, {"title": "Mars and Venus United by Love", "photographer": "Paolo Veronese (Paolo Caliari)", "desc": "构图上，Mars and Venus United by Love以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Paolo Veronese (Paolo Caliari)的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP167124.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437891", "id": 748}, {"title": "Candlestick", "photographer": "Met Museum", "desc": "构图上，Candlestick以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP193.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/444525", "id": 545}, {"title": "Beauty of a sunflower in light and shadow.jpg", "photographer": "লুন", "desc": "构图上，Beauty of a sunflower in light and shadow.jpg以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，লুন的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Beauty_of_a_sunflower_in_light_and_shadow.jpg/960px-Beauty_of_a_sunflower_in_light_and_shadow.jpg", "category": "光影", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ABeauty_of_a_sunflower_in_light_and_shadow.jpg", "id": 248}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

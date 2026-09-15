@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年09月15日 星期二</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">16</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">8</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Shoes", "photographer": "Vincent van Gogh", "desc": "构图上，Shoes以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Vincent van Gogh的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1947.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436533", "id": 459}, {"title": "VIENNA VOLUNTEER.(in Italy 1848) (Supplement", "photographer": "Openverse 摄影师", "desc": "构图上，VIENNA VOLUNTEER.(in Italy 1848) (Supplement以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "art", "drawing", "illustration", "paper", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA2L3dpZW44ODYwNi1pbWFnZS5qcGc.jpg", "category": "纪实", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/11574656/image-paper-art-vintage", "id": 468}, {"title": "Mrs. Robert Shurlock (Henrietta Ann Jane Russell, 1775–1849) and Her Daughter...", "photographer": "John Russell", "desc": "构图上，Mrs. Robert Shurlock (Henrietta Ann Jane Russell, 1775–1849) and Her Daughter...以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，John Russell的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP161649.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437580", "id": 433}, {"title": "Four upholstery panels for a settee", "photographer": "Beauvais", "desc": "构图上，Four upholstery panels for a settee以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Beauvais的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/es/original/DP221524.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/231000", "id": 305}, {"title": "Textile Design with Alternating  Hexagons and Starlike Shapes with Pearls in ...", "photographer": "Anonymous, Alsatian, 19th century", "desc": "构图上，Textile Design with Alternating  Hexagons and Starlike Shapes with Pearls in ...以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Anonymous, Alsatian, 19th century的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP889340.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/709079", "id": 771}, {"id": 8, "title": "东京压缩", "photographer": "Michael Wolf", "desc": "地铁通勤者的面孔被玻璃挤压变形，都市生活的窒息感与个体在巨大系统中的无力感，被冷酷地记录下来。", "tags": ["街拍", "都市", "纪实"], "img": "https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=800&q=80", "category": "街拍", "source": "unsplash"}, {"title": "Earth Observations taken by the Expedition 14 crew", "photographer": "NASA", "desc": "构图上，Earth Observations taken by the Expedition 14 crew以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/iss014e10547/iss014e10547~orig.jpg", "category": "建筑", "source": "nasa", "source_url": "https://images.nasa.gov/details-iss014e10547", "id": 210}, {"title": "The Life of the Virgin", "photographer": "Adriaen Isenbrant", "desc": "构图上，The Life of the Virgin以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Adriaen Isenbrant的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT12055.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436723", "id": 773}, {"title": "Mountains Sunset Hills Valley", "photographer": "Openverse 摄影师", "desc": "构图上，Mountains Sunset Hills Valley以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "hills vista", "mountain", "nature", "panorama", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvbnMxNjkzLWltYWdlLWt3eXMwcDVnLmpwZw.jpg", "category": "风景", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/5967322/mountains-sunset-hills-valley", "id": 134}, {"title": "Virgin and Child", "photographer": "Hans Memling", "desc": "构图上，Virgin and Child以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Hans Memling的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/rl/original/DT3076.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/459053", "id": 737}, {"title": "Pochette d'Amore", "photographer": "Met Museum", "desc": "构图上，Pochette d'Amore以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/mi/original/DP-20647-001.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/501573", "id": 131}, {"title": "Hanging (Arid)", "photographer": "Met Museum", "desc": "构图上，Hanging (Arid)以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP107285.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/452105", "id": 502}, {"title": "Al Ma'wa for Nature and Wildlife 11.jpg", "photographer": "Mohammad hajeer", "desc": "构图上，Al Ma'wa for Nature and Wildlife 11.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mohammad hajeer的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Al_Ma%27wa_for_Nature_and_Wildlife_11.jpg/960px-Al_Ma%27wa_for_Nature_and_Wildlife_11.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AAl_Ma%27wa_for_Nature_and_Wildlife_11.jpg", "id": 376}, {"title": "Manuel Osorio Manrique de Zuñiga (1784–1792)", "photographer": "Goya (Francisco de Goya y Lucientes)", "desc": "构图上，Manuel Osorio Manrique de Zuñiga (1784–1792)以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Goya (Francisco de Goya y Lucientes)的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP287624.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436545", "id": 720}, {"title": "Free rocks ocean monochrome photography", "photographer": "Openverse 摄影师", "desc": "构图上，Free rocks ocean monochrome photography以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "animal", "backgrounds", "bird", "monochrome", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL2JzMzk0Ny1pbWFnZS1rd3Z4M3diNC5qcGc.jpg", "category": "黑白", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/5919140/image-background-public-domain-ocean", "id": 510}, {"title": "Pendant mask of Ìyọ́bà Idià", "photographer": "Ìgbèsànmwà (ivory- and wood- carving guild) artists", "desc": "构图上，Pendant mask of Ìyọ́bà Idià以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Ìgbèsànmwà (ivory- and wood- carving guild) artists的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP231460.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/318622", "id": 480}, {"title": "Boy Face from Venezuela.jpg", "photographer": "Wilfredor", "desc": "构图上，Boy Face from Venezuela.jpg以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Wilfredor的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Boy_Face_from_Venezuela.jpg/960px-Boy_Face_from_Venezuela.jpg", "category": "肖像", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ABoy_Face_from_Venezuela.jpg", "id": 160}, {"title": "A New York Golden Hour Trip", "photographer": "dolbinator1000", "desc": "构图上，A New York Golden Hour Trip以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，dolbinator1000的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "architecture", "boat", "building", "city", "flickr"], "img": "https://live.staticflickr.com/7458/16168524098_3061e06fbd_b.jpg", "category": "光影", "source": "flickr", "source_url": "https://www.flickr.com/photos/126654539@N08/16168524098", "id": 107}, {"title": "Tabernacle Polyptych with the Madonna and Child and Scenes from the Life of C...", "photographer": "Met Museum", "desc": "构图上，Tabernacle Polyptych with the Madonna and Child and Scenes from the Life of C...以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/rl/original/SLP1553-1.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/460281", "id": 619}, {"title": "Battersea Reach", "photographer": "Sir Francis Seymour Haden", "desc": "构图上，Battersea Reach以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Sir Francis Seymour Haden的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP835556.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/630986", "id": 639}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

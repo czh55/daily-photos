@@ -11925,6 +11925,66 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/446127",
       "id": 783
+    },
+    {
+      "title": "Christ Taking Leave of His Mother",
+      "photographer": "Gerard David",
+      "desc": "构图上，Christ Taking Leave of His Mother以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Gerard David的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-26280-001.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436097",
+      "id": 784
+    },
+    {
+      "title": "Landscapes",
+      "photographer": "Dai Benxiao",
+      "desc": "构图上，Landscapes以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Dai Benxiao的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/as/original/DP160517.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/39931",
+      "id": 785
+    },
+    {
+      "title": "East Hampton, Long Island",
+      "photographer": "Andrew Fisher Bunner",
+      "desc": "构图上，East Hampton, Long Island以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Andrew Fisher Bunner的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ad/original/ap99.38.48.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/10278",
+      "id": 786
+    },
+    {
+      "title": "Madame la Marquise de Coëtlogon",
+      "photographer": "Louis de Carmontelle",
+      "desc": "构图上，Madame la Marquise de Coëtlogon以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Louis de Carmontelle的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/rl/original/DP-19383-001.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/459375",
+      "id": 787
     }
   ]
 }

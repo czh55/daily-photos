@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年09月16日 星期三</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">7</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Deity figure", "photographer": "Maya artist(s)", "desc": "构图上，Deity figure以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Maya artist(s)的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-23472-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/313262", "id": 495}, {"title": "Modern office building small windows", "photographer": "Openverse 摄影师", "desc": "构图上，Modern office building small windows以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "apartment building", "geometry", "geometry photo", "minimal", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L3Vwd2s2MTkwODM0Ny13aWtpbWVkaWEtaW1hZ2Uta293b25qc3QuanBn.jpg", "category": "建筑", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/3299283/free-photo-image-geometry-apartment-building-architectural", "id": 52}, {"title": "Black and white monochrome - trees in winter snow.jpg", "photographer": "PosifCool", "desc": "构图上，Black and white monochrome - trees in winter snow.jpg以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，PosifCool的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Black_and_white_monochrome_-_trees_in_winter_snow.jpg/960px-Black_and_white_monochrome_-_trees_in_winter_snow.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "黑白", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ABlack_and_white_monochrome_-_trees_in_winter_snow.jpg", "id": 605}, {"title": "Sierra Leone Elections. USAID in Sierra", "photographer": "U.S. Agency for International Development", "desc": "构图上，Sierra Leone Elections. USAID in Sierra以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，U.S. Agency for International Development的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "africa", "africa elections", "africa people", "elections", "rawpixel"], "img": "https://images.rawpixel.com/image_1300/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmwzOTg4NTkwMDcwMC1pbWFnZS1rdWNnaGF1eS5qcGc.jpg", "category": "纪实", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/4051110/image-public-domain-person-woman", "id": 572}, {"title": "The Classic of Filial Piety", "photographer": "Li Gonglin", "desc": "构图上，The Classic of Filial Piety以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Li Gonglin的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/as/original/DP151528.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/39895", "id": 191}, {"id": 16, "title": "东京夜雨", "photographer": "未知摄影师", "desc": "霓虹灯在雨夜的街面积水中投射出破碎的光影。透明雨伞下匆匆的行人、湿漉漉的柏油路面——这是赛博朋克美学最真实的日常呈现。", "tags": ["都市", "雨夜", "霓虹"], "img": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80", "category": "街拍", "source": "unsplash"}, {"title": "'I sentimenti by Mistero Hifeng' - very cool smash shatter polygon rainbow pr...", "photographer": "▓▒░ TORLEY ░▒▓", "desc": "构图上，'I sentimenti by Mistero Hifeng' - very cool smash shatter polygon rainbow pr...以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，▓▒░ TORLEY ░▒▓的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "firestorm", "lindenlab", "secondlife", "flickr"], "img": "https://live.staticflickr.com/7534/16093994640_4890e7f904_b.jpg", "category": "肖像", "source": "flickr", "source_url": "https://www.flickr.com/photos/70285332@N00/16093994640", "id": 157}, {"title": "Sketch of a Town in Germany", "photographer": "Andrew Fisher Bunner", "desc": "构图上，Sketch of a Town in Germany以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Andrew Fisher Bunner的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ad/original/ap99.38.68.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/10322", "id": 549}, {"title": "The Storm", "photographer": "Pierre-Auguste Cot", "desc": "构图上，The Storm以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Pierre-Auguste Cot的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT11964.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/435997", "id": 769}, {"id": 11, "title": "尘暴", "photographer": "Arthur Rothstein", "desc": "1930年代沙尘暴中的农场家庭。尘土的质感、绝望的姿态、灰调的天空——环境灾难中的人类脆弱与坚韧并存。", "tags": ["纪实", "环境", "社会"], "img": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80", "category": "纪实", "source": "unsplash"}, {"title": "Boy Holding Flowers", "photographer": "Anonymous, French, 18th century", "desc": "构图上，Boy Holding Flowers以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Anonymous, French, 18th century的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP812628.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/339930", "id": 693}, {"title": "Handscroll of Ten Homoerotic (Nanshoku) Scenes", "photographer": "Miyagawa Chōshun 宮川長春", "desc": "构图上，Handscroll of Ten Homoerotic (Nanshoku) Scenes以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Miyagawa Chōshun 宮川長春的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/as/original/DP-24890-002.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/888663", "id": 313}, {"title": "In social life, Sikander Khan was friendly and kind.jpg", "photographer": "Nasirkyz", "desc": "构图上，In social life, Sikander Khan was friendly and kind.jpg以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nasirkyz的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/In_social_life%2C_Sikander_Khan_was_friendly_and_kind.jpg/960px-In_social_life%2C_Sikander_Khan_was_friendly_and_kind.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "纪实", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AIn_social_life%2C_Sikander_Khan_was_friendly_and_kind.jpg", "id": 634}, {"title": "”Abiding nowhere, the awakened mind arises”", "photographer": "Musō Soseki", "desc": "构图上，”Abiding nowhere, the awakened mind arises”以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Musō Soseki的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/as/original/DP-17101-002.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/816189", "id": 326}, {"title": "A Farm in Brittany", "photographer": "Paul Gauguin", "desc": "构图上，A Farm in Brittany以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Paul Gauguin的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP123847.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436448", "id": 624}, {"title": "Astronaut John Young in shadow of Lunar Module behind ultraviolet camera", "photographer": "NASA", "desc": "构图上，Astronaut John Young in shadow of Lunar Module behind ultraviolet camera以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/as16-114-18439/as16-114-18439~large.jpg", "category": "光影", "source": "nasa", "source_url": "https://images.nasa.gov/details-as16-114-18439", "id": 249}, {"title": "Bowl with a Majlis Scene by a Pond", "photographer": "Abu Zayd al-Kashani", "desc": "构图上，Bowl with a Majlis Scene by a Pond以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Abu Zayd al-Kashani的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP371760.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/451752", "id": 524}, {"title": "The Youthful Saint John the Baptist", "photographer": "Domenico Pieratti", "desc": "构图上，The Youthful Saint John the Baptist以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Domenico Pieratti的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/es/original/DP217272.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/231787", "id": 749}, {"title": "Gustave Boyer (b. 1840) in a Straw Hat", "photographer": "Paul Cézanne", "desc": "构图上，Gustave Boyer (b. 1840) in a Straw Hat以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Paul Cézanne的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1938.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/435873", "id": 228}, {"title": "Tunic with Diamond Band", "photographer": "Met Museum", "desc": "构图上，Tunic with Diamond Band以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP107698.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/314528", "id": 423}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

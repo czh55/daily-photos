@@ -12000,6 +12000,81 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/453385",
       "id": 788
+    },
+    {
+      "title": "In proof of true love, a watercarrier skeleton arguing with a woman (Posada);...",
+      "photographer": "José Guadalupe Posada",
+      "desc": "构图上，In proof of true love, a watercarrier skeleton arguing with a woman (Posada);...以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，José Guadalupe Posada的镜头传递出对街拍题材的独到观察与共鸣。",
+      "tags": [
+        "街拍",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP865112.jpg",
+      "category": "街拍",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/729644",
+      "id": 789
+    },
+    {
+      "title": "Armchair (part of a set)",
+      "photographer": "Nicolas-Quinibert Foliot",
+      "desc": "构图上，Armchair (part of a set)以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nicolas-Quinibert Foliot的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/es/original/152736.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/197740",
+      "id": 790
+    },
+    {
+      "title": "Glass mosaic face bead",
+      "photographer": "Met Museum",
+      "desc": "构图上，Glass mosaic face bead以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/gr/original/DP121066.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/254703",
+      "id": 791
+    },
+    {
+      "title": "Ceramic Fragment",
+      "photographer": "Met Museum",
+      "desc": "构图上，Ceramic Fragment以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/LC-40_170_510.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/450180",
+      "id": 792
+    },
+    {
+      "title": "Cuff Band with Bust of a Female",
+      "photographer": "Met Museum",
+      "desc": "构图上，Cuff Band with Bust of a Female以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/DP18250_09.50.969.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/445660",
+      "id": 793
     }
   ]
 }

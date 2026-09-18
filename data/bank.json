@@ -12075,6 +12075,51 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/445660",
       "id": 793
+    },
+    {
+      "title": "Prayer in the Mosque",
+      "photographer": "Jean-Léon Gérôme",
+      "desc": "构图上，Prayer in the Mosque以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jean-Léon Gérôme的镜头传递出对纪实题材的独到观察与共鸣。",
+      "tags": [
+        "纪实",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1971.jpg",
+      "category": "纪实",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436482",
+      "id": 794
+    },
+    {
+      "title": "The Denial of Saint Peter",
+      "photographer": "Ludovico Carracci",
+      "desc": "构图上，The Denial of Saint Peter以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Ludovico Carracci的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-40824-001.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/438561",
+      "id": 795
+    },
+    {
+      "title": "A Canal in Venice",
+      "photographer": "Martín Rico y Ortega",
+      "desc": "构图上，A Canal in Venice以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Martín Rico y Ortega的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP267029.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/437460",
+      "id": 796
     }
   ]
 }

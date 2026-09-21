@@ -12120,6 +12120,51 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/437460",
       "id": 796
+    },
+    {
+      "title": "Water-lily textile",
+      "photographer": "Associated Artists",
+      "desc": "构图上，Water-lily textile以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Associated Artists的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ad/original/DP14669.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/14004",
+      "id": 797
+    },
+    {
+      "title": "The Nymphaeum of the Villa di Papa Giulio, Rome",
+      "photographer": "Hubert Robert",
+      "desc": "构图上，The Nymphaeum of the Villa di Papa Giulio, Rome以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Hubert Robert的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP226756.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/339696",
+      "id": 798
+    },
+    {
+      "title": "The Flagellation",
+      "photographer": "Master of the Berswordt Altar",
+      "desc": "构图上，The Flagellation以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Master of the Berswordt Altar的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP164873.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/438466",
+      "id": 799
     }
   ]
 }

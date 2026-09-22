@@ -12165,6 +12165,96 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/438466",
       "id": 799
+    },
+    {
+      "title": "Scenes in and around the Capital",
+      "photographer": "Met Museum",
+      "desc": "构图上，Scenes in and around the Capital以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。",
+      "tags": [
+        "肖像",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/as/original/DP-12432-004.jpg",
+      "category": "肖像",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/53428",
+      "id": 800
+    },
+    {
+      "title": "Ixion, from \"The Four Disgracers\"",
+      "photographer": "Hendrick Goltzius",
+      "desc": "构图上，Ixion, from \"The Four Disgracers\"以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Hendrick Goltzius的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP108231.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/343582",
+      "id": 801
+    },
+    {
+      "title": "Eagle relief",
+      "photographer": "Toltec artist(s)",
+      "desc": "构图上，Eagle relief以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Toltec artist(s)的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-20487-001.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/307599",
+      "id": 802
+    },
+    {
+      "title": "Christ Carrying the Cross",
+      "photographer": "Martin Schongauer",
+      "desc": "构图上，Christ Carrying the Cross以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Martin Schongauer的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP820028.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/336162",
+      "id": 803
+    },
+    {
+      "title": "Bowl with Courtly and Astrological Motifs",
+      "photographer": "Met Museum",
+      "desc": "构图上，Bowl with Courtly and Astrological Motifs以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/DP170379.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/451379",
+      "id": 804
+    },
+    {
+      "title": "A Seaman's Wife's Reckoning",
+      "photographer": "Thomas Rowlandson",
+      "desc": "构图上，A Seaman's Wife's Reckoning以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Thomas Rowlandson的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP884507.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/811771",
+      "id": 805
     }
   ]
 }

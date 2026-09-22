@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年09月22日 星期二</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">15</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">8</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Plaque carved in relief with Egyptianizing creature", "photographer": "Met Museum", "desc": "构图上，Plaque carved in relief with Egyptianizing creature以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/an/original/DP-28973-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/325345", "id": 219}, {"title": "Capital with Acanthus Leaves", "photographer": "Met Museum", "desc": "构图上，Capital with Acanthus Leaves以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/10.175.101.JPG", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/456186", "id": 637}, {"title": "The Annunciation", "photographer": "Joos van Cleve", "desc": "构图上，The Annunciation以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Joos van Cleve的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-19433-001.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436791", "id": 419}, {"title": "Cliffside Sero Colorado (Black & White photography).png", "photographer": "Ginelly.Q", "desc": "构图上，Cliffside Sero Colorado (Black & White photography).png以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Ginelly.Q的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Cliffside_Sero_Colorado_%28Black_%26_White_photography%29.png/960px-Cliffside_Sero_Colorado_%28Black_%26_White_photography%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "黑白", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ACliffside_Sero_Colorado_%28Black_%26_White_photography%29.png", "id": 622}, {"title": "Intervale Scenic Vista White Mountain North Conway NH.jpg", "photographer": "EgorovaSvetlana", "desc": "构图上，Intervale Scenic Vista White Mountain North Conway NH.jpg以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，EgorovaSvetlana的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Intervale_Scenic_Vista_White_Mountain_North_Conway_NH.jpg/960px-Intervale_Scenic_Vista_White_Mountain_North_Conway_NH.jpg", "category": "风景", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AIntervale_Scenic_Vista_White_Mountain_North_Conway_NH.jpg", "id": 187}, {"title": "Forest Light", "photographer": "Fugue", "desc": "构图上，Forest Light以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Fugue的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "forest", "frankfurt", "germany", "oberursel", "flickr"], "img": "https://live.staticflickr.com/21/31523548_0a55db3df5_b.jpg", "category": "自然", "source": "flickr", "source_url": "https://www.flickr.com/photos/16633713@N00/31523548", "id": 141}, {"id": 13, "title": "巴塔哥尼亚秋色", "photographer": "未知摄影师", "desc": "南美尽头的原始秋景。火红的山毛榉林与湛蓝的湖泊形成浓烈对比，远山积雪将画面带入一种超越时间的永恒感。", "tags": ["风景", "色彩", "自然"], "img": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80", "category": "风景", "source": "unsplash"}, {"title": "Canal side social life - geograph.org.uk - 4668830.jpg", "photographer": "Andy Stephenson", "desc": "构图上，Canal side social life - geograph.org.uk - 4668830.jpg以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Andy Stephenson的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Canal_side_social_life_-_geograph.org.uk_-_4668830.jpg/960px-Canal_side_social_life_-_geograph.org.uk_-_4668830.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "纪实", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ACanal_side_social_life_-_geograph.org.uk_-_4668830.jpg", "id": 633}, {"title": "Al Ma'wa for Nature and Wildlife 18.jpg", "photographer": "Mohammad hajeer", "desc": "构图上，Al Ma'wa for Nature and Wildlife 18.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mohammad hajeer的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Al_Ma%27wa_for_Nature_and_Wildlife_18.jpg/960px-Al_Ma%27wa_for_Nature_and_Wildlife_18.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AAl_Ma%27wa_for_Nature_and_Wildlife_18.jpg", "id": 333}, {"title": "Boss from a disc-headed pin", "photographer": "Met Museum", "desc": "构图上，Boss from a disc-headed pin以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/an/original/DP-25848-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/323971", "id": 354}, {"title": "The Rehearsal of the Ballet Onstage", "photographer": "Edgar Degas", "desc": "构图上，The Rehearsal of the Ballet Onstage以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Edgar Degas的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1565.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436155", "id": 329}, {"title": "Allegory of Asia, from \"The Four Continents\"", "photographer": "Marcus Gheeraerts the Elder", "desc": "构图上，Allegory of Asia, from \"The Four Continents\"以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Marcus Gheeraerts the Elder的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP836192.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/385670", "id": 724}, {"title": "Ceramic Fragment", "photographer": "Met Museum", "desc": "构图上，Ceramic Fragment以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/LC-40_170_510.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/450180", "id": 792}, {"title": "[South Portal, Chartres Cathedral]", "photographer": "Charles Marville", "desc": "构图上，[South Portal, Chartres Cathedral]以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Charles Marville的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ph/original/DP158042.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/283734", "id": 561}, {"title": "Madonna Adoring the Child", "photographer": "Botticelli (Alessandro di Mariano Filipepi)", "desc": "构图上，Madonna Adoring the Child以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Botticelli (Alessandro di Mariano Filipepi)的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/rl/original/DP318246.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/459001", "id": 149}, {"title": "A Canal in Venice", "photographer": "Martín Rico y Ortega", "desc": "构图上，A Canal in Venice以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Martín Rico y Ortega的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP267029.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437460", "id": 796}, {"title": "The Jabach Family", "photographer": "Charles Le Brun", "desc": "构图上，The Jabach Family以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Charles Le Brun的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP352819.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/626692", "id": 76}, {"title": "Pierced Bowl Signed by Hasan al-Qashani", "photographer": "Met Museum", "desc": "构图上，Pierced Bowl Signed by Hasan al-Qashani以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP123181.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/452032", "id": 464}, {"title": "Glass gold-band mosaic bead", "photographer": "Met Museum", "desc": "构图上，Glass gold-band mosaic bead以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/gr/original/sf1513011color.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/249047", "id": 716}, {"title": "Street life with clothing shop entrance and shopping women in the Ferdinand B...", "photographer": "Amsterdam free photos & pictures of the Dutch city", "desc": "构图上，Street life with clothing shop entrance and shopping women in the Ferdinand B...以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Amsterdam free photos & pictures of the Dutch city的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "amsterdam", "bolstraat", "city", "clothing", "flickr"], "img": "https://live.staticflickr.com/3815/10797052506_e4c0707cff_b.jpg", "category": "光影", "source": "flickr", "source_url": "https://www.flickr.com/photos/104736837@N03/10797052506", "id": 293}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

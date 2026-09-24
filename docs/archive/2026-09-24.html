@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年09月24日 星期四</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">15</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">8</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "The True Issue or \"Thats Whats the Matter\"", "photographer": "Currier & Ives", "desc": "构图上，The True Issue or \"Thats Whats the Matter\"以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Currier & Ives的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP831802.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/430812", "id": 77}, {"title": "The Virgin and Child with Saints", "photographer": "Girolamo da Treviso", "desc": "构图上，The Virgin and Child with Saints以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Girolamo da Treviso的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP812144.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/338785", "id": 809}, {"title": "Al Ma'wa for Nature and Wildlife 09.jpg", "photographer": "Mohammad hajeer", "desc": "构图上，Al Ma'wa for Nature and Wildlife 09.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mohammad hajeer的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Al_Ma%27wa_for_Nature_and_Wildlife_09.jpg/960px-Al_Ma%27wa_for_Nature_and_Wildlife_09.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AAl_Ma%27wa_for_Nature_and_Wildlife_09.jpg", "id": 300}, {"title": "Still Life with a Vase of Flowers, Melon, Peaches, and Grapes", "photographer": "Charlotte Eustache Sophie de Fuligny Damas, marquise de Grollier", "desc": "构图上，Still Life with a Vase of Flowers, Melon, Peaches, and Grapes以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Charlotte Eustache Sophie de Fuligny Damas, marquise de Grollier的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-25141-001.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/888924", "id": 239}, {"title": "Elektrostal. Urban architecture. img 001.jpg", "photographer": "Dmitry Makeev", "desc": "构图上，Elektrostal. Urban architecture. img 001.jpg以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Dmitry Makeev的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Elektrostal._Urban_architecture._img_001.jpg/960px-Elektrostal._Urban_architecture._img_001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "建筑", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AElektrostal._Urban_architecture._img_001.jpg", "id": 584}, {"title": "Nelsons Column Silhouette #dailyshoot #London #monochrome #Canon", "photographer": "Leshaines123", "desc": "构图上，Nelsons Column Silhouette #dailyshoot #London #monochrome #Canon以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Leshaines123的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "365", "admiral", "anawesomeshot", "canon", "flickr"], "img": "https://live.staticflickr.com/8221/8340800597_caf0a8075c_b.jpg", "category": "黑白", "source": "flickr", "source_url": "https://www.flickr.com/photos/46018453@N06/8340800597", "id": 175}, {"title": "silhouette person walking concrete tiles", "photographer": "Openverse 摄影师", "desc": "构图上，silhouette person walking concrete tiles以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "black and white", "black and white photography", "light and shadow", "person photo", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA2L3Vwd2s2MjIwNzk3Mi13aWtpbWVkaWEtaW1hZ2Uta293bjRiZTguanBn.jpg", "category": "光影", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/3296412/free-photo-image-shadow-black-and-white-photography-walking", "id": 244}, {"title": "Mosaic glass bowl fragment", "photographer": "Met Museum", "desc": "构图上，Mosaic glass bowl fragment以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/gr/original/DP22081edited1.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/257088", "id": 227}, {"title": "Blue Candid - Flickr - Waterford Man.jpg", "photographer": "Waterford_Man", "desc": "构图上，Blue Candid - Flickr - Waterford Man.jpg以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Waterford_Man的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Blue_Candid_-_Flickr_-_Waterford_Man.jpg/960px-Blue_Candid_-_Flickr_-_Waterford_Man.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "街拍", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ABlue_Candid_-_Flickr_-_Waterford_Man.jpg", "id": 612}, {"title": "Al Ma'wa for Nature and Wildlife 06.jpg", "photographer": "Mohammad hajeer", "desc": "构图上，Al Ma'wa for Nature and Wildlife 06.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mohammad hajeer的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Al_Ma%27wa_for_Nature_and_Wildlife_06.jpg/960px-Al_Ma%27wa_for_Nature_and_Wildlife_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AAl_Ma%27wa_for_Nature_and_Wildlife_06.jpg", "id": 581}, {"title": "Reed Pipe", "photographer": "Met Museum", "desc": "构图上，Reed Pipe以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/mi/original/midp89.4.572.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/501188", "id": 412}, {"title": "The Denial of Saint Peter", "photographer": "Ludovico Carracci", "desc": "构图上，The Denial of Saint Peter以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Ludovico Carracci的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-40824-001.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/438561", "id": 795}, {"id": 20, "title": "晨曦中的金门大桥", "photographer": "未知摄影师", "desc": "旧金山的晨雾如海浪般翻涌，橘红色的金门大桥从云雾中探出。自然现象与人造奇迹的对话，是西海岸最具标志性的视觉诗篇。", "tags": ["建筑", "晨雾", "城市"], "img": "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&q=80", "category": "建筑", "source": "unsplash"}, {"title": "Fragment from a Molding with Intertwined Vines and Acanthus Leaves", "photographer": "Met Museum", "desc": "构图上，Fragment from a Molding with Intertwined Vines and Acanthus Leaves以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/10.175.88.JPG", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/456178", "id": 765}, {"title": "Dublin pride 2016 parade - Dublin, Ireland - Documentary photography", "photographer": "Giuseppe Milo (www.pixael.com)", "desc": "构图上，Dublin pride 2016 parade - Dublin, Ireland - Documentary photography以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Giuseppe Milo (www.pixael.com)的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "amazon", "amnesty", "documentary", "dropbox", "flickr"], "img": "https://live.staticflickr.com/7368/27822902091_4996230ee9_b.jpg", "category": "纪实", "source": "flickr", "source_url": "https://www.flickr.com/photos/87690240@N03/27822902091", "id": 167}, {"title": "Monthly check you rest your", "photographer": "libraryofcongress", "desc": "构图上，Monthly check you rest your以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，libraryofcongress的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "art", "person", "poster", "social security", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTExL2xyL2xvYzkyNTAwNjM0LWltYWdlLmpwZw.jpg", "category": "纪实", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/8650531/image-art-vintage-public-domain", "id": 94}, {"title": "202410 午後的外埔忘憂谷以南之黃色稻田.jpg", "photographer": "Junyu-K", "desc": "构图上，202410 午後的外埔忘憂谷以南之黃色稻田.jpg以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Junyu-K的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/202410_%E5%8D%88%E5%BE%8C%E7%9A%84%E5%A4%96%E5%9F%94%E5%BF%98%E6%86%82%E8%B0%B7%E4%BB%A5%E5%8D%97%E4%B9%8B%E9%BB%83%E8%89%B2%E7%A8%BB%E7%94%B0.jpg/960px-202410_%E5%8D%88%E5%BE%8C%E7%9A%84%E5%A4%96%E5%9F%94%E5%BF%98%E6%86%82%E8%B0%B7%E4%BB%A5%E5%8D%97%E4%B9%8B%E9%BB%83%E8%89%B2%E7%A8%BB%E7%94%B0.jpg", "category": "风景", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3A202410_%E5%8D%88%E5%BE%8C%E7%9A%84%E5%A4%96%E5%9F%94%E5%BF%98%E6%86%82%E8%B0%B7%E4%BB%A5%E5%8D%97%E4%B9%8B%E9%BB%83%E8%89%B2%E7%A8%BB%E7%94%B0.jpg", "id": 28}, {"title": "Yuny and His Wife Renenutet", "photographer": "Met Museum", "desc": "构图上，Yuny and His Wife Renenutet以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/eg/original/DT549.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/544740", "id": 753}, {"title": "Louis Armstrong, head-and-shoulders portrait, facing", "photographer": "libraryofcongress", "desc": "构图上，Louis Armstrong, head-and-shoulders portrait, facing以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，libraryofcongress的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "armstrong", "black portrait", "famous", "photo", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2xvYzk3NTE4MzIzLWltYWdlLmpwZw.jpg", "category": "肖像", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/6746916/photo-image-face-black-shirt", "id": 266}, {"title": "Young Ladies of the Village", "photographer": "Gustave Courbet", "desc": "构图上，Young Ladies of the Village以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Gustave Courbet的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1967.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/438820", "id": 736}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

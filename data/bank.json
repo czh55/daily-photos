@@ -12390,6 +12390,96 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/338711",
       "id": 814
+    },
+    {
+      "title": "KSC-04pd1229",
+      "photographer": "NASA",
+      "desc": "构图上，KSC-04pd1229以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对建筑题材的独到观察与共鸣。",
+      "tags": [
+        "建筑",
+        "nasa",
+        "space"
+      ],
+      "img": "https://images-assets.nasa.gov/image/KSC-04pd1229/KSC-04pd1229~orig.jpg",
+      "category": "建筑",
+      "source": "nasa",
+      "source_url": "https://images.nasa.gov/details-KSC-04pd1229",
+      "id": 815
+    },
+    {
+      "title": "Bedrock Exhumed from the Deep",
+      "photographer": "NASA",
+      "desc": "构图上，Bedrock Exhumed from the Deep以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对建筑题材的独到观察与共鸣。",
+      "tags": [
+        "建筑",
+        "nasa",
+        "space"
+      ],
+      "img": "https://images-assets.nasa.gov/image/PIA12291/PIA12291~orig.jpg",
+      "category": "建筑",
+      "source": "nasa",
+      "source_url": "https://images.nasa.gov/details-PIA12291",
+      "id": 816
+    },
+    {
+      "title": "Portrait of a Woman with a Man at a Casement",
+      "photographer": "Fra Filippo Lippi",
+      "desc": "构图上，Portrait of a Woman with a Man at a Casement以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Fra Filippo Lippi的镜头传递出对纪实题材的独到观察与共鸣。",
+      "tags": [
+        "纪实",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP159891.jpg",
+      "category": "纪实",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436896",
+      "id": 817
+    },
+    {
+      "title": "Fragment of Archivolt with a Corinthian Capital",
+      "photographer": "Met Museum",
+      "desc": "构图上，Fragment of Archivolt with a Corinthian Capital以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/10.175.105.JPG",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/456189",
+      "id": 818
+    },
+    {
+      "title": "A Street in Grasse",
+      "photographer": "Charles Nègre",
+      "desc": "构图上，A Street in Grasse以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Charles Nègre的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ph/original/DT4681.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/283736",
+      "id": 819
+    },
+    {
+      "title": "Eight views of the Yellow Mountains",
+      "photographer": "Zheng Min",
+      "desc": "构图上，Eight views of the Yellow Mountains以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Zheng Min的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/as/original/DP332570.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/77870",
+      "id": 820
     }
   ]
 }

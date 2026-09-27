@@ -12480,6 +12480,111 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/77870",
       "id": 820
+    },
+    {
+      "title": "Embroidered bag with fringe",
+      "photographer": "Nasca artist",
+      "desc": "构图上，Embroidered bag with fringe以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nasca artist的镜头传递出对纪实题材的独到观察与共鸣。",
+      "tags": [
+        "纪实",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-26535-001.jpg",
+      "category": "纪实",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/308024",
+      "id": 821
+    },
+    {
+      "title": "Capital",
+      "photographer": "Met Museum",
+      "desc": "构图上，Capital以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/10.175.87.JPG",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/456177",
+      "id": 822
+    },
+    {
+      "title": "The Sound of Spring in a Lonely Valley",
+      "photographer": "Hongren",
+      "desc": "构图上，The Sound of Spring in a Lonely Valley以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Hongren的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/as/original/DP-36009-002.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/40020",
+      "id": 823
+    },
+    {
+      "title": "Fragment with Two Figures",
+      "photographer": "Met Museum",
+      "desc": "构图上，Fragment with Two Figures以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。",
+      "tags": [
+        "光影",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/is/original/68791.jpg",
+      "category": "光影",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/444353",
+      "id": 824
+    },
+    {
+      "title": "Design with an Eagle Fighting with a Serpent and a Putto in the Sky Holding a...",
+      "photographer": "Pietro da Cortona (Pietro Berrettini)",
+      "desc": "构图上，Design with an Eagle Fighting with a Serpent and a Putto in the Sky Holding a...以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Pietro da Cortona (Pietro Berrettini)的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP809203.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/343630",
+      "id": 825
+    },
+    {
+      "title": "Panthea Stabs Herself beside the Corpse of Abradatas",
+      "photographer": "Benjamin West",
+      "desc": "构图上，Panthea Stabs Herself beside the Corpse of Abradatas以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Benjamin West的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ad/original/ap87.12.167.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/12964",
+      "id": 826
+    },
+    {
+      "title": "The Holy Family with the Infant Saint John the Baptist",
+      "photographer": "Sassoferrato (Giovanni Battista Salvi)",
+      "desc": "构图上，The Holy Family with the Infant Saint John the Baptist以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Sassoferrato (Giovanni Battista Salvi)的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP801532.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/341171",
+      "id": 827
     }
   ]
 }

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年09月29日 星期二</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">18</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">8</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Glass panels modern facade building", "photographer": "Openverse 摄影师", "desc": "构图上，Glass panels modern facade building以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "architecture", "building", "geometry", "glass building", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3Vwd2s2MjEzMjYyNy13aWtpbWVkaWEtaW1hZ2Uta293YXZyMmouanBn.jpg", "category": "建筑", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/3282311/free-photo-image-office-building-view-city", "id": 558}, {"title": "Sulking", "photographer": "Edgar Degas", "desc": "构图上，Sulking以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Edgar Degas的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-25463-001.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436162", "id": 451}, {"title": "Bust-Length Study of a Man", "photographer": "François-Auguste Biard", "desc": "构图上，Bust-Length Study of a Man以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，François-Auguste Biard的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-23957-001.jpg", "category": "自然", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/856295", "id": 48}, {"title": "The Prince and the Petitioner", "photographer": "Vali Jan", "desc": "构图上，The Prince and the Petitioner以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Vali Jan的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/sf45-174-23r.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/450605", "id": 387}, {"title": "Brunch communautaire avec les candidats de la ville de Québec / Community bru...", "photographer": "Michael Ignatieff", "desc": "构图上，Brunch communautaire avec les candidats de la ville de Québec / Community bru...以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Michael Ignatieff的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "ignatieff", "michael", "quebec", "adult", "flickr"], "img": "https://live.staticflickr.com/5097/5526711570_17709d04e3_b.jpg", "category": "街拍", "source": "flickr", "source_url": "https://www.flickr.com/photos/14231352@N08/5526711570", "id": 152}, {"id": 18, "title": "北海道雪景", "photographer": "未知摄影师", "desc": "暴雪后的宁静。被厚雪覆盖的树木如同雕塑，蓝调的光线赋予了冬季森林一种近乎神圣的氛围，时间仿佛在此凝固。", "tags": ["雪景", "自然", "蓝调"], "img": "https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?w=800&q=80", "category": "自然", "source": "unsplash"}, {"title": "Young Woman with a Pink", "photographer": "Hans Memling", "desc": "构图上，Young Woman with a Pink以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Hans Memling的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-45396-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437059", "id": 306}, {"title": "Emil Paje Photography | Commercial, Weddings, Portrait & Lifesytle, Wildlife ...", "photographer": "emilpaje", "desc": "构图上，Emil Paje Photography | Commercial, Weddings, Portrait & Lifesytle, Wildlife ...以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，emilpaje的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "|", "commercial", "emil", "lifesytle", "flickr"], "img": "https://live.staticflickr.com/7614/16656457120_93c24153f6_b.jpg", "category": "自然", "source": "flickr", "source_url": "https://www.flickr.com/photos/62227281@N08/16656457120", "id": 36}, {"title": "Intervale Scenic Vista White Mountain North Conway NH.jpg", "photographer": "EgorovaSvetlana", "desc": "构图上，Intervale Scenic Vista White Mountain North Conway NH.jpg以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，EgorovaSvetlana的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Intervale_Scenic_Vista_White_Mountain_North_Conway_NH.jpg/960px-Intervale_Scenic_Vista_White_Mountain_North_Conway_NH.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "风景", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AIntervale_Scenic_Vista_White_Mountain_North_Conway_NH.jpg", "id": 656}, {"title": "Al Ma'wa for Nature and Wildlife 11.jpg", "photographer": "Mohammad hajeer", "desc": "构图上，Al Ma'wa for Nature and Wildlife 11.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mohammad hajeer的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Al_Ma%27wa_for_Nature_and_Wildlife_11.jpg/960px-Al_Ma%27wa_for_Nature_and_Wildlife_11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AAl_Ma%27wa_for_Nature_and_Wildlife_11.jpg", "id": 582}, {"title": "Nature landscape black white photography", "photographer": "Openverse 摄影师", "desc": "构图上，Nature landscape black white photography以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "black and white", "black and white landscape", "black and white nature", "black and white photography", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHgxNjM4ODU5LWltYWdlLWt3dnhzem02LmpwZw.jpg", "category": "黑白", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/5923289/photo-image-public-domain-nature-free", "id": 397}, {"title": "Tälsäm or yä bərana kətab (healing scroll)", "photographer": "Northern Highlands däbtära (religious scholar)", "desc": "构图上，Tälsäm or yä bərana kətab (healing scroll)以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Northern Highlands däbtära (religious scholar)的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP326509.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/320962", "id": 723}, {"title": "Ten Verses on Oxherding", "photographer": "Met Museum", "desc": "构图上，Ten Verses on Oxherding以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/as/original/2015_300_10_Burke_website.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/53660", "id": 331}, {"title": "Poetry (Poesia XXVII)", "photographer": "Master of the E-Series Tarocchi", "desc": "构图上，Poetry (Poesia XXVII)以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Master of the E-Series Tarocchi的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/59.570.32.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/362029", "id": 439}, {"title": "[Family Group]", "photographer": "Unknown", "desc": "构图上，[Family Group]以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Unknown的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ph/original/DT237387.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/283196", "id": 268}, {"title": "Emerging geometry in life building blocks.jpg", "photographer": "FedeCaimi", "desc": "构图上，Emerging geometry in life building blocks.jpg以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，FedeCaimi的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Emerging_geometry_in_life_building_blocks.jpg/960px-Emerging_geometry_in_life_building_blocks.jpg", "category": "建筑", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AEmerging_geometry_in_life_building_blocks.jpg", "id": 57}, {"title": "Head of Christ (Ecce Homo)", "photographer": "Petrus Christus", "desc": "构图上，Head of Christ (Ecce Homo)以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Petrus Christus的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT229079.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/435897", "id": 414}, {"title": "Golden Hour Girl", "photographer": "dolbinator1000", "desc": "构图上，Golden Hour Girl以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，dolbinator1000的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "cliff", "dress", "field", "girl", "flickr"], "img": "https://live.staticflickr.com/8641/16022841399_8b61b9bbd0_b.jpg", "category": "光影", "source": "flickr", "source_url": "https://www.flickr.com/photos/126654539@N08/16022841399", "id": 108}, {"title": "\"The Concourse of the Birds\", Folio 11r from a Mantiq al-Tayr (Language of th...", "photographer": "Habiballah of Sava", "desc": "构图上，\"The Concourse of the Birds\", Folio 11r from a Mantiq al-Tayr (Language of th...以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Habiballah of Sava的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP234083.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/451725", "id": 33}, {"title": "CITY LONDON ELECTION. LIBAERAL CANDIDATES", "photographer": "Openverse 摄影师", "desc": "构图上，CITY LONDON ELECTION. LIBAERAL CANDIDATES以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "art", "city", "illustration", "man", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA2L3dpZW53X183NTQ4LWltYWdlLmpwZw.jpg", "category": "街拍", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/11676209/image-paper-art-man", "id": 137}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

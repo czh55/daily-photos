@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年09月30日 星期三</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">14</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">8</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Earth observations taken during the STS-71 mission", "photographer": "NASA", "desc": "构图上，Earth observations taken during the STS-71 mission以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/sts071-705-055/sts071-705-055~orig.jpg", "category": "风景", "source": "nasa", "source_url": "https://images.nasa.gov/details-sts071-705-055", "id": 32}, {"title": "Door board (jovo)", "photographer": "Met Museum", "desc": "构图上，Door board (jovo)以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-21001-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/757056", "id": 781}, {"title": "Terracotta fragment of an oinochoe (jug)", "photographer": "Met Museum", "desc": "构图上，Terracotta fragment of an oinochoe (jug)以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/gr/original/DVB12164_1_ff.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/750501", "id": 575}, {"title": "2024 Photo of a canal tour boat with tourists under the bridge Kortjewantsbrug i", "photographer": "Fons Heijnsbroek", "desc": "构图上，2024 Photo of a canal tour boat with tourists under the bridge Kortjewantsbrug i以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Fons Heijnsbroek的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/2024_Photo_of_a_canal_tour_boat_with_tourists_under_the_bridge_Kortjewantsbrug_in_Amsterdam_city%2C_with_water_reflections_and_light_shadow_effects_-_free_image_of_city_photography_in_high_resolutions_Netherlands_by_Fons_Heijnsbroek.tif/lossy-page1-960px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "光影", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3A2024_Photo_of_a_canal_tour_boat_with_tourists_under_the_bridge_Kortjewantsbrug_in_Amsterdam_city%2C_with_water_reflections_and_light_shadow_effects_-_free_image_of_city_photography_in_high_resolutions_Netherlands_by_Fons_Heijnsbroek.tif", "id": 599}, {"title": "Brunch communautaire avec les candidats de la ville de Québec / Community bru...", "photographer": "Michael Ignatieff", "desc": "构图上，Brunch communautaire avec les candidats de la ville de Québec / Community bru...以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Michael Ignatieff的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "ignatieff", "michael", "quebec", "flickr"], "img": "https://live.staticflickr.com/5257/5526711344_83dba237a5_b.jpg", "category": "街拍", "source": "flickr", "source_url": "https://www.flickr.com/photos/14231352@N08/5526711344", "id": 833}, {"title": "Relief with enthroned ruler", "photographer": "Chakalte'", "desc": "构图上，Relief with enthroned ruler以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Chakalte'的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP104826.jpg", "category": "自然", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/313240", "id": 198}, {"title": "Dancers in the Rehearsal Room with a Double Bass", "photographer": "Edgar Degas", "desc": "构图上，Dancers in the Rehearsal Room with a Double Bass以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Edgar Degas的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP275510.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436138", "id": 832}, {"title": "Sunset golden hour scenery, view", "photographer": "Openverse 摄影师", "desc": "构图上，Sunset golden hour scenery, view以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "clouds", "golden hour", "landscape", "nature", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL3B4OTE1MTc0LWltYWdlLWt3dnV1YWVuLmpwZw.jpg", "category": "光影", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/5904304/image-clouds-public-domain-golden", "id": 110}, {"title": "The Peasant Wedding Dance", "photographer": "Pieter van der Heyden", "desc": "构图上，The Peasant Wedding Dance以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Pieter van der Heyden的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP825997.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/338711", "id": 814}, {"title": "2024 - Photo of the street Plantage Middenlaan in Amsterdam with house facades i", "photographer": "Fons Heijnsbroek", "desc": "构图上，2024 - Photo of the street Plantage Middenlaan in Amsterdam with house facades i以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Fons Heijnsbroek的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/2024_-_Photo_of_the_street_Plantage_Middenlaan_in_Amsterdam_with_house_facades_in_sun_and_shadow_-_street_photography_in_free_images_and_high_resolutions%2C_Dutch_photographer_Fons_Heijnsbroek%2C_Netherlands_2024.tif/lossy-page1-960px-thumbnail.tif.jpg", "category": "光影", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3A2024_-_Photo_of_the_street_Plantage_Middenlaan_in_Amsterdam_with_house_facades_in_sun_and_shadow_-_street_photography_in_free_images_and_high_resolutions%2C_Dutch_photographer_Fons_Heijnsbroek%2C_Netherlands_2024.tif", "id": 246}, {"title": "Old Woman", "photographer": "Nicolas Bernard Lépicié", "desc": "构图上，Old Woman以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nicolas Bernard Lépicié的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP831521.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/395503", "id": 768}, {"title": "Skyscraper Architecture Urban Skyline Cityscape City City Life Outdoors Water...", "photographer": "OiMax", "desc": "构图上，Skyscraper Architecture Urban Skyline Cityscape City City Life Outdoors Water...以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，OiMax的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "architecture", "city", "citylife", "cityscape", "flickr"], "img": "https://live.staticflickr.com/4244/34888934651_6eb89b5412_b.jpg", "category": "建筑", "source": "flickr", "source_url": "https://www.flickr.com/photos/72396314@N00/34888934651", "id": 199}, {"title": "Architectural Geometry - geograph.org.uk - 7962428.jpg", "photographer": "Anthony O'Neil", "desc": "构图上，Architectural Geometry - geograph.org.uk - 7962428.jpg以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Anthony O'Neil的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Architectural_Geometry_-_geograph.org.uk_-_7962428.jpg/960px-Architectural_Geometry_-_geograph.org.uk_-_7962428.jpg", "category": "建筑", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AArchitectural_Geometry_-_geograph.org.uk_-_7962428.jpg", "id": 55}, {"title": "The Dancing Class", "photographer": "Edgar Degas", "desc": "构图上，The Dancing Class以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Edgar Degas的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-25445-001.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436141", "id": 647}, {"title": "The Adoration of the Magi", "photographer": "Joos van Wassenhove", "desc": "构图上，The Adoration of the Magi以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Joos van Wassenhove的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-16339-001.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436803", "id": 34}, {"title": "Case (Inrō) with Design of Standing Cranes (obverse); Tortoises beside Stones...", "photographer": "Met Museum", "desc": "构图上，Case (Inrō) with Design of Standing Cranes (obverse); Tortoises beside Stones...以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/as/original/29_100_834_O3.JPG", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/58739", "id": 830}, {"title": "Armchair (part of a set)", "photographer": "Nicolas-Quinibert Foliot", "desc": "构图上，Armchair (part of a set)以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nicolas-Quinibert Foliot的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/es/original/152736.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/197740", "id": 790}, {"id": 3, "title": "移民母亲", "photographer": "Dorothea Lange", "desc": "大萧条时期最具感染力的纪实肖像。一位母亲忧虑的眼神与孩子们的依偎，成为整个时代的象征。", "tags": ["纪实", "肖像", "社会"], "img": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800&q=80", "category": "肖像", "source": "unsplash"}, {"title": "Glass mosaic fragment", "photographer": "Met Museum", "desc": "构图上，Glass mosaic fragment以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/gr/original/DP22088edited.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/257097", "id": 812}, {"title": "Four Gospels in Armenian", "photographer": "Met Museum", "desc": "构图上，Four Gospels in Armenian以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/md/original/DP228809.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/478665", "id": 471}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

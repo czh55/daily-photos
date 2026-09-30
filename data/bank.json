@@ -12761,6 +12761,99 @@
       "source": "met",
       "source_url": "https://www.metmuseum.org/art/collection/search/436638",
       "id": 838
+    },
+    {
+      "title": "The Highlands - Scotland - Travel, landscape photography",
+      "photographer": "Giuseppe Milo (www.pixael.com)",
+      "desc": "构图上，The Highlands - Scotland - Travel, landscape photography以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Giuseppe Milo (www.pixael.com)的镜头传递出对风景题材的独到观察与共鸣。",
+      "tags": [
+        "风景",
+        "a7",
+        "clouds",
+        "contrast",
+        "europe",
+        "flickr"
+      ],
+      "img": "https://live.staticflickr.com/769/21597811149_647854ea30_b.jpg",
+      "category": "风景",
+      "source": "flickr",
+      "source_url": "https://www.flickr.com/photos/87690240@N03/21597811149",
+      "id": 839
+    },
+    {
+      "title": "The Nativity",
+      "photographer": "Lorenzo Monaco (Piero di Giovanni)",
+      "desc": "构图上，The Nativity以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Lorenzo Monaco (Piero di Giovanni)的镜头传递出对街拍题材的独到观察与共鸣。",
+      "tags": [
+        "街拍",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/rl/original/DT709.jpg",
+      "category": "街拍",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/459007",
+      "id": 840
+    },
+    {
+      "title": "The Flight into Egypt",
+      "photographer": "Carlo Maratti",
+      "desc": "构图上，The Flight into Egypt以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Carlo Maratti的镜头传递出对街拍题材的独到观察与共鸣。",
+      "tags": [
+        "街拍",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-19712-001.jpg",
+      "category": "街拍",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/816629",
+      "id": 841
+    },
+    {
+      "title": "Head of a Man",
+      "photographer": "Flemish",
+      "desc": "构图上，Head of a Man以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Flemish的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/rl/original/DT3355.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/459298",
+      "id": 842
+    },
+    {
+      "title": "Flower vase",
+      "photographer": "The \"Greek A\" Factory",
+      "desc": "构图上，Flower vase以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，The \"Greek A\" Factory的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/es/original/SF1995_43ab.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/208199",
+      "id": 843
+    },
+    {
+      "title": "Woman and Boy",
+      "photographer": "François Boucher",
+      "desc": "构图上，Woman and Boy以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，François Boucher的镜头传递出对黑白题材的独到观察与共鸣。",
+      "tags": [
+        "黑白",
+        "met",
+        "art"
+      ],
+      "img": "https://images.metmuseum.org/CRDImages/dp/original/DP805480.jpg",
+      "category": "黑白",
+      "source": "met",
+      "source_url": "https://www.metmuseum.org/art/collection/search/336378",
+      "id": 844
     }
   ]
 }

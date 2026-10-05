@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年10月05日 星期一</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">19</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">8</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Glass cooler (seau à verre)", "photographer": "Saint-Cloud factory", "desc": "构图上，Glass cooler (seau à verre)以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Saint-Cloud factory的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/es/original/DP169174.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/200840", "id": 315}, {"title": "Creative Photography - Nature/Wildlife", "photographer": "NASA", "desc": "构图上，Creative Photography - Nature/Wildlife以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/KSC-20201028-PH-JBS02_0013/KSC-20201028-PH-JBS02_0013~orig.jpg", "category": "自然", "source": "nasa", "source_url": "https://images.nasa.gov/details-KSC-20201028-PH-JBS02_0013", "id": 46}, {"title": "Ed Muskie presidential candidate, New", "photographer": "libraryofcongress", "desc": "构图上，Ed Muskie presidential candidate, New以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，libraryofcongress的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "audience", "city", "color", "microphone", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvbG9jMjAyMDczNTcxNC1pbWFnZS5qcGc.jpg", "category": "街拍", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/6320353/muskie-presidential-candidate-new-york-city", "id": 704}, {"title": "See the light!", "photographer": "VinothChandar", "desc": "构图上，See the light!以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，VinothChandar的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "capture", "chennai", "light", "madras", "flickr"], "img": "https://live.staticflickr.com/6004/5957574260_eefc56639c_b.jpg", "category": "光影", "source": "flickr", "source_url": "https://www.flickr.com/photos/44345361@N06/5957574260", "id": 526}, {"title": "Self-Portrait with Two Pupils, Marie Gabrielle Capet (1761–1818) and Marie Ma...", "photographer": "Adélaïde Labille-Guiard", "desc": "构图上，Self-Portrait with Two Pupils, Marie Gabrielle Capet (1761–1818) and Marie Ma...以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Adélaïde Labille-Guiard的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP320103.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436840", "id": 308}, {"title": "Boy With a Staff", "photographer": "Giovanni Battista Piazzetta", "desc": "构图上，Boy With a Staff以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Giovanni Battista Piazzetta的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP811138.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/339681", "id": 411}, {"title": "Building geometry (Nampo Lotte)", "photographer": "Idle Expatter", "desc": "构图上，Building geometry (Nampo Lotte)以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Idle Expatter的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "architecture", "buildings", "busan", "geometry", "flickr"], "img": "https://live.staticflickr.com/7176/6828151318_57d500854e_b.jpg", "category": "建筑", "source": "flickr", "source_url": "https://www.flickr.com/photos/75719750@N02/6828151318", "id": 50}, {"title": "Golden hour sky", "photographer": "Sergeant Matt Hecht", "desc": "构图上，Golden hour sky以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Sergeant Matt Hecht的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "cloud", "countryside", "golden hour", "golden sky", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L2ZsODg4MjA4MDE1Ni1pbWFnZS1rcWFwNTJwaC5qcGc.jpg", "category": "光影", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/3578681/free-photo-image-sun-background", "id": 111}, {"title": "Young Woman Knitting", "photographer": "Berthe Morisot", "desc": "构图上，Young Woman Knitting以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Berthe Morisot的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1928.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437159", "id": 475}, {"title": "Seascape and Deluge (from Sketchbook VII)", "photographer": "William Trost Richards", "desc": "构图上，Seascape and Deluge (from Sketchbook VII)以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，William Trost Richards的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ad/original/257785.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/15373", "id": 717}, {"title": "Elderly Gambian woman face portrait.jpg", "photographer": "Ferdinand Reus", "desc": "构图上，Elderly Gambian woman face portrait.jpg以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Ferdinand Reus的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Elderly_Gambian_woman_face_portrait.jpg/960px-Elderly_Gambian_woman_face_portrait.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "肖像", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AElderly_Gambian_woman_face_portrait.jpg", "id": 629}, {"title": "Saint Jerome Praying in a Landscape", "photographer": "Niccolò dell' Abate", "desc": "构图上，Saint Jerome Praying in a Landscape以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Niccolò dell' Abate的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP807541.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/343425", "id": 714}, {"title": "The Last Toilet of Charlotte Corday", "photographer": "Lumb Stocks", "desc": "构图上，The Last Toilet of Charlotte Corday以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Lumb Stocks的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP884893.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/764636", "id": 385}, {"title": "Holy Family with an Angel", "photographer": "Raffaellino del Garbo (also known as Raffaelle de' Capponi and Raffaelle de' Carli)", "desc": "构图上，Holy Family with an Angel以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Raffaellino del Garbo (also known as Raffaelle de' Capponi and Raffaelle de' Carli)的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-15089-001.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437368", "id": 212}, {"title": "The Sleep of Venus", "photographer": "Pierre Paul Prud'hon", "desc": "构图上，The Sleep of Venus以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Pierre Paul Prud'hon的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP-44579-001.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/933949", "id": 778}, {"title": "L'Arlésienne: Madame Joseph-Michel Ginoux (Marie Julien, 1848–1911)", "photographer": "Vincent van Gogh", "desc": "构图上，L'Arlésienne: Madame Joseph-Michel Ginoux (Marie Julien, 1848–1911)以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Vincent van Gogh的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1396.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436529", "id": 223}, {"title": "Textile Design with Alternating Vertical Rows of Lozenges and Pearls Framed b...", "photographer": "Anonymous, Alsatian, 19th century", "desc": "构图上，Textile Design with Alternating Vertical Rows of Lozenges and Pearls Framed b...以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Anonymous, Alsatian, 19th century的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP889454.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/710695", "id": 761}, {"title": "The Gaze", "photographer": "Pierre-Louis Pierson", "desc": "构图上，The Gaze以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Pierre-Louis Pierson的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ph/original/DP158928.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/283245", "id": 672}, {"title": "Earth Observations taken by the Expedition 23 Crew", "photographer": "NASA", "desc": "构图上，Earth Observations taken by the Expedition 23 Crew以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/iss023e057948/iss023e057948~orig.jpg", "category": "黑白", "source": "nasa", "source_url": "https://images.nasa.gov/details-iss023e057948", "id": 129}, {"title": "Glass eye bead", "photographer": "Met Museum", "desc": "构图上，Glass eye bead以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/gr/original/DP-13080-076.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/239926", "id": 447}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

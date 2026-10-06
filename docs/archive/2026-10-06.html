@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年10月06日 星期二</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">17</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">7</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "The Crucifixion; The Last Judgment", "photographer": "Jan van Eyck", "desc": "构图上，The Crucifixion; The Last Judgment以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jan van Eyck的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/LC-33_92ab-Primary_Temp.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436282", "id": 372}, {"title": "The Birth of the Virgin", "photographer": "Fra Carnevale (Bartolomeo di Giovanni Corradini)", "desc": "构图上，The Birth of the Virgin以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Fra Carnevale (Bartolomeo di Giovanni Corradini)的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP109484.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/435848", "id": 117}, {"title": "The Last Toilet of Charlotte Corday", "photographer": "Lumb Stocks", "desc": "构图上，The Last Toilet of Charlotte Corday以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Lumb Stocks的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP884893.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/764636", "id": 385}, {"title": "Architectural Geometry - geograph.org.uk - 7962428.jpg", "photographer": "Anthony O'Neil", "desc": "构图上，Architectural Geometry - geograph.org.uk - 7962428.jpg以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Anthony O'Neil的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Architectural_Geometry_-_geograph.org.uk_-_7962428.jpg/960px-Architectural_Geometry_-_geograph.org.uk_-_7962428.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "建筑", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AArchitectural_Geometry_-_geograph.org.uk_-_7962428.jpg", "id": 609}, {"title": "SpaceX Dragon before Departure", "photographer": "NASA", "desc": "构图上，SpaceX Dragon before Departure以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/iss047e109559/iss047e109559~orig.jpg", "category": "肖像", "source": "nasa", "source_url": "https://images.nasa.gov/details-iss047e109559", "id": 163}, {"id": 19, "title": "耶路撒冷哭墙", "photographer": "未知摄影师", "desc": "信仰与历史在石墙前交汇。祈祷者的手触摸千年石壁，光影在缝隙间流转——一个民族的苦难与希望被凝固在一张照片中。", "tags": ["纪实", "人文", "宗教"], "img": "https://images.unsplash.com/photo-1466442929976-97f336a657be?w=800&q=80", "category": "纪实", "source": "unsplash"}, {"title": "Flower vase", "photographer": "The \"Greek A\" Factory", "desc": "构图上，Flower vase以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，The \"Greek A\" Factory的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/es/original/SF1995_43ab.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/208199", "id": 843}, {"title": "Capital", "photographer": "Met Museum", "desc": "构图上，Capital以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/10.175.39.JPG", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/446116", "id": 782}, {"title": "Free man walking pass mural", "photographer": "Openverse 摄影师", "desc": "构图上，Free man walking pass mural以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "graffiti paintings art", "hip hop", "light dark", "photography", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHgxMzg3NDYtaW1hZ2Uta3d2eHliOHouanBn.jpg", "category": "光影", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/5924156/photo-image-public-domain-shadow-person", "id": 245}, {"title": "A Street in Grasse", "photographer": "Charles Nègre", "desc": "构图上，A Street in Grasse以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Charles Nègre的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ph/original/DT4681.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/283736", "id": 819}, {"title": "View of Toledo", "photographer": "El Greco (Domenikos Theotokopoulos)", "desc": "构图上，View of Toledo以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，El Greco (Domenikos Theotokopoulos)的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP349564.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436575", "id": 641}, {"title": "Damascus Room", "photographer": "Met Museum", "desc": "构图上，Damascus Room以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP240367.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/452102", "id": 232}, {"title": "a human faced carp!?", "photographer": "yajico", "desc": "构图上，a human faced carp!?以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，yajico的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "carp", "japan", "jikeiin", "jinmengyo", "flickr"], "img": "https://live.staticflickr.com/26/95563981_3fa9e7378b_b.jpg", "category": "肖像", "source": "flickr", "source_url": "https://www.flickr.com/photos/71912190@N00/95563981", "id": 285}, {"title": "East Hampton, Long Island", "photographer": "Andrew Fisher Bunner", "desc": "构图上，East Hampton, Long Island以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Andrew Fisher Bunner的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ad/original/ap99.38.48.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/10278", "id": 786}, {"title": "Colorful canal houses at golden hour in Damrak avenue Amsterdam the Netherlands.", "photographer": "Basile Morin", "desc": "构图上，Colorful canal houses at golden hour in Damrak avenue Amsterdam the Netherlands.以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Basile Morin的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Colorful_canal_houses_at_golden_hour_in_Damrak_avenue_Amsterdam_the_Netherlands.jpg/960px-Colorful_canal_houses_at_golden_hour_in_Damrak_avenue_Amsterdam_the_Netherlands.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "光影", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AColorful_canal_houses_at_golden_hour_in_Damrak_avenue_Amsterdam_the_Netherlands.jpg", "id": 618}, {"title": "Creative Photography - Nature/Wildlife", "photographer": "NASA", "desc": "构图上，Creative Photography - Nature/Wildlife以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/KSC-20201028-PH-JBS02_0139/KSC-20201028-PH-JBS02_0139~orig.jpg", "category": "自然", "source": "nasa", "source_url": "https://images.nasa.gov/details-KSC-20201028-PH-JBS02_0139", "id": 47}, {"title": "Armchair (part of a set)", "photographer": "Nicolas-Quinibert Foliot", "desc": "构图上，Armchair (part of a set)以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nicolas-Quinibert Foliot的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/es/original/152178.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/197741", "id": 275}, {"title": "Magical Stela with Horus the Child", "photographer": "Met Museum", "desc": "构图上，Magical Stela with Horus the Child以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/eg/original/DP-38634-001.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/546037", "id": 325}, {"title": "Still Life with Apples and a Pot of Primroses", "photographer": "Paul Cézanne", "desc": "构图上，Still Life with Apples and a Pot of Primroses以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Paul Cézanne的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT47.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/435882", "id": 465}, {"title": "Tommaso di Folco Portinari (1428–1501); Maria Portinari (Maria Maddalena Baro...", "photographer": "Hans Memling", "desc": "构图上，Tommaso di Folco Portinari (1428–1501); Maria Portinari (Maria Maddalena Baro...以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Hans Memling的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-44362-005.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437056", "id": 368}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年10月08日 星期四</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">19</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">6</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Funeral of François Duplessis de Mornay", "photographer": "Jean Restout le jeune", "desc": "构图上，Funeral of François Duplessis de Mornay以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jean Restout le jeune的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP812089.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/339688", "id": 226}, {"title": "Colorful canal houses at golden hour in Damrak avenue Amsterdam the Netherlands.", "photographer": "Basile Morin", "desc": "构图上，Colorful canal houses at golden hour in Damrak avenue Amsterdam the Netherlands.以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Basile Morin的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Colorful_canal_houses_at_golden_hour_in_Damrak_avenue_Amsterdam_the_Netherlands.jpg/960px-Colorful_canal_houses_at_golden_hour_in_Damrak_avenue_Amsterdam_the_Netherlands.jpg", "category": "光影", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AColorful_canal_houses_at_golden_hour_in_Damrak_avenue_Amsterdam_the_Netherlands.jpg", "id": 114}, {"title": "Bisajärvi in evening light from the southwest in Sipoonkorpi, Vantaa, Finland, 2", "photographer": "Ximonic (Simo Räsänen)", "desc": "构图上，Bisajärvi in evening light from the southwest in Sipoonkorpi, Vantaa, Finland, 2以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Ximonic (Simo Räsänen)的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Bisaj%C3%A4rvi_in_evening_light_from_the_southwest_in_Sipoonkorpi%2C_Vantaa%2C_Finland%2C_2021_May.jpg/960px-Bisaj%C3%A4rvi_in_evening_light_from_the_southwest_in_Sipoonkorpi%2C_Vantaa%2C_Finland%2C_2021_May.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ABisaj%C3%A4rvi_in_evening_light_from_the_southwest_in_Sipoonkorpi%2C_Vantaa%2C_Finland%2C_2021_May.jpg", "id": 144}, {"title": "OSIRIS-REx NASA Social", "photographer": "NASA", "desc": "构图上，OSIRIS-REx NASA Social以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/KSC-20160907-PH_KLS02_0002/KSC-20160907-PH_KLS02_0002~orig.jpg", "category": "纪实", "source": "nasa", "source_url": "https://images.nasa.gov/details-KSC-20160907-PH_KLS02_0002", "id": 102}, {"title": "\"Kai Khusrau, Farangis and Giv Crossing the River Jihun (Oxus)\", Folio from a...", "photographer": "Abu'l Qasim Firdausi", "desc": "构图上，\"Kai Khusrau, Farangis and Giv Crossing the River Jihun (Oxus)\", Folio from a...以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Abu'l Qasim Firdausi的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP234071.JPG", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/447300", "id": 164}, {"title": "Forest Light", "photographer": "Umnak", "desc": "构图上，Forest Light以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Umnak的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "johnmuircabin", "tongassforest", "conifer", "dawn", "flickr"], "img": "https://live.staticflickr.com/5486/10523143414_247d5c67be_b.jpg", "category": "自然", "source": "flickr", "source_url": "https://www.flickr.com/photos/11376383@N00/10523143414", "id": 276}, {"title": "Marine", "photographer": "Salomon van Ruysdael", "desc": "构图上，Marine以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Salomon van Ruysdael的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP145942.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437587", "id": 445}, {"title": "CROAT OUTPOST.(in October 1848) (Supplement", "photographer": "Openverse 摄影师", "desc": "构图上，CROAT OUTPOST.(in October 1848) (Supplement以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "art", "design", "drawing", "illustration", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA2L3dpZW44OTM0OC1pbWFnZS5qcGc.jpg", "category": "纪实", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/11605358/image-paper-art-vintage", "id": 380}, {"title": "02025 0882 Street photography in Bielsko-Biała.jpg", "photographer": "Marsilar", "desc": "构图上，02025 0882 Street photography in Bielsko-Biała.jpg以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Marsilar的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/02025_0882_Street_photography_in_Bielsko-Bia%C5%82a.jpg/960px-02025_0882_Street_photography_in_Bielsko-Bia%C5%82a.jpg", "category": "街拍", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3A02025_0882_Street_photography_in_Bielsko-Bia%C5%82a.jpg", "id": 69}, {"title": "NASA astronaut Zena Cardman poses for a portrait", "photographer": "NASA", "desc": "构图上，NASA astronaut Zena Cardman poses for a portrait以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/jsc2024e022261_alt/jsc2024e022261_alt~orig.jpg", "category": "肖像", "source": "nasa", "source_url": "https://images.nasa.gov/details-jsc2024e022261_alt", "id": 85}, {"title": "The Last Supper", "photographer": "Netherlandish (Antwerp Mannerist) Painters", "desc": "构图上，The Last Supper以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Netherlandish (Antwerp Mannerist) Painters的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT2910.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437213", "id": 512}, {"title": "Capital of a Double Pilaster", "photographer": "Met Museum", "desc": "构图上，Capital of a Double Pilaster以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/10.175.93.JPG", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/446127", "id": 783}, {"title": "Virgin and Child", "photographer": "Bartolomé Estebán Murillo", "desc": "构图上，Virgin and Child以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Bartolomé Estebán Murillo的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-14936-010.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437175", "id": 441}, {"title": "Don Gaspar de Guzmán (1587–1645), Count-Duke of Olivares", "photographer": "Juan Bautista Martínez del Mazo", "desc": "构图上，Don Gaspar de Guzmán (1587–1645), Count-Duke of Olivares以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Juan Bautista Martínez del Mazo的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-14936-011.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437868", "id": 173}, {"title": "A Cairo Bazaar", "photographer": "Adrien Dauzats", "desc": "构图上，A Cairo Bazaar以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Adrien Dauzats的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-15439-001.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/441356", "id": 342}, {"title": "Studio Portrait: Boy Hood, Algeria", "photographer": "themet", "desc": "构图上，Studio Portrait: Boy Hood, Algeria以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，themet的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "algeria", "celebrities", "portrait", "portrait painting", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAzL21ldDc2NDgzMi1pbWFnZS5qcGc.jpg", "category": "肖像", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/9086560/studio-portrait-boy-with-hood-algeria-unknown", "id": 265}, {"title": "Cup and Saucer", "photographer": "Glasgow Pottery Company", "desc": "构图上，Cup and Saucer以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Glasgow Pottery Company的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ad/original/ADA5516.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/2858", "id": 501}, {"title": "Two Costume Designs or Portrait Types", "photographer": "Anonymous, French, 18th century", "desc": "构图上，Two Costume Designs or Portrait Types以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Anonymous, French, 18th century的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP825818.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/415335", "id": 551}, {"title": "Hacha with Human Face", "photographer": "clevelandart", "desc": "构图上，Hacha with Human Face以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，clevelandart的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "art", "face", "human", "person", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAzL2NsZTE5OTAtLTI0MC1pbWFnZS5qcGc.jpg", "category": "肖像", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/9709558/hacha-with-human-face", "id": 215}, {"title": "Virgin and Child with Saints Catherine of Alexandria and Barbara", "photographer": "Hans Memling", "desc": "构图上，Virgin and Child with Saints Catherine of Alexandria and Barbara以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Hans Memling的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-33354-001.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437054", "id": 420}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

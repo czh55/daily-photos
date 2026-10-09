@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年10月09日 星期五</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">17</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">8</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Candlestick with Figural Imagery", "photographer": "Met Museum", "desc": "构图上，Candlestick with Figural Imagery以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP246482.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/444580", "id": 692}, {"title": "Elderly Gambian woman face portrait.jpg", "photographer": "Ferdinand Reus", "desc": "构图上，Elderly Gambian woman face portrait.jpg以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Ferdinand Reus的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Elderly_Gambian_woman_face_portrait.jpg/960px-Elderly_Gambian_woman_face_portrait.jpg", "category": "肖像", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AElderly_Gambian_woman_face_portrait.jpg", "id": 216}, {"title": "Galaxy Cluster Abell 1689", "photographer": "NASA", "desc": "构图上，Galaxy Cluster Abell 1689以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001983/GSFC_20171208_Archive_e001983~large.jpg", "category": "建筑", "source": "nasa", "source_url": "https://images.nasa.gov/details-GSFC_20171208_Archive_e001983", "id": 58}, {"title": "Funeral of François Duplessis de Mornay", "photographer": "Jean Restout le jeune", "desc": "构图上，Funeral of François Duplessis de Mornay以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jean Restout le jeune的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP812089.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/339688", "id": 226}, {"title": "Armchair (part of a set)", "photographer": "Nicolas-Quinibert Foliot", "desc": "构图上，Armchair (part of a set)以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nicolas-Quinibert Foliot的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/es/original/152177.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/197739", "id": 626}, {"title": "The pianist - Isernia, Italy - Black and white photography", "photographer": "Giuseppe Milo (www.pixael.com)", "desc": "构图上，The pianist - Isernia, Italy - Black and white photography以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Giuseppe Milo (www.pixael.com)的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "art", "backlight", "beautiful", "beauty", "flickr"], "img": "https://live.staticflickr.com/8293/29092217043_5490517326_b.jpg", "category": "黑白", "source": "flickr", "source_url": "https://www.flickr.com/photos/87690240@N03/29092217043", "id": 120}, {"title": "Fragment of a Capital with a Basket-Weave Pattern and Crosses", "photographer": "Met Museum", "desc": "构图上，Fragment of a Capital with a Basket-Weave Pattern and Crosses以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/10.175.86.JPG", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/456176", "id": 421}, {"title": "Portrait Aubrey Beardsley Frederick H", "photographer": "thegetty", "desc": "构图上，Portrait Aubrey Beardsley Frederick H以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，thegetty的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "body", "face", "hand", "photograph", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAyL2xyL2dldHR5MTA2ZzlyLWltYWdlLmpwZw.jpg", "category": "肖像", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/14262991/portrait-aubrey-beardsley-frederick-evans", "id": 81}, {"title": "Dish with Horse and Rider", "photographer": "Met Museum", "desc": "构图上，Dish with Horse and Rider以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/sf45-153-2b.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/450578", "id": 237}, {"title": "New York City Street Scenes - Building Geometry", "photographer": "Steven Pisano", "desc": "构图上，New York City Street Scenes - Building Geometry以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Steven Pisano的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "flickr"], "img": "https://live.staticflickr.com/642/20746466564_1917011b4c_b.jpg", "category": "建筑", "source": "flickr", "source_url": "https://www.flickr.com/photos/45776673@N04/20746466564", "id": 51}, {"title": "The Agony in the Garden", "photographer": "Nicolas Poussin", "desc": "构图上，The Agony in the Garden以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nicolas Poussin的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-23235-001.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/442488", "id": 566}, {"title": "Merano Street Photography by Giovanni Ussi 33.jpg", "photographer": "Giovanni Ussi", "desc": "构图上，Merano Street Photography by Giovanni Ussi 33.jpg以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Giovanni Ussi的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Merano_Street_Photography_by_Giovanni_Ussi_33.jpg/960px-Merano_Street_Photography_by_Giovanni_Ussi_33.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "街拍", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AMerano_Street_Photography_by_Giovanni_Ussi_33.jpg", "id": 711}, {"title": "SOCIAL GOLD LIFE BALL WIEN 2015 Bodengold.jpg", "photographer": "Johannes Angerbauer-Goldhoff", "desc": "构图上，SOCIAL GOLD LIFE BALL WIEN 2015 Bodengold.jpg以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Johannes Angerbauer-Goldhoff的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/SOCIAL_GOLD_LIFE_BALL_WIEN_2015_Bodengold.jpg/960px-SOCIAL_GOLD_LIFE_BALL_WIEN_2015_Bodengold.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "纪实", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ASOCIAL_GOLD_LIFE_BALL_WIEN_2015_Bodengold.jpg", "id": 635}, {"title": "Abdullkadir KAPLAN DUDAYEV.jpg", "photographer": "BerzanOner", "desc": "构图上，Abdullkadir KAPLAN DUDAYEV.jpg以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，BerzanOner的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Abdullkadir_KAPLAN_DUDAYEV.jpg/960px-Abdullkadir_KAPLAN_DUDAYEV.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "肖像", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AAbdullkadir_KAPLAN_DUDAYEV.jpg", "id": 591}, {"title": "\"The Court of Ravana\", Folio from a Ramayana", "photographer": "Met Museum", "desc": "构图上，\"The Court of Ravana\", Folio from a Ramayana以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP107192.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/454358", "id": 533}, {"title": "Cafe Candid (47184250341).jpg", "photographer": "Rod Waddington from Kergunyah, Australia", "desc": "构图上，Cafe Candid (47184250341).jpg以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Rod Waddington from Kergunyah, Australia的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Cafe_Candid_%2847184250341%29.jpg/960px-Cafe_Candid_%2847184250341%29.jpg", "category": "街拍", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ACafe_Candid_%2847184250341%29.jpg", "id": 154}, {"title": "Jan Lutma", "photographer": "Rembrandt (Rembrandt van Rijn)", "desc": "构图上，Jan Lutma以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Rembrandt (Rembrandt van Rijn)的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP108240.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/364153", "id": 294}, {"title": "The Marriage Feast at Cana", "photographer": "Juan de Flandes", "desc": "构图上，The Marriage Feast at Cana以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Juan de Flandes的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1459.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436801", "id": 681}, {"title": "The Penitence of Saint Jerome", "photographer": "Joachim Patinir", "desc": "构图上，The Penitence of Saint Jerome以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Joachim Patinir的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT5549.jpg", "category": "自然", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437261", "id": 148}, {"title": "The Flight into Egypt", "photographer": "Carlo Maratti", "desc": "构图上，The Flight into Egypt以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Carlo Maratti的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-19712-001.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/816629", "id": 841}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

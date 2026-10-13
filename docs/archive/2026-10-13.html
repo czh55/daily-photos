@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年10月13日 星期二</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">19</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">8</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "The Monet Family in Their Garden at Argenteuil", "photographer": "Edouard Manet", "desc": "构图上，The Monet Family in Their Garden at Argenteuil以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Edouard Manet的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-25465-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436965", "id": 540}, {"title": "Mr. H. Ormand, is leading", "photographer": "libraryofcongress", "desc": "构图上，Mr. H. Ormand, is leading以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，libraryofcongress的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "adult education", "all things vintage", "azores", "clock", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvbG9jMjAxNzgzMDMzMy1pbWFnZS5qcGc.jpg", "category": "纪实", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/12151842/image-person-art-vintage", "id": 632}, {"title": "Nuzzlin. They are just about the loviest creatures I've met. #sealions #famil...", "photographer": "Johnath", "desc": "构图上，Nuzzlin. They are just about the loviest creatures I've met. #sealions #famil...以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Johnath的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "instagramapp", "iphoneography", "square", "flickr"], "img": "https://live.staticflickr.com/8696/16646126160_c77f88f943_b.jpg", "category": "自然", "source": "flickr", "source_url": "https://www.flickr.com/photos/23586883@N00/16646126160", "id": 37}, {"title": "Portrait of a Man", "photographer": "Rembrandt (Rembrandt van Rijn)", "desc": "构图上，Portrait of a Man以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Rembrandt (Rembrandt van Rijn)的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP145947.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437400", "id": 546}, {"title": "Earth Observations taken by Expedition 32 crewmember", "photographer": "NASA", "desc": "构图上，Earth Observations taken by Expedition 32 crewmember以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/iss032e023718/iss032e023718~orig.jpg", "category": "建筑", "source": "nasa", "source_url": "https://images.nasa.gov/details-iss032e023718", "id": 208}, {"title": "Sea monster", "photographer": "Severo Calzetta da Ravenna", "desc": "构图上，Sea monster以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Severo Calzetta da Ravenna的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/es/original/DP-12420-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/207000", "id": 746}, {"title": "Arba'een In Mehran City 2016 - Iran (Black And White Photography-Mostafa Meraji)", "photographer": "Mostafameraji", "desc": "构图上，Arba'een In Mehran City 2016 - Iran (Black And White Photography-Mostafa Meraji)以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mostafameraji的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Arba%27een_In_Mehran_City_2016_-_Iran_%28Black_And_White_Photography-Mostafa_Meraji%29_%D8%A7%D8%B1%D8%A8%D8%B9%DB%8C%D9%86_%D8%AF%D8%B1_%D9%85%D9%87%D8%B1%D8%A7%D9%86-_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-_%D8%B9%DA%A9%D8%B3_%D9%87%D8%A7%DB%8C_%D8%B3%DB%8C%D8%A7%D9%87_%D9%88_%D8%B3%D9%81%DB%8C%D8%AF_08.jpg/960px-thumbnail.jpg", "category": "纪实", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AArba%27een_In_Mehran_City_2016_-_Iran_%28Black_And_White_Photography-Mostafa_Meraji%29_%D8%A7%D8%B1%D8%A8%D8%B9%DB%8C%D9%86_%D8%AF%D8%B1_%D9%85%D9%87%D8%B1%D8%A7%D9%86-_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-_%D8%B9%DA%A9%D8%B3_%D9%87%D8%A7%DB%8C_%D8%B3%DB%8C%D8%A7%D9%87_%D9%88_%D8%B3%D9%81%DB%8C%D8%AF_08.jpg", "id": 222}, {"title": "City Hall", "photographer": "John Hill", "desc": "构图上，City Hall以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，John Hill的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ad/original/268406.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/16988", "id": 715}, {"title": "Portrait of Alvise Contarini(?); (verso) A Tethered Roebuck", "photographer": "Jacometto (Jacometto Veneziano)", "desc": "构图上，Portrait of Alvise Contarini(?); (verso) A Tethered Roebuck以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jacometto (Jacometto Veneziano)的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/rl/original/DP221485.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/459028", "id": 505}, {"title": "Fragment from a Frieze with a Meander Pattern and Rosettes", "photographer": "Met Museum", "desc": "构图上，Fragment from a Frieze with a Meander Pattern and Rosettes以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/118072.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/453602", "id": 705}, {"title": "Pair of carved ornaments with the Maize God", "photographer": "Maya artist(s)", "desc": "构图上，Pair of carved ornaments with the Maize God以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Maya artist(s)的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-24306-003.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/317760", "id": 478}, {"title": "The Last Communion of Saint Jerome", "photographer": "Botticelli (Alessandro di Mariano Filipepi)", "desc": "构图上，The Last Communion of Saint Jerome以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Botticelli (Alessandro di Mariano Filipepi)的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-24049-001.jpg", "category": "自然", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/435728", "id": 565}, {"title": "The Fortune-Teller", "photographer": "Georges de La Tour", "desc": "构图上，The Fortune-Teller以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Georges de La Tour的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-14286-015.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436838", "id": 155}, {"title": "Gibraltar, Arsenal, &c: Buena Vista", "photographer": "thegetty", "desc": "构图上，Gibraltar, Arsenal, &c: Buena Vista以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，thegetty的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "buena vista", "city", "mountain", "nature", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAyL2xyL2dldHR5MTA4eW10LWltYWdlLmpwZw.jpg", "category": "风景", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/14320905/gibraltar-the-arsenal-andc-from-buena-vista-francis-frith", "id": 185}, {"title": "Chile Mountains", "photographer": "Openverse 摄影师", "desc": "构图上，Chile Mountains以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "glacier", "ice", "mountain", "nature", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvaXMxNDIwMC1pbWFnZS1rd3lzZXJ3My5qcGc.jpg", "category": "风景", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/5970050/chile-mountains", "id": 425}, {"title": "Emil Paje Photography | Commercial, Weddings, Portrait & Lifesytle, Wildlife ...", "photographer": "emilpaje", "desc": "构图上，Emil Paje Photography | Commercial, Weddings, Portrait & Lifesytle, Wildlife ...以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，emilpaje的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "|", "commercial", "emil", "lifesytle", "flickr"], "img": "https://live.staticflickr.com/8750/16636486947_8095f50de4_b.jpg", "category": "自然", "source": "flickr", "source_url": "https://www.flickr.com/photos/62227281@N08/16636486947", "id": 38}, {"title": "The Holy Family with the Infant Saint John the Baptist", "photographer": "Sassoferrato (Giovanni Battista Salvi)", "desc": "构图上，The Holy Family with the Infant Saint John the Baptist以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Sassoferrato (Giovanni Battista Salvi)的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP801532.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/341171", "id": 827}, {"title": "Dublin pride 2016 parade - Dublin, Ireland - Documentary photography", "photographer": "Giuseppe Milo (www.pixael.com)", "desc": "构图上，Dublin pride 2016 parade - Dublin, Ireland - Documentary photography以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Giuseppe Milo (www.pixael.com)的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "amazon", "amnesty", "documentary", "dropbox", "flickr"], "img": "https://live.staticflickr.com/7330/27286938683_4591fcfa42_b.jpg", "category": "纪实", "source": "flickr", "source_url": "https://www.flickr.com/photos/87690240@N03/27286938683", "id": 221}, {"title": "The Goddess Bhairavi Devi with Shiva", "photographer": "Payag", "desc": "构图上，The Goddess Bhairavi Devi with Shiva以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Payag的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP257990.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/457743", "id": 687}, {"title": "Jar, Ritual Scenes", "photographer": "Met Museum", "desc": "构图上，Jar, Ritual Scenes以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/1993.441_a.JPG", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/316813", "id": 218}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

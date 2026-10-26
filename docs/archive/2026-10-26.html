@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年10月26日 星期一</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">17</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">7</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "\"The Death of King Dasharatha, the Father of Rama\", Folio from a Ramayana", "photographer": "Met Museum", "desc": "构图上，\"The Death of King Dasharatha, the Father of Rama\", Folio from a Ramayana以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP107193.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/454359", "id": 719}, {"title": "Lioness wild", "photographer": "Openverse 摄影师", "desc": "构图上，Lioness wild以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "animal wildlife", "lion", "lion images", "lioness", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZnJhZnJpY2FfYW5pbWFsX2JpZ19jYXJuaXZvcmVfMS1pbWFnZS1reWJlYjJoai5qcGc.jpg", "category": "自然", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/6041364/photo-image-public-domain-nature-free", "id": 41}, {"title": "Portrait of a Young Woman", "photographer": "Jean Antoine Laurent", "desc": "构图上，Portrait of a Young Woman以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jean Antoine Laurent的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP327722.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436848", "id": 357}, {"title": "Salvator Mundi", "photographer": "Hans Memling", "desc": "构图上，Salvator Mundi以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Hans Memling的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-19586-001.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437061", "id": 62}, {"title": "Brunch communautaire avec les candidats de la ville de Québec / Community bru...", "photographer": "Michael Ignatieff", "desc": "构图上，Brunch communautaire avec les candidats de la ville de Québec / Community bru...以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Michael Ignatieff的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "ignatieff", "michael", "quebec", "flickr"], "img": "https://live.staticflickr.com/5256/5526711132_769052868f_b.jpg", "category": "街拍", "source": "flickr", "source_url": "https://www.flickr.com/photos/14231352@N08/5526711132", "id": 280}, {"title": "Black and white film photography, Collage, 1970s, Rostov-on-Don, Russia.jpg", "photographer": "Vyacheslav Argenberg", "desc": "构图上，Black and white film photography, Collage, 1970s, Rostov-on-Don, Russia.jpg以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Vyacheslav Argenberg的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Black_and_white_film_photography%2C_Collage%2C_1970s%2C_Rostov-on-Don%2C_Russia.jpg/960px-Black_and_white_film_photography%2C_Collage%2C_1970s%2C_Rostov-on-Don%2C_Russia.jpg", "category": "黑白", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ABlack_and_white_film_photography%2C_Collage%2C_1970s%2C_Rostov-on-Don%2C_Russia.jpg", "id": 126}, {"title": "Black and white monochrome - trees in winter snow.jpg", "photographer": "PosifCool", "desc": "构图上，Black and white monochrome - trees in winter snow.jpg以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，PosifCool的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Black_and_white_monochrome_-_trees_in_winter_snow.jpg/960px-Black_and_white_monochrome_-_trees_in_winter_snow.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "黑白", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ABlack_and_white_monochrome_-_trees_in_winter_snow.jpg", "id": 605}, {"title": "Christ Blessing, Surrounded by a Donor Family", "photographer": "German Painter", "desc": "构图上，Christ Blessing, Surrounded by a Donor Family以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，German Painter的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT302497.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437466", "id": 312}, {"title": "Capital with Acanthus and Palm Leaves", "photographer": "Met Museum", "desc": "构图上，Capital with Acanthus and Palm Leaves以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/10.175.57.JPG", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/456218", "id": 473}, {"title": "Relief panel", "photographer": "Met Museum", "desc": "构图上，Relief panel以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/an/original/DP355694.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/322621", "id": 534}, {"title": "Al Ma'wa for Nature and Wildlife 08.jpg", "photographer": "Mohammad hajeer", "desc": "构图上，Al Ma'wa for Nature and Wildlife 08.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mohammad hajeer的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Al_Ma%27wa_for_Nature_and_Wildlife_08.jpg/960px-Al_Ma%27wa_for_Nature_and_Wildlife_08.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AAl_Ma%27wa_for_Nature_and_Wildlife_08.jpg", "id": 375}, {"title": "Portrait of a Woman and an Enslaved Servant", "photographer": "Nicolas de Largillierre (or Largillière)", "desc": "构图上，Portrait of a Woman and an Enslaved Servant以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nicolas de Largillierre (or Largillière)的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP312828.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436846", "id": 351}, {"title": "Christ Carrying the Cross, with the Crucifixion; The Resurrection, with the P...", "photographer": "Gerard David", "desc": "构图上，Christ Carrying the Cross, with the Crucifixion; The Resurrection, with the P...以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Gerard David的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/rl/original/DT1472.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/459061", "id": 438}, {"title": "Apis dorsata nest on a tree at golden hour in Laos.jpg", "photographer": "Basile Morin", "desc": "构图上，Apis dorsata nest on a tree at golden hour in Laos.jpg以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Basile Morin的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Apis_dorsata_nest_on_a_tree_at_golden_hour_in_Laos.jpg/960px-Apis_dorsata_nest_on_a_tree_at_golden_hour_in_Laos.jpg", "category": "光影", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AApis_dorsata_nest_on_a_tree_at_golden_hour_in_Laos.jpg", "id": 113}, {"title": "Wangchuan Villa", "photographer": "Wang Yuanqi", "desc": "构图上，Wangchuan Villa以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Wang Yuanqi的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/as/original/DP214271_CRD.jpg", "category": "自然", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/49187", "id": 316}, {"title": "Design with an Eagle Fighting with a Serpent and a Putto in the Sky Holding a...", "photographer": "Pietro da Cortona (Pietro Berrettini)", "desc": "构图上，Design with an Eagle Fighting with a Serpent and a Putto in the Sky Holding a...以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Pietro da Cortona (Pietro Berrettini)的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP809203.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/343630", "id": 825}, {"title": "Two Women", "photographer": "Paul Gauguin", "desc": "构图上，Two Women以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Paul Gauguin的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1953.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/438001", "id": 712}, {"title": "Forest Light", "photographer": "Fugue", "desc": "构图上，Forest Light以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Fugue的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "forest", "frankfurt", "germany", "oberursel", "flickr"], "img": "https://live.staticflickr.com/21/31523548_0a55db3df5_b.jpg", "category": "自然", "source": "flickr", "source_url": "https://www.flickr.com/photos/16633713@N00/31523548", "id": 141}, {"title": "iss038e055233", "photographer": "NASA", "desc": "构图上，iss038e055233以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/iss038e055233/iss038e055233~orig.jpg", "category": "肖像", "source": "nasa", "source_url": "https://images.nasa.gov/details-iss038e055233", "id": 217}, {"title": "Al Ma'wa for Nature and Wildlife 11.jpg", "photographer": "Mohammad hajeer", "desc": "构图上，Al Ma'wa for Nature and Wildlife 11.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mohammad hajeer的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Al_Ma%27wa_for_Nature_and_Wildlife_11.jpg/960px-Al_Ma%27wa_for_Nature_and_Wildlife_11.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AAl_Ma%27wa_for_Nature_and_Wildlife_11.jpg", "id": 376}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

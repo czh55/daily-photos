@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年10月30日 星期五</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">15</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">7</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Deity figure", "photographer": "Maya artist(s)", "desc": "构图上，Deity figure以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Maya artist(s)的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-23472-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/313262", "id": 495}, {"title": "Cherry Blossom Viewing at Itsukushima and Yoshino", "photographer": "Met Museum", "desc": "构图上，Cherry Blossom Viewing at Itsukushima and Yoshino以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/as/original/DP362588.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/53429", "id": 373}, {"title": "The True Issue or \"Thats Whats the Matter\"", "photographer": "Currier & Ives", "desc": "构图上，The True Issue or \"Thats Whats the Matter\"以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Currier & Ives的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP831802.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/430812", "id": 77}, {"title": "RETURN CAMPAIGN.(in Italy 1849) (Supplement", "photographer": "Openverse 摄影师", "desc": "构图上，RETURN CAMPAIGN.(in Italy 1849) (Supplement以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "art", "backpack", "drawing", "illustration", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA2L3dpZW44ODYwNy1pbWFnZS5qcGc.jpg", "category": "纪实", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/11574658/image-paper-art-vintage", "id": 96}, {"title": "\"Isfandiyar's Third Course: He Slays a Dragon\", Folio from a Shahnama (Book o...", "photographer": "Abu'l Qasim Firdausi", "desc": "构图上，\"Isfandiyar's Third Course: He Slays a Dragon\", Folio from a Shahnama (Book o...以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Abu'l Qasim Firdausi的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP108574.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/452651", "id": 181}, {"title": "Canoeing - Paola, Italy - Black and white photography", "photographer": "Giuseppe Milo (www.pixael.com)", "desc": "构图上，Canoeing - Paola, Italy - Black and white photography以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Giuseppe Milo (www.pixael.com)的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "black", "blackandwhite", "bw", "calabria", "flickr"], "img": "https://live.staticflickr.com/938/29679581948_5320b9ecb9_b.jpg", "category": "黑白", "source": "flickr", "source_url": "https://www.flickr.com/photos/87690240@N03/29679581948", "id": 359}, {"title": "NASA astronaut Zena Cardman poses for a portrait", "photographer": "NASA", "desc": "构图上，NASA astronaut Zena Cardman poses for a portrait以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/jsc2024e022261_alt2/jsc2024e022261_alt2~orig.jpg", "category": "肖像", "source": "nasa", "source_url": "https://images.nasa.gov/details-jsc2024e022261_alt2", "id": 86}, {"title": "The Japanese Robe", "photographer": "Alfred Stevens", "desc": "构图上，The Japanese Robe以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Alfred Stevens的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-42347-001.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437756", "id": 756}, {"title": "Orpheus Instructing Savage People Theology", "photographer": "themet", "desc": "构图上，Orpheus Instructing Savage People Theology以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，themet的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "art", "music", "painting", "person", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA5L21ldDY2NDY2Mi1pbWFnZS5qcGc.jpg", "category": "纪实", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/8102144/orpheus-instructing-savage-people-theology-and-the-arts-social-life", "id": 289}, {"title": "Javan munia, Wildlife&nature.jpg", "photographer": "Khairul Biswas", "desc": "构图上，Javan munia, Wildlife&nature.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Khairul Biswas的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Javan_munia%2C_Wildlife%26nature.jpg/960px-Javan_munia%2C_Wildlife%26nature.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AJavan_munia%2C_Wildlife%26nature.jpg", "id": 44}, {"title": "Anthology of Persian Poetry in Oblong Format (Safina)", "photographer": "Sultan Muhammad Nur", "desc": "构图上，Anthology of Persian Poetry in Oblong Format (Safina)以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Sultan Muhammad Nur的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP235838.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/453385", "id": 788}, {"title": "Free goose wildlife nature image", "photographer": "Openverse 摄影师", "desc": "构图上，Free goose wildlife nature image以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "animal", "background", "bird", "canada", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvaXMyMzQ0OS1pbWFnZS1rd3Z5ZWI1Yy5qcGc.jpg", "category": "自然", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/5926826/photo-image-background-public-domain-green", "id": 39}, {"title": "The Pink Dress (Albertie-Marguerite Carré, later Madame Ferdinand-Henri Himme...", "photographer": "Berthe Morisot", "desc": "构图上，The Pink Dress (Albertie-Marguerite Carré, later Madame Ferdinand-Henri Himme...以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Berthe Morisot的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1927.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/438009", "id": 444}, {"title": "silhouette person walking concrete tiles", "photographer": "Openverse 摄影师", "desc": "构图上，silhouette person walking concrete tiles以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "black and white", "black and white photography", "light and shadow", "person photo", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA2L3Vwd2s2MjIwNzk3Mi13aWtpbWVkaWEtaW1hZ2Uta293bjRiZTguanBn.jpg", "category": "光影", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/3296412/free-photo-image-shadow-black-and-white-photography-walking", "id": 244}, {"title": "Eagle relief", "photographer": "Toltec artist(s)", "desc": "构图上，Eagle relief以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Toltec artist(s)的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-20487-001.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/307599", "id": 802}, {"title": "Openwork plaque with a sphinx at a tree", "photographer": "Met Museum", "desc": "构图上，Openwork plaque with a sphinx at a tree以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/an/original/DP110556.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/324198", "id": 728}, {"title": "Arba'een In Mehran City 2016 - Iran (Black And White Photography-Mostafa Meraji)", "photographer": "Mostafameraji", "desc": "构图上，Arba'een In Mehran City 2016 - Iran (Black And White Photography-Mostafa Meraji)以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mostafameraji的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Arba%27een_In_Mehran_City_2016_-_Iran_%28Black_And_White_Photography-Mostafa_Meraji%29_%D8%A7%D8%B1%D8%A8%D8%B9%DB%8C%D9%86_%D8%AF%D8%B1_%D9%85%D9%87%D8%B1%D8%A7%D9%86-_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-_%D8%B9%DA%A9%D8%B3_%D9%87%D8%A7%DB%8C_%D8%B3%DB%8C%D8%A7%D9%87_%D9%88_%D8%B3%D9%81%DB%8C%D8%AF_40.jpg/960px-thumbnail.jpg", "category": "纪实", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AArba%27een_In_Mehran_City_2016_-_Iran_%28Black_And_White_Photography-Mostafa_Meraji%29_%D8%A7%D8%B1%D8%A8%D8%B9%DB%8C%D9%86_%D8%AF%D8%B1_%D9%85%D9%87%D8%B1%D8%A7%D9%86-_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-_%D8%B9%DA%A9%D8%B3_%D9%87%D8%A7%DB%8C_%D8%B3%DB%8C%D8%A7%D9%87_%D9%88_%D8%B3%D9%81%DB%8C%D8%AF_40.jpg", "id": 324}, {"title": "Textile Design with Alternating  Hexagons and Starlike Shapes with Pearls in ...", "photographer": "Anonymous, Alsatian, 19th century", "desc": "构图上，Textile Design with Alternating  Hexagons and Starlike Shapes with Pearls in ...以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Anonymous, Alsatian, 19th century的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP889340.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/709079", "id": 771}, {"title": "Mountain Vista", "photographer": "Openverse 摄影师", "desc": "构图上，Mountain Vista以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "clothing", "light", "man", "mountain", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvaXMxNTE5Mi1pbWFnZS1rd3lzYzJ3ay5qcGc.jpg", "category": "风景", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/5969519/mountain-vista", "id": 133}, {"title": "Vessel, Seated Deities", "photographer": "Met Museum", "desc": "构图上，Vessel, Seated Deities以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-13003-005.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/310607", "id": 314}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

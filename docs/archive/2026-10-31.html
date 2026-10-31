@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年10月31日 星期六</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">16</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">7</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Head of a ruler", "photographer": "Met Museum", "desc": "构图上，Head of a ruler以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/an/original/DP-23662-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/329077", "id": 696}, {"title": "Al Ma'wa for Nature and Wildlife 05.jpg", "photographer": "Mohammad hajeer", "desc": "构图上，Al Ma'wa for Nature and Wildlife 05.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mohammad hajeer的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Al_Ma%27wa_for_Nature_and_Wildlife_05.jpg/960px-Al_Ma%27wa_for_Nature_and_Wildlife_05.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AAl_Ma%27wa_for_Nature_and_Wildlife_05.jpg", "id": 363}, {"title": "Anthology of Persian Poetry in Oblong Format (Safina)", "photographer": "Sultan Muhammad Nur", "desc": "构图上，Anthology of Persian Poetry in Oblong Format (Safina)以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Sultan Muhammad Nur的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP235838.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/453385", "id": 788}, {"title": "202410 午後的台中外埔忘憂谷.jpg", "photographer": "Junyu-K", "desc": "构图上，202410 午後的台中外埔忘憂谷.jpg以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Junyu-K的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/202410_%E5%8D%88%E5%BE%8C%E7%9A%84%E5%8F%B0%E4%B8%AD%E5%A4%96%E5%9F%94%E5%BF%98%E6%86%82%E8%B0%B7.jpg/960px-202410_%E5%8D%88%E5%BE%8C%E7%9A%84%E5%8F%B0%E4%B8%AD%E5%A4%96%E5%9F%94%E5%BF%98%E6%86%82%E8%B0%B7.jpg", "category": "风景", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3A202410_%E5%8D%88%E5%BE%8C%E7%9A%84%E5%8F%B0%E4%B8%AD%E5%A4%96%E5%9F%94%E5%BF%98%E6%86%82%E8%B0%B7.jpg", "id": 27}, {"title": "The Brioche", "photographer": "Edouard Manet", "desc": "构图上，The Brioche以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Edouard Manet的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-13655-001.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436946", "id": 474}, {"title": "view lush forest light blue", "photographer": "Openverse 摄影师", "desc": "构图上，view lush forest light blue以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "background", "blue", "cloud", "desktop wallpaper", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYxNjQ5MTU1LXdpa2ltZWRpYS1pbWFnZS1rb3dsenRxbS5qcGc.jpg", "category": "自然", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/3294403/free-photo-image-azure-sky-bush-cc0", "id": 135}, {"id": 18, "title": "北海道雪景", "photographer": "未知摄影师", "desc": "暴雪后的宁静。被厚雪覆盖的树木如同雕塑，蓝调的光线赋予了冬季森林一种近乎神圣的氛围，时间仿佛在此凝固。", "tags": ["雪景", "自然", "蓝调"], "img": "https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?w=800&q=80", "category": "自然", "source": "unsplash"}, {"title": "Hanging (Arid)", "photographer": "Met Museum", "desc": "构图上，Hanging (Arid)以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP107285.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/452105", "id": 502}, {"title": "The Rehearsal of the Ballet Onstage", "photographer": "Edgar Degas", "desc": "构图上，The Rehearsal of the Ballet Onstage以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Edgar Degas的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1565.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436155", "id": 329}, {"title": "The Punishment of Niobe", "photographer": "Merry Joseph Blondel", "desc": "构图上，The Punishment of Niobe以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Merry Joseph Blondel的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP-22653-001.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/848292", "id": 548}, {"title": "In Full Sunlight (En plein soleil)", "photographer": "James Tissot", "desc": "构图上，In Full Sunlight (En plein soleil)以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，James Tissot的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-21607-001.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/438887", "id": 394}, {"title": "Tabernacle Polyptych with the Madonna and Child and Scenes from the Life of C...", "photographer": "Met Museum", "desc": "构图上，Tabernacle Polyptych with the Madonna and Child and Scenes from the Life of C...以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/rl/original/SLP1553-1.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/460281", "id": 619}, {"title": "A Fisherman Leaning on an Oar", "photographer": "Jean Honoré Fragonard", "desc": "构图上，A Fisherman Leaning on an Oar以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jean Honoré Fragonard的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP136103.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/373266", "id": 344}, {"title": "Madonna and Child", "photographer": "Master of the Magdalen", "desc": "构图上，Madonna and Child以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Master of the Magdalen的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT279163.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437015", "id": 487}, {"title": "Irish pub - Dublin, Ireland - Black and white photography", "photographer": "Giuseppe Milo (www.pixael.com)", "desc": "构图上，Irish pub - Dublin, Ireland - Black and white photography以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Giuseppe Milo (www.pixael.com)的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "beer", "black", "blackandwhite", "bokeh", "flickr"], "img": "https://live.staticflickr.com/5528/30653875653_3657bb32f4_b.jpg", "category": "黑白", "source": "flickr", "source_url": "https://www.flickr.com/photos/87690240@N03/30653875653", "id": 121}, {"title": "Cornemuse Béchonnet", "photographer": "Joseph Bechonnet", "desc": "构图上，Cornemuse Béchonnet以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Joseph Bechonnet的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/mi/original/89.2.165 full.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/500561", "id": 757}, {"title": "Relief panel", "photographer": "Met Museum", "desc": "构图上，Relief panel以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/an/original/DP375420.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/322611", "id": 494}, {"title": "Salome", "photographer": "Henri Regnault", "desc": "构图上，Salome以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Henri Regnault的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/ep16.95.R.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437384", "id": 211}, {"title": "Boss from a disc-headed pin", "photographer": "Met Museum", "desc": "构图上，Boss from a disc-headed pin以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/an/original/DP-25848-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/323971", "id": 354}, {"title": "The Pink Dress (Albertie-Marguerite Carré, later Madame Ferdinand-Henri Himme...", "photographer": "Berthe Morisot", "desc": "构图上，The Pink Dress (Albertie-Marguerite Carré, later Madame Ferdinand-Henri Himme...以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Berthe Morisot的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1927.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/438009", "id": 444}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

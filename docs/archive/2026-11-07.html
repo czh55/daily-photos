@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年11月07日 星期六</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">16</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">8</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Intervale Scenic Vista White Mountain North Conway.jpg", "photographer": "EgorovaSvetlana", "desc": "构图上，Intervale Scenic Vista White Mountain North Conway.jpg以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，EgorovaSvetlana的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Intervale_Scenic_Vista_White_Mountain_North_Conway.jpg/960px-Intervale_Scenic_Vista_White_Mountain_North_Conway.jpg", "category": "风景", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AIntervale_Scenic_Vista_White_Mountain_North_Conway.jpg", "id": 186}, {"title": "Embroidered bag with fringe", "photographer": "Nasca artist", "desc": "构图上，Embroidered bag with fringe以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nasca artist的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-26535-001.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/308024", "id": 821}, {"title": "Golden Hour Girl", "photographer": "dolbinator1000", "desc": "构图上，Golden Hour Girl以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，dolbinator1000的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "cliff", "dress", "field", "girl", "flickr"], "img": "https://live.staticflickr.com/8641/16022841399_8b61b9bbd0_b.jpg", "category": "光影", "source": "flickr", "source_url": "https://www.flickr.com/photos/126654539@N08/16022841399", "id": 108}, {"title": "Merano Street Photography by Giovanni Ussi 14.jpg", "photographer": "Giovanni Ussi", "desc": "构图上，Merano Street Photography by Giovanni Ussi 14.jpg以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Giovanni Ussi的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Merano_Street_Photography_by_Giovanni_Ussi_14.jpg/960px-Merano_Street_Photography_by_Giovanni_Ussi_14.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "街拍", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AMerano_Street_Photography_by_Giovanni_Ussi_14.jpg", "id": 590}, {"title": "Holy Family with an Angel", "photographer": "Raffaellino del Garbo (also known as Raffaelle de' Capponi and Raffaelle de' Carli)", "desc": "构图上，Holy Family with an Angel以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Raffaellino del Garbo (also known as Raffaelle de' Capponi and Raffaelle de' Carli)的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-15089-001.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437368", "id": 212}, {"id": 2, "title": "圣拉扎尔车站背后", "photographer": "Henri Cartier-Bresson", "desc": "决定性瞬间的经典诠释——一个男人跳跃水坑的瞬间被精确捕捉，水面的倒影与动态完美共构。", "tags": ["街拍", "决定性瞬间", "黑白"], "img": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&q=80", "category": "街拍", "source": "unsplash"}, {"title": "Glass eye bead", "photographer": "Met Museum", "desc": "构图上，Glass eye bead以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/gr/original/DP-13080-076.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/239926", "id": 447}, {"title": "Study of Water and Plants", "photographer": "Thomas Fearnley", "desc": "构图上，Study of Water and Plants以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Thomas Fearnley的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-19486-001.jpg", "category": "自然", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/839041", "id": 317}, {"title": "Terracotta fragment of an oinochoe (jug)", "photographer": "Met Museum", "desc": "构图上，Terracotta fragment of an oinochoe (jug)以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/gr/original/DVB12164_1_ff.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/750501", "id": 575}, {"title": "Head of a Central Asian Figure", "photographer": "Met Museum", "desc": "构图上，Head of a Central Asian Figure以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP353091.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/664761", "id": 587}, {"title": "Old Trees, Level Distance", "photographer": "Guo Xi", "desc": "构图上，Old Trees, Level Distance以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Guo Xi的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/as/original/DP167812_CRD.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/39668", "id": 192}, {"title": "Saint Jerome Praying in a Landscape", "photographer": "Niccolò dell' Abate", "desc": "构图上，Saint Jerome Praying in a Landscape以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Niccolò dell' Abate的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP807541.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/343425", "id": 714}, {"title": "Portrait of a Youth with a Surgical Cut in one Eye", "photographer": "Met Museum", "desc": "构图上，Portrait of a Youth with a Surgical Cut in one Eye以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/eg/original/DP112592.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/547768", "id": 460}, {"title": "Sketch of a Town in Germany", "photographer": "Andrew Fisher Bunner", "desc": "构图上，Sketch of a Town in Germany以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Andrew Fisher Bunner的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ad/original/ap99.38.68.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/10322", "id": 549}, {"title": "Oedipus and the Sphinx", "photographer": "Gustave Moreau", "desc": "构图上，Oedipus and the Sphinx以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Gustave Moreau的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-14201-023.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437153", "id": 381}, {"title": "Bashi-Bazouk", "photographer": "Jean-Léon Gérôme", "desc": "构图上，Bashi-Bazouk以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jean-Léon Gérôme的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP243839.jpg", "category": "自然", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/440723", "id": 492}, {"title": "Saint Philip Neri (1515–1595)", "photographer": "Carlo Dolci", "desc": "构图上，Saint Philip Neri (1515–1595)以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Carlo Dolci的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-944-001.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/712539", "id": 356}, {"title": "'I sentimenti by Mistero Hifeng' - very cool smash shatter polygon rainbow pr...", "photographer": "▓▒░ TORLEY ░▒▓", "desc": "构图上，'I sentimenti by Mistero Hifeng' - very cool smash shatter polygon rainbow pr...以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，▓▒░ TORLEY ░▒▓的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "firestorm", "lindenlab", "secondlife", "flickr"], "img": "https://live.staticflickr.com/7534/16093994640_4890e7f904_b.jpg", "category": "肖像", "source": "flickr", "source_url": "https://www.flickr.com/photos/70285332@N00/16093994640", "id": 157}, {"title": "Zheng Huangniu and Yushanzhu", "photographer": "Kano Naizen", "desc": "构图上，Zheng Huangniu and Yushanzhu以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Kano Naizen的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/as/original/DP361158.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/53238", "id": 336}, {"title": "Damascus Room", "photographer": "Met Museum", "desc": "构图上，Damascus Room以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP240367.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/452102", "id": 232}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

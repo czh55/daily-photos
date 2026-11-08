@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年11月08日 星期日</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">7</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "An Allegory of the Arts with Isis and Geometry Attending the Three-headed Fig...", "photographer": "Erasmus Quellinus", "desc": "构图上，An Allegory of the Arts with Isis and Geometry Attending the Three-headed Fig...以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Erasmus Quellinus的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP802235.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/376666", "id": 760}, {"title": "Skyscraper Architecture Urban Skyline Cityscape City City Life Outdoors Water...", "photographer": "OiMax", "desc": "构图上，Skyscraper Architecture Urban Skyline Cityscape City City Life Outdoors Water...以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，OiMax的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "architecture", "city", "citylife", "cityscape", "flickr"], "img": "https://live.staticflickr.com/4244/34888934651_6eb89b5412_b.jpg", "category": "建筑", "source": "flickr", "source_url": "https://www.flickr.com/photos/72396314@N00/34888934651", "id": 199}, {"title": "Al Ma'wa for Nature and Wildlife 11.jpg", "photographer": "Mohammad hajeer", "desc": "构图上，Al Ma'wa for Nature and Wildlife 11.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mohammad hajeer的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Al_Ma%27wa_for_Nature_and_Wildlife_11.jpg/960px-Al_Ma%27wa_for_Nature_and_Wildlife_11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AAl_Ma%27wa_for_Nature_and_Wildlife_11.jpg", "id": 582}, {"title": "Oedipus and the Sphinx", "photographer": "Gustave Moreau", "desc": "构图上，Oedipus and the Sphinx以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Gustave Moreau的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-14201-023.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437153", "id": 381}, {"title": "092 Wild Mute swan in flight at Lake Geneva during golden hour of sunset Photo b", "photographer": "Giles Laurent", "desc": "构图上，092 Wild Mute swan in flight at Lake Geneva during golden hour of sunset Photo b以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Giles Laurent的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/092_Wild_Mute_swan_in_flight_at_Lake_Geneva_during_golden_hour_of_sunset_Photo_by_Giles_Laurent.jpg/960px-092_Wild_Mute_swan_in_flight_at_Lake_Geneva_during_golden_hour_of_sunset_Photo_by_Giles_Laurent.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "光影", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3A092_Wild_Mute_swan_in_flight_at_Lake_Geneva_during_golden_hour_of_sunset_Photo_by_Giles_Laurent.jpg", "id": 616}, {"title": "Creative Photography - Nature/Wildlife", "photographer": "NASA", "desc": "构图上，Creative Photography - Nature/Wildlife以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/KSC-20201028-PH-JBS02_0011/KSC-20201028-PH-JBS02_0011~orig.jpg", "category": "自然", "source": "nasa", "source_url": "https://images.nasa.gov/details-KSC-20201028-PH-JBS02_0011", "id": 45}, {"title": "The Temptation of Saint Anthony", "photographer": "Herri met de Bles", "desc": "构图上，The Temptation of Saint Anthony以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Herri met de Bles的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP235224.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/435678", "id": 156}, {"title": "Barcelona Spain Interior-view-in-Casa Batlló-01.jpg", "photographer": "CEphoto, Uwe Aranas", "desc": "构图上，Barcelona Spain Interior-view-in-Casa Batlló-01.jpg以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，CEphoto, Uwe Aranas的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Barcelona_Spain_Interior-view-in-Casa_Batll%C3%B3-01.jpg/960px-Barcelona_Spain_Interior-view-in-Casa_Batll%C3%B3-01.jpg", "category": "黑白", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ABarcelona_Spain_Interior-view-in-Casa_Batll%C3%B3-01.jpg", "id": 177}, {"title": "Golden Hour Girl", "photographer": "dolbinator1000", "desc": "构图上，Golden Hour Girl以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，dolbinator1000的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "cliff", "dress", "field", "girl", "flickr"], "img": "https://live.staticflickr.com/8641/16022841399_8b61b9bbd0_b.jpg", "category": "光影", "source": "flickr", "source_url": "https://www.flickr.com/photos/126654539@N08/16022841399", "id": 108}, {"title": "Head of a Bearded, Young Man in Profile Facing Right", "photographer": "Bronzino (Agnolo di Cosimo di Mariano)", "desc": "构图上，Head of a Bearded, Young Man in Profile Facing Right以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Bronzino (Agnolo di Cosimo di Mariano)的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP808035.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/345085", "id": 808}, {"title": "A Sphere, Projecting Against a Plane", "photographer": "James Gillray", "desc": "构图上，A Sphere, Projecting Against a Plane以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，James Gillray的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP808152.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/391758", "id": 507}, {"title": "Two Views from the Eight Views of the Xiao and Xiang Rivers", "photographer": "Kantei", "desc": "构图上，Two Views from the Eight Views of the Xiao and Xiang Rivers以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Kantei的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/as/original/DP700764_crd.jpg", "category": "自然", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/53226", "id": 318}, {"title": "Boating", "photographer": "Edouard Manet", "desc": "构图上，Boating以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Edouard Manet的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-25466-001.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436947", "id": 806}, {"title": "Youth and Dervish", "photographer": "Met Museum", "desc": "构图上，Youth and Dervish以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP299968.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/453895", "id": 296}, {"title": "Argentine black and white tegu (Salvator merianae) male Vicente Lopez.jpg", "photographer": "Charles J. Sharp", "desc": "构图上，Argentine black and white tegu (Salvator merianae) male Vicente Lopez.jpg以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Charles J. Sharp的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Argentine_black_and_white_tegu_%28Salvator_merianae%29_male_Vicente_Lopez.jpg/960px-Argentine_black_and_white_tegu_%28Salvator_merianae%29_male_Vicente_Lopez.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "黑白", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AArgentine_black_and_white_tegu_%28Salvator_merianae%29_male_Vicente_Lopez.jpg", "id": 620}, {"title": "Interior with a Young Couple", "photographer": "Pieter de Hooch", "desc": "构图上，Interior with a Young Couple以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Pieter de Hooch的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP145906.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436675", "id": 562}, {"title": "Head of a Man", "photographer": "Flemish", "desc": "构图上，Head of a Man以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Flemish的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/rl/original/DT3355.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/459298", "id": 842}, {"title": "”Abiding nowhere, the awakened mind arises”", "photographer": "Musō Soseki", "desc": "构图上，”Abiding nowhere, the awakened mind arises”以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Musō Soseki的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/as/original/DP-17101-002.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/816189", "id": 326}, {"title": "Engraved spouted jar", "photographer": "Maya artist(s)", "desc": "构图上，Engraved spouted jar以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Maya artist(s)的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DT4518.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/318346", "id": 813}, {"title": "Shadow photography.jpg", "photographer": "JAYASHREESATHIYAMOORTHY", "desc": "构图上，Shadow photography.jpg以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，JAYASHREESATHIYAMOORTHY的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Shadow_photography.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled", "category": "光影", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AShadow_photography.jpg", "id": 729}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

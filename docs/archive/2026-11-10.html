@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年11月10日 星期二</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">17</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">8</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Juan de Pareja (ca. 1608–1670)", "photographer": "Velázquez (Diego Rodríguez de Silva y Velázquez)", "desc": "构图上，Juan de Pareja (ca. 1608–1670)以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Velázquez (Diego Rodríguez de Silva y Velázquez)的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-14286-001.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437869", "id": 452}, {"title": "White Plum Blossoms and Moon", "photographer": "Itō Jakuchū", "desc": "构图上，White Plum Blossoms and Moon以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Itō Jakuchū的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/as/original/DP-12232-273.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/53408", "id": 739}, {"title": "Saint Christopher", "photographer": "Follower of Hans Baldung Grien", "desc": "构图上，Saint Christopher以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Follower of Hans Baldung Grien的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/rl/original/DP-13666-009.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/459222", "id": 650}, {"title": "Receptacle with Figurative Relief and Stopper", "photographer": "Met Museum", "desc": "构图上，Receptacle with Figurative Relief and Stopper以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP208760.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/316796", "id": 631}, {"title": "Bisajärvi in evening light from the southwest in Sipoonkorpi, Vantaa, Finland, 2", "photographer": "Ximonic (Simo Räsänen)", "desc": "构图上，Bisajärvi in evening light from the southwest in Sipoonkorpi, Vantaa, Finland, 2以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Ximonic (Simo Räsänen)的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Bisaj%C3%A4rvi_in_evening_light_from_the_southwest_in_Sipoonkorpi%2C_Vantaa%2C_Finland%2C_2021_May.jpg/960px-Bisaj%C3%A4rvi_in_evening_light_from_the_southwest_in_Sipoonkorpi%2C_Vantaa%2C_Finland%2C_2021_May.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ABisaj%C3%A4rvi_in_evening_light_from_the_southwest_in_Sipoonkorpi%2C_Vantaa%2C_Finland%2C_2021_May.jpg", "id": 607}, {"title": "Free black white architecture photo", "photographer": "Openverse 摄影师", "desc": "构图上，Free black white architecture photo以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "black and white", "black and white architectural photography", "black and white architecture photos", "black and white building", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg1MzYyNTYtaW1hZ2Uta3d2eG5obmguanBn.jpg", "category": "黑白", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/5922653/photo-image-public-domain-free-city", "id": 123}, {"title": "Come in - Tokyo, Japan - Color street photography", "photographer": "Giuseppe Milo (www.pixael.com)", "desc": "构图上，Come in - Tokyo, Japan - Color street photography以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Giuseppe Milo (www.pixael.com)的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "candid", "city", "color", "contrast", "flickr"], "img": "https://live.staticflickr.com/4624/38848339185_d1092a7e36_b.jpg", "category": "街拍", "source": "flickr", "source_url": "https://www.flickr.com/photos/87690240@N03/38848339185", "id": 65}, {"title": "<em>Sib</em> sphinx for a barque", "photographer": "Met Museum", "desc": "构图上，<em>Sib</em> sphinx for a barque以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/eg/original/DP-39623-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/590745", "id": 486}, {"title": "The Marriage Feast at Cana", "photographer": "Juan de Flandes", "desc": "构图上，The Marriage Feast at Cana以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Juan de Flandes的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1459.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436801", "id": 681}, {"title": "“First we computerized work, then we computerized home and social life, then ...", "photographer": "anokarina", "desc": "构图上，“First we computerized work, then we computerized home and social life, then ...以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，anokarina的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "appleiphone7", "art", "artomatic2017", "blacklivesmatter", "flickr"], "img": "https://live.staticflickr.com/2805/33645217694_7470e1da1d_b.jpg", "category": "纪实", "source": "flickr", "source_url": "https://www.flickr.com/photos/30760976@N04/33645217694", "id": 91}, {"title": "Free man walking pass mural", "photographer": "Openverse 摄影师", "desc": "构图上，Free man walking pass mural以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "graffiti paintings art", "hip hop", "light dark", "photography", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHgxMzg3NDYtaW1hZ2Uta3d2eHliOHouanBn.jpg", "category": "光影", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/5924156/photo-image-public-domain-shadow-person", "id": 245}, {"title": "Sleep", "photographer": "Pierre Puvis de Chavannes", "desc": "构图上，Sleep以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Pierre Puvis de Chavannes的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-14201-033.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437349", "id": 537}, {"title": "Twin Stars", "photographer": "Luis Falero", "desc": "构图上，Twin Stars以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Luis Falero的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP800314.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/335370", "id": 448}, {"title": "SpaceX Dragon before Departure", "photographer": "NASA", "desc": "构图上，SpaceX Dragon before Departure以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/iss047e109559/iss047e109559~orig.jpg", "category": "肖像", "source": "nasa", "source_url": "https://images.nasa.gov/details-iss047e109559", "id": 163}, {"title": "The Rest on the Flight into Egypt", "photographer": "Gerard David", "desc": "构图上，The Rest on the Flight into Egypt以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Gerard David的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-14936-023.jpg", "category": "自然", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436101", "id": 261}, {"title": "[Amphitheater, Nîmes]", "photographer": "Edouard Baldus", "desc": "构图上，[Amphitheater, Nîmes]以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Edouard Baldus的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ph/original/TR.307.3.2019_Baldus.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/831091", "id": 311}, {"title": "The Doorway", "photographer": "James McNeill Whistler", "desc": "构图上，The Doorway以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，James McNeill Whistler的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP813603.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/365017", "id": 250}, {"title": "Galaxy Cluster Abell 1689", "photographer": "NASA", "desc": "构图上，Galaxy Cluster Abell 1689以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001983/GSFC_20171208_Archive_e001983~large.jpg", "category": "建筑", "source": "nasa", "source_url": "https://images.nasa.gov/details-GSFC_20171208_Archive_e001983", "id": 58}, {"title": "Ergaki, Buiba Valley, Western Sayan Mountains, Krasnoyarsk Krai, Russia.jpg", "photographer": "Vyacheslav Argenberg", "desc": "构图上，Ergaki, Buiba Valley, Western Sayan Mountains, Krasnoyarsk Krai, Russia.jpg以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Vyacheslav Argenberg的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Ergaki%2C_Buiba_Valley%2C_Western_Sayan_Mountains%2C_Krasnoyarsk_Krai%2C_Russia.jpg/960px-Ergaki%2C_Buiba_Valley%2C_Western_Sayan_Mountains%2C_Krasnoyarsk_Krai%2C_Russia.jpg", "category": "风景", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AErgaki%2C_Buiba_Valley%2C_Western_Sayan_Mountains%2C_Krasnoyarsk_Krai%2C_Russia.jpg", "id": 426}, {"title": "Tōkyō #6", "photographer": "Thomas Leuthard", "desc": "构图上，Tōkyō #6以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Thomas Leuthard的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "architecture", "city", "dark", "light", "flickr"], "img": "https://live.staticflickr.com/7011/13979851281_35237bab41_b.jpg", "category": "光影", "source": "flickr", "source_url": "https://www.flickr.com/photos/41346951@N05/13979851281", "id": 241}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

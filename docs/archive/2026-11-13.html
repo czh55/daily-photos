@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年11月13日 星期五</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">19</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">8</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Vessel terminating in the forepart of a stag", "photographer": "Met Museum", "desc": "构图上，Vessel terminating in the forepart of a stag以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/an/original/DP-42027-001.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/327399", "id": 443}, {"title": "Armchair (part of a set)", "photographer": "Nicolas-Quinibert Foliot", "desc": "构图上，Armchair (part of a set)以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nicolas-Quinibert Foliot的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/es/original/152178.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/197741", "id": 275}, {"title": "Circus Sideshow (Parade de cirque)", "photographer": "Georges Seurat", "desc": "构图上，Circus Sideshow (Parade de cirque)以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Georges Seurat的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP375450_cropped.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437654", "id": 488}, {"title": "Still Life with Apples and a Pot of Primroses", "photographer": "Paul Cézanne", "desc": "构图上，Still Life with Apples and a Pot of Primroses以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Paul Cézanne的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT47.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/435882", "id": 465}, {"title": "The Flight into Egypt", "photographer": "Carlo Maratti", "desc": "构图上，The Flight into Egypt以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Carlo Maratti的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-19712-001.jpg", "category": "街拍", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/816629", "id": 841}, {"id": 5, "title": "莱茵河 II", "photographer": "Andreas Gursky", "desc": "当代摄影最昂贵作品之一，以极致冷静的视角呈现莱茵河的几何秩序，挑战了风景摄影的传统美学边界。", "tags": ["当代", "观念", "大画幅"], "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80", "category": "风景", "source": "unsplash"}, {"title": "Elektrostal. Urban architecture. img 004.jpg", "photographer": "Dmitry Makeev", "desc": "构图上，Elektrostal. Urban architecture. img 004.jpg以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Dmitry Makeev的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Elektrostal._Urban_architecture._img_004.jpg/960px-Elektrostal._Urban_architecture._img_004.jpg", "category": "建筑", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AElektrostal._Urban_architecture._img_004.jpg", "id": 206}, {"title": "OSIRIS-REx NASA Social", "photographer": "NASA", "desc": "构图上，OSIRIS-REx NASA Social以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/KSC-20160907-PH_KLS02_0002/KSC-20160907-PH_KLS02_0002~orig.jpg", "category": "纪实", "source": "nasa", "source_url": "https://images.nasa.gov/details-KSC-20160907-PH_KLS02_0002", "id": 102}, {"title": "Amerapoora: Shwe-doung-dyk Pagoda", "photographer": "Linnaeus Tripe", "desc": "构图上，Amerapoora: Shwe-doung-dyk Pagoda以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Linnaeus Tripe的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ph/original/DP300695.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/302650", "id": 388}, {"title": "Madame la Marquise de Coëtlogon", "photographer": "Louis de Carmontelle", "desc": "构图上，Madame la Marquise de Coëtlogon以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Louis de Carmontelle的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/rl/original/DP-19383-001.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/459375", "id": 787}, {"title": "Altar to the Sun Warrior", "photographer": "Mexico Nahua artist(s)", "desc": "构图上，Altar to the Sun Warrior以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mexico Nahua artist(s)的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-39200-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/318674", "id": 762}, {"title": "Earth observations of city lights in the Alps taken during STS-97", "photographer": "NASA", "desc": "构图上，Earth observations of city lights in the Alps taken during STS-97以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/sts097-355-011/sts097-355-011~orig.jpg", "category": "风景", "source": "nasa", "source_url": "https://images.nasa.gov/details-sts097-355-011", "id": 31}, {"title": "Boy With a Staff", "photographer": "Giovanni Battista Piazzetta", "desc": "构图上，Boy With a Staff以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Giovanni Battista Piazzetta的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP811138.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/339681", "id": 411}, {"title": "Homeward Bound (New York)", "photographer": "Erskine Nicol", "desc": "构图上，Homeward Bound (New York)以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Erskine Nicol的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP853623.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/366825", "id": 346}, {"title": "VIENNA VOLUNTEER.(in Italy 1848) (Supplement", "photographer": "Openverse 摄影师", "desc": "构图上，VIENNA VOLUNTEER.(in Italy 1848) (Supplement以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "art", "drawing", "illustration", "journal", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA2L3dpZW44OTM3NC1pbWFnZS5qcGc.jpg", "category": "纪实", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/11601105/image-paper-art-vintage", "id": 95}, {"title": "Abdullkadir KAPLAN DUDAYEV.jpg", "photographer": "BerzanOner", "desc": "构图上，Abdullkadir KAPLAN DUDAYEV.jpg以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，BerzanOner的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Abdullkadir_KAPLAN_DUDAYEV.jpg/960px-Abdullkadir_KAPLAN_DUDAYEV.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "肖像", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AAbdullkadir_KAPLAN_DUDAYEV.jpg", "id": 591}, {"title": "Quillwork Sconce", "photographer": "Ruth Read", "desc": "构图上，Quillwork Sconce以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Ruth Read的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ad/original/ES4737.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/6840", "id": 810}, {"title": "The Fifteen Mysteries and the Virgin of the Rosary", "photographer": "Netherlandish (Brussels) Painter", "desc": "构图上，The Fifteen Mysteries and the Virgin of the Rosary以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Netherlandish (Brussels) Painter的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT5754.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437216", "id": 568}, {"title": "Fisherman's Lodge At Mount Xisai", "photographer": "Li Jie", "desc": "构图上，Fisherman's Lodge At Mount Xisai以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Li Jie的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/as/original/DP-15820-005_crd.jpg", "category": "自然", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/40057", "id": 147}, {"title": "Dancers in the Rehearsal Room with a Double Bass", "photographer": "Edgar Degas", "desc": "构图上，Dancers in the Rehearsal Room with a Double Bass以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Edgar Degas的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP275510.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436138", "id": 832}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

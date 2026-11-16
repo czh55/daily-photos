@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年11月16日 星期一</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">14</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">7</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Clock watch with astronomical dial and sundial", "photographer": "Jan Jansen Bockeltz", "desc": "构图上，Clock watch with astronomical dial and sundial以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jan Jansen Bockeltz的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/es/original/DP340434.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/194191", "id": 274}, {"title": "Barcelona Spain Interior-view-in-Casa Batlló-01.jpg", "photographer": "CEphoto, Uwe Aranas", "desc": "构图上，Barcelona Spain Interior-view-in-Casa Batlló-01.jpg以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，CEphoto, Uwe Aranas的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Barcelona_Spain_Interior-view-in-Casa_Batll%C3%B3-01.jpg/960px-Barcelona_Spain_Interior-view-in-Casa_Batll%C3%B3-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "黑白", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ABarcelona_Spain_Interior-view-in-Casa_Batll%C3%B3-01.jpg", "id": 604}, {"title": "Creative Photography - Nature/Wildlife", "photographer": "NASA", "desc": "构图上，Creative Photography - Nature/Wildlife以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/KSC-20201028-PH-JBS02_0086/KSC-20201028-PH-JBS02_0086~orig.jpg", "category": "自然", "source": "nasa", "source_url": "https://images.nasa.gov/details-KSC-20201028-PH-JBS02_0086", "id": 828}, {"title": "iss071e513872", "photographer": "NASA", "desc": "构图上，iss071e513872以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/iss071e513872/iss071e513872~orig.jpg", "category": "肖像", "source": "nasa", "source_url": "https://images.nasa.gov/details-iss071e513872", "id": 87}, {"id": 11, "title": "尘暴", "photographer": "Arthur Rothstein", "desc": "1930年代沙尘暴中的农场家庭。尘土的质感、绝望的姿态、灰调的天空——环境灾难中的人类脆弱与坚韧并存。", "tags": ["纪实", "环境", "社会"], "img": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80", "category": "纪实", "source": "unsplash"}, {"title": "Cross with Pearls", "photographer": "Met Museum", "desc": "构图上，Cross with Pearls以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/md/original/DT11711.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/476543", "id": 557}, {"title": "Al Ma'wa for Nature and Wildlife 23.jpg", "photographer": "Mohammad hajeer", "desc": "构图上，Al Ma'wa for Nature and Wildlife 23.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Mohammad hajeer的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Al_Ma%27wa_for_Nature_and_Wildlife_23.jpg/960px-Al_Ma%27wa_for_Nature_and_Wildlife_23.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AAl_Ma%27wa_for_Nature_and_Wildlife_23.jpg", "id": 335}, {"title": "Indian paradise flycatcher bird.. Wildlife&nature IMG 9480.jpg", "photographer": "Khairul Biswas", "desc": "构图上，Indian paradise flycatcher bird.. Wildlife&nature IMG 9480.jpg以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Khairul Biswas的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Indian_paradise_flycatcher_bird.._Wildlife%26nature_IMG_9480.jpg/960px-Indian_paradise_flycatcher_bird.._Wildlife%26nature_IMG_9480.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AIndian_paradise_flycatcher_bird.._Wildlife%26nature_IMG_9480.jpg", "id": 43}, {"title": "Greenhouse, David Hosack Estate, Hyde Park, New York (from Hoasack Album)", "photographer": "Thomas Kelah Wharton", "desc": "构图上，Greenhouse, David Hosack Estate, Hyde Park, New York (from Hoasack Album)以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Thomas Kelah Wharton的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ad/original/ap1994.187.12.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/14845", "id": 710}, {"title": "Tuber-inspired stirrup-spout bottle", "photographer": "Moche artist(s)", "desc": "构图上，Tuber-inspired stirrup-spout bottle以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Moche artist(s)的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-24360-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/308532", "id": 378}, {"title": "Emerging geometry in life building blocks.jpg", "photographer": "FedeCaimi", "desc": "构图上，Emerging geometry in life building blocks.jpg以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，FedeCaimi的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Emerging_geometry_in_life_building_blocks.jpg/960px-Emerging_geometry_in_life_building_blocks.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "建筑", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AEmerging_geometry_in_life_building_blocks.jpg", "id": 611}, {"title": "Lake Khövsgöl.jpg", "photographer": "Виктор Пинчук", "desc": "构图上，Lake Khövsgöl.jpg以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Виктор Пинчук的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/7/79/Lake_Kh%C3%B6vsg%C3%B6l.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled", "category": "风景", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ALake_Kh%C3%B6vsg%C3%B6l.jpg", "id": 727}, {"title": "Adam and Eve with Charles I and Henrietta Maria", "photographer": "Met Museum", "desc": "构图上，Adam and Eve with Charles I and Henrietta Maria以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/es/original/DP158590.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/228990", "id": 674}, {"title": "Building of the Savings Bank of Beaune en 2016.jpg", "photographer": "Pierre André Leclercq", "desc": "构图上，Building of the Savings Bank of Beaune en 2016.jpg以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Pierre André Leclercq的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Building_of_the_Savings_Bank_of_Beaune_en_2016.jpg/960px-Building_of_the_Savings_Bank_of_Beaune_en_2016.jpg", "category": "建筑", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ABuilding_of_the_Savings_Bank_of_Beaune_en_2016.jpg", "id": 56}, {"title": "Snuff Bottle", "photographer": "Met Museum", "desc": "构图上，Snuff Bottle以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/as/original/21_175_190ab_O1.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/41400", "id": 422}, {"title": "Fragment from a Frieze with a Meander Pattern and Rosettes", "photographer": "Met Museum", "desc": "构图上，Fragment from a Frieze with a Meander Pattern and Rosettes以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/118072.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/453602", "id": 705}, {"title": "Virgin and Child", "photographer": "Met Museum", "desc": "构图上，Virgin and Child以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/md/original/DP-34069-001.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/464294", "id": 640}, {"title": "The Holy Family with the Infant Saint John the Baptist", "photographer": "Sassoferrato (Giovanni Battista Salvi)", "desc": "构图上，The Holy Family with the Infant Saint John the Baptist以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Sassoferrato (Giovanni Battista Salvi)的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP801532.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/341171", "id": 827}, {"title": "The Penitence of Saint Jerome", "photographer": "Joachim Patinir", "desc": "构图上，The Penitence of Saint Jerome以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Joachim Patinir的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT5549.jpg", "category": "自然", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437261", "id": 148}, {"title": "Earth Observations taken by the Expedition 23 Crew", "photographer": "NASA", "desc": "构图上，Earth Observations taken by the Expedition 23 Crew以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/iss023e057948/iss023e057948~orig.jpg", "category": "黑白", "source": "nasa", "source_url": "https://images.nasa.gov/details-iss023e057948", "id": 129}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

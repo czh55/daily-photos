@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年11月19日 星期四</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">18</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">8</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Vessel with mythological scene", "photographer": "Maya artist(s)", "desc": "构图上，Vessel with mythological scene以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Maya artist(s)的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP348021.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/662967", "id": 479}, {"title": "The Lamentation", "photographer": "Master of the Virgin among Virgins", "desc": "构图上，The Lamentation以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Master of the Virgin among Virgins的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-23271-001.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437035", "id": 251}, {"title": "Settee (canapé) (part of a set)", "photographer": "Nicolas-Quinibert Foliot", "desc": "构图上，Settee (canapé) (part of a set)以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Nicolas-Quinibert Foliot的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/es/original/TP101.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/197738", "id": 348}, {"title": "The Forest in Winter at Sunset", "photographer": "Théodore Rousseau", "desc": "构图上，The Forest in Winter at Sunset以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Théodore Rousseau的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-31520-001.jpg", "category": "自然", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/438816", "id": 197}, {"title": "Reed Pipe", "photographer": "Met Museum", "desc": "构图上，Reed Pipe以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/mi/original/midp89.4.572.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/501188", "id": 412}, {"title": "Maó, Menorca #street #streetphotography #house #architecture #urban #holes", "photographer": "Pintanescu", "desc": "构图上，Maó, Menorca #street #streetphotography #house #architecture #urban #holes以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Pintanescu的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "instagramapp", "iphoneography", "square", "flickr"], "img": "https://live.staticflickr.com/2828/34041984330_8a51f8faa3_b.jpg", "category": "建筑", "source": "flickr", "source_url": "https://www.flickr.com/photos/54030959@N08/34041984330", "id": 201}, {"title": "Golden hour sky", "photographer": "Sergeant Matt Hecht", "desc": "构图上，Golden hour sky以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Sergeant Matt Hecht的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "cloud", "countryside", "golden hour", "golden sky", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L2ZsODg4MjA4MDE1Ni1pbWFnZS1rcWFwNTJwaC5qcGc.jpg", "category": "光影", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/3578681/free-photo-image-sun-background", "id": 111}, {"title": "NASA astronaut Zena Cardman poses for a portrait", "photographer": "NASA", "desc": "构图上，NASA astronaut Zena Cardman poses for a portrait以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/jsc2024e022261_alt/jsc2024e022261_alt~orig.jpg", "category": "肖像", "source": "nasa", "source_url": "https://images.nasa.gov/details-jsc2024e022261_alt", "id": 85}, {"title": "Young Girl with Long Braids and Pantalettes, Holding a Flower", "photographer": "Auguste Edouart", "desc": "构图上，Young Girl with Long Braids and Pantalettes, Holding a Flower以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Auguste Edouart的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP890500.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/691008", "id": 695}, {"title": "Portrait of a Woman, Possibly a Nun of San Secondo; (verso) Scene in Grisaille", "photographer": "Jacometto (Jacometto Veneziano)", "desc": "构图上，Portrait of a Woman, Possibly a Nun of San Secondo; (verso) Scene in Grisaille以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jacometto (Jacometto Veneziano)的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/rl/original/DP221483.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/459027", "id": 270}, {"title": "Couple zebras", "photographer": "Openverse 摄影师", "desc": "构图上，Couple zebras以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "animal", "nature", "nature photos", "wildlife", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYxNzA5MzA0LXdpa2ltZWRpYS1pbWFnZS1rb3diYXh2dy5qcGc.jpg", "category": "自然", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/3283220/free-photo-image-zebra-wildlife-animal-cc0", "id": 571}, {"title": "Glass gold-band mosaic bead", "photographer": "Met Museum", "desc": "构图上，Glass gold-band mosaic bead以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/gr/original/sf1513011color.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/249047", "id": 716}, {"title": "Hind Head Hill, On the Portsmouth Road, part V, plate 25 from \"Liber Studiorum\"", "photographer": "Joseph Mallord William Turner", "desc": "构图上，Hind Head Hill, On the Portsmouth Road, part V, plate 25 from \"Liber Studiorum\"以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Joseph Mallord William Turner的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/dp/original/DP821392.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/382928", "id": 685}, {"title": "Tetrapod Bowl", "photographer": "Met Museum", "desc": "构图上，Tetrapod Bowl以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-13003-001.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/314518", "id": 297}, {"title": "Saint Anthony the Abbot in the Wilderness", "photographer": "Sano di Pietro (Ansano di Pietro di Mencio)", "desc": "构图上，Saint Anthony the Abbot in the Wilderness以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Sano di Pietro (Ansano di Pietro di Mencio)的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/rl/original/DP319194.jpg", "category": "风景", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/458967", "id": 402}, {"title": "The Nativity with Donors and Saints Jerome and Leonard", "photographer": "Gerard David", "desc": "构图上，The Nativity with Donors and Saints Jerome and Leonard以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Gerard David的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1476.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436099", "id": 224}, {"title": "Ergaki, Buiba Valley, Western Sayan Mountains, Krasnoyarsk Krai, Russia.jpg", "photographer": "Vyacheslav Argenberg", "desc": "构图上，Ergaki, Buiba Valley, Western Sayan Mountains, Krasnoyarsk Krai, Russia.jpg以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Vyacheslav Argenberg的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Ergaki%2C_Buiba_Valley%2C_Western_Sayan_Mountains%2C_Krasnoyarsk_Krai%2C_Russia.jpg/960px-Ergaki%2C_Buiba_Valley%2C_Western_Sayan_Mountains%2C_Krasnoyarsk_Krai%2C_Russia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "风景", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AErgaki%2C_Buiba_Valley%2C_Western_Sayan_Mountains%2C_Krasnoyarsk_Krai%2C_Russia.jpg", "id": 654}, {"title": "The Crucifixion with Donors and Saints Peter and Margaret of Antioch", "photographer": "Cornelis Engebrechtsz", "desc": "构图上，The Crucifixion with Donors and Saints Peter and Margaret of Antioch以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Cornelis Engebrechtsz的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT10856.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436271", "id": 482}, {"title": "Fish hacha", "photographer": "Classic Veracruz artist(s)", "desc": "构图上，Fish hacha以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Classic Veracruz artist(s)的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP104813.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/310599", "id": 407}, {"title": "Edmund Muskie, presidential candidate, New", "photographer": "libraryofcongress", "desc": "构图上，Edmund Muskie, presidential candidate, New以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，libraryofcongress的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "city", "microphone", "new york", "podium", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvbG9jMjAyMDczNTcxNy1pbWFnZS5qcGc.jpg", "category": "街拍", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/6299160/edmund-muskie-presidential-candidate-new-york-city", "id": 281}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

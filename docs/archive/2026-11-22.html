@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年11月22日 星期日</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">12</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">8</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"title": "Dublin North Inner City candidate Darryl O'Callaghan and Party Leader Eamon G...", "photographer": "Labour Youth ~ Óige an Lucht Oibre", "desc": "构图上，Dublin North Inner City candidate Darryl O'Callaghan and Party Leader Eamon G...以街拍元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Labour Youth ~ Óige an Lucht Oibre的镜头传递出对街拍题材的独到观察与共鸣。", "tags": ["街拍", "adult", "festival", "man", "movie", "flickr"], "img": "https://live.staticflickr.com/2832/12343960335_87115d3311_b.jpg", "category": "街拍", "source": "flickr", "source_url": "https://www.flickr.com/photos/80895979@N00/12343960335", "id": 151}, {"title": "Chile Mountains", "photographer": "Openverse 摄影师", "desc": "构图上，Chile Mountains以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "glacier", "ice", "mountain", "nature", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvaXMxNDIwMC1pbWFnZS1rd3lzZXJ3My5qcGc.jpg", "category": "风景", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/5970050/chile-mountains", "id": 425}, {"title": "OSIRIS-REx NASA Social", "photographer": "NASA", "desc": "构图上，OSIRIS-REx NASA Social以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/KSC-20160907-PH_KLS02_0055/KSC-20160907-PH_KLS02_0055~orig.jpg", "category": "纪实", "source": "nasa", "source_url": "https://images.nasa.gov/details-KSC-20160907-PH_KLS02_0055", "id": 848}, {"title": "KSC-01PP-0882", "photographer": "NASA", "desc": "构图上，KSC-01PP-0882以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/01pp0882/01pp0882~large.jpg", "category": "建筑", "source": "nasa", "source_url": "https://images.nasa.gov/details-01pp0882", "id": 60}, {"title": "Animal pendant", "photographer": "Met Museum", "desc": "构图上，Animal pendant以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-43941-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/309952", "id": 236}, {"title": "A Section of the Via Sacra, Rome (The Church of Saints Cosmas and Damian)", "photographer": "Christoffer Wilhelm Eckersberg", "desc": "构图上，A Section of the Via Sacra, Rome (The Church of Saints Cosmas and Damian)以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Christoffer Wilhelm Eckersberg的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP268211.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/441768", "id": 829}, {"title": "Curiosity Spots Clouds Over Mont Mercou", "photographer": "NASA", "desc": "构图上，Curiosity Spots Clouds Over Mont Mercou以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，NASA的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "nasa", "space"], "img": "https://images-assets.nasa.gov/image/PIA24622/PIA24622~orig.jpg", "category": "肖像", "source": "nasa", "source_url": "https://images.nasa.gov/details-PIA24622", "id": 835}, {"title": "'Forest of Light' sculpture on Keele University campus - geograph.org.uk - 41528", "photographer": "Jonathan Hutchins", "desc": "构图上，'Forest of Light' sculpture on Keele University campus - geograph.org.uk - 41528以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jonathan Hutchins的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/%27Forest_of_Light%27_sculpture_on_Keele_University_campus_-_geograph.org.uk_-_4152862.jpg/960px-%27Forest_of_Light%27_sculpture_on_Keele_University_campus_-_geograph.org.uk_-_4152862.jpg", "category": "自然", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3A%27Forest_of_Light%27_sculpture_on_Keele_University_campus_-_geograph.org.uk_-_4152862.jpg", "id": 143}, {"title": "Top Panel of a Box", "photographer": "Met Museum", "desc": "构图上，Top Panel of a Box以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/md/original/DP-15003-001.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/464256", "id": 290}, {"title": "Fragment from a Molding with Intertwined Vines and Acanthus Leaves", "photographer": "Met Museum", "desc": "构图上，Fragment from a Molding with Intertwined Vines and Acanthus Leaves以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/10.175.88.JPG", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/456178", "id": 765}, {"title": "Tunic with Diamond Band", "photographer": "Met Museum", "desc": "构图上，Tunic with Diamond Band以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP107698.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/314528", "id": 423}, {"title": "Mars and Venus United by Love", "photographer": "Paolo Veronese (Paolo Caliari)", "desc": "构图上，Mars and Venus United by Love以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Paolo Veronese (Paolo Caliari)的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP167124.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437891", "id": 748}, {"title": "Apis dorsata nest on a tree at golden hour in Laos.jpg", "photographer": "Basile Morin", "desc": "构图上，Apis dorsata nest on a tree at golden hour in Laos.jpg以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Basile Morin的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Apis_dorsata_nest_on_a_tree_at_golden_hour_in_Laos.jpg/960px-Apis_dorsata_nest_on_a_tree_at_golden_hour_in_Laos.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "光影", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AApis_dorsata_nest_on_a_tree_at_golden_hour_in_Laos.jpg", "id": 617}, {"title": "Neckless jar with complex scene", "photographer": "Paracas artist(s)", "desc": "构图上，Neckless jar with complex scene以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Paracas artist(s)的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-24348-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/312928", "id": 462}, {"title": "[South Portal, Chartres Cathedral]", "photographer": "Charles Marville", "desc": "构图上，[South Portal, Chartres Cathedral]以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Charles Marville的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ph/original/DP158042.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/283734", "id": 561}, {"title": "urban bridge dusk headlight tail", "photographer": "Openverse 摄影师", "desc": "构图上，urban bridge dusk headlight tail以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "architecture", "bridge", "city", "highway architecture", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYxNzExMjM4LXdpa2ltZWRpYS1pbWFnZS1rb3diaHZiYy5qcGc.jpg", "category": "建筑", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/3283392/free-photo-image-bridge-tower-arch", "id": 204}, {"title": "Fragment of a Capital with a Basket-Weave Pattern and Crosses", "photographer": "Met Museum", "desc": "构图上，Fragment of a Capital with a Basket-Weave Pattern and Crosses以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/10.175.86.JPG", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/456176", "id": 421}, {"title": "Door board (jovo)", "photographer": "Met Museum", "desc": "构图上，Door board (jovo)以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ao/original/DP-21002-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/757089", "id": 466}, {"title": "A Musical Party", "photographer": "Gerbrand van den Eeckhout", "desc": "构图上，A Musical Party以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Gerbrand van den Eeckhout的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP143165.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436267", "id": 775}, {"title": "Sunflowers", "photographer": "Vincent van Gogh", "desc": "构图上，Sunflowers以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Vincent van Gogh的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-41223-001.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436524", "id": 709}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>

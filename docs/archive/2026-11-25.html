@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日摄影推荐 | Daily Photography</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="date">2026年11月25日 星期三</div>
+  <h1>每日摄影推荐</h1>
+  <p class="subtitle">每天精选 20 幅优秀摄影作品，启迪你的视觉灵感</p>
+</header>
+
+<div class="stats-bar container">
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">今日推荐</div></div>
+  <div class="stat"><div class="stat-value">17</div><div class="stat-label">摄影大师</div></div>
+  <div class="stat"><div class="stat-value">8</div><div class="stat-label">风格流派</div></div>
+</div>
+
+<div class="filter-bar container" id="filterBar"></div>
+
+<div class="archive-link container">
+  <a href="index.html">浏览往期推荐</a>
+</div>
+
+<div class="gallery container" id="gallery"></div>
+
+<footer>
+  <p>每日摄影推荐 &copy; <span id="footerYear"></span> · 自动更新于每日 9:00 · Powered by <span>Cursor Automations</span></p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+var photos = [{"id": 16, "title": "东京夜雨", "photographer": "未知摄影师", "desc": "霓虹灯在雨夜的街面积水中投射出破碎的光影。透明雨伞下匆匆的行人、湿漉漉的柏油路面——这是赛博朋克美学最真实的日常呈现。", "tags": ["都市", "雨夜", "霓虹"], "img": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80", "category": "街拍", "source": "unsplash"}, {"title": "The Ballet from \"Robert le Diable\"", "photographer": "Edgar Degas", "desc": "构图上，The Ballet from \"Robert le Diable\"以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Edgar Degas的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DT1911.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436123", "id": 307}, {"title": "Sea monster", "photographer": "Severo Calzetta da Ravenna", "desc": "构图上，Sea monster以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Severo Calzetta da Ravenna的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/es/original/DP-12420-001.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/207000", "id": 746}, {"title": "Madonna Adoring the Child", "photographer": "Botticelli (Alessandro di Mariano Filipepi)", "desc": "构图上，Madonna Adoring the Child以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Botticelli (Alessandro di Mariano Filipepi)的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/rl/original/DP318246.jpg", "category": "建筑", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/459001", "id": 149}, {"title": "Mosaic glass inlay", "photographer": "Met Museum", "desc": "构图上，Mosaic glass inlay以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/gr/original/sf421139.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/257722", "id": 130}, {"title": "Dublin pride 2016 parade - Dublin, Ireland - Documentary photography", "photographer": "Giuseppe Milo (www.pixael.com)", "desc": "构图上，Dublin pride 2016 parade - Dublin, Ireland - Documentary photography以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Giuseppe Milo (www.pixael.com)的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "amazon", "amnesty", "documentary", "dropbox", "flickr"], "img": "https://live.staticflickr.com/7211/27798136392_3010bb3b1f_b.jpg", "category": "纪实", "source": "flickr", "source_url": "https://www.flickr.com/photos/87690240@N03/27798136392", "id": 855}, {"title": "Black and white monochrome - trees in winter snow.jpg", "photographer": "PosifCool", "desc": "构图上，Black and white monochrome - trees in winter snow.jpg以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，PosifCool的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Black_and_white_monochrome_-_trees_in_winter_snow.jpg/960px-Black_and_white_monochrome_-_trees_in_winter_snow.jpg", "category": "黑白", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ABlack_and_white_monochrome_-_trees_in_winter_snow.jpg", "id": 255}, {"title": "Dish with Horse and Rider", "photographer": "Met Museum", "desc": "构图上，Dish with Horse and Rider以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Met Museum的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/sf45-153-2b.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/450578", "id": 237}, {"title": "Forest Treetops Struck Light (c", "photographer": "Openverse 摄影师", "desc": "构图上，Forest Treetops Struck Light (c以自然元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对自然题材的独到观察与共鸣。", "tags": ["自然", "art", "drawings", "forest", "light", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA0L25nYTE1OTI4Mi1pbWFnZS5qcGc.jpg", "category": "自然", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/10026941/forest-treetops-struck-light-c-1800-heinrich-rieter", "id": 194}, {"title": "Joseph Stalin, Franklin D Roosevelt and Winston Churchill, in Teheran, 1943, edi", "photographer": "Dennis Charles Oulds", "desc": "构图上，Joseph Stalin, Franklin D Roosevelt and Winston Churchill, in Teheran, 1943, edi以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Dennis Charles Oulds的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Joseph_Stalin%2C_Franklin_D_Roosevelt_and_Winston_Churchill%2C_in_Teheran%2C_1943%2C_edit.jpg/960px-Joseph_Stalin%2C_Franklin_D_Roosevelt_and_Winston_Churchill%2C_in_Teheran%2C_1943%2C_edit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "黑白", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AJoseph_Stalin%2C_Franklin_D_Roosevelt_and_Winston_Churchill%2C_in_Teheran%2C_1943%2C_edit.jpg", "id": 686}, {"title": "Ariadne", "photographer": "George Frederic Watts", "desc": "构图上，Ariadne以肖像元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，George Frederic Watts的镜头传递出对肖像题材的独到观察与共鸣。", "tags": ["肖像", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP169627.jpg", "category": "肖像", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/437936", "id": 88}, {"title": "The Goddess Bhairavi Devi with Shiva", "photographer": "Payag", "desc": "构图上，The Goddess Bhairavi Devi with Shiva以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Payag的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/is/original/DP257990.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/457743", "id": 687}, {"title": "Sunset golden hour scenery, view", "photographer": "Openverse 摄影师", "desc": "构图上，Sunset golden hour scenery, view以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Openverse 摄影师的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "clouds", "golden hour", "landscape", "nature", "rawpixel"], "img": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL3B4OTE1MTc0LWltYWdlLWt3dnV1YWVuLmpwZw.jpg", "category": "光影", "source": "rawpixel", "source_url": "https://www.rawpixel.com/image/5904304/image-clouds-public-domain-golden", "id": 110}, {"title": "(from Sketchbook)", "photographer": "James McNeill Whistler", "desc": "构图上，(from Sketchbook)以黑白元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，James McNeill Whistler的镜头传递出对黑白题材的独到观察与共鸣。", "tags": ["黑白", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ad/original/196258.jpg", "category": "黑白", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/16018", "id": 398}, {"title": "Intervale Scenic Vista White Mountain North Conway.jpg", "photographer": "EgorovaSvetlana", "desc": "构图上，Intervale Scenic Vista White Mountain North Conway.jpg以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，EgorovaSvetlana的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Intervale_Scenic_Vista_White_Mountain_North_Conway.jpg/960px-Intervale_Scenic_Vista_White_Mountain_North_Conway.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "风景", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AIntervale_Scenic_Vista_White_Mountain_North_Conway.jpg", "id": 655}, {"title": "Intervale Scenic vista Mt Washington White Mountain North Conway NH.jpg", "photographer": "EgorovaSvetlana", "desc": "构图上，Intervale Scenic vista Mt Washington White Mountain North Conway NH.jpg以风景元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，EgorovaSvetlana的镜头传递出对风景题材的独到观察与共鸣。", "tags": ["风景", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Intervale_Scenic_vista_Mt_Washington_White_Mountain_North_Conway_NH.jpg/960px-Intervale_Scenic_vista_Mt_Washington_White_Mountain_North_Conway_NH.jpg", "category": "风景", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3AIntervale_Scenic_vista_Mt_Washington_White_Mountain_North_Conway_NH.jpg", "id": 188}, {"title": "Building of the Savings Bank of Beaune en 2016.jpg", "photographer": "Pierre André Leclercq", "desc": "构图上，Building of the Savings Bank of Beaune en 2016.jpg以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Pierre André Leclercq的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "wikimedia"], "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Building_of_the_Savings_Bank_of_Beaune_en_2016.jpg/960px-Building_of_the_Savings_Bank_of_Beaune_en_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "category": "建筑", "source": "wikimedia", "source_url": "https://commons.wikimedia.org/wiki/File%3ABuilding_of_the_Savings_Bank_of_Beaune_en_2016.jpg", "id": 610}, {"title": "Antoine Laurent Lavoisier (1743–1794) and Marie Anne Lavoisier (Marie Anne Pi...", "photographer": "Jacques Louis David", "desc": "构图上，Antoine Laurent Lavoisier (1743–1794) and Marie Anne Lavoisier (Marie Anne Pi...以光影元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Jacques Louis David的镜头传递出对光影题材的独到观察与共鸣。", "tags": ["光影", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-19709-001.jpg", "category": "光影", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/436106", "id": 369}, {"title": "A Book Peddler", "photographer": "Master of the Canesso Peddler", "desc": "构图上，A Book Peddler以纪实元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Master of the Canesso Peddler的镜头传递出对纪实题材的独到观察与共鸣。", "tags": ["纪实", "met", "art"], "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-36366-001.jpg", "category": "纪实", "source": "met", "source_url": "https://www.metmuseum.org/art/collection/search/910384", "id": 309}, {"title": "Building geometry (Nampo Lotte)", "photographer": "Idle Expatter", "desc": "构图上，Building geometry (Nampo Lotte)以建筑元素形成清晰视觉焦点；光影层次丰富，明暗对比赋予画面深度与空间感；情感表达上，Idle Expatter的镜头传递出对建筑题材的独到观察与共鸣。", "tags": ["建筑", "architecture", "buildings", "busan", "geometry", "flickr"], "img": "https://live.staticflickr.com/7176/6828151318_57d500854e_b.jpg", "category": "建筑", "source": "flickr", "source_url": "https://www.flickr.com/photos/75719750@N02/6828151318", "id": 50}];
+
+(function() {
+  var footerYearEl = document.getElementById('footerYear');
+  if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
+  var categories = ['全部'].concat(
+    Array.from(new Set(photos.map(function(p) { return p.category; })))
+  );
+
+  var filterBar = document.getElementById('filterBar');
+  categories.forEach(function(cat) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === '全部' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+      btn.classList.add('active');
+      renderGallery(cat === '全部' ? null : cat);
+    });
+    filterBar.appendChild(btn);
+  });
+
+  function sourceLabel(src) {
+    var labels = {
+      openverse: 'Openverse',
+      wikimedia: 'Wikimedia',
+      nasa: 'NASA',
+      met: 'Met Museum',
+      unsplash: 'Unsplash',
+      pexels: 'Pexels',
+      pixabay: 'Pixabay',
+      rawpixel: 'Rawpixel'
+    };
+    return labels[src] || src || '';
+  }
+
+  function renderGallery(filter) {
+    var gallery = document.getElementById('gallery');
+    var filtered = filter ? photos.filter(function(p) { return p.category === filter; }) : photos;
+    gallery.innerHTML = filtered.map(function(p, i) {
+      var srcLine = p.source ? '<p class="source-label">' + sourceLabel(p.source) + '</p>' : '';
+      return '<div class="photo-card" data-index="' + i + '" data-img="' + p.img + '" data-caption="' + p.title + ' \u2014 ' + p.photographer + '">' +
+        '<div class="img-wrap">' +
+          '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="badge">' + p.tags[0] + '</span>' +
+          '<span class="rank">#' + (i + 1) + '</span>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="photographer">' + p.photographer + '</p>' +
+          srcLine +
+          '<p class="desc">' + p.desc + '</p>' +
+          '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var cards = document.querySelectorAll('.photo-card');
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].addEventListener('click', function() {
+        document.getElementById('lightboxImg').src = this.dataset.img;
+        document.getElementById('lightboxCaption').textContent = this.dataset.caption;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    }
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) document.getElementById('lightbox').classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+  });
+
+  renderGallery(null);
+})();
+</script>
+
+</body>
+</html>
